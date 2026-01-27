@@ -254,5 +254,225 @@ A: コンテンツが実際に挿入されていない可能性があります�
 
 ---
 
+## 🏗️ 【2026-01-27】完全再構築計画
+
+### 背景と目的
+
+**問題**:
+- Regex置換の失敗（ネストした`<div>`にマッチしない）
+- 実行順序依存による相互上書き
+- Orient のみ異なる構造（🎁限定モデル分析 vs 🎭キャラクター/コラボ分析）
+- SEIKO/CASIOでライン別円グラフが追加されない
+- ライン別詳細分析・キャラクター/コラボ分析セクションに検索リンクがない
+
+**3者協議の結論**:
+- ✅ ゼロベース再構築（既存コードのパッチングではない）
+- ✅ Strategy Patternアーキテクチャ
+- ✅ Schema-First開発
+- ✅ Golden Masterテスト
+- ✅ 単一スクリプトで全ブランド生成（実行順序依存を排除）
+
+---
+
+### Phase 1: 準備（Golden Master作成）
+
+**目的**: 現在の出力をベースラインとして保存し、回帰テストに使用
+
+**作業**:
+1. 既存の4スクリプトを実行してHTMLを生成
+2. 各ブランドタブのHTMLセクションを抽出
+3. `golden_master/` ディレクトリに保存
+4. 検証スクリプト作成（構造比較、グラフ数確認）
+
+**成果物**:
+- `golden_master/seiko_tab.html`
+- `golden_master/casio_tab.html`
+- `golden_master/citizen_tab.html`
+- `golden_master/orient_tab.html`
+- `golden_master/verify.py`
+
+---
+
+### Phase 2: データスキーマ定義
+
+**必須フィールド（全ブランド共通）**:
+```python
+{
+    "model_number": str,      # 型番
+    "title": str,             # タイトル
+    "price": float,           # 価格
+    "sales": int,             # 販売数
+    "line": str,              # ライン
+    "condition": str,         # 商品状態
+    "category": str           # カテゴリ
+}
+```
+
+**ブランド固有フィールド**:
+```python
+{
+    "drive_type": str,         # 駆動方式（SEIKO, CITIZEN）
+    "character_collab": bool,  # キャラクター/コラボ
+    "limited_edition": bool,   # 限定モデル（Orient）
+    "anniversary_model": bool  # 記念モデル（Orient）
+}
+```
+
+**バリデーションルール**:
+- 価格: 0以上の数値
+- 販売数: 0以上の整数
+- ライン: 空文字は"不明"に正規化
+- 型番: 抽出失敗時は"N/A"
+
+**成果物**: `schema.py`
+
+---
+
+### Phase 3: 共通パイプライン設計
+
+**アーキテクチャ**: Strategy Pattern
+
+```
+BrandAnalyzer (Context)
+    ├── AbstractBrandStrategy (抽象基底クラス)
+    │   ├── extract_model_number()
+    │   ├── classify_line()
+    │   ├── generate_sections()
+    │   └── calculate_cv()
+    │
+    ├── SEIKOStrategy
+    ├── CASIOStrategy
+    ├── CITIZENStrategy
+    └── OrientStrategy
+```
+
+**共通処理フロー**:
+1. CSV読み込み
+2. 完品データフィルタ
+3. ブランド別データ抽出
+4. 型番抽出（ブランド別）
+5. ライン分類（ブランド別）
+6. 統計計算（共通）
+7. HTML生成（共通テンプレート + ブランド固有）
+
+**成果物**:
+- `brand_analyzer.py`
+- `strategies/base.py`
+- `utils/common.py`
+
+---
+
+### Phase 4: 統一HTMLテンプレート
+
+**6セクション構成（全ブランド統一）**:
+1. 📊 基本統計（販売数、平均価格、CV値）
+2. 🏆 Top30人気モデル（テーブル + eBay/メルカリ検索リンク）
+3. 📈 価格帯別販売分布（棒グラフ）
+4. 📊 ライン別売上比率（円グラフ）← **全ブランドで統一**
+5. 🔵 ライン別詳細分析（テーブル + **検索リンク追加**）
+6. 🎭 キャラクター/コラボ分析（テーブル + **検索リンク追加**）
+
+**重要な追加機能**:
+- ✅ **ライン別詳細分析に検索リンク**: ライン名（例: "SEIKO 5"）でeBay/メルカリ検索
+- ✅ **キャラクター/コラボ分析に検索リンク**: キャラクター名（例: "ジブリ"）でeBay/メルカリ検索
+- ✅ Orientに🎭キャラクター/コラボ分析を追加（既存の🎁は7番目に残す）
+- ✅ グラフレイアウトはCSS Gridで2x3配置
+
+**検索リンク仕様**:
+```python
+# ライン別詳細分析の例
+line_name = "SEIKO 5"
+ebay_url = f"https://www.ebay.com/sch/i.html?_nkw=SEIKO+SEIKO+5+Watch&LH_Sold=1"
+mercari_url = f"https://jp.mercari.com/search?keyword=SEIKO%20SEIKO%205%20時計&status=on_sale"
+
+# キャラクター/コラボ分析の例
+character = "ジブリ"
+ebay_url = f"https://www.ebay.com/sch/i.html?_nkw=SEIKO+ジブリ+Watch&LH_Sold=1"
+mercari_url = f"https://jp.mercari.com/search?keyword=SEIKO%20ジブリ%20時計&status=on_sale"
+```
+
+**チェックボックス機能**:
+各検索リンクの横にチェックボックスを配置し、ユーザーが検索済みを判断できるようにする。
+
+```html
+<a href="..." target="_blank" class="link-btn link-ebay">eBay</a>
+<input type="checkbox" class="search-checkbox">
+<a href="..." target="_blank" class="link-btn link-mercari">メルカリ</a>
+<input type="checkbox" class="search-checkbox">
+```
+
+**適用箇所**:
+- Top30テーブル（各モデル）
+- ライン別詳細分析（各ライン）
+- キャラクター/コラボ分析（各キャラクター）
+
+**成果物**: `templates/brand_tab.html`
+
+---
+
+### Phase 5: 実装順序
+
+1. **共通ユーティリティ** (`utils/common.py`)
+   - `calculate_cv(values)`
+   - `format_price(price)`
+   - `aggregate_top_lines(df, top_n=7)`
+   - `generate_search_links(brand, keyword, type='model')`
+
+2. **基底クラス** (`strategies/base.py`)
+
+3. **CITIZENストラテジー** (`strategies/citizen.py`)
+   - 既存ロジック移植 + 検索リンク追加
+
+4. **他ブランドストラテジー**
+   - `strategies/seiko.py` + 検索リンク
+   - `strategies/casio.py` + 検索リンク
+   - `strategies/orient.py` + 🎭セクション追加 + 検索リンク
+
+5. **統合スクリプト** (`rebuild_all_brands_unified.py`)
+   - 全ブランドを1回の実行で生成
+   - 文字列位置ベースで置換
+   - 1回のファイル書き込みで完了
+
+---
+
+### Phase 6: テスト & 検証
+
+**テスト項目**:
+1. Golden Master回帰テスト
+2. 検索リンクの動作確認（全セクション）
+3. グラフ数の一致確認（各ブランド6個）
+4. Top30行数の確認（各30行）
+5. 冪等性テスト（2回実行して同じ結果）
+6. 視覚検証（ブラウザで全タブ確認）
+
+**成果物**:
+- `tests/test_golden_master.py`
+- `tests/test_search_links.py`
+- `tests/test_idempotency.py`
+
+---
+
+### 実装優先度
+
+**優先度1（必須）**:
+- Phase 1, 2, 3, 5の実装
+- 全ブランドでライン別円グラフ追加
+- ライン別詳細分析・キャラクター/コラボ分析に検索リンク追加
+- Orientに🎭キャラクター/コラボ分析を追加
+
+**優先度2（推奨）**:
+- Phase 4のテンプレート化
+- Phase 6のテスト自動化
+
+---
+
+### 実装開始の前提条件
+
+1. ✅ この計画書の承認
+2. ✅ `rebuild_all_brands_unified.py` の既存コードを削除
+3. ✅ 既存の4スクリプトはGolden Master作成まで保持
+
+---
+
 **このファイルは、プロジェクトの重要なルールと再発防止策を記録しています。**
 **タブの追加・修正を行う際は、必ずこのファイルを参照してください。**
