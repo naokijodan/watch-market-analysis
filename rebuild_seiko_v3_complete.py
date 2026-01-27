@@ -111,8 +111,34 @@ def extract_model_number(title):
 
     return None
 
-# ライン分類実行
+# ライン分類実行（通常）
 df_seiko['ライン'] = df_seiko['タイトル_upper'].apply(classify_seiko_line)
+
+# キャラクター/コラボ判定（別視点）
+CHARACTER_KEYWORDS = [
+    'DISNEY', 'MICKEY', 'MINNIE',
+    'HELLO KITTY', 'KITTY', 'RILAKKUMA',
+    'GHIBLI', 'TOTORO', 'SPIRITED AWAY',  # ← ユーザー指摘！
+    'ONE PIECE', 'LUFFY', 'NARUTO', 'DRAGON BALL', 'DRAGONBALL',
+    'GUNDAM', 'MOBILE SUIT', 'EVANGELION', 'EVA',
+    'DORAEMON', 'DEMON SLAYER', 'KIMETSU', 'SAILOR MOON',
+    'POKEMON', 'PIKACHU',
+    'SPIDER', 'IRON MAN', 'CAPTAIN AMERICA', 'AVENGERS',
+    'SNOOPY', 'PEANUTS',  # ← ユーザー指摘！
+    'STAR WARS', 'DARTH', 'YODA', 'JEDI',
+    'COLLABORATION', 'COLLAB',
+    'STREET FIGHTER',
+    'KUMAMON',
+]
+
+def is_character_collab(title_upper):
+    """キャラクター/コラボ商品かどうか判定"""
+    for kw in CHARACTER_KEYWORDS:
+        if kw in title_upper:
+            return True
+    return False
+
+df_seiko['キャラクター/コラボ'] = df_seiko['タイトル_upper'].apply(is_character_collab)
 
 # 型番を抽出
 df_seiko['型番抽出'] = df_seiko['タイトル'].apply(extract_model_number)
@@ -356,6 +382,80 @@ lines_html += '''
         </div>
 '''
 
+# 6.5. キャラクター/コラボ分析（別視点）
+character_data = df_seiko[df_seiko['キャラクター/コラボ']==True].copy()
+character_sales = character_data['販売数'].sum()
+character_median = character_data['価格'].median()
+
+# キャラクター別集計
+character_breakdown = {}
+char_keywords_display = {
+    'GHIBLI': 'ジブリ',
+    'ONE PIECE': 'ワンピース',
+    'POKEMON': 'ポケモン',
+    'DISNEY': 'ディズニー',
+    'HELLO KITTY': 'ハローキティ',
+    'EVANGELION': 'エヴァンゲリオン',
+    'SNOOPY': 'スヌーピー',
+    'GUNDAM': 'ガンダム',
+    'STREET FIGHTER': 'ストリートファイター',
+    'STAR WARS': 'スターウォーズ',
+    'DORAEMON': 'ドラえもん',
+}
+
+for kw_en, kw_jp in char_keywords_display.items():
+    mask = character_data['タイトル_upper'].str.contains(kw_en, na=False)
+    count = character_data[mask]['販売数'].sum()
+    if count > 0:
+        character_breakdown[kw_jp] = int(count)
+
+character_html = f'''
+        <h3 class="section-title seiko-blue">🎭 キャラクター/コラボ分析（複数視点）</h3>
+        <p style="color: #666; margin-bottom: 15px;">同じ商品を別の角度から分析 - 例：ALBAジブリは「ALBAライン」と「ジブリコラボ」の両方に該当</p>
+
+        <div class="stats-grid" style="margin-bottom: 20px;">
+            <div class="stat-card">
+                <div class="label">キャラクター商品数</div>
+                <div class="value seiko-accent">{character_sales:,}個</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">中央値</div>
+                <div class="value">${character_median:.0f}</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">全体比率</div>
+                <div class="value seiko-accent">{character_sales/total_line_sales*100:.1f}%</div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>キャラクター</th>
+                        <th>販売数</th>
+                        <th>比率</th>
+                    </tr>
+                </thead>
+                <tbody>
+'''
+
+for char_name, count in sorted(character_breakdown.items(), key=lambda x: x[1], reverse=True):
+    ratio = count / character_sales * 100 if character_sales > 0 else 0
+    character_html += f'''
+                    <tr>
+                        <td><strong>{char_name}</strong></td>
+                        <td>{count:,}</td>
+                        <td class="seiko-accent">{ratio:.1f}%</td>
+                    </tr>
+    '''
+
+character_html += '''
+                </tbody>
+            </table>
+        </div>
+'''
+
 # 7. 各ラインの人気モデル（CSVから再分類）
 line_models_html = '<h3 class="section-title seiko-blue">📌 各ラインの人気モデル（実データより）</h3>'
 line_models_html += '<p style="color: #666; margin-bottom: 20px;">元CSVデータから再分類した正確な人気モデルTop5</p>'
@@ -514,6 +614,7 @@ new_seiko_tab = (
     strategy_html +
     graphs_html +
     lines_html +
+    character_html +  # ← キャラクター分析追加
     line_models_html +
     top30_html +
     '    </div>\n' +
