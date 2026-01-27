@@ -457,21 +457,25 @@ orient_html += '''
             </table>
         </div>
     </div>
+'''
 
+# Plotlyスクリプトを生成（JSONで変数を展開）
+import json
+plotly_script = f'''
     <script>
     const orientColor = '#FF6B35';
     const orientGradient = ['#FF6B35', '#FF8C61', '#FFB399', '#FFD9CC'];
 
     // 価格帯別分析グラフ
     Plotly.newPlot('orient_price_chart', [{{
-        x: {price_x},
-        y: {price_y},
+        x: {json.dumps(price_x)},
+        y: {json.dumps(price_y)},
         type: 'bar',
         marker: {{
             color: orientColor,
             line: {{ width: 1, color: '#fff' }}
         }},
-        text: {price_y},
+        text: {json.dumps(price_y)},
         textposition: 'outside',
         hovertemplate: '<b>%{{x}}</b><br>販売数: %{{y}}<extra></extra>'
     }}], {{
@@ -484,8 +488,8 @@ orient_html += '''
 
     // ライン別売上比率
     Plotly.newPlot('orient_line_chart', [{{
-        labels: {line_labels},
-        values: {line_values},
+        labels: {json.dumps(line_labels)},
+        values: {json.dumps(line_values)},
         type: 'pie',
         marker: {{
             colors: orientGradient.concat(['#FFE5D9', '#FFF0E9', '#FFF8F4', '#E6E6E6', '#D0D0D0', '#B8B8B8', '#A0A0A0'])
@@ -499,6 +503,9 @@ orient_html += '''
     }}, {{responsive: true}});
     </script>
 '''
+
+# HTMLに統合
+orient_html += plotly_script
 
 # ===========================
 # 9. HTML置換（安全な文字列位置ベース）

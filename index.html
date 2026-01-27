@@ -10638,6 +10638,1997 @@
     const orientGradient = ['#FF6B35', '#FF8C61', '#FFB399', '#FFD9CC'];
 
     // 価格帯別分析グラフ
+    Plotly.newPlot('orient_price_chart', [{
+        x: ["$50-100", "$100-150", "$150-200", "$200-250", "$250-300", "$300-350", "$350-400", "$400-450", "$450-500", "$500-550", "$550-600", "$650-700", "$700-750", "$900-950"],
+        y: [11, 53, 48, 135, 166, 87, 20, 8, 3, 8, 10, 2, 1, 2],
+        type: 'bar',
+        marker: {
+            color: orientColor,
+            line: { width: 1, color: '#fff' }
+        },
+        text: [11, 53, 48, 135, 166, 87, 20, 8, 3, 8, 10, 2, 1, 2],
+        textposition: 'outside',
+        hovertemplate: '<b>%{x}</b><br>販売数: %{y}<extra></extra>'
+    }], {
+        margin: {l: 40, r: 20, t: 20, b: 60},
+        xaxis: { title: '価格帯', tickangle: -45 },
+        yaxis: { title: '販売数' },
+        paper_bgcolor: 'white',
+        plot_bgcolor: '#fafafa'
+    }, {responsive: true});
+
+    // ライン別売上比率
+    Plotly.newPlot('orient_line_chart', [{
+        labels: ["Mako", "Bambino", "Sports", "\u305d\u306e\u4ed6Orient", "Sun & Moon", "Neo 70s", "Orient Star", "Contemporary", "Classic", "Revival", "Panda"],
+        values: [118, 93, 74, 72, 61, 48, 47, 17, 12, 8, 4],
+        type: 'pie',
+        marker: {
+            colors: orientGradient.concat(['#FFE5D9', '#FFF0E9', '#FFF8F4', '#E6E6E6', '#D0D0D0', '#B8B8B8', '#A0A0A0'])
+        },
+        textinfo: 'label+percent',
+        textposition: 'outside',
+        hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>比率: %{percent}<extra></extra>'
+    }], {
+        margin: {l: 20, r: 20, t: 20, b: 20},
+        paper_bgcolor: 'white'
+    }, {responsive: true});
+    </script>
+
+    <div id="Orient" class="tab-content">
+        <h2 style="color: #FF6B35; text-align: center; margin-bottom: 30px;">🟠 Orient 詳細分析</h2>
+
+        <!-- 基本統計 -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">総商品数</div>
+                <div class="value" style="color: #FF6B35;">213</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">総販売数</div>
+                <div class="value" style="color: #FF6B35;">554</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">価格中央値</div>
+                <div class="value" style="color: #FF6B35;">$256.96</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">型番抽出率</div>
+                <div class="value" style="color: #FF6B35;">144/213</div>
+            </div>
+        </div>
+
+        <!-- 仕入れ戦略 -->
+        <h3 class="section-title" style="color: #FF6B35;">🎯 仕入れ戦略（実践ガイド）</h3>
+        <div class="strategy-box" style="border-left: 4px solid #FF6B35;">
+            <h4 style="color: #FF6B35;">💡 Orient仕入れのポイント</h4>
+            <ul style="line-height: 1.8;">
+                <li><strong>Orient Star</strong>: 高級ライン、完品で$150-300が狙い目</li>
+                <li><strong>Bambino</strong>: ドレスウォッチ、$80-200で安定した需要</li>
+                <li><strong>Mako</strong>: ダイバーズ、スポーツ系で人気、$100-250</li>
+                <li><strong>Sun & Moon</strong>: ムーンフェイズ搭載、$150-350で高需要</li>
+                <li><strong>型番RN-AA0823L</strong>: 75周年記念モデル、最多販売数84個</li>
+            </ul>
+        </div>
+
+        <!-- 市場分析グラフ -->
+        <h3 class="section-title" style="color: #FF6B35;">📊 市場分析グラフ</h3>
+        <div class="chart-grid">
+            <div class="chart-container">
+                <h4 style="color: #FF6B35;">価格帯別分析（50ドル刻み）</h4>
+                <div id="orient_price_chart" style="height: 350px;"></div>
+            </div>
+            <div class="chart-container">
+                <h4 style="color: #FF6B35;">ライン別売上比率</h4>
+                <div id="orient_line_chart" style="height: 350px;"></div>
+            </div>
+        </div>
+
+        <!-- 限定モデル/記念モデル分析 -->
+        <h3 class="section-title" style="color: #FF6B35;">🎁 限定モデル/記念モデル分析</h3>
+        <p style="color: #666; margin-bottom: 20px;">LIMITED EDITION、ANNIVERSARY等の特別モデルの分析</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>モデルタイプ</th>
+                        <th>商品数</th>
+                        <th>販売数</th>
+                        <th>比率</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>ANNIVERSARY</strong></td>
+                        <td>19</td>
+                        <td>127</td>
+                        <td style="color: #FF6B35;">22.9%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>75TH</strong></td>
+                        <td>16</td>
+                        <td>120</td>
+                        <td style="color: #FF6B35;">21.7%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>LIMITED EDITION</strong></td>
+                        <td>6</td>
+                        <td>12</td>
+                        <td style="color: #FF6B35;">2.2%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>70TH</strong></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td style="color: #FF6B35;">0.2%</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ライン別詳細分析 -->
+        <h3 class="section-title" style="color: #FF6B35;">🟠 ライン別詳細分析</h3>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ライン</th>
+                        <th>商品数</th>
+                        <th>比率</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>Orient Star</strong></td>
+                        <td>31</td>
+                        <td style="color: #FF6B35;">14.6%</td>
+                        <td>47</td>
+                        <td>$440.00</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Bambino</strong></td>
+                        <td>31</td>
+                        <td style="color: #FF6B35;">14.6%</td>
+                        <td>93</td>
+                        <td>$243.43</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Mako</strong></td>
+                        <td>37</td>
+                        <td style="color: #FF6B35;">17.4%</td>
+                        <td>118</td>
+                        <td>$239.99</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Sun & Moon</strong></td>
+                        <td>27</td>
+                        <td style="color: #FF6B35;">12.7%</td>
+                        <td>61</td>
+                        <td>$314.50</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Neo 70s</strong></td>
+                        <td>10</td>
+                        <td style="color: #FF6B35;">4.7%</td>
+                        <td>48</td>
+                        <td>$209.31</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Panda</strong></td>
+                        <td>2</td>
+                        <td style="color: #FF6B35;">0.9%</td>
+                        <td>4</td>
+                        <td>$266.15</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Sports</strong></td>
+                        <td>12</td>
+                        <td style="color: #FF6B35;">5.6%</td>
+                        <td>74</td>
+                        <td>$269.44</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Classic</strong></td>
+                        <td>6</td>
+                        <td style="color: #FF6B35;">2.8%</td>
+                        <td>12</td>
+                        <td>$277.37</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Revival</strong></td>
+                        <td>4</td>
+                        <td style="color: #FF6B35;">1.9%</td>
+                        <td>8</td>
+                        <td>$241.93</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Contemporary</strong></td>
+                        <td>8</td>
+                        <td style="color: #FF6B35;">3.8%</td>
+                        <td>17</td>
+                        <td>$248.72</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>その他Orient</strong></td>
+                        <td>45</td>
+                        <td style="color: #FF6B35;">21.1%</td>
+                        <td>72</td>
+                        <td>$185.00</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="section-title" style="color: #FF6B35;">📌 各ラインの人気モデル（実データより）</h3>
+        <p style="color: #666; margin-bottom: 20px;">元CSVデータから再分類した正確な人気モデルTop15</p>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">Orient Star - Top15モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>AU0005L</td>
+                        <td>7</td>
+                        <td>$415.37</td>
+                        <td class="highlight" style="color: #FF6B35;">¥41,848</td>
+                        <td>0.084</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AU0005L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AU0005L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>AS0003S</td>
+                        <td>4</td>
+                        <td>$341.54</td>
+                        <td class="highlight" style="color: #FF6B35;">¥34,410</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AS0003S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AS0003S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>AV0006L</td>
+                        <td>4</td>
+                        <td>$529.88</td>
+                        <td class="highlight" style="color: #FF6B35;">¥53,385</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AV0006L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AV0006L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>AT0007N</td>
+                        <td>3</td>
+                        <td>$391.76</td>
+                        <td class="highlight" style="color: #FF6B35;">¥39,469</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AT0007N&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AT0007N&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">5</strong></td>
+                        <td>AU0004B</td>
+                        <td>2</td>
+                        <td>$443.15</td>
+                        <td class="highlight" style="color: #FF6B35;">¥44,647</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AU0004B&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AU0004B&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">6</strong></td>
+                        <td>AU0110N</td>
+                        <td>2</td>
+                        <td>$411.88</td>
+                        <td class="highlight" style="color: #FF6B35;">¥41,496</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AU0110N&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AU0110N&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">7</strong></td>
+                        <td>AV0004L</td>
+                        <td>2</td>
+                        <td>$557.67</td>
+                        <td class="highlight" style="color: #FF6B35;">¥56,185</td>
+                        <td>0.007</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AV0004L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AV0004L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">8</strong></td>
+                        <td>AV0008Y</td>
+                        <td>2</td>
+                        <td>$577.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥58,132</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AV0008Y&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AV0008Y&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">9</strong></td>
+                        <td>AF02003W0</td>
+                        <td>1</td>
+                        <td>$415.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥41,811</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AF02003W0&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AF02003W0&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">10</strong></td>
+                        <td>AU0108G</td>
+                        <td>1</td>
+                        <td>$410.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥41,307</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AU0108G&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AU0108G&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">11</strong></td>
+                        <td>AU0307E</td>
+                        <td>1</td>
+                        <td>$685.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥69,013</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AU0307E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AU0307E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">12</strong></td>
+                        <td>AV0001S</td>
+                        <td>1</td>
+                        <td>$536.60</td>
+                        <td class="highlight" style="color: #FF6B35;">¥54,062</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AV0001S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AV0001S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">13</strong></td>
+                        <td>DA02-C0-B</td>
+                        <td>1</td>
+                        <td>$320.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥32,240</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+DA02-C0-B&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20DA02-C0-B&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">14</strong></td>
+                        <td>EW01-C0</td>
+                        <td>1</td>
+                        <td>$180.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥18,135</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+EW01-C0&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20EW01-C0&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">15</strong></td>
+                        <td>ND0005S</td>
+                        <td>1</td>
+                        <td>$295.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥29,721</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+ND0005S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20ND0005S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">Bambino - Top14モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>AK0803Y</td>
+                        <td>39</td>
+                        <td>$308.92</td>
+                        <td class="highlight" style="color: #FF6B35;">¥31,123</td>
+                        <td>0.061</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0803Y&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0803Y&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>AP0105Y</td>
+                        <td>10</td>
+                        <td>$241.32</td>
+                        <td class="highlight" style="color: #FF6B35;">¥24,313</td>
+                        <td>0.012</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AP0105Y&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AP0105Y&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>AK0703E</td>
+                        <td>8</td>
+                        <td>$254.38</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,628</td>
+                        <td>0.130</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0703E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0703E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>WK0002E</td>
+                        <td>8</td>
+                        <td>$205.26</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,679</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WK0002E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WK0002E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">5</strong></td>
+                        <td>AC0027S</td>
+                        <td>6</td>
+                        <td>$298.07</td>
+                        <td class="highlight" style="color: #FF6B35;">¥30,030</td>
+                        <td>0.009</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AC0027S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AC0027S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">6</strong></td>
+                        <td>WK0003G</td>
+                        <td>5</td>
+                        <td>$205.03</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,657</td>
+                        <td>0.007</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WK0003G&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WK0003G&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">7</strong></td>
+                        <td>AC0023E</td>
+                        <td>3</td>
+                        <td>$235.45</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,721</td>
+                        <td>0.015</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AC0023E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AC0023E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">8</strong></td>
+                        <td>WK0004L</td>
+                        <td>2</td>
+                        <td>$203.84</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,536</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WK0004L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WK0004L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">9</strong></td>
+                        <td>AC00005W0</td>
+                        <td>1</td>
+                        <td>$260.65</td>
+                        <td class="highlight" style="color: #FF6B35;">¥26,260</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AC00005W0&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AC00005W0&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">10</strong></td>
+                        <td>AC00007W0</td>
+                        <td>1</td>
+                        <td>$231.50</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,323</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AC00007W0&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AC00007W0&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">11</strong></td>
+                        <td>AG0004S</td>
+                        <td>1</td>
+                        <td>$235.47</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,723</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AG0004S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AG0004S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">12</strong></td>
+                        <td>AK0807R</td>
+                        <td>1</td>
+                        <td>$265.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥26,698</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0807R&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0807R&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">13</strong></td>
+                        <td>AP0002S</td>
+                        <td>1</td>
+                        <td>$213.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥21,459</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AP0002S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AP0002S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">14</strong></td>
+                        <td>AP0101B</td>
+                        <td>1</td>
+                        <td>$190.11</td>
+                        <td class="highlight" style="color: #FF6B35;">¥19,153</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AP0101B&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AP0101B&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">Mako - Top14モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>TX0210L</td>
+                        <td>35</td>
+                        <td>$256.96</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,888</td>
+                        <td>0.101</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0210L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0210L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>AA0823L</td>
+                        <td>22</td>
+                        <td>$264.32</td>
+                        <td class="highlight" style="color: #FF6B35;">¥26,630</td>
+                        <td>0.029</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA0823L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA0823L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>AA02001B3</td>
+                        <td>9</td>
+                        <td>$190.66</td>
+                        <td class="highlight" style="color: #FF6B35;">¥19,208</td>
+                        <td>0.015</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA02001B3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA02001B3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>WJ0002L</td>
+                        <td>7</td>
+                        <td>$205.82</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,736</td>
+                        <td>0.101</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WJ0002L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WJ0002L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">5</strong></td>
+                        <td>TX0203S</td>
+                        <td>6</td>
+                        <td>$233.56</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,530</td>
+                        <td>0.052</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0203S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0203S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">6</strong></td>
+                        <td>AA02002D3</td>
+                        <td>5</td>
+                        <td>$208.75</td>
+                        <td class="highlight" style="color: #FF6B35;">¥21,031</td>
+                        <td>0.144</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA02002D3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA02002D3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">7</strong></td>
+                        <td>AA02009D3</td>
+                        <td>5</td>
+                        <td>$187.93</td>
+                        <td class="highlight" style="color: #FF6B35;">¥18,933</td>
+                        <td>0.011</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA02009D3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA02009D3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">8</strong></td>
+                        <td>TX0204E</td>
+                        <td>4</td>
+                        <td>$227.25</td>
+                        <td class="highlight" style="color: #FF6B35;">¥22,895</td>
+                        <td>0.030</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0204E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0204E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">9</strong></td>
+                        <td>AA0822L</td>
+                        <td>1</td>
+                        <td>$537.41</td>
+                        <td class="highlight" style="color: #FF6B35;">¥54,144</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA0822L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA0822L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">10</strong></td>
+                        <td>EM75005R9</td>
+                        <td>1</td>
+                        <td>$346.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥34,859</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+EM75005R9&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20EM75005R9&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">11</strong></td>
+                        <td>TX0201L</td>
+                        <td>1</td>
+                        <td>$204.96</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,649</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0201L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0201L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">12</strong></td>
+                        <td>TX0206L</td>
+                        <td>1</td>
+                        <td>$220.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥22,165</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0206L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0206L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">13</strong></td>
+                        <td>TX0207R</td>
+                        <td>1</td>
+                        <td>$232.83</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,457</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0207R&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0207R&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">14</strong></td>
+                        <td>TX0209G</td>
+                        <td>1</td>
+                        <td>$363.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥36,572</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0209G&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0209G&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">Sun & Moon - Top9モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>AK0001S</td>
+                        <td>11</td>
+                        <td>$348.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥35,061</td>
+                        <td>0.071</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0001S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0001S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>AK0803Y</td>
+                        <td>8</td>
+                        <td>$299.12</td>
+                        <td class="highlight" style="color: #FF6B35;">¥30,136</td>
+                        <td>0.038</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0803Y&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0803Y&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>AK0005S</td>
+                        <td>7</td>
+                        <td>$310.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥31,232</td>
+                        <td>0.083</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0005S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0005S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>AK0303L</td>
+                        <td>6</td>
+                        <td>$244.76</td>
+                        <td class="highlight" style="color: #FF6B35;">¥24,659</td>
+                        <td>0.013</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0303L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0303L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">5</strong></td>
+                        <td>AS0002S</td>
+                        <td>4</td>
+                        <td>$358.92</td>
+                        <td class="highlight" style="color: #FF6B35;">¥36,161</td>
+                        <td>0.142</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AS0002S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AS0002S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">6</strong></td>
+                        <td>AK0002Y</td>
+                        <td>2</td>
+                        <td>$313.49</td>
+                        <td class="highlight" style="color: #FF6B35;">¥31,583</td>
+                        <td>0.020</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0002Y&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0002Y&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">7</strong></td>
+                        <td>AK0004L</td>
+                        <td>2</td>
+                        <td>$319.75</td>
+                        <td class="highlight" style="color: #FF6B35;">¥32,214</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0004L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0004L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">8</strong></td>
+                        <td>AK00-C0-E</td>
+                        <td>1</td>
+                        <td>$249.90</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,177</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK00-C0-E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK00-C0-E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">9</strong></td>
+                        <td>AK0305S</td>
+                        <td>1</td>
+                        <td>$242.90</td>
+                        <td class="highlight" style="color: #FF6B35;">¥24,472</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0305S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0305S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">Neo 70s - Top6モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>WV0041TX</td>
+                        <td>38</td>
+                        <td>$207.06</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,861</td>
+                        <td>0.026</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WV0041TX&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WV0041TX&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>WV0011TX</td>
+                        <td>6</td>
+                        <td>$183.29</td>
+                        <td class="highlight" style="color: #FF6B35;">¥18,466</td>
+                        <td>0.113</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WV0011TX&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WV0011TX&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>WV0021TX</td>
+                        <td>1</td>
+                        <td>$179.99</td>
+                        <td class="highlight" style="color: #FF6B35;">¥18,133</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WV0021TX&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WV0021TX&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>WV0021TY</td>
+                        <td>1</td>
+                        <td>$229.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,071</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WV0021TY&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WV0021TY&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">5</strong></td>
+                        <td>WV0051SE</td>
+                        <td>1</td>
+                        <td>$229.03</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,074</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WV0051SE&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WV0051SE&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">6</strong></td>
+                        <td>WV0081SE</td>
+                        <td>1</td>
+                        <td>$235.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,676</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WV0081SE&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WV0081SE&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">Panda - Top2モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>TX0302S</td>
+                        <td>2</td>
+                        <td>$217.11</td>
+                        <td class="highlight" style="color: #FF6B35;">¥21,873</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0302S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0302S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>TX0308S</td>
+                        <td>2</td>
+                        <td>$315.20</td>
+                        <td class="highlight" style="color: #FF6B35;">¥31,756</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0308S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0308S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">Sports - Top5モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>AA0823L</td>
+                        <td>61</td>
+                        <td>$274.50</td>
+                        <td class="highlight" style="color: #FF6B35;">¥27,656</td>
+                        <td>0.072</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA0823L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA0823L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>AA0007L</td>
+                        <td>3</td>
+                        <td>$228.92</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,063</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA0007L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA0007L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>AK0403N</td>
+                        <td>3</td>
+                        <td>$214.04</td>
+                        <td class="highlight" style="color: #FF6B35;">¥21,564</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0403N&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0403N&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>AA0810N</td>
+                        <td>1</td>
+                        <td>$261.44</td>
+                        <td class="highlight" style="color: #FF6B35;">¥26,340</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA0810N&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA0810N&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">5</strong></td>
+                        <td>TX0204E</td>
+                        <td>1</td>
+                        <td>$220.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥22,165</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0204E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0204E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">Classic - Top4モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>AC0001S</td>
+                        <td>4</td>
+                        <td>$249.75</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,162</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AC0001S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AC0001S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>AS0003S</td>
+                        <td>3</td>
+                        <td>$371.23</td>
+                        <td class="highlight" style="color: #FF6B35;">¥37,400</td>
+                        <td>0.097</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AS0003S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AS0003S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>AG0004S</td>
+                        <td>2</td>
+                        <td>$207.47</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,902</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AG0004S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AG0004S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>AS0001B</td>
+                        <td>1</td>
+                        <td>$304.99</td>
+                        <td class="highlight" style="color: #FF6B35;">¥30,727</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AS0001B&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AS0001B&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">Contemporary - Top6モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>AR0007S</td>
+                        <td>5</td>
+                        <td>$257.21</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,913</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AR0007S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AR0007S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>AR0003S</td>
+                        <td>3</td>
+                        <td>$245.53</td>
+                        <td class="highlight" style="color: #FF6B35;">¥24,737</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AR0003S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AR0003S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>AR0004Y</td>
+                        <td>2</td>
+                        <td>$250.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,187</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AR0004Y&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AR0004Y&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>AR0008E</td>
+                        <td>2</td>
+                        <td>$265.50</td>
+                        <td class="highlight" style="color: #FF6B35;">¥26,749</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AR0008E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AR0008E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">5</strong></td>
+                        <td>AR0009L</td>
+                        <td>1</td>
+                        <td>$256.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,792</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AR0009L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AR0009L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">6</strong></td>
+                        <td>AR0010R</td>
+                        <td>1</td>
+                        <td>$247.45</td>
+                        <td class="highlight" style="color: #FF6B35;">¥24,930</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AR0010R&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AR0010R&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h4 style="color: #FF6B35; margin-top: 30px;">その他Orient - Top12モデル</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>AR0003S</td>
+                        <td>3</td>
+                        <td>$245.83</td>
+                        <td class="highlight" style="color: #FF6B35;">¥24,767</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AR0003S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AR0003S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>AG0728S</td>
+                        <td>2</td>
+                        <td>$216.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥21,762</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AG0728S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AG0728S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>AA0823L</td>
+                        <td>1</td>
+                        <td>$268.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥27,001</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA0823L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA0823L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>AA0915R</td>
+                        <td>1</td>
+                        <td>$276.30</td>
+                        <td class="highlight" style="color: #FF6B35;">¥27,837</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA0915R&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA0915R&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">5</strong></td>
+                        <td>AK0702Y</td>
+                        <td>1</td>
+                        <td>$200.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,150</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0702Y&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0702Y&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">6</strong></td>
+                        <td>EL03-D0-B</td>
+                        <td>1</td>
+                        <td>$299.90</td>
+                        <td class="highlight" style="color: #FF6B35;">¥30,214</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+EL03-D0-B&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20EL03-D0-B&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">7</strong></td>
+                        <td>EL06-D0-B</td>
+                        <td>1</td>
+                        <td>$329.99</td>
+                        <td class="highlight" style="color: #FF6B35;">¥33,246</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+EL06-D0-B&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20EL06-D0-B&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">8</strong></td>
+                        <td>FA02-C6</td>
+                        <td>1</td>
+                        <td>$299.99</td>
+                        <td class="highlight" style="color: #FF6B35;">¥30,223</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+FA02-C6&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20FA02-C6&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">9</strong></td>
+                        <td>FA02-C7</td>
+                        <td>1</td>
+                        <td>$354.24</td>
+                        <td class="highlight" style="color: #FF6B35;">¥35,689</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+FA02-C7&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20FA02-C7&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">10</strong></td>
+                        <td>NB00-Q1-B</td>
+                        <td>1</td>
+                        <td>$199.99</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,148</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+NB00-Q1-B&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20NB00-Q1-B&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">11</strong></td>
+                        <td>WG0010A</td>
+                        <td>1</td>
+                        <td>$186.14</td>
+                        <td class="highlight" style="color: #FF6B35;">¥18,753</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WG0010A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WG0010A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">12</strong></td>
+                        <td>WV0041TX</td>
+                        <td>1</td>
+                        <td>$199.55</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,104</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WV0041TX&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WV0041TX&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="section-title" style="color: #FF6B35;">🏆 全ライン横断 型番分析Top30</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">1</strong></td>
+                        <td>AA0823L</td>
+                        <td>84</td>
+                        <td>$272.27</td>
+                        <td class="highlight" style="color: #FF6B35;">¥27,431</td>
+                        <td>0.060</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA0823L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA0823L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">2</strong></td>
+                        <td>AK0803Y</td>
+                        <td>47</td>
+                        <td>$300.25</td>
+                        <td class="highlight" style="color: #FF6B35;">¥30,250</td>
+                        <td>0.050</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0803Y&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0803Y&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">3</strong></td>
+                        <td>WV0041TX</td>
+                        <td>39</td>
+                        <td>$207.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,855</td>
+                        <td>0.033</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WV0041TX&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WV0041TX&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">4</strong></td>
+                        <td>TX0210L</td>
+                        <td>35</td>
+                        <td>$256.96</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,888</td>
+                        <td>0.101</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0210L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0210L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">5</strong></td>
+                        <td>AK0001S</td>
+                        <td>11</td>
+                        <td>$348.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥35,061</td>
+                        <td>0.071</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0001S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0001S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">6</strong></td>
+                        <td>AP0105Y</td>
+                        <td>10</td>
+                        <td>$241.32</td>
+                        <td class="highlight" style="color: #FF6B35;">¥24,313</td>
+                        <td>0.012</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AP0105Y&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AP0105Y&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">7</strong></td>
+                        <td>AA02001B3</td>
+                        <td>9</td>
+                        <td>$190.66</td>
+                        <td class="highlight" style="color: #FF6B35;">¥19,208</td>
+                        <td>0.015</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA02001B3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA02001B3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">8</strong></td>
+                        <td>AK0703E</td>
+                        <td>8</td>
+                        <td>$254.38</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,628</td>
+                        <td>0.130</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0703E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0703E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">9</strong></td>
+                        <td>WK0002E</td>
+                        <td>8</td>
+                        <td>$205.26</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,679</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WK0002E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WK0002E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">10</strong></td>
+                        <td>AK0005S</td>
+                        <td>7</td>
+                        <td>$310.00</td>
+                        <td class="highlight" style="color: #FF6B35;">¥31,232</td>
+                        <td>0.083</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0005S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0005S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">11</strong></td>
+                        <td>AS0003S</td>
+                        <td>7</td>
+                        <td>$345.70</td>
+                        <td class="highlight" style="color: #FF6B35;">¥34,829</td>
+                        <td>0.085</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AS0003S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AS0003S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">12</strong></td>
+                        <td>AU0005L</td>
+                        <td>7</td>
+                        <td>$415.37</td>
+                        <td class="highlight" style="color: #FF6B35;">¥41,848</td>
+                        <td>0.084</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AU0005L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AU0005L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">13</strong></td>
+                        <td>WJ0002L</td>
+                        <td>7</td>
+                        <td>$205.82</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,736</td>
+                        <td>0.101</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WJ0002L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WJ0002L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">14</strong></td>
+                        <td>AC0027S</td>
+                        <td>6</td>
+                        <td>$298.07</td>
+                        <td class="highlight" style="color: #FF6B35;">¥30,030</td>
+                        <td>0.009</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AC0027S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AC0027S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">15</strong></td>
+                        <td>AK0303L</td>
+                        <td>6</td>
+                        <td>$244.76</td>
+                        <td class="highlight" style="color: #FF6B35;">¥24,659</td>
+                        <td>0.013</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0303L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0303L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">16</strong></td>
+                        <td>AR0003S</td>
+                        <td>6</td>
+                        <td>$245.68</td>
+                        <td class="highlight" style="color: #FF6B35;">¥24,752</td>
+                        <td>0.001</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AR0003S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AR0003S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">17</strong></td>
+                        <td>TX0203S</td>
+                        <td>6</td>
+                        <td>$233.56</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,530</td>
+                        <td>0.052</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0203S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0203S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">18</strong></td>
+                        <td>WV0011TX</td>
+                        <td>6</td>
+                        <td>$183.29</td>
+                        <td class="highlight" style="color: #FF6B35;">¥18,466</td>
+                        <td>0.113</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WV0011TX&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WV0011TX&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">19</strong></td>
+                        <td>AA02002D3</td>
+                        <td>5</td>
+                        <td>$208.75</td>
+                        <td class="highlight" style="color: #FF6B35;">¥21,031</td>
+                        <td>0.144</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA02002D3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA02002D3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">20</strong></td>
+                        <td>AA02009D3</td>
+                        <td>5</td>
+                        <td>$187.93</td>
+                        <td class="highlight" style="color: #FF6B35;">¥18,933</td>
+                        <td>0.011</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA02009D3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA02009D3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">21</strong></td>
+                        <td>AR0007S</td>
+                        <td>5</td>
+                        <td>$257.21</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,913</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AR0007S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AR0007S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">22</strong></td>
+                        <td>TX0204E</td>
+                        <td>5</td>
+                        <td>$222.47</td>
+                        <td class="highlight" style="color: #FF6B35;">¥22,413</td>
+                        <td>0.028</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+TX0204E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20TX0204E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">23</strong></td>
+                        <td>WK0003G</td>
+                        <td>5</td>
+                        <td>$205.03</td>
+                        <td class="highlight" style="color: #FF6B35;">¥20,657</td>
+                        <td>0.007</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+WK0003G&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20WK0003G&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">24</strong></td>
+                        <td>AC0001S</td>
+                        <td>4</td>
+                        <td>$249.75</td>
+                        <td class="highlight" style="color: #FF6B35;">¥25,162</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AC0001S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AC0001S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">25</strong></td>
+                        <td>AS0002S</td>
+                        <td>4</td>
+                        <td>$358.92</td>
+                        <td class="highlight" style="color: #FF6B35;">¥36,161</td>
+                        <td>0.142</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AS0002S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AS0002S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">26</strong></td>
+                        <td>AV0006L</td>
+                        <td>4</td>
+                        <td>$529.88</td>
+                        <td class="highlight" style="color: #FF6B35;">¥53,385</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AV0006L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AV0006L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">27</strong></td>
+                        <td>AA0007L</td>
+                        <td>3</td>
+                        <td>$228.92</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,063</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AA0007L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AA0007L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">28</strong></td>
+                        <td>AC0023E</td>
+                        <td>3</td>
+                        <td>$235.45</td>
+                        <td class="highlight" style="color: #FF6B35;">¥23,721</td>
+                        <td>0.015</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AC0023E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AC0023E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">29</strong></td>
+                        <td>AG0004S</td>
+                        <td>3</td>
+                        <td>$221.47</td>
+                        <td class="highlight" style="color: #FF6B35;">¥22,313</td>
+                        <td>0.089</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AG0004S&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AG0004S&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong style="color: #FF6B35;">30</strong></td>
+                        <td>AK0403N</td>
+                        <td>3</td>
+                        <td>$214.04</td>
+                        <td class="highlight" style="color: #FF6B35;">¥21,564</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+AK0403N&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20AK0403N&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+    const orientColor = '#FF6B35';
+    const orientGradient = ['#FF6B35', '#FF8C61', '#FFB399', '#FFD9CC'];
+
+    // 価格帯別分析グラフ
     Plotly.newPlot('orient_price_chart', [{{
         x: {price_x},
         y: {price_y},
