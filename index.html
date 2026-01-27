@@ -1,0 +1,3203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時計市場分析レポート - eBay輸出</title>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #1976D2;
+            --secondary: #E65100;
+            --success: #4CAF50;
+            --warning: #FFC107;
+            --danger: #F44336;
+            --bg-light: #f5f5f5;
+            --bg-dark: #1a1a1a;
+            --text-light: #333;
+            --text-dark: #fff;
+            --border: #ddd;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+        
+        body.dark-mode .card, body.dark-mode .tab-button {
+            background: #2d2d2d;
+            color: var(--text-dark);
+            border-color: #444;
+        }
+        
+        body.dark-mode .tab-button.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        body.dark-mode input, body.dark-mode select {
+            background: #2d2d2d;
+            color: var(--text-dark);
+            border-color: #444;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header-controls {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+        
+        body.dark-mode .stat-card {
+            background: #2d2d2d;
+            color: var(--text-dark);
+        }
+        
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        body.dark-mode .stat-card h3 {
+            color: #aaa;
+        }
+        
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .tab-button:hover {
+            background: #f0f0f0;
+        }
+        
+        .tab-button.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        body.dark-mode .tab-content {
+            background: #2d2d2d;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        body.dark-mode th {
+            background: #1a1a1a;
+        }
+        
+        tr:hover {
+            background: #f9f9f9;
+        }
+        
+        body.dark-mode tr:hover {
+            background: #333;
+        }
+        
+        .search-box {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 1rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .badge-success { background: #4CAF50; color: white; }
+        .badge-warning { background: #FFC107; color: #333; }
+        .badge-info { background: #2196F3; color: white; }
+        
+        .link-button {
+            padding: 0.25rem 0.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 0.25rem;
+            display: inline-block;
+        }
+        
+        .link-button:hover {
+            opacity: 0.8;
+        }
+        
+        .chart-container {
+            margin: 2rem 0;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        body.dark-mode .chart-container {
+            background: #2d2d2d;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--primary);
+        }
+        
+        .insight-box {
+            background: #E3F2FD;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        body.dark-mode .insight-box {
+            background: #1a3a52;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⌚ 時計市場分析レポート - eBay輸出</h1>
+        <p>日本で仕入れ → 海外eBayで販売の市場分析</p>
+        <div class="header-controls">
+            <button class="btn btn-primary" onclick="updateExchangeRate()">💱 為替レート更新</button>
+            <button class="btn btn-primary" onclick="toggleDarkMode()">🌙 ダークモード</button>
+            <span style="margin-left: auto;">生成日時: 2026-01-27 14:54:15</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- 全体統計 -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>📊 総レコード数</h3>
+                <div class="value">10,311</div>
+            </div>
+            <div class="stat-card">
+                <h3>💰 総販売数</h3>
+                <div class="value">22,753個</div>
+            </div>
+            <div class="stat-card">
+                <h3>💵 総売上</h3>
+                <div class="value">$5,765,190</div>
+            </div>
+            <div class="stat-card">
+                <h3>📈 中央値価格</h3>
+                <div class="value">$229.99</div>
+            </div>
+        </div>
+        
+        <!-- インサイト -->
+        <div class="insight-box">
+            <h3>🎯 主要インサイト</h3>
+            <ul>
+                <li><strong>データ期間:</strong> 2025-12-28 ~ 2026-01-26 (約1ヶ月)</li>
+                <li><strong>主要ブランド:</strong> SEIKO、CASIO、OMEGA が全体の約50%を占める</li>
+                <li><strong>駆動方式:</strong> クオーツ(31%)、自動巻(17%)、ソーラー(10%)の順</li>
+                <li><strong>仕入れのポイント:</strong> JDM限定モデル、付属品完備、型番明記の商品は高値で取引される傾向</li>
+                <li><strong>IQR法適用:</strong> 各カテゴリで中間50%のデータのみ使用し、外れ値を除外して精度向上</li>
+            </ul>
+        </div>
+        
+        <!-- タブナビゲーション -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="switchTab('overview')">📊 全体分析</button>
+            <button class="tab-button" onclick="switchTab('自動巻')">⚙️ 自動巻</button>
+            <button class="tab-button" onclick="switchTab('クオーツ')">🔋 クオーツ</button>
+            <button class="tab-button" onclick="switchTab('ソーラー')">☀️ ソーラー</button>
+            <button class="tab-button" onclick="switchTab('手巻き')">🔧 手巻き</button>
+            <button class="tab-button" onclick="switchTab('デジタル')">🔢 デジタル</button>
+            <button class="tab-button" onclick="switchTab('スマートウォッチ')">📱 スマートウォッチ</button>
+            <button class="tab-button" onclick="switchTab('parts')">🔩 パーツ分析</button>
+        </div>
+        
+        <!-- 全体分析タブ -->
+        <div id="overview" class="tab-content active">
+            <h2 class="section-title">全体市場分析</h2>
+            
+            <div class="chart-container">
+                <div id="chart-category-distribution"></div>
+            </div>
+            
+            <div class="chart-container">
+                <div id="chart-brand-distribution"></div>
+            </div>
+            
+            <div class="chart-container">
+                <div id="chart-price-distribution"></div>
+            </div>
+        </div>
+
+        <div id="自動巻" class="tab-content">
+            <h2 class="section-title">⚙️ 自動巻</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>総販売数</h3>
+                    <div class="value">1,283個</div>
+                </div>
+                <div class="stat-card">
+                    <h3>取引件数</h3>
+                    <div class="value">808件</div>
+                </div>
+                <div class="stat-card">
+                    <h3>中央値価格</h3>
+                    <div class="value">$499.99</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均価格</h3>
+                    <div class="value">$603.88</div>
+                </div>
+            </div>
+            
+            <h3>ブランド別統計</h3>
+            <input type="text" class="search-box" id="search-brand-自動巻" 
+                   placeholder="ブランド検索..." onkeyup="filterTable('brand-table-自動巻', this.value)">
+            
+            <table id="brand-table-自動巻">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>JDM</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SEIKO</strong></td>
+                        <td>618</td>
+                        <td>312</td>
+                        <td>$259.99</td>
+                        <td>$1299.99</td>
+                        <td><strong>$399.99</strong></td>
+                        <td>¥61,998</td>
+                        <td><strong>¥46,598</strong></td>
+                        <td><span class="badge badge-success">JDM 18</span></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>OMEGA</strong></td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>$299.99</td>
+                        <td>$1325.56</td>
+                        <td><strong>$795.22</strong></td>
+                        <td>¥123,259</td>
+                        <td><strong>¥95,607</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hamilton</strong></td>
+                        <td>70</td>
+                        <td>60</td>
+                        <td>$289.90</td>
+                        <td>$1250.00</td>
+                        <td><strong>$499.99</strong></td>
+                        <td>¥77,498</td>
+                        <td><strong>¥58,998</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Hamilton%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Orient</strong></td>
+                        <td>189</td>
+                        <td>59</td>
+                        <td>$259.84</td>
+                        <td>$904.18</td>
+                        <td><strong>$310.00</strong></td>
+                        <td>¥48,050</td>
+                        <td><strong>¥35,440</strong></td>
+                        <td><span class="badge badge-success">JDM 1</span></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>(不明)</strong></td>
+                        <td>69</td>
+                        <td>56</td>
+                        <td>$290.00</td>
+                        <td>$1314.40</td>
+                        <td><strong>$703.85</strong></td>
+                        <td>¥109,096</td>
+                        <td><strong>¥84,277</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=(不明)+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=(不明)%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Oris</strong></td>
+                        <td>38</td>
+                        <td>38</td>
+                        <td>$280.00</td>
+                        <td>$1249.99</td>
+                        <td><strong>$835.11</strong></td>
+                        <td>¥129,442</td>
+                        <td><strong>¥100,553</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Oris+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Oris%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Longines</strong></td>
+                        <td>32</td>
+                        <td>32</td>
+                        <td>$269.79</td>
+                        <td>$1304.21</td>
+                        <td><strong>$704.14</strong></td>
+                        <td>¥109,142</td>
+                        <td><strong>¥84,313</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>TAG HEUER</strong></td>
+                        <td>32</td>
+                        <td>32</td>
+                        <td>$370.00</td>
+                        <td>$1299.05</td>
+                        <td><strong>$964.39</strong></td>
+                        <td>¥149,480</td>
+                        <td><strong>¥116,584</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=TAG HEUER%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>RADO</strong></td>
+                        <td>19</td>
+                        <td>18</td>
+                        <td>$266.38</td>
+                        <td>$1006.40</td>
+                        <td><strong>$377.30</strong></td>
+                        <td>¥58,481</td>
+                        <td><strong>¥43,785</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=RADO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=RADO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>CITIZEN</strong></td>
+                        <td>25</td>
+                        <td>13</td>
+                        <td>$264.39</td>
+                        <td>$430.76</td>
+                        <td><strong>$383.00</strong></td>
+                        <td>¥59,365</td>
+                        <td><strong>¥44,492</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>BVLGARI</strong></td>
+                        <td>13</td>
+                        <td>13</td>
+                        <td>$489.00</td>
+                        <td>$1246.40</td>
+                        <td><strong>$909.30</strong></td>
+                        <td>¥140,941</td>
+                        <td><strong>¥109,753</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=BVLGARI+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=BVLGARI%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tissot</strong></td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>$285.00</td>
+                        <td>$1100.00</td>
+                        <td><strong>$663.50</strong></td>
+                        <td>¥102,842</td>
+                        <td><strong>¥79,274</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Tissot%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>TUDOR</strong></td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>$897.34</td>
+                        <td>$1325.00</td>
+                        <td><strong>$1074.40</strong></td>
+                        <td>¥166,532</td>
+                        <td><strong>¥130,225</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TUDOR+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=TUDOR%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>JUNGHANS</strong></td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>$640.00</td>
+                        <td>$1014.69</td>
+                        <td><strong>$726.18</strong></td>
+                        <td>¥112,557</td>
+                        <td><strong>¥87,046</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=JUNGHANS+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=JUNGHANS%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Frederique Constant</strong></td>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>$330.00</td>
+                        <td>$1100.00</td>
+                        <td><strong>$818.44</strong></td>
+                        <td>¥126,858</td>
+                        <td><strong>¥98,486</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Frederique+Constant+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Frederique Constant%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>CASIO</strong></td>
+                        <td>6</td>
+                        <td>5</td>
+                        <td>$277.00</td>
+                        <td>$482.63</td>
+                        <td><strong>$393.88</strong></td>
+                        <td>¥61,051</td>
+                        <td><strong>¥45,841</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>BULOVA</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$319.99</td>
+                        <td>$571.00</td>
+                        <td><strong>$467.50</strong></td>
+                        <td>¥72,461</td>
+                        <td><strong>¥54,969</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=BULOVA+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=BULOVA%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>BREITLING</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$1041.55</td>
+                        <td>$1258.30</td>
+                        <td><strong>$1041.97</strong></td>
+                        <td>¥161,506</td>
+                        <td><strong>¥126,204</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=BREITLING+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=BREITLING%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>MONTBLANC</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$750.00</td>
+                        <td>$1262.93</td>
+                        <td><strong>$1213.80</strong></td>
+                        <td>¥188,139</td>
+                        <td><strong>¥147,511</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=MONTBLANC+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=MONTBLANC%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Baume & Mercier</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$820.00</td>
+                        <td>$1216.00</td>
+                        <td><strong>$893.00</strong></td>
+                        <td>¥138,415</td>
+                        <td><strong>¥107,732</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Baume+&+Mercier+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Baume & Mercier%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">型番別統計（販売数順 Top 30）</h3>
+            <input type="text" class="search-box" id="search-model-自動巻" 
+                   placeholder="型番検索..." onkeyup="filterTable('model-table-自動巻', this.value)">
+            
+            <table id="model-table-自動巻">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6309-7040</strong></td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>$467.68</td>
+                        <td>$599.99</td>
+                        <td><strong>$499.99</strong></td>
+                        <td>¥77,498</td>
+                        <td><strong>¥58,998</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6309-7040+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206309-7040&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5626-7000</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$489.99</td>
+                        <td>$887.00</td>
+                        <td><strong>$732.09</strong></td>
+                        <td>¥113,473</td>
+                        <td><strong>¥87,778</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5626-7000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205626-7000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6218-8971</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$299.90</td>
+                        <td>$441.18</td>
+                        <td><strong>$369.73</strong></td>
+                        <td>¥57,307</td>
+                        <td><strong>¥42,845</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6218-8971+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206218-8971&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TAG HEUER</td>
+                        <td><strong>WV211B</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$832.32</td>
+                        <td>$1054.64</td>
+                        <td><strong>$1041.55</strong></td>
+                        <td>¥161,440</td>
+                        <td><strong>¥126,152</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WV211B+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=TAG%20HEUER%20WV211B&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5646-7010</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$719.99</td>
+                        <td>$949.99</td>
+                        <td><strong>$730.00</strong></td>
+                        <td>¥113,150</td>
+                        <td><strong>¥87,520</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5646-7010+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205646-7010&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5606-7000</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$338.66</td>
+                        <td>$399.99</td>
+                        <td><strong>$399.99</strong></td>
+                        <td>¥61,998</td>
+                        <td><strong>¥46,598</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5606-7000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205606-7000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5625-7000</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$429.99</td>
+                        <td>$499.90</td>
+                        <td><strong>$489.99</strong></td>
+                        <td>¥75,948</td>
+                        <td><strong>¥57,758</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5625-7000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205625-7000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5626-7110</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$575.00</td>
+                        <td>$679.90</td>
+                        <td><strong>$601.34</strong></td>
+                        <td>¥93,207</td>
+                        <td><strong>¥71,566</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5626-7110+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205626-7110&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>4005-7000</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$326.00</td>
+                        <td>$667.13</td>
+                        <td><strong>$499.99</strong></td>
+                        <td>¥77,498</td>
+                        <td><strong>¥58,998</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+4005-7000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%204005-7000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TAG HEUER</td>
+                        <td><strong>CAR2111</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$1087.96</td>
+                        <td>$1299.05</td>
+                        <td><strong>$1193.51</strong></td>
+                        <td>¥184,993</td>
+                        <td><strong>¥144,994</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAR2111+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=TAG%20HEUER%20CAR2111&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5626-7111</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$499.99</td>
+                        <td>$589.95</td>
+                        <td><strong>$544.97</strong></td>
+                        <td>¥84,470</td>
+                        <td><strong>¥64,576</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5626-7111+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205626-7111&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6206-8040</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$400.00</td>
+                        <td>$405.00</td>
+                        <td><strong>$402.50</strong></td>
+                        <td>¥62,387</td>
+                        <td><strong>¥46,910</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6206-8040+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206206-8040&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5621-7000</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$380.00</td>
+                        <td>$511.65</td>
+                        <td><strong>$445.82</strong></td>
+                        <td>¥69,102</td>
+                        <td><strong>¥52,282</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5621-7000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205621-7000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TAG HEUER</td>
+                        <td><strong>WS2113</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$1246.40</td>
+                        <td>$1246.40</td>
+                        <td><strong>$1246.40</strong></td>
+                        <td>¥193,192</td>
+                        <td><strong>¥151,553</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WS2113+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=TAG%20HEUER%20WS2113&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7009-3110</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$309.00</td>
+                        <td>$349.99</td>
+                        <td><strong>$329.50</strong></td>
+                        <td>¥51,071</td>
+                        <td><strong>¥37,857</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7009-3110+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207009-3110&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5206-6100</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$319.99</td>
+                        <td>$329.99</td>
+                        <td><strong>$324.99</strong></td>
+                        <td>¥50,373</td>
+                        <td><strong>¥37,298</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5206-6100+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205206-6100&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TAG HEUER</td>
+                        <td><strong>WAN2111</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$850.00</td>
+                        <td>$873.02</td>
+                        <td><strong>$861.51</strong></td>
+                        <td>¥133,534</td>
+                        <td><strong>¥103,827</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAN2111+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=TAG%20HEUER%20WAN2111&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5625-7113</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$339.99</td>
+                        <td>$499.90</td>
+                        <td><strong>$419.94</strong></td>
+                        <td>¥65,091</td>
+                        <td><strong>¥49,073</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5625-7113+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205625-7113&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>4006-7012</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$289.90</td>
+                        <td>$474.90</td>
+                        <td><strong>$382.40</strong></td>
+                        <td>¥59,272</td>
+                        <td><strong>¥44,417</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+4006-7012+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%204006-7012&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="クオーツ" class="tab-content">
+            <h2 class="section-title">🔋 クオーツ</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>総販売数</h3>
+                    <div class="value">2,056個</div>
+                </div>
+                <div class="stat-card">
+                    <h3>取引件数</h3>
+                    <div class="value">1,500件</div>
+                </div>
+                <div class="stat-card">
+                    <h3>中央値価格</h3>
+                    <div class="value">$199.22</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均価格</h3>
+                    <div class="value">$210.98</div>
+                </div>
+            </div>
+            
+            <h3>ブランド別統計</h3>
+            <input type="text" class="search-box" id="search-brand-クオーツ" 
+                   placeholder="ブランド検索..." onkeyup="filterTable('brand-table-クオーツ', this.value)">
+            
+            <table id="brand-table-クオーツ">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>JDM</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SEIKO</strong></td>
+                        <td>943</td>
+                        <td>580</td>
+                        <td>$136.90</td>
+                        <td>$348.00</td>
+                        <td><strong>$185.00</strong></td>
+                        <td>¥28,675</td>
+                        <td><strong>¥19,940</strong></td>
+                        <td><span class="badge badge-success">JDM 24</span></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>GUCCI</strong></td>
+                        <td>281</td>
+                        <td>235</td>
+                        <td>$139.00</td>
+                        <td>$348.37</td>
+                        <td><strong>$189.90</strong></td>
+                        <td>¥29,434</td>
+                        <td><strong>¥20,547</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=GUCCI+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=GUCCI%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Longines</strong></td>
+                        <td>114</td>
+                        <td>114</td>
+                        <td>$140.00</td>
+                        <td>$348.00</td>
+                        <td><strong>$200.00</strong></td>
+                        <td>¥30,999</td>
+                        <td><strong>¥21,799</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>TAG HEUER</strong></td>
+                        <td>107</td>
+                        <td>105</td>
+                        <td>$155.99</td>
+                        <td>$340.00</td>
+                        <td><strong>$279.99</strong></td>
+                        <td>¥43,398</td>
+                        <td><strong>¥31,718</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=TAG HEUER%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>(不明)</strong></td>
+                        <td>94</td>
+                        <td>75</td>
+                        <td>$137.00</td>
+                        <td>$345.42</td>
+                        <td><strong>$182.99</strong></td>
+                        <td>¥28,363</td>
+                        <td><strong>¥19,690</strong></td>
+                        <td><span class="badge badge-success">JDM 2</span></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=(不明)+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=(不明)%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>CASIO</strong></td>
+                        <td>164</td>
+                        <td>58</td>
+                        <td>$138.20</td>
+                        <td>$295.50</td>
+                        <td><strong>$176.58</strong></td>
+                        <td>¥27,369</td>
+                        <td><strong>¥18,895</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>OMEGA</strong></td>
+                        <td>56</td>
+                        <td>56</td>
+                        <td>$150.00</td>
+                        <td>$344.01</td>
+                        <td><strong>$288.95</strong></td>
+                        <td>¥44,787</td>
+                        <td><strong>¥32,829</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hamilton</strong></td>
+                        <td>44</td>
+                        <td>41</td>
+                        <td>$149.90</td>
+                        <td>$339.90</td>
+                        <td><strong>$269.90</strong></td>
+                        <td>¥41,834</td>
+                        <td><strong>¥30,467</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Hamilton%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>RADO</strong></td>
+                        <td>35</td>
+                        <td>34</td>
+                        <td>$139.99</td>
+                        <td>$339.99</td>
+                        <td><strong>$189.99</strong></td>
+                        <td>¥29,448</td>
+                        <td><strong>¥20,558</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=RADO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=RADO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>DIOR</strong></td>
+                        <td>28</td>
+                        <td>28</td>
+                        <td>$149.90</td>
+                        <td>$339.99</td>
+                        <td><strong>$222.45</strong></td>
+                        <td>¥34,479</td>
+                        <td><strong>¥24,583</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=DIOR+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=DIOR%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>FENDI</strong></td>
+                        <td>25</td>
+                        <td>25</td>
+                        <td>$137.00</td>
+                        <td>$309.99</td>
+                        <td><strong>$199.99</strong></td>
+                        <td>¥30,998</td>
+                        <td><strong>¥21,798</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=FENDI+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=FENDI%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>SAINT LAURENT</strong></td>
+                        <td>25</td>
+                        <td>25</td>
+                        <td>$139.90</td>
+                        <td>$260.00</td>
+                        <td><strong>$178.00</strong></td>
+                        <td>¥27,590</td>
+                        <td><strong>¥19,072</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SAINT+LAURENT+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SAINT LAURENT%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>CITIZEN</strong></td>
+                        <td>30</td>
+                        <td>24</td>
+                        <td>$139.99</td>
+                        <td>$330.00</td>
+                        <td><strong>$197.80</strong></td>
+                        <td>¥30,658</td>
+                        <td><strong>¥21,526</strong></td>
+                        <td><span class="badge badge-success">JDM 1</span></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tissot</strong></td>
+                        <td>16</td>
+                        <td>16</td>
+                        <td>$169.00</td>
+                        <td>$310.13</td>
+                        <td><strong>$240.00</strong></td>
+                        <td>¥37,199</td>
+                        <td><strong>¥26,759</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Tissot%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>HERMES</strong></td>
+                        <td>14</td>
+                        <td>14</td>
+                        <td>$193.97</td>
+                        <td>$341.99</td>
+                        <td><strong>$277.50</strong></td>
+                        <td>¥43,011</td>
+                        <td><strong>¥31,409</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=HERMES+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=HERMES%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>ISSEY MIYAKE</strong></td>
+                        <td>9</td>
+                        <td>7</td>
+                        <td>$140.00</td>
+                        <td>$259.90</td>
+                        <td><strong>$162.00</strong></td>
+                        <td>¥25,110</td>
+                        <td><strong>¥17,088</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=ISSEY+MIYAKE+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=ISSEY MIYAKE%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Swatch</strong></td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>$150.00</td>
+                        <td>$347.09</td>
+                        <td><strong>$175.79</strong></td>
+                        <td>¥27,247</td>
+                        <td><strong>¥18,797</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Swatch+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Swatch%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>NIXON</strong></td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>$149.88</td>
+                        <td>$287.00</td>
+                        <td><strong>$169.99</strong></td>
+                        <td>¥26,348</td>
+                        <td><strong>¥18,078</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=NIXON+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=NIXON%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>DIESEL</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$138.00</td>
+                        <td>$209.29</td>
+                        <td><strong>$174.88</strong></td>
+                        <td>¥27,107</td>
+                        <td><strong>¥18,685</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=DIESEL+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=DIESEL%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Orient</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$159.90</td>
+                        <td>$169.99</td>
+                        <td><strong>$159.99</strong></td>
+                        <td>¥24,798</td>
+                        <td><strong>¥16,838</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">型番別統計（販売数順 Top 30）</h3>
+            <input type="text" class="search-box" id="search-model-クオーツ" 
+                   placeholder="型番検索..." onkeyup="filterTable('model-table-クオーツ', this.value)">
+            
+            <table id="model-table-クオーツ">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GBD-200SM</strong></td>
+                        <td>25</td>
+                        <td>2</td>
+                        <td>$149.03</td>
+                        <td>$162.50</td>
+                        <td><strong>$155.76</strong></td>
+                        <td>¥24,143</td>
+                        <td><strong>¥16,314</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GBD-200SM+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GBD-200SM&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>9521-5210</strong></td>
+                        <td>9</td>
+                        <td>5</td>
+                        <td>$182.50</td>
+                        <td>$219.99</td>
+                        <td><strong>$189.99</strong></td>
+                        <td>¥29,448</td>
+                        <td><strong>¥20,558</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+9521-5210+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%209521-5210&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GA-V01-2AJF</strong></td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>$142.60</td>
+                        <td>$174.98</td>
+                        <td><strong>$158.79</strong></td>
+                        <td>¥24,612</td>
+                        <td><strong>¥16,689</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GA-V01-2AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GA-V01-2AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7741-5130</strong></td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>$180.00</td>
+                        <td>$232.40</td>
+                        <td><strong>$219.90</strong></td>
+                        <td>¥34,084</td>
+                        <td><strong>¥24,267</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7741-5130+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207741-5130&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>9531-5160</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$139.90</td>
+                        <td>$250.00</td>
+                        <td><strong>$203.88</strong></td>
+                        <td>¥31,602</td>
+                        <td><strong>¥22,281</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+9531-5160+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%209531-5160&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7730-5020</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$138.90</td>
+                        <td>$209.99</td>
+                        <td><strong>$149.94</strong></td>
+                        <td>¥23,241</td>
+                        <td><strong>¥15,593</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7730-5020+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207730-5020&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6730-5330</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$164.99</td>
+                        <td>$220.98</td>
+                        <td><strong>$195.00</strong></td>
+                        <td>¥30,224</td>
+                        <td><strong>¥21,179</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6730-5330+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206730-5330&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5933-5080</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$149.00</td>
+                        <td>$219.90</td>
+                        <td><strong>$167.49</strong></td>
+                        <td>¥25,960</td>
+                        <td><strong>¥17,768</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5933-5080+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205933-5080&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>2625-0010</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$159.99</td>
+                        <td>$189.00</td>
+                        <td><strong>$179.50</strong></td>
+                        <td>¥27,821</td>
+                        <td><strong>¥19,257</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+2625-0010+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%202625-0010&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7731-5110</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$150.00</td>
+                        <td>$194.90</td>
+                        <td><strong>$187.00</strong></td>
+                        <td>¥28,985</td>
+                        <td><strong>¥20,188</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7731-5110+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207731-5110&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6458-6000</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$189.90</td>
+                        <td>$279.99</td>
+                        <td><strong>$190.00</strong></td>
+                        <td>¥29,450</td>
+                        <td><strong>¥20,560</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6458-6000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206458-6000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7731-5210</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$154.90</td>
+                        <td>$219.99</td>
+                        <td><strong>$189.99</strong></td>
+                        <td>¥29,448</td>
+                        <td><strong>¥20,558</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7731-5210+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207731-5210&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>8420-5370</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$160.91</td>
+                        <td>$195.00</td>
+                        <td><strong>$170.00</strong></td>
+                        <td>¥26,350</td>
+                        <td><strong>¥18,080</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+8420-5370+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%208420-5370&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7731-5120</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$148.90</td>
+                        <td>$189.99</td>
+                        <td><strong>$179.99</strong></td>
+                        <td>¥27,898</td>
+                        <td><strong>¥19,318</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7731-5120+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207731-5120&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>2628-0060</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$149.99</td>
+                        <td>$185.00</td>
+                        <td><strong>$179.90</strong></td>
+                        <td>¥27,884</td>
+                        <td><strong>¥19,307</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+2628-0060+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%202628-0060&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6030-5390</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$160.00</td>
+                        <td>$220.00</td>
+                        <td><strong>$170.91</strong></td>
+                        <td>¥26,491</td>
+                        <td><strong>¥18,192</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6030-5390+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206030-5390&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6030-5090</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$159.90</td>
+                        <td>$199.90</td>
+                        <td><strong>$179.21</strong></td>
+                        <td>¥27,777</td>
+                        <td><strong>¥19,222</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6030-5090+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206030-5090&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>9571-6000</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$149.99</td>
+                        <td>$189.99</td>
+                        <td><strong>$169.00</strong></td>
+                        <td>¥26,195</td>
+                        <td><strong>¥17,956</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+9571-6000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%209571-6000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7731-5000</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$139.99</td>
+                        <td>$229.99</td>
+                        <td><strong>$179.99</strong></td>
+                        <td>¥27,898</td>
+                        <td><strong>¥19,318</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7731-5000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207731-5000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7548-7000</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$209.99</td>
+                        <td>$279.90</td>
+                        <td><strong>$249.90</strong></td>
+                        <td>¥38,734</td>
+                        <td><strong>¥27,987</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7548-7000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207548-7000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>9722-5000</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$189.99</td>
+                        <td>$314.79</td>
+                        <td><strong>$252.39</strong></td>
+                        <td>¥39,120</td>
+                        <td><strong>¥28,296</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+9722-5000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%209722-5000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>8243-5000</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$149.90</td>
+                        <td>$169.99</td>
+                        <td><strong>$159.94</strong></td>
+                        <td>¥24,791</td>
+                        <td><strong>¥16,833</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+8243-5000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%208243-5000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6030-5630</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$139.90</td>
+                        <td>$149.90</td>
+                        <td><strong>$144.90</strong></td>
+                        <td>¥22,459</td>
+                        <td><strong>¥14,967</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6030-5630+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206030-5630&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7740-5000</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$329.00</td>
+                        <td>$329.00</td>
+                        <td><strong>$329.00</strong></td>
+                        <td>¥50,995</td>
+                        <td><strong>¥37,796</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7740-5000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207740-5000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>9063-5010</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$199.99</td>
+                        <td>$300.00</td>
+                        <td><strong>$250.00</strong></td>
+                        <td>¥38,749</td>
+                        <td><strong>¥27,999</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+9063-5010+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%209063-5010&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6030-5620</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$238.00</td>
+                        <td>$239.90</td>
+                        <td><strong>$238.95</strong></td>
+                        <td>¥37,037</td>
+                        <td><strong>¥26,629</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6030-5620+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206030-5620&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7731-5160</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$149.90</td>
+                        <td>$160.00</td>
+                        <td><strong>$154.95</strong></td>
+                        <td>¥24,017</td>
+                        <td><strong>¥16,213</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7731-5160+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207731-5160&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>DW-5600</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$238.55</td>
+                        <td>$238.70</td>
+                        <td><strong>$238.62</strong></td>
+                        <td>¥36,986</td>
+                        <td><strong>¥26,589</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+DW-5600+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20DW-5600&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>4822-8010</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$199.99</td>
+                        <td>$287.97</td>
+                        <td><strong>$243.98</strong></td>
+                        <td>¥37,816</td>
+                        <td><strong>¥27,253</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+4822-8010+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%204822-8010&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>7741-5140</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$200.00</td>
+                        <td>$299.99</td>
+                        <td><strong>$250.00</strong></td>
+                        <td>¥38,749</td>
+                        <td><strong>¥27,999</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7741-5140+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207741-5140&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="ソーラー" class="tab-content">
+            <h2 class="section-title">☀️ ソーラー</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>総販売数</h3>
+                    <div class="value">1,860個</div>
+                </div>
+                <div class="stat-card">
+                    <h3>取引件数</h3>
+                    <div class="value">463件</div>
+                </div>
+                <div class="stat-card">
+                    <h3>中央値価格</h3>
+                    <div class="value">$212.93</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均価格</h3>
+                    <div class="value">$221.76</div>
+                </div>
+            </div>
+            
+            <h3>ブランド別統計</h3>
+            <input type="text" class="search-box" id="search-brand-ソーラー" 
+                   placeholder="ブランド検索..." onkeyup="filterTable('brand-table-ソーラー', this.value)">
+            
+            <table id="brand-table-ソーラー">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>JDM</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CASIO</strong></td>
+                        <td>1,386</td>
+                        <td>270</td>
+                        <td>$145.00</td>
+                        <td>$344.80</td>
+                        <td><strong>$198.86</strong></td>
+                        <td>¥30,823</td>
+                        <td><strong>¥21,658</strong></td>
+                        <td><span class="badge badge-success">JDM 11</span></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>SEIKO</strong></td>
+                        <td>212</td>
+                        <td>91</td>
+                        <td>$145.07</td>
+                        <td>$336.85</td>
+                        <td><strong>$229.90</strong></td>
+                        <td>¥35,634</td>
+                        <td><strong>¥25,507</strong></td>
+                        <td><span class="badge badge-success">JDM 1</span></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>CITIZEN</strong></td>
+                        <td>129</td>
+                        <td>59</td>
+                        <td>$147.92</td>
+                        <td>$341.00</td>
+                        <td><strong>$240.00</strong></td>
+                        <td>¥37,200</td>
+                        <td><strong>¥26,760</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Orient</strong></td>
+                        <td>121</td>
+                        <td>34</td>
+                        <td>$149.80</td>
+                        <td>$315.20</td>
+                        <td><strong>$216.73</strong></td>
+                        <td>¥33,592</td>
+                        <td><strong>¥23,873</strong></td>
+                        <td><span class="badge badge-success">JDM 10</span></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Orient%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>G-SHOCK</strong></td>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>$155.00</td>
+                        <td>$302.26</td>
+                        <td><strong>$173.10</strong></td>
+                        <td>¥26,830</td>
+                        <td><strong>¥18,464</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=G-SHOCK+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=G-SHOCK%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>(不明)</strong></td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>$208.00</td>
+                        <td>$310.00</td>
+                        <td><strong>$222.50</strong></td>
+                        <td>¥34,487</td>
+                        <td><strong>¥24,590</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=(不明)+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=(不明)%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">型番別統計（販売数順 Top 30）</h3>
+            <input type="text" class="search-box" id="search-model-ソーラー" 
+                   placeholder="型番検索..." onkeyup="filterTable('model-table-ソーラー', this.value)">
+            
+            <table id="model-table-ソーラー">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GW-5000U-1JF</strong></td>
+                        <td>162</td>
+                        <td>11</td>
+                        <td>$213.00</td>
+                        <td>$302.99</td>
+                        <td><strong>$271.23</strong></td>
+                        <td>¥42,040</td>
+                        <td><strong>¥30,632</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GW-5000U-1JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GW-5000U-1JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>PRW-35LD-5JF</strong></td>
+                        <td>101</td>
+                        <td>6</td>
+                        <td>$251.00</td>
+                        <td>$263.83</td>
+                        <td><strong>$261.89</strong></td>
+                        <td>¥40,592</td>
+                        <td><strong>¥29,474</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+PRW-35LD-5JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20PRW-35LD-5JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GWX-5600-1JF</strong></td>
+                        <td>89</td>
+                        <td>6</td>
+                        <td>$146.99</td>
+                        <td>$170.00</td>
+                        <td><strong>$153.52</strong></td>
+                        <td>¥23,796</td>
+                        <td><strong>¥16,037</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GWX-5600-1JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GWX-5600-1JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>OCW-T200S-1AJF</strong></td>
+                        <td>88</td>
+                        <td>5</td>
+                        <td>$325.37</td>
+                        <td>$339.99</td>
+                        <td><strong>$337.02</strong></td>
+                        <td>¥52,238</td>
+                        <td><strong>¥38,790</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+OCW-T200S-1AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20OCW-T200S-1AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GW-6900-1JF</strong></td>
+                        <td>75</td>
+                        <td>2</td>
+                        <td>$155.75</td>
+                        <td>$157.68</td>
+                        <td><strong>$156.72</strong></td>
+                        <td>¥24,290</td>
+                        <td><strong>¥16,432</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GW-6900-1JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GW-6900-1JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>LIW-M700D-1AJF</strong></td>
+                        <td>24</td>
+                        <td>5</td>
+                        <td>$194.91</td>
+                        <td>$223.99</td>
+                        <td><strong>$205.00</strong></td>
+                        <td>¥31,775</td>
+                        <td><strong>¥22,420</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+LIW-M700D-1AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20LIW-M700D-1AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GST-B600D-1AJF</strong></td>
+                        <td>19</td>
+                        <td>3</td>
+                        <td>$297.66</td>
+                        <td>$327.31</td>
+                        <td><strong>$319.80</strong></td>
+                        <td>¥49,569</td>
+                        <td><strong>¥36,655</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GST-B600D-1AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GST-B600D-1AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>PRJ-B001B-2JF</strong></td>
+                        <td>17</td>
+                        <td>3</td>
+                        <td>$147.88</td>
+                        <td>$163.62</td>
+                        <td><strong>$163.61</strong></td>
+                        <td>¥25,359</td>
+                        <td><strong>¥17,287</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+PRJ-B001B-2JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20PRJ-B001B-2JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>PRJ-B001B-5JF</strong></td>
+                        <td>15</td>
+                        <td>3</td>
+                        <td>$149.00</td>
+                        <td>$154.72</td>
+                        <td><strong>$149.48</strong></td>
+                        <td>¥23,169</td>
+                        <td><strong>¥15,535</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+PRJ-B001B-5JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20PRJ-B001B-5JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GXW-56BB-1JF</strong></td>
+                        <td>13</td>
+                        <td>2</td>
+                        <td>$169.25</td>
+                        <td>$189.20</td>
+                        <td><strong>$179.22</strong></td>
+                        <td>¥27,779</td>
+                        <td><strong>¥19,223</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GXW-56BB-1JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GXW-56BB-1JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GWX-5600C-4JF</strong></td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>$149.99</td>
+                        <td>$166.70</td>
+                        <td><strong>$154.94</strong></td>
+                        <td>¥24,015</td>
+                        <td><strong>¥16,212</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GWX-5600C-4JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GWX-5600C-4JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>PRW-61LD-5JF</strong></td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>$324.67</td>
+                        <td>$337.92</td>
+                        <td><strong>$331.30</strong></td>
+                        <td>¥51,350</td>
+                        <td><strong>¥38,080</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+PRW-61LD-5JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20PRW-61LD-5JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>LCW-M170D-1AJF</strong></td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>$154.90</td>
+                        <td>$159.03</td>
+                        <td><strong>$156.97</strong></td>
+                        <td>¥24,329</td>
+                        <td><strong>¥16,463</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+LCW-M170D-1AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20LCW-M170D-1AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>PRG-340-3JF</strong></td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>$164.13</td>
+                        <td>$168.15</td>
+                        <td><strong>$166.14</strong></td>
+                        <td>¥25,751</td>
+                        <td><strong>¥17,601</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+PRG-340-3JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20PRG-340-3JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>PRJ-B001B-1JF</strong></td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>$153.62</td>
+                        <td>$178.48</td>
+                        <td><strong>$166.05</strong></td>
+                        <td>¥25,737</td>
+                        <td><strong>¥17,590</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+PRJ-B001B-1JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20PRJ-B001B-1JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>LCW-M300D-1AJF</strong></td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>$149.14</td>
+                        <td>$161.80</td>
+                        <td><strong>$155.47</strong></td>
+                        <td>¥24,097</td>
+                        <td><strong>¥16,278</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+LCW-M300D-1AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20LCW-M300D-1AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>LCW-M170D-2AJF</strong></td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>$151.99</td>
+                        <td>$168.75</td>
+                        <td><strong>$160.37</strong></td>
+                        <td>¥24,857</td>
+                        <td><strong>¥16,885</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+LCW-M170D-2AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20LCW-M170D-2AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>PRW-70Y-1JF</strong></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>$240.00</td>
+                        <td>$344.80</td>
+                        <td><strong>$307.00</strong></td>
+                        <td>¥47,585</td>
+                        <td><strong>¥35,068</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+PRW-70Y-1JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20PRW-70Y-1JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>LIW-M610D-2AJF</strong></td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>$156.12</td>
+                        <td>$169.03</td>
+                        <td><strong>$162.57</strong></td>
+                        <td>¥25,199</td>
+                        <td><strong>¥17,159</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+LIW-M610D-2AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20LIW-M610D-2AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GW-A1100</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$149.99</td>
+                        <td>$185.00</td>
+                        <td><strong>$167.50</strong></td>
+                        <td>¥25,961</td>
+                        <td><strong>¥17,769</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GW-A1100+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GW-A1100&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GST-W110D-1AJF</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$199.00</td>
+                        <td>$305.00</td>
+                        <td><strong>$252.00</strong></td>
+                        <td>¥39,060</td>
+                        <td><strong>¥28,248</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GST-W110D-1AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GST-W110D-1AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GST-W110D</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$198.73</td>
+                        <td>$278.50</td>
+                        <td><strong>$238.62</strong></td>
+                        <td>¥36,985</td>
+                        <td><strong>¥26,588</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GST-W110D+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GST-W110D&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>G-SHOCK</td>
+                        <td><strong>GX-56TU</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$155.00</td>
+                        <td>$175.75</td>
+                        <td><strong>$165.38</strong></td>
+                        <td>¥25,633</td>
+                        <td><strong>¥17,506</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=G-SHOCK+GX-56TU+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=G-SHOCK%20GX-56TU&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GW-8900A-1JF</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$154.99</td>
+                        <td>$162.00</td>
+                        <td><strong>$158.50</strong></td>
+                        <td>¥24,566</td>
+                        <td><strong>¥16,653</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GW-8900A-1JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GW-8900A-1JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GW-5000-1JF</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$212.93</td>
+                        <td>$306.00</td>
+                        <td><strong>$259.47</strong></td>
+                        <td>¥40,217</td>
+                        <td><strong>¥29,173</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GW-5000-1JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GW-5000-1JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="手巻き" class="tab-content">
+            <h2 class="section-title">🔧 手巻き</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>総販売数</h3>
+                    <div class="value">140個</div>
+                </div>
+                <div class="stat-card">
+                    <h3>取引件数</h3>
+                    <div class="value">138件</div>
+                </div>
+                <div class="stat-card">
+                    <h3>中央値価格</h3>
+                    <div class="value">$299.99</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均価格</h3>
+                    <div class="value">$311.14</div>
+                </div>
+            </div>
+            
+            <h3>ブランド別統計</h3>
+            <input type="text" class="search-box" id="search-brand-手巻き" 
+                   placeholder="ブランド検索..." onkeyup="filterTable('brand-table-手巻き', this.value)">
+            
+            <table id="brand-table-手巻き">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>JDM</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>OMEGA</strong></td>
+                        <td>57</td>
+                        <td>57</td>
+                        <td>$199.99</td>
+                        <td>$459.99</td>
+                        <td><strong>$299.99</strong></td>
+                        <td>¥46,498</td>
+                        <td><strong>¥34,198</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>SEIKO</strong></td>
+                        <td>29</td>
+                        <td>27</td>
+                        <td>$199.99</td>
+                        <td>$464.07</td>
+                        <td><strong>$299.99</strong></td>
+                        <td>¥46,498</td>
+                        <td><strong>¥34,198</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>(不明)</strong></td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>$213.74</td>
+                        <td>$453.00</td>
+                        <td><strong>$250.00</strong></td>
+                        <td>¥38,750</td>
+                        <td><strong>¥28,000</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=(不明)+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=(不明)%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Audemars Piguet</strong></td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>$320.00</td>
+                        <td>$430.00</td>
+                        <td><strong>$354.00</strong></td>
+                        <td>¥54,870</td>
+                        <td><strong>¥40,896</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Audemars+Piguet+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Audemars Piguet%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Oris</strong></td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>$280.00</td>
+                        <td>$379.99</td>
+                        <td><strong>$319.90</strong></td>
+                        <td>¥49,584</td>
+                        <td><strong>¥36,667</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Oris+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Oris%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Longines</strong></td>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>$199.99</td>
+                        <td>$449.99</td>
+                        <td><strong>$263.00</strong></td>
+                        <td>¥40,764</td>
+                        <td><strong>¥29,611</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>GaGa MILANO</strong></td>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>$216.11</td>
+                        <td>$279.90</td>
+                        <td><strong>$256.05</strong></td>
+                        <td>¥39,686</td>
+                        <td><strong>¥28,749</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=GaGa+MILANO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=GaGa MILANO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hamilton</strong></td>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>$320.00</td>
+                        <td>$400.00</td>
+                        <td><strong>$364.99</strong></td>
+                        <td>¥56,573</td>
+                        <td><strong>¥42,258</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Hamilton%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>CITIZEN</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$224.78</td>
+                        <td>$350.00</td>
+                        <td><strong>$287.39</strong></td>
+                        <td>¥44,545</td>
+                        <td><strong>¥32,636</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tissot</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$279.99</td>
+                        <td>$299.90</td>
+                        <td><strong>$289.94</strong></td>
+                        <td>¥44,941</td>
+                        <td><strong>¥32,953</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=Tissot%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">型番別統計（販売数順 Top 30）</h3>
+            <input type="text" class="search-box" id="search-model-手巻き" 
+                   placeholder="型番検索..." onkeyup="filterTable('model-table-手巻き', this.value)">
+            
+            <table id="model-table-手巻き">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>5740-8000</strong></td>
+                        <td>9</td>
+                        <td>9</td>
+                        <td>$250.74</td>
+                        <td>$464.07</td>
+                        <td><strong>$369.90</strong></td>
+                        <td>¥57,334</td>
+                        <td><strong>¥42,867</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5740-8000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205740-8000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEIKO</td>
+                        <td><strong>6102-8000</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$199.99</td>
+                        <td>$289.99</td>
+                        <td><strong>$244.99</strong></td>
+                        <td>¥37,973</td>
+                        <td><strong>¥27,378</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6102-8000+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206102-8000&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="デジタル" class="tab-content">
+            <h2 class="section-title">🔢 デジタル</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>総販売数</h3>
+                    <div class="value">395個</div>
+                </div>
+                <div class="stat-card">
+                    <h3>取引件数</h3>
+                    <div class="value">152件</div>
+                </div>
+                <div class="stat-card">
+                    <h3>中央値価格</h3>
+                    <div class="value">$130.00</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均価格</h3>
+                    <div class="value">$133.87</div>
+                </div>
+            </div>
+            
+            <h3>ブランド別統計</h3>
+            <input type="text" class="search-box" id="search-brand-デジタル" 
+                   placeholder="ブランド検索..." onkeyup="filterTable('brand-table-デジタル', this.value)">
+            
+            <table id="brand-table-デジタル">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>JDM</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CASIO</strong></td>
+                        <td>354</td>
+                        <td>137</td>
+                        <td>$104.00</td>
+                        <td>$187.25</td>
+                        <td><strong>$130.00</strong></td>
+                        <td>¥20,150</td>
+                        <td><strong>¥13,120</strong></td>
+                        <td><span class="badge badge-success">JDM 3</span></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>(不明)</strong></td>
+                        <td>28</td>
+                        <td>5</td>
+                        <td>$120.00</td>
+                        <td>$177.00</td>
+                        <td><strong>$137.96</strong></td>
+                        <td>¥21,383</td>
+                        <td><strong>¥14,107</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=(不明)+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=(不明)%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>G-SHOCK</strong></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>$106.26</td>
+                        <td>$144.00</td>
+                        <td><strong>$110.00</strong></td>
+                        <td>¥17,050</td>
+                        <td><strong>¥10,640</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=G-SHOCK+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=G-SHOCK%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>SEIKO</strong></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>$109.00</td>
+                        <td>$175.00</td>
+                        <td><strong>$142.00</strong></td>
+                        <td>¥22,010</td>
+                        <td><strong>¥14,608</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">型番別統計（販売数順 Top 30）</h3>
+            <input type="text" class="search-box" id="search-model-デジタル" 
+                   placeholder="型番検索..." onkeyup="filterTable('model-table-デジタル', this.value)">
+            
+            <table id="model-table-デジタル">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>BGD-5650-1JF</strong></td>
+                        <td>32</td>
+                        <td>2</td>
+                        <td>$122.51</td>
+                        <td>$140.44</td>
+                        <td><strong>$131.47</strong></td>
+                        <td>¥20,378</td>
+                        <td><strong>¥13,302</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+BGD-5650-1JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20BGD-5650-1JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>BA-110AH-9AJF</strong></td>
+                        <td>17</td>
+                        <td>3</td>
+                        <td>$110.20</td>
+                        <td>$130.00</td>
+                        <td><strong>$112.02</strong></td>
+                        <td>¥17,363</td>
+                        <td><strong>¥10,890</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+BA-110AH-9AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20BA-110AH-9AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GA-V01-1AJF</strong></td>
+                        <td>15</td>
+                        <td>4</td>
+                        <td>$133.99</td>
+                        <td>$154.64</td>
+                        <td><strong>$140.94</strong></td>
+                        <td>¥21,845</td>
+                        <td><strong>¥14,476</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GA-V01-1AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GA-V01-1AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>GA-2300-1AJF</strong></td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>$126.03</td>
+                        <td>$148.33</td>
+                        <td><strong>$137.18</strong></td>
+                        <td>¥21,262</td>
+                        <td><strong>¥14,010</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+GA-2300-1AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20GA-2300-1AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>BA-110AH-6AJF</strong></td>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>$112.50</td>
+                        <td>$131.14</td>
+                        <td><strong>$113.33</strong></td>
+                        <td>¥17,566</td>
+                        <td><strong>¥11,052</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+BA-110AH-6AJF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20BA-110AH-6AJF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>PRJ-B001-5JF</strong></td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>$143.00</td>
+                        <td>$153.83</td>
+                        <td><strong>$148.42</strong></td>
+                        <td>¥23,004</td>
+                        <td><strong>¥15,403</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+PRJ-B001-5JF+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20PRJ-B001-5JF&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="スマートウォッチ" class="tab-content">
+            <h2 class="section-title">📱 スマートウォッチ</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>総販売数</h3>
+                    <div class="value">42個</div>
+                </div>
+                <div class="stat-card">
+                    <h3>取引件数</h3>
+                    <div class="value">15件</div>
+                </div>
+                <div class="stat-card">
+                    <h3>中央値価格</h3>
+                    <div class="value">$153.26</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均価格</h3>
+                    <div class="value">$174.85</div>
+                </div>
+            </div>
+            
+            <h3>ブランド別統計</h3>
+            <input type="text" class="search-box" id="search-brand-スマートウォッチ" 
+                   placeholder="ブランド検索..." onkeyup="filterTable('brand-table-スマートウォッチ', this.value)">
+            
+            <table id="brand-table-スマートウォッチ">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>JDM</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CASIO</strong></td>
+                        <td>24</td>
+                        <td>8</td>
+                        <td>$127.60</td>
+                        <td>$291.99</td>
+                        <td><strong>$203.29</strong></td>
+                        <td>¥31,509</td>
+                        <td><strong>¥22,207</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>(不明)</strong></td>
+                        <td>12</td>
+                        <td>2</td>
+                        <td>$119.80</td>
+                        <td>$126.14</td>
+                        <td><strong>$122.97</strong></td>
+                        <td>¥19,060</td>
+                        <td><strong>¥12,248</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=(不明)+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=(不明)%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>SONY</strong></td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>$117.17</td>
+                        <td>$205.00</td>
+                        <td><strong>$161.09</strong></td>
+                        <td>¥24,968</td>
+                        <td><strong>¥16,974</strong></td>
+                        <td></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SONY+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SONY%20時計&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">型番別統計（販売数順 Top 30）</h3>
+            <input type="text" class="search-box" id="search-model-スマートウォッチ" 
+                   placeholder="型番検索..." onkeyup="filterTable('model-table-スマートウォッチ', this.value)">
+            
+            <table id="model-table-スマートウォッチ">
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>取引数</th>
+                        <th>最安値</th>
+                        <th>最高値</th>
+                        <th>中央値</th>
+                        <th>中央値(円)</th>
+                        <th>仕入上限</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>WSD-F20</strong></td>
+                        <td>11</td>
+                        <td>2</td>
+                        <td>$133.60</td>
+                        <td>$153.84</td>
+                        <td><strong>$143.72</strong></td>
+                        <td>¥22,276</td>
+                        <td><strong>¥14,821</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+WSD-F20+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20WSD-F20&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>DW-H5600-1JR</strong></td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>$238.85</td>
+                        <td>$289.38</td>
+                        <td><strong>$264.12</strong></td>
+                        <td>¥40,937</td>
+                        <td><strong>¥29,750</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+DW-H5600-1JR+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20DW-H5600-1JR&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CASIO</td>
+                        <td><strong>WSD-F30</strong></td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>$181.58</td>
+                        <td>$225.00</td>
+                        <td><strong>$203.29</strong></td>
+                        <td>¥31,509</td>
+                        <td><strong>¥22,207</strong></td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+WSD-F30+watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-button">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CASIO%20WSD-F30&status=on_sale" target="_blank" class="link-button">メルカリ</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="parts" class="tab-content">
+            <h2 class="section-title">🔩 パーツ市場分析</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>総パーツ数</h3>
+                    <div class="value">685</div>
+                </div>
+                <div class="stat-card">
+                    <h3>総販売数</h3>
+                    <div class="value">1,331個</div>
+                </div>
+                <div class="stat-card">
+                    <h3>中央値価格</h3>
+                    <div class="value">$224.99</div>
+                </div>
+            </div>
+            
+            <div class="insight-box">
+                <h3>💡 パーツ市場の特徴</h3>
+                <ul>
+                    <li>高級ブランド（ROLEX、OMEGA等）の箱・パーツは単体でも高値取引</li>
+                    <li>リンク/コマは中古時計の調整用に需要が安定</li>
+                    <li>ベゼル、文字盤は修理・カスタム用に専門家からの需要あり</li>
+                </ul>
+            </div>
+            
+            <h3>パーツ種類別統計</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>パーツ種類</th>
+                        <th>件数</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>平均価格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>リンク/コマ</strong></td>
+                        <td>271</td>
+                        <td>499</td>
+                        <td><strong>$121.16</strong></td>
+                        <td>$223.73</td>
+                    </tr>
+                    <tr>
+                        <td><strong>箱・ケース</strong></td>
+                        <td>100</td>
+                        <td>305</td>
+                        <td><strong>$490.00</strong></td>
+                        <td>$437.68</td>
+                    </tr>
+                    <tr>
+                        <td><strong>バンド</strong></td>
+                        <td>219</td>
+                        <td>458</td>
+                        <td><strong>$120.00</strong></td>
+                        <td>$186.37</td>
+                    </tr>
+                    <tr>
+                        <td><strong>バックル</strong></td>
+                        <td>60</td>
+                        <td>115</td>
+                        <td><strong>$156.30</strong></td>
+                        <td>$273.24</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ベゼル</strong></td>
+                        <td>254</td>
+                        <td>543</td>
+                        <td><strong>$449.67</strong></td>
+                        <td>$651.26</td>
+                    </tr>
+                    <tr>
+                        <td><strong>文字盤</strong></td>
+                        <td>95</td>
+                        <td>166</td>
+                        <td><strong>$578.90</strong></td>
+                        <td>$630.51</td>
+                    </tr>
+                    <tr>
+                        <td><strong>その他パーツ</strong></td>
+                        <td>66</td>
+                        <td>67</td>
+                        <td><strong>$365.49</strong></td>
+                        <td>$406.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        const analysisData = {"summary": {"total_records": 10311, "total_sales": 22753, "total_revenue": 5765190.1899999995, "date_range": "2025-12-28 ~ 2026-01-26", "avg_price": 559.1300737076907, "median_price": 229.99, "top_brands": {"SEIKO": 2741, "CASIO": 1811, "OMEGA": 801, "(不明)": 634, "GUCCI": 589, "CITIZEN": 459, "TAG HEUER": 403, "ROLEX": 296, "Longines": 227, "Orient": 213}}, "categories": {"自動巻": {"total": 1283, "transactions": 808, "median": 499.99, "mean": 603.8786881188119, "icon": "⚙️", "color": "#E65100", "brand_stats": [{"brand": "SEIKO", "count": 618, "models": 312, "min": 259.99, "max": 1299.99, "median": 399.99, "mean": 477.4545833333333, "jpy": 61998, "breakeven": 46598, "jdm_count": 18, "jdm_premium": 3.4, "vintage_count": 82, "box_count": 51}, {"brand": "OMEGA", "count": 94, "models": 94, "min": 299.99, "max": 1325.56, "median": 795.22, "mean": 781.9067021276597, "jpy": 123259, "breakeven": 95607, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 60, "box_count": 3}, {"brand": "Hamilton", "count": 70, "models": 60, "min": 289.9, "max": 1250.0, "median": 499.99, "mean": 535.6170000000001, "jpy": 77498, "breakeven": 58998, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 4, "box_count": 9}, {"brand": "Orient", "count": 189, "models": 59, "min": 259.84, "max": 904.18, "median": 310.0, "mean": 367.321186440678, "jpy": 48050, "breakeven": 35440, "jdm_count": 1, "jdm_premium": -13.7, "vintage_count": 3, "box_count": 15}, {"brand": "(不明)", "count": 69, "models": 56, "min": 290.0, "max": 1314.4, "median": 703.85, "mean": 712.3042857142856, "jpy": 109096, "breakeven": 84277, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 6, "box_count": 9}, {"brand": "Oris", "count": 38, "models": 38, "min": 280.0, "max": 1249.99, "median": 835.11, "mean": 820.2252631578948, "jpy": 129442, "breakeven": 100553, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 4, "box_count": 8}, {"brand": "Longines", "count": 32, "models": 32, "min": 269.79, "max": 1304.21, "median": 704.145, "mean": 714.799375, "jpy": 109142, "breakeven": 84313, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 6, "box_count": 6}, {"brand": "TAG HEUER", "count": 32, "models": 32, "min": 370.0, "max": 1299.05, "median": 964.39, "mean": 877.9059374999999, "jpy": 149480, "breakeven": 116584, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 1, "box_count": 1}, {"brand": "RADO", "count": 19, "models": 18, "min": 266.38, "max": 1006.4, "median": 377.3, "mean": 408.99, "jpy": 58481, "breakeven": 43785, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 8, "box_count": 0}, {"brand": "CITIZEN", "count": 25, "models": 13, "min": 264.39, "max": 430.76, "median": 383.0, "mean": 353.21461538461546, "jpy": 59365, "breakeven": 44492, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 3, "box_count": 2}, {"brand": "BVLGARI", "count": 13, "models": 13, "min": 489.0, "max": 1246.4, "median": 909.3, "mean": 910.093076923077, "jpy": 140941, "breakeven": 109753, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 1, "box_count": 1}, {"brand": "Tissot", "count": 12, "models": 12, "min": 285.0, "max": 1100.0, "median": 663.5, "mean": 632.0116666666667, "jpy": 102842, "breakeven": 79274, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 1, "box_count": 5}, {"brand": "TUDOR", "count": 11, "models": 11, "min": 897.34, "max": 1325.0, "median": 1074.4, "mean": 1082.081818181818, "jpy": 166532, "breakeven": 130225, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "JUNGHANS", "count": 7, "models": 7, "min": 640.0, "max": 1014.69, "median": 726.18, "mean": 779.8314285714285, "jpy": 112557, "breakeven": 87046, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 3}, {"brand": "Frederique Constant", "count": 6, "models": 6, "min": 330.0, "max": 1100.0, "median": 818.44, "mean": 784.8633333333333, "jpy": 126858, "breakeven": 98486, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "CASIO", "count": 6, "models": 5, "min": 277.0, "max": 482.63, "median": 393.88, "mean": 371.302, "jpy": 61051, "breakeven": 45841, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 2}, {"brand": "BULOVA", "count": 4, "models": 4, "min": 319.99, "max": 571.0, "median": 467.495, "mean": 456.495, "jpy": 72461, "breakeven": 54969, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 1}, {"brand": "BREITLING", "count": 4, "models": 4, "min": 1041.55, "max": 1258.3, "median": 1041.975, "mean": 1095.95, "jpy": 161506, "breakeven": 126204, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "MONTBLANC", "count": 3, "models": 3, "min": 750.0, "max": 1262.93, "median": 1213.8, "mean": 1075.5766666666666, "jpy": 188139, "breakeven": 147511, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 1}, {"brand": "Baume & Mercier", "count": 3, "models": 3, "min": 820.0, "max": 1216.0, "median": 893.0, "mean": 976.3333333333334, "jpy": 138415, "breakeven": 107732, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 1}], "model_stats": [{"brand": "SEIKO", "model": "6309-7040", "count": 6, "transactions": 3, "min": 467.68, "max": 599.99, "median": 499.99, "jpy": 77498, "breakeven": 58998}, {"brand": "SEIKO", "model": "5626-7000", "count": 4, "transactions": 4, "min": 489.99, "max": 887.0, "median": 732.085, "jpy": 113473, "breakeven": 87778}, {"brand": "SEIKO", "model": "6218-8971", "count": 4, "transactions": 4, "min": 299.9, "max": 441.18, "median": 369.725, "jpy": 57307, "breakeven": 42845}, {"brand": "TAG HEUER", "model": "WV211B", "count": 4, "transactions": 4, "min": 832.32, "max": 1054.64, "median": 1041.55, "jpy": 161440, "breakeven": 126152}, {"brand": "SEIKO", "model": "5646-7010", "count": 3, "transactions": 3, "min": 719.99, "max": 949.99, "median": 730.0, "jpy": 113150, "breakeven": 87520}, {"brand": "SEIKO", "model": "5606-7000", "count": 3, "transactions": 3, "min": 338.66, "max": 399.99, "median": 399.99, "jpy": 61998, "breakeven": 46598}, {"brand": "SEIKO", "model": "5625-7000", "count": 3, "transactions": 3, "min": 429.99, "max": 499.9, "median": 489.99, "jpy": 75948, "breakeven": 57758}, {"brand": "SEIKO", "model": "5626-7110", "count": 3, "transactions": 3, "min": 575.0, "max": 679.9, "median": 601.34, "jpy": 93207, "breakeven": 71566}, {"brand": "SEIKO", "model": "4005-7000", "count": 3, "transactions": 3, "min": 326.0, "max": 667.13, "median": 499.99, "jpy": 77498, "breakeven": 58998}, {"brand": "TAG HEUER", "model": "CAR2111", "count": 2, "transactions": 2, "min": 1087.96, "max": 1299.05, "median": 1193.505, "jpy": 184993, "breakeven": 144994}, {"brand": "SEIKO", "model": "5626-7111", "count": 2, "transactions": 2, "min": 499.99, "max": 589.95, "median": 544.97, "jpy": 84470, "breakeven": 64576}, {"brand": "SEIKO", "model": "6206-8040", "count": 2, "transactions": 2, "min": 400.0, "max": 405.0, "median": 402.5, "jpy": 62387, "breakeven": 46910}, {"brand": "SEIKO", "model": "5621-7000", "count": 2, "transactions": 2, "min": 380.0, "max": 511.65, "median": 445.825, "jpy": 69102, "breakeven": 52282}, {"brand": "TAG HEUER", "model": "WS2113", "count": 2, "transactions": 2, "min": 1246.4, "max": 1246.4, "median": 1246.4, "jpy": 193192, "breakeven": 151553}, {"brand": "SEIKO", "model": "7009-3110", "count": 2, "transactions": 2, "min": 309.0, "max": 349.99, "median": 329.495, "jpy": 51071, "breakeven": 37857}, {"brand": "SEIKO", "model": "5206-6100", "count": 2, "transactions": 2, "min": 319.99, "max": 329.99, "median": 324.99, "jpy": 50373, "breakeven": 37298}, {"brand": "TAG HEUER", "model": "WAN2111", "count": 2, "transactions": 2, "min": 850.0, "max": 873.02, "median": 861.51, "jpy": 133534, "breakeven": 103827}, {"brand": "SEIKO", "model": "5625-7113", "count": 2, "transactions": 2, "min": 339.99, "max": 499.9, "median": 419.945, "jpy": 65091, "breakeven": 49073}, {"brand": "SEIKO", "model": "4006-7012", "count": 2, "transactions": 2, "min": 289.9, "max": 474.9, "median": 382.4, "jpy": 59272, "breakeven": 44417}]}, "クオーツ": {"total": 2056, "transactions": 1500, "median": 199.225, "mean": 210.9776266666667, "icon": "🔋", "color": "#1976D2", "brand_stats": [{"brand": "SEIKO", "count": 943, "models": 580, "min": 136.9, "max": 348.0, "median": 185.0, "mean": 195.12186206896553, "jpy": 28675, "breakeven": 19940, "jdm_count": 24, "jdm_premium": -5.7, "vintage_count": 362, "box_count": 44}, {"brand": "GUCCI", "count": 281, "models": 235, "min": 139.0, "max": 348.37, "median": 189.9, "mean": 199.30029787234045, "jpy": 29434, "breakeven": 20547, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 128, "box_count": 48}, {"brand": "Longines", "count": 114, "models": 114, "min": 140.0, "max": 348.0, "median": 199.995, "mean": 222.39912280701753, "jpy": 30999, "breakeven": 21799, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 43, "box_count": 4}, {"brand": "TAG HEUER", "count": 107, "models": 105, "min": 155.99, "max": 340.0, "median": 279.99, "mean": 271.46019047619046, "jpy": 43398, "breakeven": 31718, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 24, "box_count": 3}, {"brand": "(不明)", "count": 94, "models": 75, "min": 137.0, "max": 345.42, "median": 182.99, "mean": 202.55826666666664, "jpy": 28363, "breakeven": 19690, "jdm_count": 2, "jdm_premium": -18.6, "vintage_count": 12, "box_count": 4}, {"brand": "CASIO", "count": 164, "models": 58, "min": 138.2, "max": 295.5, "median": 176.57999999999998, "mean": 190.35741379310343, "jpy": 27369, "breakeven": 18895, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 5, "box_count": 9}, {"brand": "OMEGA", "count": 56, "models": 56, "min": 150.0, "max": 344.01, "median": 288.95, "mean": 275.40017857142857, "jpy": 44787, "breakeven": 32829, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 43, "box_count": 4}, {"brand": "Hamilton", "count": 44, "models": 41, "min": 149.9, "max": 339.9, "median": 269.9, "mean": 254.83731707317074, "jpy": 41834, "breakeven": 30467, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 5, "box_count": 8}, {"brand": "RADO", "count": 35, "models": 34, "min": 139.99, "max": 339.99, "median": 189.99, "mean": 207.41794117647058, "jpy": 29448, "breakeven": 20558, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 15, "box_count": 4}, {"brand": "DIOR", "count": 28, "models": 28, "min": 149.9, "max": 339.99, "median": 222.45, "mean": 230.80357142857142, "jpy": 34479, "breakeven": 24583, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 7, "box_count": 2}, {"brand": "FENDI", "count": 25, "models": 25, "min": 137.0, "max": 309.99, "median": 199.99, "mean": 216.6736, "jpy": 30998, "breakeven": 21798, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 6, "box_count": 4}, {"brand": "SAINT LAURENT", "count": 25, "models": 25, "min": 139.9, "max": 260.0, "median": 178.0, "mean": 180.66240000000002, "jpy": 27590, "breakeven": 19072, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 7, "box_count": 5}, {"brand": "CITIZEN", "count": 30, "models": 24, "min": 139.99, "max": 330.0, "median": 197.79500000000002, "mean": 214.07208333333335, "jpy": 30658, "breakeven": 21526, "jdm_count": 1, "jdm_premium": -15.0, "vintage_count": 10, "box_count": 2}, {"brand": "Tissot", "count": 16, "models": 16, "min": 169.0, "max": 310.13, "median": 239.995, "mean": 239.53375, "jpy": 37199, "breakeven": 26759, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 5, "box_count": 2}, {"brand": "HERMES", "count": 14, "models": 14, "min": 193.97, "max": 341.99, "median": 277.495, "mean": 281.7964285714285, "jpy": 43011, "breakeven": 31409, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 4, "box_count": 3}, {"brand": "ISSEY MIYAKE", "count": 9, "models": 7, "min": 140.0, "max": 259.9, "median": 162.0, "mean": 180.50857142857143, "jpy": 25110, "breakeven": 17088, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 1}, {"brand": "Swatch", "count": 7, "models": 7, "min": 150.0, "max": 347.09, "median": 175.79, "mean": 213.50571428571428, "jpy": 27247, "breakeven": 18797, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "NIXON", "count": 7, "models": 7, "min": 149.88, "max": 287.0, "median": 169.99, "mean": 194.69285714285712, "jpy": 26348, "breakeven": 18078, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 2}, {"brand": "DIESEL", "count": 4, "models": 4, "min": 138.0, "max": 209.29, "median": 174.885, "mean": 174.265, "jpy": 27107, "breakeven": 18685, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "Orient", "count": 3, "models": 3, "min": 159.9, "max": 169.99, "median": 159.99, "mean": 163.29333333333332, "jpy": 24798, "breakeven": 16838, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 2, "box_count": 0}], "model_stats": [{"brand": "CASIO", "model": "GBD-200SM", "count": 25, "transactions": 2, "min": 149.03, "max": 162.5, "median": 155.765, "jpy": 24143, "breakeven": 16314}, {"brand": "SEIKO", "model": "9521-5210", "count": 9, "transactions": 5, "min": 182.5, "max": 219.99, "median": 189.99, "jpy": 29448, "breakeven": 20558}, {"brand": "CASIO", "model": "GA-V01-2AJF", "count": 7, "transactions": 2, "min": 142.6, "max": 174.98, "median": 158.79, "jpy": 24612, "breakeven": 16689}, {"brand": "SEIKO", "model": "7741-5130", "count": 5, "transactions": 5, "min": 180.0, "max": 232.4, "median": 219.9, "jpy": 34084, "breakeven": 24267}, {"brand": "SEIKO", "model": "9531-5160", "count": 4, "transactions": 4, "min": 139.9, "max": 250.0, "median": 203.885, "jpy": 31602, "breakeven": 22281}, {"brand": "SEIKO", "model": "7730-5020", "count": 4, "transactions": 4, "min": 138.9, "max": 209.99, "median": 149.945, "jpy": 23241, "breakeven": 15593}, {"brand": "SEIKO", "model": "6730-5330", "count": 4, "transactions": 4, "min": 164.99, "max": 220.98, "median": 194.995, "jpy": 30224, "breakeven": 21179}, {"brand": "SEIKO", "model": "5933-5080", "count": 4, "transactions": 4, "min": 149.0, "max": 219.9, "median": 167.49, "jpy": 25960, "breakeven": 17768}, {"brand": "SEIKO", "model": "2625-0010", "count": 4, "transactions": 4, "min": 159.99, "max": 189.0, "median": 179.495, "jpy": 27821, "breakeven": 19257}, {"brand": "SEIKO", "model": "7731-5110", "count": 4, "transactions": 4, "min": 150.0, "max": 194.9, "median": 187.0, "jpy": 28985, "breakeven": 20188}, {"brand": "SEIKO", "model": "6458-6000", "count": 4, "transactions": 4, "min": 189.9, "max": 279.99, "median": 190.0, "jpy": 29450, "breakeven": 20560}, {"brand": "SEIKO", "model": "7731-5210", "count": 4, "transactions": 4, "min": 154.9, "max": 219.99, "median": 189.99, "jpy": 29448, "breakeven": 20558}, {"brand": "SEIKO", "model": "8420-5370", "count": 3, "transactions": 3, "min": 160.91, "max": 195.0, "median": 170.0, "jpy": 26350, "breakeven": 18080}, {"brand": "SEIKO", "model": "7731-5120", "count": 3, "transactions": 3, "min": 148.9, "max": 189.99, "median": 179.99, "jpy": 27898, "breakeven": 19318}, {"brand": "SEIKO", "model": "2628-0060", "count": 3, "transactions": 3, "min": 149.99, "max": 185.0, "median": 179.9, "jpy": 27884, "breakeven": 19307}, {"brand": "SEIKO", "model": "6030-5390", "count": 3, "transactions": 3, "min": 160.0, "max": 220.0, "median": 170.91, "jpy": 26491, "breakeven": 18192}, {"brand": "SEIKO", "model": "6030-5090", "count": 3, "transactions": 3, "min": 159.9, "max": 199.9, "median": 179.21, "jpy": 27777, "breakeven": 19222}, {"brand": "SEIKO", "model": "9571-6000", "count": 3, "transactions": 3, "min": 149.99, "max": 189.99, "median": 169.0, "jpy": 26195, "breakeven": 17956}, {"brand": "SEIKO", "model": "7731-5000", "count": 3, "transactions": 3, "min": 139.99, "max": 229.99, "median": 179.99, "jpy": 27898, "breakeven": 19318}, {"brand": "SEIKO", "model": "7548-7000", "count": 3, "transactions": 3, "min": 209.99, "max": 279.9, "median": 249.9, "jpy": 38734, "breakeven": 27987}, {"brand": "SEIKO", "model": "9722-5000", "count": 2, "transactions": 2, "min": 189.99, "max": 314.79, "median": 252.39000000000001, "jpy": 39120, "breakeven": 28296}, {"brand": "SEIKO", "model": "8243-5000", "count": 2, "transactions": 2, "min": 149.9, "max": 169.99, "median": 159.945, "jpy": 24791, "breakeven": 16833}, {"brand": "SEIKO", "model": "6030-5630", "count": 2, "transactions": 2, "min": 139.9, "max": 149.9, "median": 144.9, "jpy": 22459, "breakeven": 14967}, {"brand": "SEIKO", "model": "7740-5000", "count": 2, "transactions": 2, "min": 329.0, "max": 329.0, "median": 329.0, "jpy": 50995, "breakeven": 37796}, {"brand": "SEIKO", "model": "9063-5010", "count": 2, "transactions": 2, "min": 199.99, "max": 300.0, "median": 249.995, "jpy": 38749, "breakeven": 27999}, {"brand": "SEIKO", "model": "6030-5620", "count": 2, "transactions": 2, "min": 238.0, "max": 239.9, "median": 238.95, "jpy": 37037, "breakeven": 26629}, {"brand": "SEIKO", "model": "7731-5160", "count": 2, "transactions": 2, "min": 149.9, "max": 160.0, "median": 154.95, "jpy": 24017, "breakeven": 16213}, {"brand": "CASIO", "model": "DW-5600", "count": 2, "transactions": 2, "min": 238.55, "max": 238.7, "median": 238.625, "jpy": 36986, "breakeven": 26589}, {"brand": "SEIKO", "model": "4822-8010", "count": 2, "transactions": 2, "min": 199.99, "max": 287.97, "median": 243.98000000000002, "jpy": 37816, "breakeven": 27253}, {"brand": "SEIKO", "model": "7741-5140", "count": 2, "transactions": 2, "min": 200.0, "max": 299.99, "median": 249.995, "jpy": 38749, "breakeven": 27999}]}, "ソーラー": {"total": 1860, "transactions": 463, "median": 212.93, "mean": 221.76181425485964, "icon": "☀️", "color": "#FFC107", "brand_stats": [{"brand": "CASIO", "count": 1386, "models": 270, "min": 145.0, "max": 344.8, "median": 198.86, "mean": 215.31114814814816, "jpy": 30823, "breakeven": 21658, "jdm_count": 11, "jdm_premium": 54.0, "vintage_count": 2, "box_count": 62}, {"brand": "SEIKO", "count": 212, "models": 91, "min": 145.07, "max": 336.85, "median": 229.9, "mean": 229.81615384615384, "jpy": 35634, "breakeven": 25507, "jdm_count": 1, "jdm_premium": -28.5, "vintage_count": 6, "box_count": 20}, {"brand": "CITIZEN", "count": 129, "models": 59, "min": 147.92, "max": 341.0, "median": 240.0, "mean": 241.74338983050848, "jpy": 37200, "breakeven": 26760, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 19}, {"brand": "Orient", "count": 121, "models": 34, "min": 149.8, "max": 315.2, "median": 216.72500000000002, "mean": 218.5844117647059, "jpy": 33592, "breakeven": 23873, "jdm_count": 10, "jdm_premium": -5.7, "vintage_count": 0, "box_count": 6}, {"brand": "G-SHOCK", "count": 7, "models": 6, "min": 155.0, "max": 302.26, "median": 173.1, "mean": 198.86833333333334, "jpy": 26830, "breakeven": 18464, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "(不明)", "count": 5, "models": 3, "min": 208.0, "max": 310.0, "median": 222.5, "mean": 246.83333333333334, "jpy": 34487, "breakeven": 24590, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}], "model_stats": [{"brand": "CASIO", "model": "GW-5000U-1JF", "count": 162, "transactions": 11, "min": 213.0, "max": 302.99, "median": 271.23, "jpy": 42040, "breakeven": 30632}, {"brand": "CASIO", "model": "PRW-35LD-5JF", "count": 101, "transactions": 6, "min": 251.0, "max": 263.83, "median": 261.89, "jpy": 40592, "breakeven": 29474}, {"brand": "CASIO", "model": "GWX-5600-1JF", "count": 89, "transactions": 6, "min": 146.99, "max": 170.0, "median": 153.52499999999998, "jpy": 23796, "breakeven": 16037}, {"brand": "CASIO", "model": "OCW-T200S-1AJF", "count": 88, "transactions": 5, "min": 325.37, "max": 339.99, "median": 337.02, "jpy": 52238, "breakeven": 38790}, {"brand": "CASIO", "model": "GW-6900-1JF", "count": 75, "transactions": 2, "min": 155.75, "max": 157.68, "median": 156.715, "jpy": 24290, "breakeven": 16432}, {"brand": "CASIO", "model": "LIW-M700D-1AJF", "count": 24, "transactions": 5, "min": 194.91, "max": 223.99, "median": 205.0, "jpy": 31775, "breakeven": 22420}, {"brand": "CASIO", "model": "GST-B600D-1AJF", "count": 19, "transactions": 3, "min": 297.66, "max": 327.31, "median": 319.8, "jpy": 49569, "breakeven": 36655}, {"brand": "CASIO", "model": "PRJ-B001B-2JF", "count": 17, "transactions": 3, "min": 147.88, "max": 163.62, "median": 163.61, "jpy": 25359, "breakeven": 17287}, {"brand": "CASIO", "model": "PRJ-B001B-5JF", "count": 15, "transactions": 3, "min": 149.0, "max": 154.72, "median": 149.48, "jpy": 23169, "breakeven": 15535}, {"brand": "CASIO", "model": "GXW-56BB-1JF", "count": 13, "transactions": 2, "min": 169.25, "max": 189.2, "median": 179.225, "jpy": 27779, "breakeven": 19223}, {"brand": "CASIO", "model": "GWX-5600C-4JF", "count": 10, "transactions": 3, "min": 149.99, "max": 166.7, "median": 154.94, "jpy": 24015, "breakeven": 16212}, {"brand": "CASIO", "model": "PRW-61LD-5JF", "count": 10, "transactions": 2, "min": 324.67, "max": 337.92, "median": 331.295, "jpy": 51350, "breakeven": 38080}, {"brand": "CASIO", "model": "LCW-M170D-1AJF", "count": 9, "transactions": 2, "min": 154.9, "max": 159.03, "median": 156.965, "jpy": 24329, "breakeven": 16463}, {"brand": "CASIO", "model": "PRG-340-3JF", "count": 7, "transactions": 2, "min": 164.13, "max": 168.15, "median": 166.14, "jpy": 25751, "breakeven": 17601}, {"brand": "CASIO", "model": "PRJ-B001B-1JF", "count": 6, "transactions": 2, "min": 153.62, "max": 178.48, "median": 166.05, "jpy": 25737, "breakeven": 17590}, {"brand": "CASIO", "model": "LCW-M300D-1AJF", "count": 6, "transactions": 2, "min": 149.14, "max": 161.8, "median": 155.47, "jpy": 24097, "breakeven": 16278}, {"brand": "CASIO", "model": "LCW-M170D-2AJF", "count": 5, "transactions": 2, "min": 151.99, "max": 168.75, "median": 160.37, "jpy": 24857, "breakeven": 16885}, {"brand": "CASIO", "model": "PRW-70Y-1JF", "count": 4, "transactions": 4, "min": 240.0, "max": 344.8, "median": 307.0, "jpy": 47585, "breakeven": 35068}, {"brand": "CASIO", "model": "LIW-M610D-2AJF", "count": 4, "transactions": 2, "min": 156.12, "max": 169.03, "median": 162.575, "jpy": 25199, "breakeven": 17159}, {"brand": "CASIO", "model": "GW-A1100", "count": 2, "transactions": 2, "min": 149.99, "max": 185.0, "median": 167.495, "jpy": 25961, "breakeven": 17769}, {"brand": "CASIO", "model": "GST-W110D-1AJF", "count": 2, "transactions": 2, "min": 199.0, "max": 305.0, "median": 252.0, "jpy": 39060, "breakeven": 28248}, {"brand": "CASIO", "model": "GST-W110D", "count": 2, "transactions": 2, "min": 198.73, "max": 278.5, "median": 238.615, "jpy": 36985, "breakeven": 26588}, {"brand": "G-SHOCK", "model": "GX-56TU", "count": 2, "transactions": 2, "min": 155.0, "max": 175.75, "median": 165.375, "jpy": 25633, "breakeven": 17506}, {"brand": "CASIO", "model": "GW-8900A-1JF", "count": 2, "transactions": 2, "min": 154.99, "max": 162.0, "median": 158.495, "jpy": 24566, "breakeven": 16653}, {"brand": "CASIO", "model": "GW-5000-1JF", "count": 2, "transactions": 2, "min": 212.93, "max": 306.0, "median": 259.46500000000003, "jpy": 40217, "breakeven": 29173}]}, "手巻き": {"total": 140, "transactions": 138, "median": 299.99, "mean": 311.1421739130435, "icon": "🔧", "color": "#795548", "brand_stats": [{"brand": "OMEGA", "count": 57, "models": 57, "min": 199.99, "max": 459.99, "median": 299.99, "mean": 313.27210526315787, "jpy": 46498, "breakeven": 34198, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 48, "box_count": 4}, {"brand": "SEIKO", "count": 29, "models": 27, "min": 199.99, "max": 464.07, "median": 299.99, "mean": 307.35814814814813, "jpy": 46498, "breakeven": 34198, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 21, "box_count": 0}, {"brand": "(不明)", "count": 11, "models": 11, "min": 213.74, "max": 453.0, "median": 250.0, "mean": 299.0863636363637, "jpy": 38750, "breakeven": 28000, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 9, "box_count": 1}, {"brand": "Audemars Piguet", "count": 7, "models": 7, "min": 320.0, "max": 430.0, "median": 354.0, "mean": 358.85714285714283, "jpy": 54870, "breakeven": 40896, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "Oris", "count": 7, "models": 7, "min": 280.0, "max": 379.99, "median": 319.9, "mean": 324.2514285714286, "jpy": 49584, "breakeven": 36667, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 7, "box_count": 1}, {"brand": "Longines", "count": 6, "models": 6, "min": 199.99, "max": 449.99, "median": 262.995, "mean": 290.47833333333335, "jpy": 40764, "breakeven": 29611, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 2, "box_count": 1}, {"brand": "GaGa MILANO", "count": 6, "models": 6, "min": 216.11, "max": 279.9, "median": 256.045, "mean": 250.16666666666666, "jpy": 39686, "breakeven": 28749, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 1, "box_count": 1}, {"brand": "Hamilton", "count": 6, "models": 6, "min": 320.0, "max": 400.0, "median": 364.99, "mean": 359.8283333333334, "jpy": 56573, "breakeven": 42258, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 1, "box_count": 0}, {"brand": "CITIZEN", "count": 2, "models": 2, "min": 224.78, "max": 350.0, "median": 287.39, "mean": 287.39, "jpy": 44545, "breakeven": 32636, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 2, "box_count": 0}, {"brand": "Tissot", "count": 2, "models": 2, "min": 279.99, "max": 299.9, "median": 289.945, "mean": 289.945, "jpy": 44941, "breakeven": 32953, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 1, "box_count": 1}], "model_stats": [{"brand": "SEIKO", "model": "5740-8000", "count": 9, "transactions": 9, "min": 250.74, "max": 464.07, "median": 369.9, "jpy": 57334, "breakeven": 42867}, {"brand": "SEIKO", "model": "6102-8000", "count": 2, "transactions": 2, "min": 199.99, "max": 289.99, "median": 244.99, "jpy": 37973, "breakeven": 27378}]}, "デジタル": {"total": 395, "transactions": 152, "median": 130.0, "mean": 133.87447368421053, "icon": "🔢", "color": "#9C27B0", "brand_stats": [{"brand": "CASIO", "count": 354, "models": 137, "min": 104.0, "max": 187.25, "median": 130.0, "mean": 133.78532846715328, "jpy": 20150, "breakeven": 13120, "jdm_count": 3, "jdm_premium": 7.8, "vintage_count": 15, "box_count": 25}, {"brand": "(不明)", "count": 28, "models": 5, "min": 120.0, "max": 177.0, "median": 137.96, "mean": 139.41, "jpy": 21383, "breakeven": 14107, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 1}, {"brand": "G-SHOCK", "count": 3, "models": 3, "min": 106.26, "max": 144.0, "median": 110.0, "mean": 120.08666666666666, "jpy": 17050, "breakeven": 10640, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "SEIKO", "count": 2, "models": 2, "min": 109.0, "max": 175.0, "median": 142.0, "mean": 142.0, "jpy": 22010, "breakeven": 14608, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 1, "box_count": 0}], "model_stats": [{"brand": "CASIO", "model": "BGD-5650-1JF", "count": 32, "transactions": 2, "min": 122.51, "max": 140.44, "median": 131.475, "jpy": 20378, "breakeven": 13302}, {"brand": "CASIO", "model": "BA-110AH-9AJF", "count": 17, "transactions": 3, "min": 110.2, "max": 130.0, "median": 112.02, "jpy": 17363, "breakeven": 10890}, {"brand": "CASIO", "model": "GA-V01-1AJF", "count": 15, "transactions": 4, "min": 133.99, "max": 154.64, "median": 140.94, "jpy": 21845, "breakeven": 14476}, {"brand": "CASIO", "model": "GA-2300-1AJF", "count": 9, "transactions": 2, "min": 126.03, "max": 148.33, "median": 137.18, "jpy": 21262, "breakeven": 14010}, {"brand": "CASIO", "model": "BA-110AH-6AJF", "count": 7, "transactions": 3, "min": 112.5, "max": 131.14, "median": 113.33, "jpy": 17566, "breakeven": 11052}, {"brand": "CASIO", "model": "PRJ-B001-5JF", "count": 4, "transactions": 2, "min": 143.0, "max": 153.83, "median": 148.41500000000002, "jpy": 23004, "breakeven": 15403}]}, "スマートウォッチ": {"total": 42, "transactions": 15, "median": 153.26, "mean": 174.84866666666667, "icon": "📱", "color": "#00BCD4", "brand_stats": [{"brand": "CASIO", "count": 24, "models": 8, "min": 127.6, "max": 291.99, "median": 203.29000000000002, "mean": 205.23000000000002, "jpy": 31509, "breakeven": 22207, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "(不明)", "count": 12, "models": 2, "min": 119.8, "max": 126.14, "median": 122.97, "mean": 122.97, "jpy": 19060, "breakeven": 12248, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}, {"brand": "SONY", "count": 3, "models": 2, "min": 117.17, "max": 205.0, "median": 161.085, "mean": 161.085, "jpy": 24968, "breakeven": 16974, "jdm_count": 0, "jdm_premium": 0, "vintage_count": 0, "box_count": 0}], "model_stats": [{"brand": "CASIO", "model": "WSD-F20", "count": 11, "transactions": 2, "min": 133.6, "max": 153.84, "median": 143.72, "jpy": 22276, "breakeven": 14821}, {"brand": "CASIO", "model": "DW-H5600-1JR", "count": 5, "transactions": 2, "min": 238.85, "max": 289.38, "median": 264.115, "jpy": 40937, "breakeven": 29750}, {"brand": "CASIO", "model": "WSD-F30", "count": 5, "transactions": 2, "min": 181.58, "max": 225.0, "median": 203.29000000000002, "jpy": 31509, "breakeven": 22207}]}}, "parts_analysis": {"total": 685, "total_sales": 1331, "median_price": 224.99, "types": {"リンク/コマ": {"count": 271, "sales": 499, "median": 121.16, "mean": 223.7269372693727}, "箱・ケース": {"count": 100, "sales": 305, "median": 489.995, "mean": 437.67789999999985}, "バンド": {"count": 219, "sales": 458, "median": 120.0, "mean": 186.37155251141553}, "バックル": {"count": 60, "sales": 115, "median": 156.3, "mean": 273.2446666666667}, "ベゼル": {"count": 254, "sales": 543, "median": 449.67, "mean": 651.2609842519685}, "文字盤": {"count": 95, "sales": 166, "median": 578.9, "mean": 630.5111578947367}, "その他パーツ": {"count": 66, "sales": 67, "median": 365.49, "mean": 406.0030303030303}}}, "config": {"exchange_rate": 155, "fee_rate": 0.2, "shipping_cost": 3000, "min_sales_count": 2}, "generated_at": "2026-01-27 14:54:15"};
+        let currentExchangeRate = 155;
+        
+        // タブ切り替え
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+        
+        // テーブルフィルター
+        function filterTable(tableId, searchValue) {
+            const table = document.getElementById(tableId);
+            const rows = table.getElementsByTagName('tr');
+            
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchValue.toLowerCase()) ? '' : 'none';
+            }
+        }
+        
+        // ダークモード切り替え
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            updateCharts();
+        }
+        
+        // ダークモード初期化
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        
+        // 為替レート更新
+        async function updateExchangeRate() {
+            try {
+                const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+                const data = await response.json();
+                const newRate = data.rates.JPY;
+                
+                if (newRate) {
+                    currentExchangeRate = newRate;
+                    alert(`為替レートを更新しました: ¥${newRate.toFixed(2)}/USD`);
+                    // 仕入上限を再計算（ページリロードせずに更新）
+                    location.reload();
+                }
+            } catch (error) {
+                alert('為替レート取得に失敗しました。デフォルト値を使用します。');
+            }
+        }
+        
+        // チャート描画
+        function updateCharts() {
+            const isDark = document.body.classList.contains('dark-mode');
+            const bgColor = isDark ? '#2d2d2d' : '#fff';
+            const textColor = isDark ? '#fff' : '#333';
+            
+            const layout = {
+                paper_bgcolor: bgColor,
+                plot_bgcolor: bgColor,
+                font: { color: textColor }
+            };
+            
+            // カテゴリ別販売数
+            const categories = Object.keys(analysisData.categories);
+            const categorySales = categories.map(cat => analysisData.categories[cat].total);
+            const categoryColors = categories.map(cat => analysisData.categories[cat].color);
+            
+            Plotly.newPlot('chart-category-distribution', [{
+                type: 'bar',
+                x: categories,
+                y: categorySales,
+                marker: { color: categoryColors },
+                text: categorySales.map(v => v.toLocaleString()),
+                textposition: 'outside'
+            }], {
+                ...layout,
+                title: '駆動方式別販売数',
+                xaxis: { title: '駆動方式' },
+                yaxis: { title: '販売数' }
+            });
+            
+            // ブランド別販売数（Top 10）
+            const brands = Object.entries(analysisData.summary.top_brands).slice(0, 10);
+            
+            Plotly.newPlot('chart-brand-distribution', [{
+                type: 'bar',
+                x: brands.map(b => b[1]),
+                y: brands.map(b => b[0]),
+                orientation: 'h',
+                marker: { color: '#1976D2' },
+                text: brands.map(b => b[1].toLocaleString()),
+                textposition: 'outside'
+            }], {
+                ...layout,
+                title: 'ブランド別レコード数 Top 10',
+                xaxis: { title: 'レコード数' },
+                yaxis: { title: 'ブランド' },
+                height: 500
+            });
+            
+            // 価格帯分布（全カテゴリ統合）
+            const allPrices = [];
+            Object.values(analysisData.categories).forEach(cat => {
+                cat.brand_stats.forEach(brand => {
+                    allPrices.push(brand.median);
+                });
+            });
+            
+            Plotly.newPlot('chart-price-distribution', [{
+                type: 'histogram',
+                x: allPrices,
+                nbinsx: 30,
+                marker: { color: '#E65100' }
+            }], {
+                ...layout,
+                title: '価格帯分布（中央値ベース）',
+                xaxis: { title: '価格（USD）' },
+                yaxis: { title: '件数' }
+            });
+        }
+        
+        // 初期チャート描画
+        updateCharts();
+    </script>
+</body>
+</html>
