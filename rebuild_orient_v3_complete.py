@@ -408,6 +408,7 @@ orient_html += '''
                         <th>比率</th>
                         <th>販売数</th>
                         <th>中央値</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -420,6 +421,7 @@ for line_name in [ln[0] for ln in ORIENT_LINES] + ['その他Orient']:
     stats = line_stats[line_name]
     line_data = df_orient[df_orient['ライン'] == line_name]
     median_price = line_data['価格'].median() if len(line_data) > 0 else 0
+    breakeven = int(median_price * 155 * 0.65)
 
     orient_html += f'''
                     <tr>
@@ -428,6 +430,7 @@ for line_name in [ln[0] for ln in ORIENT_LINES] + ['その他Orient']:
                         <td style="color: {orient_color};">{stats['pct']:.1f}%</td>
                         <td>{stats['sales']}</td>
                         <td>${median_price:.2f}</td>
+                        <td class="highlight" style="color: #FF6B35;">¥{breakeven:,}</td>
                     </tr>
 '''
 

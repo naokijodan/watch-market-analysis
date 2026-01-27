@@ -364,6 +364,7 @@ lines_html = '''
                         <th>販売数</th>
                         <th class="seiko-accent">比率</th>
                         <th>中央値</th>
+                        <th class="seiko-accent">仕入上限(¥)</th>
                         <th>CV値</th>
                         <th>安定度</th>
                         <th>JDM比率</th>
@@ -379,6 +380,7 @@ for line_name, data in sorted(seiko_lines.items(), key=lambda x: x[1]['count'], 
     jdm_ratio = f"{data['jdm_count'] / data['count'] * 100:.1f}%" if data['count'] > 0 else '0%'
     line_ratio = data['count'] / total_line_sales * 100
     premium_color = 'seiko-accent' if data['jdm_premium'] > 10 else ''
+    breakeven = int(data['median'] * 155 * 0.65)
 
     lines_html += f'''
                     <tr>
@@ -386,6 +388,7 @@ for line_name, data in sorted(seiko_lines.items(), key=lambda x: x[1]['count'], 
                         <td>{data['count']:,}</td>
                         <td class="seiko-accent">{line_ratio:.1f}%</td>
                         <td>${data['median']:.0f}</td>
+                        <td class="highlight seiko-accent">¥{breakeven:,}</td>
                         <td>{cv:.3f}</td>
                         <td>{stability}</td>
                         <td>{jdm_ratio}</td>
@@ -495,6 +498,7 @@ for line_name in sorted(line_stats.keys(), key=lambda x: line_stats[x]['count'],
                         <th>型番</th>
                         <th>販売数</th>
                         <th>中央値</th>
+                        <th class="seiko-accent">仕入上限(¥)</th>
                         <th>CV値</th>
                         <th>商品例</th>
                         <th>検索</th>
@@ -504,12 +508,14 @@ for line_name in sorted(line_stats.keys(), key=lambda x: line_stats[x]['count'],
     '''
 
     for i, model in enumerate(models, 1):
+        model_breakeven = int(model['median'] * 155 * 0.65)
         line_models_html += f'''
                     <tr>
                         <td><strong class="seiko-accent">{i}</strong></td>
                         <td><strong>{model['model']}</strong></td>
                         <td>{model['count']}</td>
                         <td>${model['median']:.0f}</td>
+                        <td class="highlight seiko-accent">¥{model_breakeven:,}</td>
                         <td>{model['cv']:.3f}</td>
                         <td class="model-sample">{model.get('title_sample', '')}</td>
                         <td>
