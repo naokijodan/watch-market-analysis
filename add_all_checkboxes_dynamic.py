@@ -193,7 +193,8 @@ brands = [
     ('SEIKO', 'seiko-accent'),
     ('CASIO', 'casio-accent'),
     ('CITIZEN', 'citizen-accent'),
-    ('Orient', 'orient-accent')
+    ('Orient', 'orient-accent'),
+    ('RADO', 'rado-accent')
 ]
 
 for brand_name, brand_color_class in brands:
