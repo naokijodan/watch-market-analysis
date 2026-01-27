@@ -468,14 +468,14 @@ html_top30 += """
 </div>
 """
 
-# グラフのスクリプト生成
-price_ranges = ['~2万', '2-5万', '5-10万', '10-20万', '20万~']
+# グラフのスクリプト生成（ドル建て価格用）
+price_ranges = ['~$200', '$200-500', '$500-1K', '$1K-2K', '$2K~']
 price_counts = [
-    len(df_omega[df_omega['価格'] < 20000]),
-    len(df_omega[(df_omega['価格'] >= 20000) & (df_omega['価格'] < 50000)]),
-    len(df_omega[(df_omega['価格'] >= 50000) & (df_omega['価格'] < 100000)]),
-    len(df_omega[(df_omega['価格'] >= 100000) & (df_omega['価格'] < 200000)]),
-    len(df_omega[df_omega['価格'] >= 200000])
+    len(df_omega[df_omega['価格'] < 200]),
+    len(df_omega[(df_omega['価格'] >= 200) & (df_omega['価格'] < 500)]),
+    len(df_omega[(df_omega['価格'] >= 500) & (df_omega['価格'] < 1000)]),
+    len(df_omega[(df_omega['価格'] >= 1000) & (df_omega['価格'] < 2000)]),
+    len(df_omega[df_omega['価格'] >= 2000])
 ]
 
 line_names = [item['ライン'] for item in line_summary[:8]]
@@ -588,6 +588,8 @@ omega_content = f"""
 {html_features}
 {html_line_top15}
 {html_top30}
+
+{graph_script}
 """
 
 # === HTML置換 ===
@@ -631,10 +633,6 @@ omega_tab_html = f"""
 """
 
 html = html[:rado_end] + omega_tab_html + html[rado_end:]
-
-# グラフスクリプトを</body>の前に挿入
-body_pos = html.find('</body>')
-html = html[:body_pos] + graph_script + "\n" + html[body_pos:]
 
 # HTMLを保存
 with open('index.html', 'w', encoding='utf-8') as f:
