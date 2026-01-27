@@ -7327,6 +7327,44 @@
 }
 </style>
 
+    
+<style>
+.citizen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.citizen-chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.citizen-accent {
+    color: #e63946;
+    font-weight: bold;
+}
+
+.citizen-blue {
+    color: #1565c0;
+}
+
+.model-sample {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .citizen-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
     <div id="CITIZEN" class="tab-content">
         <h2 class="section-title citizen-blue">📊 CITIZEN 詳細分析</h2>
 
@@ -8645,6 +8683,54 @@
             </table>
         </div>
     </div>
+
+        <script>
+        const citizenBlue = '#1565c0';
+        const citizenRed = '#e63946';
+        const citizenGradient = ['#1565c0', '#1976d2', '#42a5f5', '#64b5f6', '#90caf9'];
+
+        Plotly.newPlot('citizen_price_chart', [{
+            x: ['$0-50', '$50-100', '$100-150', '$150-200', '$200-250', '$250-300', '$300-350', '$350-400', '$400-450', '$450-500', '$500-550', '$550-600', '$600-650'],
+            y: [1, 74, 64, 139, 140, 104, 26, 27, 32, 19, 7, 9, 5],
+            type: 'bar',
+            marker: {
+                color: citizenBlue,
+                line: {color: citizenRed, width: 1}
+            },
+            hovertemplate: '<b>%{x}</b><br>販売数: %{y}<extra></extra>'
+        }], {
+            xaxis: {title: '価格帯', tickangle: -45},
+            yaxis: {title: '販売数'},
+            margin: {l: 50, r: 20, t: 20, b: 80},
+            plot_bgcolor: '#f8f9fa',
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('citizen_movement_chart', [{
+            labels: ['ソーラー', 'デジタル', 'クオーツ', '自動巻', '手巻き', 'スマートウォッチ'],
+            values: [245, 77, 76, 58, 6, 1],
+            type: 'pie',
+            marker: {colors: citizenGradient},
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>比率: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('citizen_gender_chart', [{
+            labels: ['メンズ', 'レディース', 'ユニセックス', 'ボーイズ/キッズ'],
+            values: [416, 8, 7, 1],
+            type: 'pie',
+            marker: {colors: [citizenBlue, citizenRed, '#64b5f6', '#42a5f5', '#90caf9']},
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>比率: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+        </script>
+
 
         <script>
         const citizenBlue = '#1565c0';
