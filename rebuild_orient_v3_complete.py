@@ -205,6 +205,11 @@ movement_dist = df_orient.groupby('駆動方式')['販売数'].sum().sort_values
 movement_labels = movement_dist.index.tolist()
 movement_values = movement_dist.values.tolist()
 
+# 性別分布
+dept_dist = df_orient.groupby('デパートメント')['販売数'].sum().sort_values(ascending=False)
+dept_labels = [dept for dept in dept_dist.index if dept != '不明']
+dept_values = [int(dept_dist[dept]) for dept in dept_labels]
+
 # ===========================
 # 7. 限定モデル/記念モデル分析
 # ===========================
@@ -297,12 +302,16 @@ orient_html = f'''
                 <div id="orient_price_chart" style="height: 350px;"></div>
             </div>
             <div class="chart-container">
+                <h4 style="color: {orient_color};">駆動方式別分布</h4>
+                <div id="orient_movement_chart" style="height: 350px;"></div>
+            </div>
+            <div class="chart-container">
                 <h4 style="color: {orient_color};">ライン別売上比率</h4>
                 <div id="orient_line_chart" style="height: 350px;"></div>
             </div>
             <div class="chart-container">
-                <h4 style="color: {orient_color};">駆動方式別分布</h4>
-                <div id="orient_movement_chart" style="height: 350px;"></div>
+                <h4 style="color: {orient_color};">性別分布</h4>
+                <div id="orient_gender_chart" style="height: 350px;"></div>
             </div>
         </div>
 
@@ -571,6 +580,22 @@ plotly_script = f'''
     Plotly.newPlot('orient_movement_chart', [{{
         labels: {json.dumps(movement_labels)},
         values: {json.dumps(movement_values)},
+        type: 'pie',
+        marker: {{
+            colors: orientGradient
+        }},
+        textinfo: 'label+percent',
+        textposition: 'outside',
+        hovertemplate: '<b>%{{label}}</b><br>販売数: %{{value}}<br>比率: %{{percent}}<extra></extra>'
+    }}], {{
+        margin: {{l: 20, r: 20, t: 20, b: 20}},
+        paper_bgcolor: 'white'
+    }}, {{responsive: true}});
+
+    // 性別分布
+    Plotly.newPlot('orient_gender_chart', [{{
+        labels: {json.dumps(dept_labels)},
+        values: {json.dumps(dept_values)},
         type: 'pie',
         marker: {{
             colors: orientGradient
