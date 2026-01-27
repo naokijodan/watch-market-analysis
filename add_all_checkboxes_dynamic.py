@@ -108,7 +108,7 @@ def add_checkboxes_to_brand(html, brand_name, brand_color_class):
     if len(lines) > 0:
         # テーブルヘッダーに「検索」列を追加
         if brand_name == 'Orient':
-            line_header_pattern = r'(<th>中央値</th>)\s*</tr>'
+            line_header_pattern = r'(<th style="color: #FF6B35;">仕入上限\(¥\)</th>)\s*</tr>'
         else:
             line_header_pattern = rf'(<th class="{brand_color_class}">JDMプレミアム</th>)\s*</tr>'
 
@@ -126,11 +126,8 @@ def add_checkboxes_to_brand(html, brand_name, brand_color_class):
             else:
                 search_key = line_name
 
-            # ライン行のパターン（最後のtdの後に検索セルを追加）
-            if brand_name == 'Orient':
-                line_row_pattern = rf'(<td><strong>{re.escape(line_name)}</strong></td>.*?<td>\$[^<]*</td>)\s*</tr>'
-            else:
-                line_row_pattern = rf'(<td><strong>{re.escape(line_name)}</strong></td>.*?<td class="[^"]*">[^<]*</td>)\s*</tr>'
+            # ライン行のパターン（行全体をキャプチャして検索セルを追加）
+            line_row_pattern = rf'(<td><strong>{re.escape(line_name)}</strong></td>.*?)\s*</tr>'
 
             search_links = generate_search_link_html(brand_name, search_key, link_type='line', include_checkbox=True)
 
@@ -167,11 +164,8 @@ def add_checkboxes_to_brand(html, brand_name, brand_color_class):
         # 各キャラクター行に検索リンク + チェックボックス追加
         added_count = 0
         for char_name in characters:
-            # キャラクター行のパターン
-            if brand_name == 'Orient':
-                char_row_pattern = rf'(<td><strong>{re.escape(char_name)}</strong></td>.*?<td style="color: #FF6B35;">[^<]*</td>)\s*</tr>'
-            else:
-                char_row_pattern = rf'(<td><strong>{re.escape(char_name)}</strong></td>.*?<td class="{brand_color_class}">[^<]*</td>)\s*</tr>'
+            # キャラクター行のパターン（シンプル版: キャラクター名から</tr>まで）
+            char_row_pattern = rf'(<td><strong>{re.escape(char_name)}</strong></td>.*?)\s*</tr>'
 
             search_links = generate_search_link_html(brand_name, char_name, link_type='character', include_checkbox=True)
 
