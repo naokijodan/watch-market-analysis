@@ -200,7 +200,7 @@ for line, group in df_casio.groupby('ライン'):
     prices = group['価格'].values
     sales = group['販売数'].sum()
 
-    # 型番別Top5を抽出
+    # 型番別Top15を抽出
     model_stats = []
     model_group = group[group['型番抽出'].notna()].copy()
     model_group = model_group[model_group['型番抽出'] != '']
@@ -217,7 +217,7 @@ for line, group in df_casio.groupby('ライン'):
                     'title_sample': mg.iloc[0]['タイトル'][:60]
                 })
 
-    model_stats = sorted(model_stats, key=lambda x: x['count'], reverse=True)[:5]
+    model_stats = sorted(model_stats, key=lambda x: x['count'], reverse=True)[:15]
 
     line_stats[line] = {
         'count': int(sales),
@@ -232,7 +232,8 @@ print("\n=== ライン別分類結果 ===")
 total_sales = sum(s['count'] for s in line_stats.values())
 for line, stats in sorted(line_stats.items(), key=lambda x: x[1]['count'], reverse=True):
     ratio = stats['count'] / total_sales * 100
-    print(f"{line}: {stats['count']}個 ({ratio:.1f}%) - 人気モデル: {len(line_models_dict.get(line, []))}個")
+    model_count = len(line_models_dict.get(line, []))
+    print(f"{line}: {stats['count']}個 ({ratio:.1f}%) - 人気モデル: {model_count}個（Top15まで抽出）")
 
 # HTMLに統合するデータを取得
 casio_brand = brand_detail['brands']['CASIO']
@@ -500,10 +501,10 @@ character_html += '''
 
 # 7. 各ラインの人気モデル（CSVから再分類）
 line_models_html = '<h3 class="section-title casio-red">📌 各ラインの人気モデル（実データより）</h3>'
-line_models_html += '<p style="color: #666; margin-bottom: 20px;">元CSVデータから再分類した正確な人気モデルTop5</p>'
+line_models_html += '<p style="color: #666; margin-bottom: 20px;">元CSVデータから再分類した正確な人気モデルTop15</p>'
 
 for line_name in sorted(line_stats.keys(), key=lambda x: line_stats[x]['count'], reverse=True):
-    models = line_models_dict.get(line_name, [])[:5]
+    models = line_models_dict.get(line_name, [])[:15]
 
     if not models:
         continue
@@ -677,6 +678,6 @@ print(f"📦 ファイルサイズ: {file_size:,} bytes ({file_size/1024:.1f} KB
 print(f"🎯 改善内容:")
 print(f"  ✓ 元CSVから正確にライン分類")
 print(f"  ✓ {len(line_stats)}ラインを認識")
-print(f"  ✓ 各ラインの実際の人気モデルTop5を抽出")
+print(f"  ✓ 各ラインの実際の人気モデルTop15を抽出")
 print(f"  ✓ キャラクター/コラボ分析を追加（複数視点）")
 print(f"  ✓ 商品タイトルサンプルを表示")
