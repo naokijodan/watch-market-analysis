@@ -505,7 +505,12 @@ for kw_en, kw_jp in char_keywords_display.items():
     mask = character_data['タイトル_upper'].str.contains(kw_en, na=False, regex=False)
     count = character_data[mask]['販売数'].sum()
     if count > 0:
-        character_breakdown[kw_jp] = int(count)
+        median_price = character_data[mask]['価格'].median()
+        character_breakdown[kw_jp] = {
+            'count': int(count),
+            'median': float(median_price),
+            'breakeven': int(median_price * 155 * 0.65)
+        }
 
 character_html = f'''
         <h3 class="section-title citizen-blue">🤝 キャラクター/コラボ分析（複数視点）</h3>
@@ -533,18 +538,25 @@ character_html = f'''
                         <th>コラボ/キャラクター</th>
                         <th>販売数</th>
                         <th>比率</th>
+                        <th>中央値</th>
+                        <th class="citizen-accent">仕入上限(¥)</th>
                     </tr>
                 </thead>
                 <tbody>
 '''
 
-for char_name, count in sorted(character_breakdown.items(), key=lambda x: x[1], reverse=True):
+for char_name, data in sorted(character_breakdown.items(), key=lambda x: x[1]['count'], reverse=True):
+    count = data['count']
+    median = data['median']
+    breakeven = data['breakeven']
     ratio = count / character_sales * 100 if character_sales > 0 else 0
     character_html += f'''
                     <tr>
                         <td><strong>{char_name}</strong></td>
                         <td>{count:,}</td>
                         <td class="citizen-accent">{ratio:.1f}%</td>
+                        <td>${median:.0f}</td>
+                        <td class="highlight citizen-accent">¥{breakeven:,}</td>
                     </tr>
     '''
 

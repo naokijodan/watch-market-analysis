@@ -225,7 +225,14 @@ for keyword in LIMITED_KEYWORDS:
     count = mask.sum()
     if count > 0:
         sales = df_orient[mask]['販売数'].sum()
-        limited_data.append({'keyword': keyword, 'count': count, 'sales': int(sales)})
+        median_price = df_orient[mask]['価格'].median()
+        limited_data.append({
+            'keyword': keyword,
+            'count': count,
+            'sales': int(sales),
+            'median': float(median_price),
+            'breakeven': int(median_price * 155 * 0.65)
+        })
 
 limited_data = sorted(limited_data, key=lambda x: x['sales'], reverse=True)
 
@@ -245,7 +252,14 @@ for keyword in CHARACTER_KEYWORDS:
     count = mask.sum()
     if count > 0:
         sales = df_orient[mask]['販売数'].sum()
-        collab_data.append({'keyword': keyword, 'count': count, 'sales': int(sales)})
+        median_price = df_orient[mask]['価格'].median()
+        collab_data.append({
+            'keyword': keyword,
+            'count': count,
+            'sales': int(sales),
+            'median': float(median_price),
+            'breakeven': int(median_price * 155 * 0.65)
+        })
 
 collab_data = sorted(collab_data, key=lambda x: x['sales'], reverse=True)
 
@@ -331,6 +345,8 @@ if len(limited_data) > 0:
                         <th>商品数</th>
                         <th>販売数</th>
                         <th>比率</th>
+                        <th>中央値</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -343,6 +359,8 @@ if len(limited_data) > 0:
                         <td>{limited['count']}</td>
                         <td>{limited['sales']}</td>
                         <td style="color: {orient_color};">{ratio:.1f}%</td>
+                        <td>${limited['median']:.0f}</td>
+                        <td class="highlight" style="color: {orient_color};">¥{limited['breakeven']:,}</td>
                     </tr>
 '''
     orient_html += '''
@@ -370,6 +388,8 @@ if len(collab_data) > 0:
                         <th>商品数</th>
                         <th>販売数</th>
                         <th>比率</th>
+                        <th>中央値</th>
+                        <th style="color: #FF6B35;">仕入上限(¥)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -382,6 +402,8 @@ if len(collab_data) > 0:
                         <td>{collab['count']}</td>
                         <td>{collab['sales']}</td>
                         <td style="color: {orient_color};">{ratio:.1f}%</td>
+                        <td>${collab['median']:.0f}</td>
+                        <td class="highlight" style="color: {orient_color};">¥{collab['breakeven']:,}</td>
                     </tr>
 '''
     orient_html += '''
