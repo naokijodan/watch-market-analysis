@@ -1,0 +1,1165 @@
+{
+  "generated_at": "2026-01-27 17:19:26",
+  "seiko_lines": {
+    "Astron": {
+      "count": 168,
+      "items": 66,
+      "median": 286.315,
+      "mean": 486.9989393939394,
+      "cv": 0.8766924415423857,
+      "min": 80.0,
+      "max": 2366.99,
+      "movement_distribution": {
+        "ソーラー": 28,
+        "クオーツ": 22,
+        "不明": 15,
+        "デジタル": 1
+      },
+      "jdm_count": 0,
+      "jdm_premium": 0.0,
+      "price_distribution": {
+        "$0-100": 2,
+        "$100-200": 17,
+        "$200-300": 15,
+        "$300-500": 6,
+        "$500-1000": 19,
+        "$1000+": 7
+      },
+      "top_models": []
+    },
+    "Chariot": {
+      "count": 28,
+      "items": 28,
+      "median": 150.49,
+      "mean": 165.58464285714282,
+      "cv": 0.3880885866746736,
+      "min": 50.0,
+      "max": 299.9,
+      "movement_distribution": {
+        "クオーツ": 19,
+        "手巻き": 5,
+        "不明": 4
+      },
+      "jdm_count": 1,
+      "jdm_premium": 0.0,
+      "price_distribution": {
+        "$0-100": 5,
+        "$100-200": 16,
+        "$200-300": 7,
+        "$300-500": 0,
+        "$500-1000": 0,
+        "$1000+": 0
+      },
+      "top_models": []
+    },
+    "Dolce": {
+      "count": 249,
+      "items": 242,
+      "median": 178.945,
+      "mean": 179.69966942148764,
+      "cv": 0.3054861517312718,
+      "min": 68.0,
+      "max": 408.9,
+      "movement_distribution": {
+        "クオーツ": 220,
+        "不明": 18,
+        "自動巻": 2,
+        "ソーラー": 2
+      },
+      "jdm_count": 0,
+      "jdm_premium": 0.0,
+      "price_distribution": {
+        "$0-100": 12,
+        "$100-200": 171,
+        "$200-300": 50,
+        "$300-500": 9,
+        "$500-1000": 0,
+        "$1000+": 0
+      },
+      "top_models": []
+    },
+    "Grand Seiko": {
+      "count": 103,
+      "items": 97,
+      "median": 899.99,
+      "mean": 1184.1827835051545,
+      "cv": 0.8715884498474336,
+      "min": 70.97,
+      "max": 5099.32,
+      "movement_distribution": {
+        "クオーツ": 41,
+        "不明": 36,
+        "自動巻": 17,
+        "手巻き": 3
+      },
+      "jdm_count": 1,
+      "jdm_premium": 0.0,
+      "price_distribution": {
+        "$0-100": 8,
+        "$100-200": 6,
+        "$200-300": 5,
+        "$300-500": 5,
+        "$500-1000": 35,
+        "$1000+": 38
+      },
+      "top_models": []
+    },
+    "King Seiko": {
+      "count": 42,
+      "items": 42,
+      "median": 474.495,
+      "mean": 487.11357142857145,
+      "cv": 0.4299676186815796,
+      "min": 50.0,
+      "max": 887.0,
+      "movement_distribution": {
+        "自動巻": 19,
+        "不明": 14,
+        "手巻き": 8,
+        "クオーツ": 1
+      },
+      "jdm_count": 1,
+      "jdm_premium": 0.0,
+      "price_distribution": {
+        "$0-100": 2,
+        "$100-200": 2,
+        "$200-300": 4,
+        "$300-500": 15,
+        "$500-1000": 19,
+        "$1000+": 0
+      },
+      "top_models": []
+    },
+    "Lord Marvel": {
+      "count": 12,
+      "items": 12,
+      "median": 349.95,
+      "mean": 340.2825,
+      "cv": 0.2303897062134495,
+      "min": 170.0,
+      "max": 464.07,
+      "movement_distribution": {
+        "手巻き": 11,
+        "不明": 1
+      },
+      "jdm_count": 0,
+      "jdm_premium": 0.0,
+      "price_distribution": {
+        "$0-100": 0,
+        "$100-200": 1,
+        "$200-300": 2,
+        "$300-500": 9,
+        "$500-1000": 0,
+        "$1000+": 0
+      },
+      "top_models": []
+    },
+    "Presage": {
+      "count": 263,
+      "items": 123,
+      "median": 427.0,
+      "mean": 503.31552845528455,
+      "cv": 0.7107476784259369,
+      "min": 149.0,
+      "max": 2250.0,
+      "movement_distribution": {
+        "自動巻": 68,
+        "不明": 49,
+        "クオーツ": 5,
+        "ソーラー": 1
+      },
+      "jdm_count": 15,
+      "jdm_premium": -0.9177292292698866,
+      "price_distribution": {
+        "$0-100": 0,
+        "$100-200": 7,
+        "$200-300": 24,
+        "$300-500": 56,
+        "$500-1000": 28,
+        "$1000+": 8
+      },
+      "top_models": []
+    },
+    "Prospex": {
+      "count": 194,
+      "items": 132,
+      "median": 480.24,
+      "mean": 691.3414393939395,
+      "cv": 1.0540542698887285,
+      "min": 55.0,
+      "max": 4122.0,
+      "movement_distribution": {
+        "不明": 48,
+        "自動巻": 45,
+        "ソーラー": 34,
+        "クオーツ": 4,
+        "デジタル": 1
+      },
+      "jdm_count": 2,
+      "jdm_premium": 21.954255319148924,
+      "price_distribution": {
+        "$0-100": 10,
+        "$100-200": 10,
+        "$200-300": 16,
+        "$300-500": 34,
+        "$500-1000": 41,
+        "$1000+": 21
+      },
+      "top_models": []
+    },
+    "SEIKO 5": {
+      "count": 1512,
+      "items": 275,
+      "median": 197.99,
+      "mean": 256.72203636363633,
+      "cv": 0.8004012581232497,
+      "min": 44.0,
+      "max": 1385.08,
+      "movement_distribution": {
+        "自動巻": 204,
+        "不明": 63,
+        "クオーツ": 7,
+        "ソーラー": 1
+      },
+      "jdm_count": 9,
+      "jdm_premium": 3.0902858321090774,
+      "price_distribution": {
+        "$0-100": 36,
+        "$100-200": 109,
+        "$200-300": 58,
+        "$300-500": 44,
+        "$500-1000": 25,
+        "$1000+": 3
+      },
+      "top_models": []
+    },
+    "その他SEIKO": {
+      "count": 4499,
+      "items": 1546,
+      "median": 170.0,
+      "mean": 247.51956015523933,
+      "cv": 1.1961129968870774,
+      "min": 24.0,
+      "max": 4520.0,
+      "movement_distribution": {
+        "クオーツ": 740,
+        "不明": 414,
+        "自動巻": 254,
+        "ソーラー": 92,
+        "手巻き": 35,
+        "デジタル": 9,
+        "スマートウォッチ": 2
+      },
+      "jdm_count": 64,
+      "jdm_premium": 6.6529411764705895,
+      "price_distribution": {
+        "$0-100": 216,
+        "$100-200": 748,
+        "$200-300": 268,
+        "$300-500": 207,
+        "$500-1000": 77,
+        "$1000+": 30
+      },
+      "top_models": []
+    }
+  },
+  "casio_lines": {
+    "BABY-G": {
+      "count": 298,
+      "items": 101,
+      "median": 105.0,
+      "mean": 110.6330693069307,
+      "cv": 0.35414146914787165,
+      "min": 35.0,
+      "max": 313.35,
+      "movement_distribution": {
+        "不明": 43,
+        "デジタル": 28,
+        "クオーツ": 22,
+        "ソーラー": 8
+      },
+      "jdm_count": 2,
+      "jdm_premium": 8.80952380952381,
+      "collab_count": 0,
+      "limited_count": 0,
+      "price_distribution": {
+        "$0-100": 46,
+        "$100-200": 52,
+        "$200-300": 2,
+        "$300-500": 1,
+        "$500-1000": 0,
+        "$1000+": 0
+      },
+      "top_models": []
+    },
+    "EDIFICE": {
+      "count": 160,
+      "items": 60,
+      "median": 237.54,
+      "mean": 247.69483333333332,
+      "cv": 0.4220146632172769,
+      "min": 58.0,
+      "max": 505.0,
+      "movement_distribution": {
+        "不明": 34,
+        "ソーラー": 18,
+        "自動巻": 5,
+        "クオーツ": 2,
+        "デジタル": 1
+      },
+      "jdm_count": 1,
+      "jdm_premium": 0.0,
+      "collab_count": 0,
+      "limited_count": 0,
+      "price_distribution": {
+        "$0-100": 2,
+        "$100-200": 18,
+        "$200-300": 27,
+        "$300-500": 12,
+        "$500-1000": 1,
+        "$1000+": 0
+      },
+      "top_models": []
+    },
+    "G-SHOCK": {
+      "count": 3270,
+      "items": 1026,
+      "median": 169.0,
+      "mean": 265.8845906432748,
+      "cv": 1.3261865356720117,
+      "min": 50.0,
+      "max": 7200.0,
+      "movement_distribution": {
+        "不明": 499,
+        "ソーラー": 282,
+        "デジタル": 167,
+        "クオーツ": 70,
+        "スマートウォッチ": 7,
+        "手巻き": 1
+      },
+      "jdm_count": 33,
+      "jdm_premium": 63.544951508300116,
+      "collab_count": 42,
+      "limited_count": 97,
+      "price_distribution": {
+        "$0-100": 105,
+        "$100-200": 513,
+        "$200-300": 171,
+        "$300-500": 136,
+        "$500-1000": 79,
+        "$1000+": 22
+      },
+      "top_models": []
+    },
+    "LINEAGE": {
+      "count": 395,
+      "items": 67,
+      "median": 164.0,
+      "mean": 157.04731343283584,
+      "cv": 0.25361970917589416,
+      "min": 50.0,
+      "max": 224.0,
+      "movement_distribution": {
+        "ソーラー": 53,
+        "不明": 9,
+        "クオーツ": 4,
+        "デジタル": 1
+      },
+      "jdm_count": 0,
+      "jdm_premium": 0.0,
+      "collab_count": 0,
+      "limited_count": 0,
+      "price_distribution": {
+        "$0-100": 6,
+        "$100-200": 52,
+        "$200-300": 9,
+        "$300-500": 0,
+        "$500-1000": 0,
+        "$1000+": 0
+      },
+      "top_models": []
+    },
+    "OCEANUS": {
+      "count": 309,
+      "items": 56,
+      "median": 369.55499999999995,
+      "mean": 511.17535714285714,
+      "cv": 0.6529878198040581,
+      "min": 140.0,
+      "max": 1745.99,
+      "movement_distribution": {
+        "ソーラー": 40,
+        "不明": 15,
+        "クオーツ": 1
+      },
+      "jdm_count": 7,
+      "jdm_premium": -1.1429652246750686,
+      "collab_count": 0,
+      "limited_count": 0,
+      "price_distribution": {
+        "$0-100": 0,
+        "$100-200": 4,
+        "$200-300": 7,
+        "$300-500": 27,
+        "$500-1000": 13,
+        "$1000+": 5
+      },
+      "top_models": []
+    },
+    "PRO TREK": {
+      "count": 389,
+      "items": 113,
+      "median": 238.58,
+      "mean": 254.47433628318586,
+      "cv": 0.5361792030111808,
+      "min": 52.0,
+      "max": 1002.11,
+      "movement_distribution": {
+        "ソーラー": 72,
+        "不明": 27,
+        "デジタル": 6,
+        "スマートウォッチ": 4,
+        "クオーツ": 4
+      },
+      "jdm_count": 4,
+      "jdm_premium": 43.2577777777778,
+      "collab_count": 0,
+      "limited_count": 0,
+      "price_distribution": {
+        "$0-100": 7,
+        "$100-200": 41,
+        "$200-300": 32,
+        "$300-500": 26,
+        "$500-1000": 6,
+        "$1000+": 1
+      },
+      "top_models": []
+    },
+    "SHEEN": {
+      "count": 2,
+      "items": 2,
+      "median": 167.075,
+      "mean": 167.075,
+      "cv": 0.14876434750086578,
+      "min": 149.5,
+      "max": 184.65,
+      "movement_distribution": {
+        "ソーラー": 2
+      },
+      "jdm_count": 0,
+      "jdm_premium": 0.0,
+      "collab_count": 0,
+      "limited_count": 0,
+      "price_distribution": {
+        "$0-100": 0,
+        "$100-200": 2,
+        "$200-300": 0,
+        "$300-500": 0,
+        "$500-1000": 0,
+        "$1000+": 0
+      },
+      "top_models": []
+    },
+    "その他CASIO": {
+      "count": 1370,
+      "items": 323,
+      "median": 100.15,
+      "mean": 139.44978328173374,
+      "cv": 0.7775227693029854,
+      "min": 25.0,
+      "max": 920.47,
+      "movement_distribution": {
+        "不明": 138,
+        "ソーラー": 77,
+        "クオーツ": 57,
+        "デジタル": 50,
+        "手巻き": 1
+      },
+      "jdm_count": 2,
+      "jdm_premium": 131.03,
+      "collab_count": 0,
+      "limited_count": 0,
+      "price_distribution": {
+        "$0-100": 160,
+        "$100-200": 110,
+        "$200-300": 28,
+        "$300-500": 20,
+        "$500-1000": 5,
+        "$1000+": 0
+      },
+      "top_models": []
+    }
+  },
+  "citizen_lines": {
+    "Attesa": {
+      "count": 552,
+      "items": 277,
+      "median": 224.78,
+      "mean": 348.3905776173285,
+      "cv": 1.2481387737069223,
+      "min": 25.29,
+      "max": 2849.05,
+      "movement_distribution": {
+        "ソーラー": 91,
+        "不明": 88,
+        "クオーツ": 52,
+        "自動巻": 33,
+        "デジタル": 10,
+        "手巻き": 2,
+        "スマートウォッチ": 1
+      },
+      "jdm_count": 1,
+      "jdm_premium": 0.0,
+      "eco_drive_count": 74,
+      "eco_drive_premium": 16.95560747663551,
+      "price_distribution": {
+        "$0-100": 44,
+        "$100-200": 79,
+        "$200-300": 69,
+        "$300-500": 47,
+        "$500-1000": 19,
+        "$1000+": 19
+      },
+      "top_models": []
+    },
+    "Promaster": {
+      "count": 110,
+      "items": 66,
+      "median": 319.995,
+      "mean": 387.9948484848485,
+      "cv": 0.6511165008227116,
+      "min": 50.16,
+      "max": 1476.25,
+      "movement_distribution": {
+        "ソーラー": 49,
+        "不明": 13,
+        "クオーツ": 3,
+        "自動巻": 1
+      },
+      "jdm_count": 3,
+      "jdm_premium": 48.21071428571429,
+      "eco_drive_count": 50,
+      "eco_drive_premium": -27.86883116883116,
+      "price_distribution": {
+        "$0-100": 2,
+        "$100-200": 7,
+        "$200-300": 23,
+        "$300-500": 21,
+        "$500-1000": 11,
+        "$1000+": 2
+      },
+      "top_models": []
+    },
+    "The CITIZEN": {
+      "count": 3,
+      "items": 3,
+      "median": 1849.3,
+      "mean": 1624.75,
+      "cv": 0.3809029579232894,
+      "min": 924.95,
+      "max": 2100.0,
+      "movement_distribution": {
+        "ソーラー": 2,
+        "不明": 1
+      },
+      "jdm_count": 0,
+      "jdm_premium": 0.0,
+      "eco_drive_count": 2,
+      "eco_drive_premium": 113.48721552516352,
+      "price_distribution": {
+        "$0-100": 0,
+        "$100-200": 0,
+        "$200-300": 0,
+        "$300-500": 0,
+        "$500-1000": 1,
+        "$1000+": 2
+      },
+      "top_models": []
+    },
+    "その他CITIZEN": {
+      "count": 33,
+      "items": 30,
+      "median": 292.33500000000004,
+      "mean": 398.858,
+      "cv": 0.9831822514095065,
+      "min": 59.0,
+      "max": 1974.5,
+      "movement_distribution": {
+        "不明": 18,
+        "ソーラー": 5,
+        "手巻き": 4,
+        "クオーツ": 2,
+        "デジタル": 1
+      },
+      "jdm_count": 0,
+      "jdm_premium": 0.0,
+      "eco_drive_count": 7,
+      "eco_drive_premium": -59.67611858447047,
+      "price_distribution": {
+        "$0-100": 5,
+        "$100-200": 6,
+        "$200-300": 5,
+        "$300-500": 6,
+        "$500-1000": 7,
+        "$1000+": 1
+      },
+      "top_models": []
+    }
+  },
+  "movement_details": {
+    "クオーツ": {
+      "total_count": 4223,
+      "total_items": 3000,
+      "median": 199.225,
+      "brand_ranking": [
+        {
+          "brand": "SEIKO",
+          "count": 1869,
+          "median": 163.42,
+          "cv": 0.9778753778540928,
+          "items": 1059
+        },
+        {
+          "brand": "GUCCI",
+          "count": 403,
+          "median": 169.99,
+          "cv": 0.4764331061971663,
+          "items": 343
+        },
+        {
+          "brand": "CASIO",
+          "count": 401,
+          "median": 119.39,
+          "cv": 0.7364715549264773,
+          "items": 160
+        },
+        {
+          "brand": "TAG HEUER",
+          "count": 230,
+          "median": 349.99,
+          "cv": 0.6075785309172478,
+          "items": 220
+        },
+        {
+          "brand": "OMEGA",
+          "count": 218,
+          "median": 444.95,
+          "cv": 0.717639200401594,
+          "items": 218
+        },
+        {
+          "brand": "Longines",
+          "count": 142,
+          "median": 220.0,
+          "cv": 0.4491750405834994,
+          "items": 142
+        },
+        {
+          "brand": "Cartier",
+          "count": 94,
+          "median": 1155.0,
+          "cv": 0.6100225279605299,
+          "items": 81
+        },
+        {
+          "brand": "Hamilton",
+          "count": 77,
+          "median": 309.0,
+          "cv": 0.5067398525898468,
+          "items": 73
+        },
+        {
+          "brand": "CITIZEN",
+          "count": 76,
+          "median": 139.99,
+          "cv": 1.0229995140122403,
+          "items": 57
+        },
+        {
+          "brand": "RADO",
+          "count": 55,
+          "median": 165.0,
+          "cv": 0.5265052321732225,
+          "items": 54
+        },
+        {
+          "brand": "HERMES",
+          "count": 54,
+          "median": 404.96000000000004,
+          "cv": 0.547589941716462,
+          "items": 54
+        },
+        {
+          "brand": "SAINT LAURENT",
+          "count": 50,
+          "median": 154.99,
+          "cv": 1.0342465904145113,
+          "items": 47
+        },
+        {
+          "brand": "DIOR",
+          "count": 42,
+          "median": 254.45,
+          "cv": 0.4252342119722422,
+          "items": 42
+        },
+        {
+          "brand": "FENDI",
+          "count": 42,
+          "median": 194.995,
+          "cv": 0.6762052624486065,
+          "items": 42
+        },
+        {
+          "brand": "ISSEY MIYAKE",
+          "count": 25,
+          "median": 149.99,
+          "cv": 1.5702691812326277,
+          "items": 17
+        }
+      ],
+      "price_distribution": {
+        "$0-100": 328,
+        "$100-200": 1269,
+        "$200-300": 510,
+        "$300-500": 474,
+        "$500-1000": 262,
+        "$1000+": 156
+      },
+      "bestseller_range": "$149-$249",
+      "bestseller_ratio": 31.7,
+      "monthly_trend": [
+        {
+          "month": "2025-12",
+          "count": 160
+        },
+        {
+          "month": "2026-01",
+          "count": 4063
+        }
+      ]
+    },
+    "スマートウォッチ": {
+      "total_count": 61,
+      "total_items": 31,
+      "median": 153.26,
+      "brand_ranking": [
+        {
+          "brand": "CASIO",
+          "count": 27,
+          "median": 225.0,
+          "cv": 0.35696210058687855,
+          "items": 11
+        },
+        {
+          "brand": "A BATHING APE",
+          "count": 4,
+          "median": 60.975,
+          "cv": 0.18960550836244455,
+          "items": 2
+        },
+        {
+          "brand": "SONY",
+          "count": 3,
+          "median": 161.085,
+          "cv": 0.3855429654630441,
+          "items": 2
+        }
+      ],
+      "price_distribution": {
+        "$0-100": 4,
+        "$100-200": 14,
+        "$200-300": 6,
+        "$300-500": 1,
+        "$500-1000": 5,
+        "$1000+": 1
+      },
+      "bestseller_range": "$115-$192",
+      "bestseller_ratio": 35.483870967741936,
+      "monthly_trend": [
+        {
+          "month": "2025-12",
+          "count": 2
+        },
+        {
+          "month": "2026-01",
+          "count": 59
+        }
+      ]
+    },
+    "ソーラー": {
+      "total_count": 3162,
+      "total_items": 923,
+      "median": 213.0,
+      "brand_ranking": [
+        {
+          "brand": "CASIO",
+          "count": 2466,
+          "median": 184.995,
+          "cv": 1.093189465843374,
+          "items": 552
+        },
+        {
+          "brand": "SEIKO",
+          "count": 294,
+          "median": 261.3,
+          "cv": 0.96201270145523,
+          "items": 158
+        },
+        {
+          "brand": "CITIZEN",
+          "count": 245,
+          "median": 268.0,
+          "cv": 1.1459440399079832,
+          "items": 147
+        },
+        {
+          "brand": "Orient",
+          "count": 122,
+          "median": 216.34,
+          "cv": 0.17497555895920175,
+          "items": 35
+        },
+        {
+          "brand": "G-SHOCK",
+          "count": 9,
+          "median": 173.1,
+          "cv": 0.6836039952563463,
+          "items": 8
+        }
+      ],
+      "price_distribution": {
+        "$0-100": 107,
+        "$100-200": 317,
+        "$200-300": 215,
+        "$300-500": 163,
+        "$500-1000": 82,
+        "$1000+": 39
+      },
+      "bestseller_range": "$160-$266",
+      "bestseller_ratio": 29.360780065005414,
+      "monthly_trend": [
+        {
+          "month": "2025-12",
+          "count": 45
+        },
+        {
+          "month": "2026-01",
+          "count": 3117
+        }
+      ]
+    },
+    "デジタル": {
+      "total_count": 844,
+      "total_items": 304,
+      "median": 130.0,
+      "brand_ranking": [
+        {
+          "brand": "CASIO",
+          "count": 701,
+          "median": 126.0,
+          "cv": 0.6642829027886674,
+          "items": 253
+        },
+        {
+          "brand": "CITIZEN",
+          "count": 77,
+          "median": 231.14,
+          "cv": 0.371723237677295,
+          "items": 11
+        },
+        {
+          "brand": "SEIKO",
+          "count": 11,
+          "median": 259.99,
+          "cv": 0.857800954370225,
+          "items": 11
+        },
+        {
+          "brand": "G-SHOCK",
+          "count": 8,
+          "median": 127.0,
+          "cv": 0.5799856550710466,
+          "items": 8
+        },
+        {
+          "brand": "ON",
+          "count": 4,
+          "median": 119.49,
+          "cv": 0.0,
+          "items": 1
+        }
+      ],
+      "price_distribution": {
+        "$0-100": 63,
+        "$100-200": 175,
+        "$200-300": 44,
+        "$300-500": 10,
+        "$500-1000": 12,
+        "$1000+": 0
+      },
+      "bestseller_range": "$98-$162",
+      "bestseller_ratio": 49.01315789473684,
+      "monthly_trend": [
+        {
+          "month": "2025-12",
+          "count": 27
+        },
+        {
+          "month": "2026-01",
+          "count": 817
+        }
+      ]
+    },
+    "手巻き": {
+      "total_count": 274,
+      "total_items": 271,
+      "median": 299.99,
+      "brand_ranking": [
+        {
+          "brand": "OMEGA",
+          "count": 90,
+          "median": 309.99,
+          "cv": 1.784290310797302,
+          "items": 90
+        },
+        {
+          "brand": "SEIKO",
+          "count": 64,
+          "median": 257.70500000000004,
+          "cv": 1.4992064095503579,
+          "items": 62
+        },
+        {
+          "brand": "Audemars Piguet",
+          "count": 10,
+          "median": 381.5,
+          "cv": 1.5082473040983617,
+          "items": 10
+        },
+        {
+          "brand": "Oris",
+          "count": 10,
+          "median": 299.99,
+          "cv": 0.339071047057665,
+          "items": 10
+        },
+        {
+          "brand": "GaGa MILANO",
+          "count": 8,
+          "median": 256.045,
+          "cv": 0.44745371527342315,
+          "items": 8
+        },
+        {
+          "brand": "Longines",
+          "count": 8,
+          "median": 255.45,
+          "cv": 0.41914442000191876,
+          "items": 8
+        },
+        {
+          "brand": "Orient",
+          "count": 8,
+          "median": 83.73,
+          "cv": 1.0449251307031584,
+          "items": 7
+        },
+        {
+          "brand": "ROLEX",
+          "count": 8,
+          "median": 2066.17,
+          "cv": 0.7768690653046392,
+          "items": 8
+        },
+        {
+          "brand": "Hamilton",
+          "count": 7,
+          "median": 379.99,
+          "cv": 0.35397976030740036,
+          "items": 7
+        },
+        {
+          "brand": "CITIZEN",
+          "count": 6,
+          "median": 287.39,
+          "cv": 0.8417230113166833,
+          "items": 6
+        },
+        {
+          "brand": "NOMOS",
+          "count": 5,
+          "median": 1041.55,
+          "cv": 0.5104336169413491,
+          "items": 5
+        },
+        {
+          "brand": "DIOR",
+          "count": 3,
+          "median": 179.99,
+          "cv": 0.06186227146343116,
+          "items": 3
+        },
+        {
+          "brand": "Tissot",
+          "count": 3,
+          "median": 279.99,
+          "cv": 0.4622732087413713,
+          "items": 3
+        }
+      ],
+      "price_distribution": {
+        "$0-100": 25,
+        "$100-200": 47,
+        "$200-300": 66,
+        "$300-500": 78,
+        "$500-1000": 31,
+        "$1000+": 24
+      },
+      "bestseller_range": "$225-$375",
+      "bestseller_ratio": 35.05535055350554,
+      "monthly_trend": [
+        {
+          "month": "2025-12",
+          "count": 17
+        },
+        {
+          "month": "2026-01",
+          "count": 257
+        }
+      ]
+    },
+    "自動巻": {
+      "total_count": 3421,
+      "total_items": 1616,
+      "median": 499.99,
+      "brand_ranking": [
+        {
+          "brand": "SEIKO",
+          "count": 2170,
+          "median": 279.9,
+          "cv": 1.1813091519820043,
+          "items": 609
+        },
+        {
+          "brand": "Orient",
+          "count": 292,
+          "median": 271.06,
+          "cv": 0.4760830388840684,
+          "items": 101
+        },
+        {
+          "brand": "OMEGA",
+          "count": 218,
+          "median": 1556.6599999999999,
+          "cv": 0.604777363755965,
+          "items": 218
+        },
+        {
+          "brand": "Hamilton",
+          "count": 72,
+          "median": 499.995,
+          "cv": 0.4969896405499536,
+          "items": 62
+        },
+        {
+          "brand": "BREITLING",
+          "count": 68,
+          "median": 2392.95,
+          "cv": 0.4223006768325479,
+          "items": 68
+        },
+        {
+          "brand": "TAG HEUER",
+          "count": 61,
+          "median": 1258.3,
+          "cv": 0.5768212762074463,
+          "items": 61
+        },
+        {
+          "brand": "CITIZEN",
+          "count": 58,
+          "median": 246.49,
+          "cv": 0.9678421764894525,
+          "items": 34
+        },
+        {
+          "brand": "TUDOR",
+          "count": 53,
+          "median": 1900.18,
+          "cv": 0.3378052906781962,
+          "items": 53
+        },
+        {
+          "brand": "Oris",
+          "count": 41,
+          "median": 844.02,
+          "cv": 0.3875950204317363,
+          "items": 41
+        },
+        {
+          "brand": "Longines",
+          "count": 37,
+          "median": 799.99,
+          "cv": 0.5059784340924891,
+          "items": 37
+        },
+        {
+          "brand": "RADO",
+          "count": 33,
+          "median": 274.995,
+          "cv": 0.5910866120973843,
+          "items": 32
+        },
+        {
+          "brand": "Cartier",
+          "count": 21,
+          "median": 2486.55,
+          "cv": 0.32726568654771043,
+          "items": 21
+        },
+        {
+          "brand": "BVLGARI",
+          "count": 20,
+          "median": 1133.4499999999998,
+          "cv": 0.3912510086003608,
+          "items": 20
+        },
+        {
+          "brand": "ROLEX",
+          "count": 20,
+          "median": 200.5,
+          "cv": 1.2828451824038536,
+          "items": 20
+        },
+        {
+          "brand": "Tissot",
+          "count": 16,
+          "median": 449.0,
+          "cv": 0.619529035757574,
+          "items": 16
+        }
+      ],
+      "price_distribution": {
+        "$0-100": 53,
+        "$100-200": 246,
+        "$200-300": 214,
+        "$300-500": 299,
+        "$500-1000": 292,
+        "$1000+": 511
+      },
+      "bestseller_range": "$375-$625",
+      "bestseller_ratio": 17.07920792079208,
+      "monthly_trend": [
+        {
+          "month": "2025-12",
+          "count": 63
+        },
+        {
+          "month": "2026-01",
+          "count": 3358
+        }
+      ]
+    }
+  }
+}
