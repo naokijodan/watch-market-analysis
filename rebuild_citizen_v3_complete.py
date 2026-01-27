@@ -483,7 +483,7 @@ char_keywords_display = {
 }
 
 for kw_en, kw_jp in char_keywords_display.items():
-    mask = character_data['タイトル_upper'].str.contains(kw_en, na=False)
+    mask = character_data['タイトル_upper'].str.contains(kw_en, na=False, regex=False)
     count = character_data[mask]['販売数'].sum()
     if count > 0:
         character_breakdown[kw_jp] = int(count)
@@ -587,8 +587,30 @@ for line_name in sorted(line_stats.keys(), key=lambda x: line_stats[x]['count'],
         </div>
     '''
 
-# 8. 型番Top30
-top_models = all_models[:30]
+# 8. 型番Top30（CSVから直接生成）
+# JSONのmodel_statsが空なので、CSVから直接計算
+all_models_from_csv = []
+model_with_number = df_citizen[df_citizen['型番抽出'].notna()].copy()
+if len(model_with_number) > 0:
+    for model, mg in model_with_number.groupby('型番抽出'):
+        model_sales = mg['販売数'].sum()
+        if model_sales >= 2:
+            median_price = mg['価格'].median()
+            cv_value = calculate_cv(mg['価格'].values)
+            # 仕入上限 = 中央値 * 155 * 0.65
+            breakeven = median_price * 155 * 0.65
+
+            all_models_from_csv.append({
+                'model': model,
+                'count': int(model_sales),
+                'median': float(median_price),
+                'cv': float(cv_value),
+                'breakeven': int(breakeven),
+            })
+
+# 販売数でソート
+all_models_from_csv = sorted(all_models_from_csv, key=lambda x: x['count'], reverse=True)
+top_models = all_models_from_csv[:30]
 
 top30_html = '''
         <h3 class="section-title citizen-blue">🏆 全ライン横断 型番分析Top30</h3>
@@ -702,8 +724,19 @@ new_citizen_tab = (
 
 # 既存のCITIZENタブを置換
 # **重要**: CITIZENタブは最後のタブなので、</body>の直前まで
-pattern = r'<div id="CITIZEN" class="tab-content">.*?</div>(?=\s*</body>)'
-html = re.sub(pattern, new_citizen_tab, html, flags=re.DOTALL, count=1)
+# 正規表現ではなく文字列操作で置換（より確実）
+citizen_start = html.find('<div id="CITIZEN" class="tab-content">')
+if citizen_start == -1:
+    print("❌ エラー: CITIZENタブが見つかりません")
+else:
+    # </body>の位置を探す
+    body_end = html.find('</body>', citizen_start)
+
+    # </body>直前の最後の</div>を探す
+    last_div_close = html.rfind('</div>', citizen_start, body_end) + 6  # 6 = len('</div>')
+
+    # CITIZENタブを置換
+    html = html[:citizen_start] + new_citizen_tab + html[last_div_close:]
 
 # 保存
 with open('index.html', 'w', encoding='utf-8') as f:

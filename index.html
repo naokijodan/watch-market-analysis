@@ -7289,6 +7289,44 @@
 }
 </style>
 
+    
+<style>
+.citizen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.citizen-chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.citizen-accent {
+    color: #e63946;
+    font-weight: bold;
+}
+
+.citizen-blue {
+    color: #1565c0;
+}
+
+.model-sample {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .citizen-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
     <div id="CITIZEN" class="tab-content">
         <h2 class="section-title citizen-blue">📊 CITIZEN 詳細分析</h2>
 
@@ -7426,15 +7464,15 @@
         <div class="stats-grid" style="margin-bottom: 20px;">
             <div class="stat-card">
                 <div class="label">コラボ商品数</div>
-                <div class="value citizen-accent">223個</div>
+                <div class="value citizen-accent">183個</div>
             </div>
             <div class="stat-card">
                 <div class="label">中央値</div>
-                <div class="value">$237</div>
+                <div class="value">$254</div>
             </div>
             <div class="stat-card">
                 <div class="label">全体比率</div>
-                <div class="value citizen-accent">31.9%</div>
+                <div class="value citizen-accent">26.2%</div>
             </div>
         </div>
 
@@ -7450,27 +7488,87 @@
                 <tbody>
 
                     <tr>
-                        <td><strong>ANA（全日空）</strong></td>
-                        <td>197</td>
-                        <td class="citizen-accent">88.3%</td>
+                        <td><strong>ANA（全日空コラボ）</strong></td>
+                        <td>149</td>
+                        <td class="citizen-accent">81.4%</td>
                     </tr>
     
                     <tr>
                         <td><strong>ホンダ</strong></td>
                         <td>11</td>
-                        <td class="citizen-accent">4.9%</td>
+                        <td class="citizen-accent">6.0%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>スヌーピー</strong></td>
+                        <td>10</td>
+                        <td class="citizen-accent">5.5%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>ピーナッツ</strong></td>
+                        <td>8</td>
+                        <td class="citizen-accent">4.4%</td>
                     </tr>
     
                     <tr>
                         <td><strong>ハローキティ</strong></td>
                         <td>4</td>
-                        <td class="citizen-accent">1.8%</td>
+                        <td class="citizen-accent">2.2%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>ディズニー</strong></td>
+                        <td>3</td>
+                        <td class="citizen-accent">1.6%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Blue Angels</strong></td>
+                        <td>2</td>
+                        <td class="citizen-accent">1.1%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>ファイナルファンタジー</strong></td>
+                        <td>2</td>
+                        <td class="citizen-accent">1.1%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>86（アニメ）</strong></td>
+                        <td>2</td>
+                        <td class="citizen-accent">1.1%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>ガンダム</strong></td>
+                        <td>1</td>
+                        <td class="citizen-accent">0.5%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>エヴァンゲリオン</strong></td>
+                        <td>1</td>
+                        <td class="citizen-accent">0.5%</td>
                     </tr>
     
                     <tr>
                         <td><strong>スターウォーズ</strong></td>
                         <td>1</td>
-                        <td class="citizen-accent">0.4%</td>
+                        <td class="citizen-accent">0.5%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>トヨタ</strong></td>
+                        <td>1</td>
+                        <td class="citizen-accent">0.5%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>日産</strong></td>
+                        <td>1</td>
+                        <td class="citizen-accent">0.5%</td>
                     </tr>
     
                 </tbody>
@@ -8153,10 +8251,448 @@
                 </thead>
                 <tbody>
 
+                    <tr>
+                        <td><strong class="citizen-accent">1</strong></td>
+                        <td>JG2101-78E</td>
+                        <td>64</td>
+                        <td>$242.58</td>
+                        <td class="highlight citizen-accent">¥24,439</td>
+                        <td>0.192</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2101-78E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2101-78E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">2</strong></td>
+                        <td>AN3660-81A</td>
+                        <td>57</td>
+                        <td>$182.06</td>
+                        <td class="highlight citizen-accent">¥18,342</td>
+                        <td>0.138</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AN3660-81A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AN3660-81A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">3</strong></td>
+                        <td>JG2103-72X</td>
+                        <td>32</td>
+                        <td>$221.41</td>
+                        <td class="highlight citizen-accent">¥22,307</td>
+                        <td>0.091</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2103-72X&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2103-72X&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">4</strong></td>
+                        <td>AC2200-55E</td>
+                        <td>24</td>
+                        <td>$111.05</td>
+                        <td class="highlight citizen-accent">¥11,188</td>
+                        <td>0.580</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AC2200-55E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AC2200-55E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">5</strong></td>
+                        <td>AT2558-51E</td>
+                        <td>16</td>
+                        <td>$216.20</td>
+                        <td class="highlight citizen-accent">¥21,782</td>
+                        <td>0.156</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT2558-51E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT2558-51E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">6</strong></td>
+                        <td>AT2557-54G</td>
+                        <td>13</td>
+                        <td>$181.65</td>
+                        <td class="highlight citizen-accent">¥18,301</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT2557-54G&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT2557-54G&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">7</strong></td>
+                        <td>BM7570-80A</td>
+                        <td>10</td>
+                        <td>$169.40</td>
+                        <td class="highlight citizen-accent">¥17,067</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BM7570-80A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BM7570-80A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">8</strong></td>
+                        <td>JG2105-93E</td>
+                        <td>10</td>
+                        <td>$238.15</td>
+                        <td class="highlight citizen-accent">¥23,993</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2105-93E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2105-93E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">9</strong></td>
+                        <td>EG2043-57A</td>
+                        <td>8</td>
+                        <td>$205.75</td>
+                        <td class="highlight citizen-accent">¥20,729</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EG2043-57A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EG2043-57A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">10</strong></td>
+                        <td>NB1050-59H</td>
+                        <td>7</td>
+                        <td>$376.81</td>
+                        <td class="highlight citizen-accent">¥37,964</td>
+                        <td>0.036</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NB1050-59H&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NB1050-59H&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">11</strong></td>
+                        <td>BN7020-09E</td>
+                        <td>6</td>
+                        <td>$1439.42</td>
+                        <td class="highlight citizen-accent">¥145,022</td>
+                        <td>0.036</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN7020-09E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN7020-09E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">12</strong></td>
+                        <td>JY8035-04E</td>
+                        <td>6</td>
+                        <td>$112.03</td>
+                        <td class="highlight citizen-accent">¥11,287</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JY8035-04E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JY8035-04E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">13</strong></td>
+                        <td>NJ0150-56W</td>
+                        <td>5</td>
+                        <td>$236.99</td>
+                        <td class="highlight citizen-accent">¥23,876</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NJ0150-56W&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NJ0150-56W&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">14</strong></td>
+                        <td>NY0040-09E</td>
+                        <td>5</td>
+                        <td>$278.55</td>
+                        <td class="highlight citizen-accent">¥28,063</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NY0040-09E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NY0040-09E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">15</strong></td>
+                        <td>AT6080-53L</td>
+                        <td>4</td>
+                        <td>$437.20</td>
+                        <td class="highlight citizen-accent">¥44,047</td>
+                        <td>0.075</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT6080-53L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT6080-53L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">16</strong></td>
+                        <td>BN0157-11X</td>
+                        <td>4</td>
+                        <td>$260.72</td>
+                        <td class="highlight citizen-accent">¥26,267</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN0157-11X&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN0157-11X&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">17</strong></td>
+                        <td>BN0190-82E</td>
+                        <td>4</td>
+                        <td>$254.79</td>
+                        <td class="highlight citizen-accent">¥25,670</td>
+                        <td>0.030</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN0190-82E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN0190-82E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">18</strong></td>
+                        <td>BN2038-01L</td>
+                        <td>4</td>
+                        <td>$54.25</td>
+                        <td class="highlight citizen-accent">¥5,465</td>
+                        <td>0.107</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN2038-01L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN2038-01L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">19</strong></td>
+                        <td>CB0261-53E</td>
+                        <td>4</td>
+                        <td>$305.01</td>
+                        <td class="highlight citizen-accent">¥30,729</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+CB0261-53E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20CB0261-53E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">20</strong></td>
+                        <td>CB5874-90A</td>
+                        <td>4</td>
+                        <td>$298.50</td>
+                        <td class="highlight citizen-accent">¥30,073</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+CB5874-90A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20CB5874-90A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">21</strong></td>
+                        <td>EG2040-55A</td>
+                        <td>4</td>
+                        <td>$183.99</td>
+                        <td class="highlight citizen-accent">¥18,536</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EG2040-55A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EG2040-55A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">22</strong></td>
+                        <td>EO2020-08E</td>
+                        <td>4</td>
+                        <td>$222.29</td>
+                        <td class="highlight citizen-accent">¥22,396</td>
+                        <td>0.060</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EO2020-08E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EO2020-08E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">23</strong></td>
+                        <td>EO2023-00A</td>
+                        <td>4</td>
+                        <td>$225.82</td>
+                        <td class="highlight citizen-accent">¥22,751</td>
+                        <td>0.029</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EO2023-00A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EO2023-00A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">24</strong></td>
+                        <td>JG2120-65W</td>
+                        <td>4</td>
+                        <td>$301.98</td>
+                        <td class="highlight citizen-accent">¥30,424</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2120-65W&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2120-65W&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">25</strong></td>
+                        <td>NJ0153-82X</td>
+                        <td>4</td>
+                        <td>$236.99</td>
+                        <td class="highlight citizen-accent">¥23,876</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NJ0153-82X&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NJ0153-82X&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">26</strong></td>
+                        <td>NJ0158-89Z</td>
+                        <td>4</td>
+                        <td>$236.99</td>
+                        <td class="highlight citizen-accent">¥23,876</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NJ0158-89Z&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NJ0158-89Z&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">27</strong></td>
+                        <td>AQ4091-56E</td>
+                        <td>3</td>
+                        <td>$2071.75</td>
+                        <td class="highlight citizen-accent">¥208,728</td>
+                        <td>0.066</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AQ4091-56E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AQ4091-56E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">28</strong></td>
+                        <td>AT6085-50E</td>
+                        <td>3</td>
+                        <td>$691.36</td>
+                        <td class="highlight citizen-accent">¥69,654</td>
+                        <td>0.140</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT6085-50E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT6085-50E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">29</strong></td>
+                        <td>BN0190-15E</td>
+                        <td>3</td>
+                        <td>$246.66</td>
+                        <td class="highlight citizen-accent">¥24,850</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN0190-15E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN0190-15E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">30</strong></td>
+                        <td>BN1010-05E</td>
+                        <td>3</td>
+                        <td>$596.95</td>
+                        <td class="highlight citizen-accent">¥60,142</td>
+                        <td>0.003</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN1010-05E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN1010-05E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+    
                 </tbody>
             </table>
         </div>
     </div>
+
+        <script>
+        const citizenBlue = '#1565c0';
+        const citizenRed = '#e63946';
+        const citizenGradient = ['#1565c0', '#1976d2', '#42a5f5', '#64b5f6', '#90caf9'];
+
+        Plotly.newPlot('citizen_price_chart', [{
+            x: ['$0-50', '$50-100', '$100-150', '$150-200', '$200-250', '$250-300', '$300-350', '$350-400', '$400-450', '$450-500', '$500-550', '$550-600', '$600-650'],
+            y: [1, 74, 64, 139, 140, 104, 26, 27, 32, 19, 7, 9, 5],
+            type: 'bar',
+            marker: {
+                color: citizenBlue,
+                line: {color: citizenRed, width: 1}
+            },
+            hovertemplate: '<b>%{x}</b><br>販売数: %{y}<extra></extra>'
+        }], {
+            xaxis: {title: '価格帯', tickangle: -45},
+            yaxis: {title: '販売数'},
+            margin: {l: 50, r: 20, t: 20, b: 80},
+            plot_bgcolor: '#f8f9fa',
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('citizen_movement_chart', [{
+            labels: ['ソーラー', 'デジタル', 'クオーツ', '自動巻', '手巻き', 'スマートウォッチ'],
+            values: [245, 77, 76, 58, 6, 1],
+            type: 'pie',
+            marker: {colors: citizenGradient},
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>比率: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('citizen_gender_chart', [{
+            labels: ['メンズ', 'レディース', 'ユニセックス', 'ボーイズ/キッズ'],
+            values: [416, 8, 7, 1],
+            type: 'pie',
+            marker: {colors: [citizenBlue, citizenRed, '#64b5f6', '#42a5f5', '#90caf9']},
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>比率: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+        </script>
+
 
         <script>
         const citizenBlue = '#1565c0';
