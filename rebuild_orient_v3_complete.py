@@ -200,15 +200,38 @@ line_sales = df_orient.groupby('ライン')['販売数'].sum().sort_values(ascen
 line_labels = line_sales.index.tolist()
 line_values = line_sales.values.tolist()
 
+# 駆動方式別分布
+movement_dist = df_orient.groupby('駆動方式')['販売数'].sum().sort_values(ascending=False)
+movement_labels = movement_dist.index.tolist()
+movement_values = movement_dist.values.tolist()
+
 # ===========================
-# 7. キャラクター/コラボ分析
+# 7. 限定モデル/記念モデル分析
+# ===========================
+
+LIMITED_KEYWORDS = [
+    'LIMITED EDITION', 'SPECIAL EDITION', 'EXCLUSIVE',
+    'ANNIVERSARY', '75TH', '70TH',
+]
+
+limited_data = []
+for keyword in LIMITED_KEYWORDS:
+    mask = df_orient['TITLE_UPPER'].str.contains(keyword, na=False, regex=False)
+    count = mask.sum()
+    if count > 0:
+        sales = df_orient[mask]['販売数'].sum()
+        limited_data.append({'keyword': keyword, 'count': count, 'sales': int(sales)})
+
+limited_data = sorted(limited_data, key=lambda x: x['sales'], reverse=True)
+
+# ===========================
+# 8. キャラクター/コラボ分析
 # ===========================
 
 CHARACTER_KEYWORDS = [
-    'LIMITED EDITION', 'SPECIAL EDITION', 'EXCLUSIVE',
-    'ANNIVERSARY', '75TH', '70TH',
     'DISNEY', 'MARVEL', 'STAR WARS',
-    'HELLO KITTY', 'SNOOPY',
+    'HELLO KITTY', 'SNOOPY', 'PEANUTS',
+    'EVANGELION', 'GUNDAM',
 ]
 
 collab_data = []
@@ -277,6 +300,10 @@ orient_html = f'''
                 <h4 style="color: {orient_color};">ライン別売上比率</h4>
                 <div id="orient_line_chart" style="height: 350px;"></div>
             </div>
+            <div class="chart-container">
+                <h4 style="color: {orient_color};">駆動方式別分布</h4>
+                <div id="orient_movement_chart" style="height: 350px;"></div>
+            </div>
         </div>
 
         <!-- 限定モデル/記念モデル分析 -->
@@ -284,8 +311,8 @@ orient_html = f'''
         <p style="color: #666; margin-bottom: 20px;">LIMITED EDITION、ANNIVERSARY等の特別モデルの分析</p>
 '''
 
-# キャラクター/コラボテーブル
-if len(collab_data) > 0:
+# 限定モデルテーブル
+if len(limited_data) > 0:
     orient_html += '''
         <div class="table-container">
             <table>
@@ -299,7 +326,45 @@ if len(collab_data) > 0:
                 </thead>
                 <tbody>
 '''
-    total_collab_sales = sum(c['sales'] for c in collab_data)
+    for limited in limited_data:
+        ratio = limited['sales'] / df_orient['販売数'].sum() * 100
+        orient_html += f'''
+                    <tr>
+                        <td><strong>{limited['keyword']}</strong></td>
+                        <td>{limited['count']}</td>
+                        <td>{limited['sales']}</td>
+                        <td style="color: {orient_color};">{ratio:.1f}%</td>
+                    </tr>
+'''
+    orient_html += '''
+                </tbody>
+            </table>
+        </div>
+'''
+else:
+    orient_html += '<p style="color: #999;">該当する特別モデルは検出されませんでした。</p>'
+
+# キャラクター/コラボ分析セクション追加
+orient_html += f'''
+        <!-- キャラクター/コラボ分析 -->
+        <h3 class="section-title" style="color: {orient_color};">🎭 キャラクター/コラボ分析</h3>
+        <p style="color: #666; margin-bottom: 20px;">DISNEY、MARVEL等のキャラクターコラボモデルの分析</p>
+'''
+
+if len(collab_data) > 0:
+    orient_html += '''
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>キャラクター</th>
+                        <th>商品数</th>
+                        <th>販売数</th>
+                        <th>比率</th>
+                    </tr>
+                </thead>
+                <tbody>
+'''
     for collab in collab_data:
         ratio = collab['sales'] / df_orient['販売数'].sum() * 100
         orient_html += f'''
@@ -316,7 +381,7 @@ if len(collab_data) > 0:
         </div>
 '''
 else:
-    orient_html += '<p style="color: #999;">該当する特別モデルは検出されませんでした。</p>'
+    orient_html += '<p style="color: #999;">該当するキャラクター/コラボモデルは検出されませんでした。</p>'
 
 orient_html += f'''
         <!-- ライン別詳細分析 -->
@@ -493,6 +558,22 @@ plotly_script = f'''
         type: 'pie',
         marker: {{
             colors: orientGradient.concat(['#FFE5D9', '#FFF0E9', '#FFF8F4', '#E6E6E6', '#D0D0D0', '#B8B8B8', '#A0A0A0'])
+        }},
+        textinfo: 'label+percent',
+        textposition: 'outside',
+        hovertemplate: '<b>%{{label}}</b><br>販売数: %{{value}}<br>比率: %{{percent}}<extra></extra>'
+    }}], {{
+        margin: {{l: 20, r: 20, t: 20, b: 20}},
+        paper_bgcolor: 'white'
+    }}, {{responsive: true}});
+
+    // 駆動方式別分布
+    Plotly.newPlot('orient_movement_chart', [{{
+        labels: {json.dumps(movement_labels)},
+        values: {json.dumps(movement_values)},
+        type: 'pie',
+        marker: {{
+            colors: orientGradient
         }},
         textinfo: 'label+percent',
         textposition: 'outside',
