@@ -7251,9 +7251,47 @@
         </script>
 
 
-<div id="CITIZEN" class="tab-content">
-        <h2 class="section-title">📊 CITIZEN 詳細分析</h2>
-        
+
+<style>
+.citizen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.citizen-chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.citizen-accent {
+    color: #e63946;
+    font-weight: bold;
+}
+
+.citizen-blue {
+    color: #1565c0;
+}
+
+.model-sample {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .citizen-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+    <div id="CITIZEN" class="tab-content">
+        <h2 class="section-title citizen-blue">📊 CITIZEN 詳細分析</h2>
+
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="label">総販売数</div>
@@ -7269,118 +7307,837 @@
             </div>
             <div class="stat-card">
                 <div class="label">JDMプレミアム</div>
-                <div class="value" style="color: var(--positive)">+81.7%</div>
+                <div class="value citizen-accent">+81.7%</div>
             </div>
         </div>
 
-        <div class="insight-box">
-            <h3>🎯 仕入れ戦略</h3>
-            <ul>
-                <li>✅ JDMプレミアム+81.7%（ただしN=4と少ない）</li>
-                <li>✅ エコ・ドライブは電池交換不要で人気</li>
-                <li>✅ 箱付きプレミアム+6.7%</li>
-                <li><strong>狙い目：</strong>エコ・ドライブ搭載モデル、Promaster、Attesa等の人気ライン、JDM表記があればテスト仕入れ</li>
-                <li><strong>仕入れ上限：</strong>$230-$250程度（SEIKOと同水準で固定、N数が増えるまで上限固定）</li>
-            </ul>
+        <div class="insight-box" style="border-left: 5px solid #e63946;">
+            <h3 class="citizen-blue">🎯 仕入れ戦略（実践ガイド）</h3>
+            <div style="display: grid; gap: 15px;">
+                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 4px solid #1565c0;">
+                    <h4 style="color: #1565c0; margin-bottom: 10px;">✅ 狙い目条件</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong class="citizen-accent">Promaster Sky</strong>（Blue Angels等の限定モデル）</li>
+                        <li><strong class="citizen-accent">ANA-DIGI TEMP</strong>（コラボモデル・限定色）</li>
+                        <li><strong>Eco-Drive</strong>高機能モデル（ソーラー電波）</li>
+                        <li><strong>Attesa</strong>チタンモデル</li>
+                    </ul>
+                </div>
+                <div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 4px solid #f57c00;">
+                    <h4 style="color: #f57c00; margin-bottom: 10px;">⚠️ 避けるべき条件</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>動作未確認のクォーツモデル</li>
+                        <li>型番不明の中古品</li>
+                        <li>ベルトのみ・文字盤のみ</li>
+                    </ul>
+                </div>
+                <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; border-left: 4px solid #388e3c;">
+                    <h4 style="color: #388e3c; margin-bottom: 10px;">💰 仕入れ価格目安</h4>
+                    <p style="margin: 0;"><strong>Promaster:</strong> ¥25,000-40,000</p>
+                    <p style="margin: 5px 0 0 0;"><strong class="citizen-accent">ANA-DIGI TEMP:</strong> ¥15,000-30,000</p>
+                </div>
+            </div>
         </div>
 
-        <h3 class="section-title">📈 プレミアム率分析</h3>
-        <div class="table-container">
-            <table>
-                <tr>
-                    <td>JDMプレミアム</td>
-                    <td class="highlight">+81.7%</td>
-                    <td>🔥 狙い目！</td>
-                </tr>
-                <tr>
-                    <td>ヴィンテージプレミアム</td>
-                    <td class="highlight">-21.7%</td>
-                    <td>⚠️ 逆プレミアム</td>
-                </tr>
-                <tr>
-                    <td>箱付きプレミアム</td>
-                    <td class="highlight">+6.7%</td>
-                    <td>適正</td>
-                </tr>
-            </table>
+        <h3 class="section-title citizen-blue">📊 市場分析グラフ</h3>
+        <div class="citizen-grid">
+            <div class="citizen-chart-container">
+                <h4 class="citizen-blue">価格帯別分析（50ドル刻み）</h4>
+                <div id="citizen_price_chart" style="height: 350px;"></div>
+            </div>
+            <div class="citizen-chart-container">
+                <h4 class="citizen-blue">駆動方式別分布</h4>
+                <div id="citizen_movement_chart" style="height: 350px;"></div>
+            </div>
+            <div class="citizen-chart-container">
+                <h4 class="citizen-blue">性別・カテゴリー別分布</h4>
+                <div id="citizen_gender_chart" style="height: 300px;"></div>
+            </div>
         </div>
 
-        <h3 class="section-title">🏆 人気モデルTop10</h3>
+        <h3 class="section-title citizen-blue">🔵 ライン別詳細分析</h3>
         <div class="table-container">
             <table>
                 <thead>
                     <tr>
-                        <th>順位</th>
-                        <th>型番</th>
+                        <th>ライン</th>
                         <th>販売数</th>
-                        <th>中央値($)</th>
-                        <th>仕入上限</th>
-                        <th>CV</th>
-                        <th>検索</th>
+                        <th class="citizen-accent">比率</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>安定度</th>
+                        <th>JDM比率</th>
+                        <th class="citizen-accent">JDMプレミアム</th>
                     </tr>
                 </thead>
                 <tbody>
 
+                    <tr>
+                        <td><strong>Attesa</strong></td>
+                        <td>552</td>
+                        <td class="citizen-accent">79.1%</td>
+                        <td>$225</td>
+                        <td>1.248</td>
+                        <td>☆☆☆</td>
+                        <td>0.2%</td>
+                        <td class="">+0.0%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Promaster</strong></td>
+                        <td>110</td>
+                        <td class="citizen-accent">15.8%</td>
+                        <td>$320</td>
+                        <td>0.651</td>
+                        <td>☆☆☆</td>
+                        <td>2.7%</td>
+                        <td class="citizen-accent">+48.2%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>その他CITIZEN</strong></td>
+                        <td>33</td>
+                        <td class="citizen-accent">4.7%</td>
+                        <td>$292</td>
+                        <td>0.983</td>
+                        <td>☆☆☆</td>
+                        <td>0.0%</td>
+                        <td class="">+0.0%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>The CITIZEN</strong></td>
+                        <td>3</td>
+                        <td class="citizen-accent">0.4%</td>
+                        <td>$1849</td>
+                        <td>0.381</td>
+                        <td>☆☆☆</td>
+                        <td>0.0%</td>
+                        <td class="">+0.0%</td>
+                    </tr>
+    
                 </tbody>
             </table>
         </div>
-    </div>
 
-    <div id="GUCCI" class="tab-content">
-        <h2 class="section-title">📊 GUCCI 詳細分析</h2>
-        
-        <div class="stats-grid">
+        <h3 class="section-title citizen-blue">🤝 キャラクター/コラボ分析（複数視点）</h3>
+        <p style="color: #666; margin-bottom: 15px;">同じ商品を別の角度から分析 - 例：ANA-DIGI TEMPは「ANA-DIGI TEMPライン」と「ANAコラボ」の両方に該当</p>
+
+        <div class="stats-grid" style="margin-bottom: 20px;">
             <div class="stat-card">
-                <div class="label">総販売数</div>
-                <div class="value">486</div>
+                <div class="label">コラボ商品数</div>
+                <div class="value citizen-accent">223個</div>
             </div>
             <div class="stat-card">
                 <div class="label">中央値</div>
-                <div class="value">$169.90</div>
+                <div class="value">$237</div>
             </div>
             <div class="stat-card">
-                <div class="label">CV（変動係数）</div>
-                <div class="value">0.357</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">JDMプレミアム</div>
-                <div class="value" style="color: var(--negative)">+0.0%</div>
+                <div class="label">全体比率</div>
+                <div class="value citizen-accent">31.9%</div>
             </div>
         </div>
 
-        <div class="insight-box">
-            <h3>🎯 仕入れ戦略</h3>
-            <ul>
-                <li>✅ 箱付きプレミアム+25.0%（全ブランド中トップクラス）</li>
-                <li>✅ CV 0.357と価格が安定</li>
-                <li>✅ ギフト需要でまとめ買い・リピート客が期待できる</li>
-                <li><strong>狙い目：</strong>箱・保証書・付属品完備、稼働品（電池交換済み）、見映えの良いデザイン</li>
-                <li><strong>仕入れ上限：</strong>$210前後（中央値$170 + 箱25%）</li>
-            </ul>
-        </div>
-
-        <h3 class="section-title">📈 プレミアム率分析</h3>
         <div class="table-container">
             <table>
-                <tr>
-                    <td>JDMプレミアム</td>
-                    <td class="highlight">+0.0%</td>
-                    <td>影響なし</td>
-                </tr>
-                <tr>
-                    <td>ヴィンテージプレミアム</td>
-                    <td class="highlight">-14.9%</td>
-                    <td>⚠️ 逆プレミアム</td>
-                </tr>
-                <tr>
-                    <td>箱付きプレミアム</td>
-                    <td class="highlight">+25.0%</td>
-                    <td>🔥 狙い目！</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>コラボ/キャラクター</th>
+                        <th>販売数</th>
+                        <th>比率</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>ANA（全日空）</strong></td>
+                        <td>197</td>
+                        <td class="citizen-accent">88.3%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>ホンダ</strong></td>
+                        <td>11</td>
+                        <td class="citizen-accent">4.9%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>ハローキティ</strong></td>
+                        <td>4</td>
+                        <td class="citizen-accent">1.8%</td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>スターウォーズ</strong></td>
+                        <td>1</td>
+                        <td class="citizen-accent">0.4%</td>
+                    </tr>
+    
+                </tbody>
             </table>
         </div>
-
-        <h3 class="section-title">🏆 人気モデルTop10</h3>
+<h3 class="section-title citizen-blue">📌 各ラインの人気モデル（実データより）</h3><p style="color: #666; margin-bottom: 20px;">元CSVデータから再分類した正確な人気モデルTop15</p>
+        <h4 style="color: #1565c0; margin-top: 25px; border-bottom: 2px solid #1565c0; padding-bottom: 5px;">
+            Attesa <span style="font-size: 0.9em; color: #666;">（販売数: 422個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">1</strong></td>
+                        <td><strong>JG2101-78E</strong></td>
+                        <td>61</td>
+                        <td>$243</td>
+                        <td>0.158</td>
+                        <td class="model-sample">CITIZEN ANA-DIGI TEMP JG2101-78E Silver Analog Digital Vinta</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2101-78E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2101-78E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">2</strong></td>
+                        <td><strong>AN3660-81A</strong></td>
+                        <td>57</td>
+                        <td>$182</td>
+                        <td>0.138</td>
+                        <td class="model-sample">CITIZEN AN3660-81A White Record Lavel Tsuno Chrono Men's Wat</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AN3660-81A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AN3660-81A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">3</strong></td>
+                        <td><strong>JG2103-72X</strong></td>
+                        <td>32</td>
+                        <td>$221</td>
+                        <td>0.091</td>
+                        <td class="model-sample">Citizen Ana-digi Temp JG2103-72X Gold Analog Digital Watch R</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2103-72X&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2103-72X&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">4</strong></td>
+                        <td><strong>AC2200-55E</strong></td>
+                        <td>24</td>
+                        <td>$111</td>
+                        <td>0.580</td>
+                        <td class="model-sample">CITIZEN AC2200-55E Tactile Watch Stainless Steel Analog Quar</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AC2200-55E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AC2200-55E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">5</strong></td>
+                        <td><strong>JG2105-93E</strong></td>
+                        <td>10</td>
+                        <td>$238</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN JG2105-93E Black ANA-DIGI TEMP Reproduction Model Me</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2105-93E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2105-93E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">6</strong></td>
+                        <td><strong>NB1050-59H</strong></td>
+                        <td>7</td>
+                        <td>$377</td>
+                        <td>0.036</td>
+                        <td class="model-sample">CITIZEN NB1050-59H Black Analog Mechanical Auto Stainless Me</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NB1050-59H&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NB1050-59H&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">7</strong></td>
+                        <td><strong>NJ0150-56W</strong></td>
+                        <td>5</td>
+                        <td>$237</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen Tsuyosa NJ0150-56W Automatic Sapphire Red Dial Men's</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NJ0150-56W&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NJ0150-56W&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">8</strong></td>
+                        <td><strong>JG2120-65W</strong></td>
+                        <td>4</td>
+                        <td>$302</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen Ana-Digi Temp Stainless Steel Men's Watch JG2120-65W</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2120-65W&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2120-65W&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">9</strong></td>
+                        <td><strong>NJ0153-82X</strong></td>
+                        <td>4</td>
+                        <td>$237</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen NJ0153-82X Automatic Red Dial Gold Tone Stainless St</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NJ0153-82X&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NJ0153-82X&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">10</strong></td>
+                        <td><strong>NJ0158-89Z</strong></td>
+                        <td>4</td>
+                        <td>$237</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen Mechanical Green Dial Silver Stainless Steel Strap M</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NJ0158-89Z&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NJ0158-89Z&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">11</strong></td>
+                        <td><strong>JG2126-69E</strong></td>
+                        <td>3</td>
+                        <td>$292</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN RECORD LABEL JG2126-69E Thermo Sensior Analog Digita</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2126-69E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2126-69E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">12</strong></td>
+                        <td><strong>NB1050-59A</strong></td>
+                        <td>3</td>
+                        <td>$394</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN Mechanical NB1050-59A Silver Auto Sapphire Glass Men</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NB1050-59A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NB1050-59A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">13</strong></td>
+                        <td><strong>NY4050-62A</strong></td>
+                        <td>3</td>
+                        <td>$211</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN  NY4050-62A Analog Mechanical (Automatic) Sapphire C</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NY4050-62A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NY4050-62A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">14</strong></td>
+                        <td><strong>BN1010-05E</strong></td>
+                        <td>2</td>
+                        <td>$595</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Brand-New Citizen CREATIVE LAB BN1010-05E Limited Watch ( Bl</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN1010-05E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN1010-05E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">15</strong></td>
+                        <td><strong>EG2040-55A</strong></td>
+                        <td>2</td>
+                        <td>$184</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen EG2040-55A Kii Quartz Women's Watch White Dial Analo</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EG2040-55A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EG2040-55A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #1565c0; margin-top: 25px; border-bottom: 2px solid #1565c0; padding-bottom: 5px;">
+            Eco-Drive <span style="font-size: 0.9em; color: #666;">（販売数: 135個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">1</strong></td>
+                        <td><strong>AT2558-51E</strong></td>
+                        <td>16</td>
+                        <td>$216</td>
+                        <td>0.156</td>
+                        <td class="model-sample">CITIZEN  1984 Chronograph Eco-Drive Mens Watch 200 Limited M</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT2558-51E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT2558-51E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">2</strong></td>
+                        <td><strong>AT2557-54G</strong></td>
+                        <td>13</td>
+                        <td>$182</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN  1984 Chronograph EcoDrive Mens Watch 200 Limited Ma</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT2557-54G&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT2557-54G&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">3</strong></td>
+                        <td><strong>BM7570-80A</strong></td>
+                        <td>10</td>
+                        <td>$169</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen Watch Titanium Solar Eco Drive Japan Men BM7570-80A </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BM7570-80A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BM7570-80A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">4</strong></td>
+                        <td><strong>EG2043-57A</strong></td>
+                        <td>8</td>
+                        <td>$206</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN Kii: EG2043-57A Gold Eco Drive Solar Women's Watch N</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EG2043-57A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EG2043-57A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">5</strong></td>
+                        <td><strong>CB0261-53E</strong></td>
+                        <td>4</td>
+                        <td>$305</td>
+                        <td>0.000</td>
+                        <td class="model-sample">​CITIZEN CB0261-53E Black Super Titanium Eco-Drive Radio Men</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+CB0261-53E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20CB0261-53E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">6</strong></td>
+                        <td><strong>AQ4091-56E</strong></td>
+                        <td>3</td>
+                        <td>$2072</td>
+                        <td>0.066</td>
+                        <td class="model-sample">CITIZEN AQ4091-56E [High Precision Eco Drive Year Difference</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AQ4091-56E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AQ4091-56E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">7</strong></td>
+                        <td><strong>AQ4091-56M</strong></td>
+                        <td>2</td>
+                        <td>$2015</td>
+                        <td>0.116</td>
+                        <td class="model-sample">CITIZEN The citizen AQ4091-56M/A060-T027351 Eco Drive Solar </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AQ4091-56M&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AQ4091-56M&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">8</strong></td>
+                        <td><strong>AT8020-03L</strong></td>
+                        <td>2</td>
+                        <td>$449</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Unused CITIZEN Blue Angels World Eco-Drive AT8020-03L Blue M</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT8020-03L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT8020-03L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">9</strong></td>
+                        <td><strong>AT8287-62E</strong></td>
+                        <td>2</td>
+                        <td>$1076</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN Attesa AT8287-62E Black HAKUTO-R Titanium Men's Watc</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT8287-62E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT8287-62E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">10</strong></td>
+                        <td><strong>CB1120-50E</strong></td>
+                        <td>2</td>
+                        <td>$340</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN ATTESA Eco-Drive CB1120-50E Solar Radio Men's Watch </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+CB1120-50E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20CB1120-50E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">11</strong></td>
+                        <td><strong>EG2040-55A</strong></td>
+                        <td>2</td>
+                        <td>$184</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen Key Eco Drive EG2040-55A Watch Silver CITIZEN Kii sh</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EG2040-55A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EG2040-55A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">12</strong></td>
+                        <td><strong>EG7080-53A</strong></td>
+                        <td>2</td>
+                        <td>$200</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN EG7080-53A Silver Key Eco-Drive Round Mesh Kii Women</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EG7080-53A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EG7080-53A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #1565c0; margin-top: 25px; border-bottom: 2px solid #1565c0; padding-bottom: 5px;">
+            Promaster <span style="font-size: 0.9em; color: #666;">（販売数: 114個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">1</strong></td>
+                        <td><strong>BN7020-09E</strong></td>
+                        <td>6</td>
+                        <td>$1439</td>
+                        <td>0.036</td>
+                        <td class="model-sample">Unused CITIZEN BN7020-09E Black PROMASTER MARINE Eco-Drive M</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN7020-09E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN7020-09E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">2</strong></td>
+                        <td><strong>JY8035-04E</strong></td>
+                        <td>6</td>
+                        <td>$112</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN Black Rubber Watch Band  JY8035-04E Eco-Drive Naviha</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JY8035-04E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JY8035-04E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">3</strong></td>
+                        <td><strong>NY0040-09E</strong></td>
+                        <td>5</td>
+                        <td>$279</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen Promaster NY0040-09E Automatic Diver 200m Men’s Watc</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+NY0040-09E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20NY0040-09E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">4</strong></td>
+                        <td><strong>AT6080-53L</strong></td>
+                        <td>4</td>
+                        <td>$437</td>
+                        <td>0.075</td>
+                        <td class="model-sample">Brand-New Citizen Promaster EcoDrive AT6080-53L Titanium Sol</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT6080-53L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT6080-53L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">5</strong></td>
+                        <td><strong>BN0157-11X</strong></td>
+                        <td>4</td>
+                        <td>$261</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen Promaster BN0157-11X MARINE Adventure Green Diver Ec</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN0157-11X&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN0157-11X&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">6</strong></td>
+                        <td><strong>BN0190-82E</strong></td>
+                        <td>4</td>
+                        <td>$255</td>
+                        <td>0.030</td>
+                        <td class="model-sample">2017 Model CITIZEN PROMASTER BN0190-82E Eco-Drive 200m Diver</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN0190-82E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN0190-82E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">7</strong></td>
+                        <td><strong>BN2038-01L</strong></td>
+                        <td>4</td>
+                        <td>$54</td>
+                        <td>0.107</td>
+                        <td class="model-sample">Original Citizen Promaster Aqualand 22mm BN2038-01L Blue Rub</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN2038-01L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN2038-01L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">8</strong></td>
+                        <td><strong>CB5874-90A</strong></td>
+                        <td>4</td>
+                        <td>$298</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN  CB5874-90A  CB5874 Eco-Drive Solar/Radio Controlled</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+CB5874-90A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20CB5874-90A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">9</strong></td>
+                        <td><strong>EO2023-00A</strong></td>
+                        <td>4</td>
+                        <td>$226</td>
+                        <td>0.029</td>
+                        <td class="model-sample">Citizen EO2023-00A Promaster MARINE Eco-Drive Solar Diver 20</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EO2023-00A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EO2023-00A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">10</strong></td>
+                        <td><strong>AT6085-50E</strong></td>
+                        <td>3</td>
+                        <td>$691</td>
+                        <td>0.140</td>
+                        <td class="model-sample">CITIZEN Promaster Land Eco-Drive AT6085-50E Solar Men's Watc</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+AT6085-50E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20AT6085-50E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">11</strong></td>
+                        <td><strong>BN0190-15E</strong></td>
+                        <td>3</td>
+                        <td>$247</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Citizen Promaster MARINE BN0190-15E Eco-Drive Solar Diver Bl</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN0190-15E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN0190-15E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">12</strong></td>
+                        <td><strong>EO2020-08E</strong></td>
+                        <td>3</td>
+                        <td>$232</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN PROMASTER Eco-Drive EO2020-08E Black Women's Watch N</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EO2020-08E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EO2020-08E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">13</strong></td>
+                        <td><strong>BN0156-05E</strong></td>
+                        <td>2</td>
+                        <td>$249</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN PROMASTER Eco-Drive GLOBAL MARINE Standard Diver BN0</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN0156-05E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN0156-05E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">14</strong></td>
+                        <td><strong>BN0261-51E</strong></td>
+                        <td>2</td>
+                        <td>$367</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN BN0261-51E PROMASTER MARINE Eco-Drive Solar Watch Bl</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+BN0261-51E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20BN0261-51E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">15</strong></td>
+                        <td><strong>EO2021-05L</strong></td>
+                        <td>2</td>
+                        <td>$221</td>
+                        <td>0.042</td>
+                        <td class="model-sample">CITIZEN PROMASTER Eco-Drive EO2021-05L Blue Men's Watch New </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+EO2021-05L&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20EO2021-05L&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #1565c0; margin-top: 25px; border-bottom: 2px solid #1565c0; padding-bottom: 5px;">
+            ANA-DIGI TEMP <span style="font-size: 0.9em; color: #666;">（販売数: 12個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="citizen-accent">1</strong></td>
+                        <td><strong>JG2101-78E</strong></td>
+                        <td>3</td>
+                        <td>$236</td>
+                        <td>0.325</td>
+                        <td class="model-sample">Citizen JG2101-78E Ana-Digi TEMP Reprint Model Silver</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2101-78E&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2101-78E&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="citizen-accent">2</strong></td>
+                        <td><strong>JG2120-65A</strong></td>
+                        <td>2</td>
+                        <td>$295</td>
+                        <td>0.000</td>
+                        <td class="model-sample">CITIZEN ANA-DIGI TEMP JG2120-65A White Dial From Japan NEW</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+JG2120-65A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=CITIZEN%20JG2120-65A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h3 class="section-title citizen-blue">🏆 全ライン横断 型番分析Top30</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -7389,7 +8146,7 @@
                         <th>型番</th>
                         <th>販売数</th>
                         <th>中央値($)</th>
-                        <th>仕入上限</th>
+                        <th class="citizen-accent">仕入上限(¥)</th>
                         <th>CV</th>
                         <th>検索</th>
                     </tr>
@@ -7400,5 +8157,53 @@
             </table>
         </div>
     </div>
+
+        <script>
+        const citizenBlue = '#1565c0';
+        const citizenRed = '#e63946';
+        const citizenGradient = ['#1565c0', '#1976d2', '#42a5f5', '#64b5f6', '#90caf9'];
+
+        Plotly.newPlot('citizen_price_chart', [{
+            x: ['$0-50', '$50-100', '$100-150', '$150-200', '$200-250', '$250-300', '$300-350', '$350-400', '$400-450', '$450-500', '$500-550', '$550-600', '$600-650'],
+            y: [1, 74, 64, 139, 140, 104, 26, 27, 32, 19, 7, 9, 5],
+            type: 'bar',
+            marker: {
+                color: citizenBlue,
+                line: {color: citizenRed, width: 1}
+            },
+            hovertemplate: '<b>%{x}</b><br>販売数: %{y}<extra></extra>'
+        }], {
+            xaxis: {title: '価格帯', tickangle: -45},
+            yaxis: {title: '販売数'},
+            margin: {l: 50, r: 20, t: 20, b: 80},
+            plot_bgcolor: '#f8f9fa',
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('citizen_movement_chart', [{
+            labels: ['ソーラー', 'デジタル', 'クオーツ', '自動巻', '手巻き', 'スマートウォッチ'],
+            values: [245, 77, 76, 58, 6, 1],
+            type: 'pie',
+            marker: {colors: citizenGradient},
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>比率: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('citizen_gender_chart', [{
+            labels: ['メンズ', 'レディース', 'ユニセックス', 'ボーイズ/キッズ'],
+            values: [416, 8, 7, 1],
+            type: 'pie',
+            marker: {colors: [citizenBlue, citizenRed, '#64b5f6', '#42a5f5', '#90caf9']},
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>比率: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+        </script>
+
 </body>
 </html>
