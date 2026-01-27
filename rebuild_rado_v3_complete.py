@@ -74,27 +74,62 @@ def calculate_cv(prices):
     return std / mean
 
 def extract_model_number(title):
-    """タイトルから型番を抽出"""
+    """改善版：RADOの型番を抽出（8パターン対応）"""
     title_upper = str(title).upper()
 
-    # RADOの型番パターン
-    # パターン1: 数字.数字.数字（例：152.0341.3、129.9517.3）
-    pattern1 = r'\b\d{3}\.\d{4}\.\d\b'
+    # パターン1: 5桁.4桁.1桁（例：68396.0068.3）
+    pattern1 = r'\b\d{5}\.\d{4}\.\d\b'
     match1 = re.search(pattern1, title_upper)
     if match1:
         return match1.group()
 
-    # パターン2: 数字-数字（例：636-0308-3）
-    pattern2 = r'\b\d{3}-\d{4}-\d\b'
+    # パターン2: 2桁-3桁.4桁.1桁（例：67-396.0067.3）
+    pattern2 = r'\b\d{2}-\d{3}\.\d{4}\.\d\b'
     match2 = re.search(pattern2, title_upper)
     if match2:
         return match2.group()
 
-    # パターン3: アルファベット+数字（R12等）
-    pattern3 = r'\bR\d{2,3}[A-Z]{0,2}\b'
+    # パターン3: 3桁.4桁.1桁+オプションアルファベット（例：152.0341.3、153.3606.2N）
+    pattern3 = r'\b\d{3}\.\d{4}\.\d[A-Z]?\b'
     match3 = re.search(pattern3, title_upper)
     if match3:
         return match3.group()
+
+    # パターン4: 5桁/数字（例：11675/1）
+    pattern4 = r'\b\d{5}/\d+\b'
+    match4 = re.search(pattern4, title_upper)
+    if match4:
+        return match4.group()
+
+    # パターン5: R+8桁（例：R14061106）
+    pattern5 = r'\bR\d{8}\b'
+    match5 = re.search(pattern5, title_upper)
+    if match5:
+        return match5.group()
+
+    # パターン6: 8桁+オプションアルファベット（例：20440794N）
+    pattern6 = r'\b\d{8}[A-Z]?\b'
+    match6 = re.search(pattern6, title_upper)
+    if match6:
+        candidate = match6.group()
+        # 1900年代/2000年代の年号を除外
+        if not candidate.startswith(('19', '20')):
+            return candidate
+
+    # パターン7: 5桁のみ（例：11006、11896）
+    pattern7 = r'\b\d{5}\b'
+    match7 = re.search(pattern7, title_upper)
+    if match7:
+        candidate = match7.group()
+        # 1900年代/2000年代の年号を除外
+        if not candidate.startswith(('19', '20')):
+            return candidate
+
+    # パターン8: 3桁.4桁のみ（例：332.7818）
+    pattern8 = r'\b\d{3}\.\d{4}\b'
+    match8 = re.search(pattern8, title_upper)
+    if match8:
+        return match8.group()
 
     return None
 
