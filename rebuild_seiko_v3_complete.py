@@ -317,6 +317,18 @@ dept_dist_real = df_seiko.groupby('デパートメント')['販売数'].sum().so
 dept_labels = [dept for dept in dept_dist_real.index if dept != '不明']
 dept_values = [int(dept_dist_real[dept]) for dept in dept_labels]
 
+# ライン別売上比率（上位7ライン + その他に集約）
+line_sales = df_seiko.groupby('ライン')['販売数'].sum().sort_values(ascending=False)
+if len(line_sales) > 7:
+    top_7_lines = line_sales.head(7)
+    others_sum = line_sales.iloc[7:].sum()
+    line_sales_final = pd.concat([top_7_lines, pd.Series({'その他': others_sum})])
+else:
+    line_sales_final = line_sales
+
+line_labels = line_sales_final.index.tolist()
+line_values = line_sales_final.values.tolist()
+
 graphs_html = f'''
         <h3 class="section-title seiko-blue">📊 市場分析グラフ</h3>
         <div class="seiko-grid">
@@ -331,6 +343,10 @@ graphs_html = f'''
             <div class="seiko-chart-container">
                 <h4 class="seiko-blue">性別・カテゴリー別分布</h4>
                 <div id="seiko_gender_chart" style="height: 300px;"></div>
+            </div>
+            <div class="seiko-chart-container">
+                <h4 class="seiko-blue">ライン別売上比率</h4>
+                <div id="seiko_line_chart" style="height: 350px;"></div>
             </div>
         </div>
 '''
@@ -600,6 +616,19 @@ graph_js = f'''
             type: 'pie',
             marker: {{colors: [seikoBlue, seikoOrange, '#66b3ff', '#ffa366', '#99ccff']}},
             textinfo: 'label+percent',
+            hovertemplate: '<b>%{{label}}</b><br>販売数: %{{value}}<br>比率: %{{percent}}<extra></extra>'
+        }}], {{
+            margin: {{l: 20, r: 20, t: 20, b: 20}},
+            paper_bgcolor: 'white'
+        }}, {{responsive: true}});
+
+        Plotly.newPlot('seiko_line_chart', [{{
+            labels: {json.dumps(line_labels, ensure_ascii=False)},
+            values: {json.dumps(line_values, ensure_ascii=False)},
+            type: 'pie',
+            marker: {{colors: seikoGradient.concat(['#99ccff', '#b3d9ff', '#cce6ff', '#e6f2ff', '#E6E6E6'])}},
+            textinfo: 'label+percent',
+            textposition: 'outside',
             hovertemplate: '<b>%{{label}}</b><br>販売数: %{{value}}<br>比率: %{{percent}}<extra></extra>'
         }}], {{
             margin: {{l: 20, r: 20, t: 20, b: 20}},
