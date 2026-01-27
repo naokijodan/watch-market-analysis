@@ -3558,7 +3558,7 @@
 
         Plotly.newPlot('seiko_price_chart', [{
             x: ['$0-50', '$50-100', '$100-150', '$150-200', '$200-250', '$250-300', '$300-350', '$350-400', '$400-450', '$450-500', '$500-550', '$550-600', '$600-650'],
-            y: [0, 0, 24, 41, 17, 0, 8, 22, 0, 0, 4, 0, 0],
+            y: [7, 586, 2876, 1287, 822, 334, 149, 364, 156, 78, 53, 45, 34],
             type: 'bar',
             marker: {
                 color: seikoBlue,
@@ -3574,8 +3574,8 @@
         }, {responsive: true});
 
         Plotly.newPlot('seiko_movement_chart', [{
-            labels: ['クオーツ', '自動巻', 'ソーラー', '手巻き', 'デジタル', 'スマートウォッチ'],
-            values: [1013, 530, 139, 56, 7, 2],
+            labels: ['自動巻', 'クオーツ', 'ソーラー', '手巻き', 'デジタル', 'スマートウォッチ'],
+            values: [2170, 1869, 294, 64, 11, 2],
             type: 'pie',
             marker: {colors: seikoGradient},
             textinfo: 'label+percent',
@@ -3587,7 +3587,7 @@
 
         Plotly.newPlot('seiko_gender_chart', [{
             labels: ['メンズ', 'レディース', 'ユニセックス', 'ボーイズ/キッズ'],
-            values: [1471, 69, 23, 6],
+            values: [4661, 133, 26, 6],
             type: 'pie',
             marker: {colors: [seikoBlue, seikoOrange, '#66b3ff', '#ffa366', '#99ccff']},
             textinfo: 'label+percent',

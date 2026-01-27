@@ -267,28 +267,28 @@ strategy_html = '''
 '''
 
 # 3-5. グラフエリア（価格帯・駆動方式・性別）
+# 価格帯分布を元CSVから正確に計算
 price_bins = list(range(0, 651, 50))
-price_distribution = {f'${i}-{i+50}': 0 for i in price_bins[:-1]}
+bin_labels = [f'${i}-{i+50}' for i in price_bins[:-1]]
 
-for model in all_models:
-    price = model['median']
-    for i in range(len(price_bins) - 1):
-        if price_bins[i] <= price < price_bins[i+1]:
-            price_distribution[f'${price_bins[i]}-{price_bins[i+1]}'] += model['count']
-            break
+price_distribution = {}
+for i in range(len(price_bins) - 1):
+    mask = (df_seiko['価格'] >= price_bins[i]) & (df_seiko['価格'] < price_bins[i+1])
+    count = df_seiko[mask]['販売数'].sum()
+    price_distribution[bin_labels[i]] = int(count)
 
 price_labels = list(price_distribution.keys())
 price_values = list(price_distribution.values())
 
-movement_dist = seiko_brand.get('movement_distribution', {})
-sorted_movements = sorted(movement_dist.items(), key=lambda x: x[1], reverse=True)
-movement_labels = [m[0] for m in sorted_movements if m[0] != '不明']
-movement_values = [m[1] for m in sorted_movements if m[0] != '不明']
+# 駆動方式分布を元CSVから計算
+movement_dist_real = df_seiko.groupby('駆動方式')['販売数'].sum().sort_values(ascending=False)
+movement_labels = [mv for mv in movement_dist_real.index if mv != '不明']
+movement_values = [int(movement_dist_real[mv]) for mv in movement_labels]
 
-department_dist = seiko_brand.get('department_distribution', {})
-sorted_depts = sorted(department_dist.items(), key=lambda x: x[1], reverse=True)
-dept_labels = [d[0] for d in sorted_depts if d[0] != '不明']
-dept_values = [d[1] for d in sorted_depts if d[0] != '不明']
+# 性別分布を元CSVから計算
+dept_dist_real = df_seiko.groupby('デパートメント')['販売数'].sum().sort_values(ascending=False)
+dept_labels = [dept for dept in dept_dist_real.index if dept != '不明']
+dept_values = [int(dept_dist_real[dept]) for dept in dept_labels]
 
 graphs_html = f'''
         <h3 class="section-title seiko-blue">📊 市場分析グラフ</h3>
