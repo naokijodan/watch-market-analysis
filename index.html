@@ -1649,6 +1649,12 @@
     color: #0051a5;
 }
 
+.model-sample {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+}
+
 @media (max-width: 768px) {
     .seiko-grid {
         grid-template-columns: 1fr;
@@ -1687,7 +1693,7 @@
                         <li><strong class="seiko-accent">JDM表記</strong>の国内限定モデル（<span class="seiko-accent">+23.6%</span>プレミアム）</li>
                         <li>型番が<strong>明確に記載</strong>されている商品</li>
                         <li><strong class="seiko-accent">箱・保証書付き</strong>（<span class="seiko-accent">+10.0%</span>プレミアム）</li>
-                        <li>人気ライン：<strong>Prospex, Presage, Grand Seiko</strong></li>
+                        <li>人気ライン：<strong>Prospex, Presage, Grand Seiko, Spirit</strong></li>
                     </ul>
                 </div>
                 <div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 4px solid #ff6b35;">
@@ -1696,6 +1702,7 @@
                         <li>ヴィンテージのみを理由にした高値仕入れ（<span style="color: #d32f2f;">-4.8%</span>逆プレミアム）</li>
                         <li>海外輸出用モデル（JDMではない）</li>
                         <li>箱なし・状態不明品</li>
+                        <li>「その他SEIKO」で型番不明の商品</li>
                     </ul>
                 </div>
                 <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #7b1fa2;">
@@ -1722,7 +1729,7 @@
             </div>
         </div>
 
-        <h3 class="section-title seiko-blue">🔵 ライン別詳細分析</h3>
+        <h3 class="section-title seiko-blue">🔵 ライン別詳細分析（全{ライン数}ライン）</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -1852,8 +1859,10 @@
                 </tbody>
             </table>
         </div>
-<h3 class="section-title seiko-blue">📌 各ラインの人気モデル</h3>
-        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">その他SEIKO</h4>
+<h3 class="section-title seiko-blue">📌 各ラインの人気モデル（実データより）</h3><p style="color: #666; margin-bottom: 20px;">元CSVデータから再分類した正確な人気モデルTop5</p>
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            その他SEIKO <span style="font-size: 0.9em; color: #666;">（販売数: 2,192個）</span>
+        </h4>
         <div class="table-container">
             <table>
                 <thead>
@@ -1863,6 +1872,7 @@
                         <th>販売数</th>
                         <th>中央値</th>
                         <th>CV値</th>
+                        <th>商品例</th>
                         <th>検索</th>
                     </tr>
                 </thead>
@@ -1870,22 +1880,446 @@
     
                     <tr>
                         <td><strong class="seiko-accent">1</strong></td>
-                        <td>5740-8000</td>
-                        <td>10</td>
-                        <td>$360</td>
-                        <td>0.204</td>
+                        <td><strong>SMW006A</strong></td>
+                        <td>415</td>
+                        <td>$230</td>
+                        <td>0.064</td>
+                        <td class="model-sample">SEIKO Metronome Watch Standard Line Color Monotone SMW006A N</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5740-8000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205740-8000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SMW006A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SMW006A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                         </td>
                     </tr>
         
                     <tr>
                         <td><strong class="seiko-accent">2</strong></td>
-                        <td>7731-5120</td>
+                        <td><strong>SND367PC</strong></td>
+                        <td>160</td>
+                        <td>$112</td>
+                        <td>0.085</td>
+                        <td class="model-sample">SEIKO Chronograph SND367PC Men's Watch Black Silver NEW in B</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SND367PC&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SND367PC&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>SARV001</strong></td>
+                        <td>52</td>
+                        <td>$153</td>
+                        <td>0.059</td>
+                        <td class="model-sample">Seiko Mechanical SARV001 Automatic Stainless Steel Men Watch</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SARV001&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SARV001&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>SMW001A</strong></td>
+                        <td>50</td>
+                        <td>$225</td>
+                        <td>0.087</td>
+                        <td class="model-sample">SEIKO Metronome Watch Standard Line Color Dark Brown SMW001A</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SMW001A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SMW001A&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>SBTQ045</strong></td>
+                        <td>48</td>
+                        <td>$107</td>
+                        <td>0.032</td>
+                        <td class="model-sample">SEIKO Chronograph RED SBTQ045 Quartz Watch in</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBTQ045&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBTQ045&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            SEIKO 5 <span style="font-size: 0.9em; color: #666;">（販売数: 1,494個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>SBSC009</strong></td>
+                        <td>208</td>
+                        <td>$394</td>
+                        <td>0.029</td>
+                        <td class="model-sample">SEIKO 5 SPORTS Field Sports GMT SBSC009 Automatic Men's watc</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBSC009&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBSC009&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>7009-3040</strong></td>
+                        <td>18</td>
+                        <td>$62</td>
+                        <td>0.967</td>
+                        <td class="model-sample">SEIKO 5 Genuine Stainless Steel Watch Band 19mm B1497S for 7</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7009-3040&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207009-3040&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>SBSA321</strong></td>
+                        <td>16</td>
+                        <td>$650</td>
+                        <td>0.064</td>
+                        <td class="model-sample">PSL Seiko 5 Sports SBSA321 Pink Panther Limited Edition Mens</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBSA321&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBSA321&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>SNK355KC</strong></td>
+                        <td>9</td>
+                        <td>$62</td>
+                        <td>0.000</td>
+                        <td class="model-sample">SEIKO 5 Genuine Stainless Steel Watch Band 18mm 3246JZ for S</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SNK355KC&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SNK355KC&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>7009-3110</strong></td>
+                        <td>8</td>
+                        <td>$224</td>
+                        <td>0.357</td>
+                        <td class="model-sample">Vintage SEIKO 5 7009-3110 Day Date Silver Automatic Watch Fr</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7009-3110&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207009-3110&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Spirit <span style="font-size: 0.9em; color: #666;">（販売数: 1,404個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>SBTR027</strong></td>
+                        <td>225</td>
+                        <td>$150</td>
+                        <td>0.162</td>
+                        <td class="model-sample">SEIKO Spirit SBTR027 Blue Gray Stainless Chronograph Men`s W</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBTR027&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBTR027&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>SBTQ071</strong></td>
+                        <td>224</td>
+                        <td>$108</td>
+                        <td>0.121</td>
+                        <td class="model-sample">SEIKO SPIRIT SBTQ071 Blue Silver Chronograph Men's Watch New</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBTQ071&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBTQ071&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>SBTQ045</strong></td>
+                        <td>157</td>
+                        <td>$111</td>
+                        <td>0.058</td>
+                        <td class="model-sample">SEIKO SPIRIT SBTQ045 Chronograph Men's Watch Dial Color Red </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBTQ045&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBTQ045&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>SBTR017</strong></td>
+                        <td>149</td>
+                        <td>$166</td>
+                        <td>0.078</td>
+                        <td class="model-sample">SEIKO SPIRIT SBTR017  Quartz hardlex Green Brown seiko selec</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBTR017&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBTR017&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>SCVE053</strong></td>
+                        <td>92</td>
+                        <td>$171</td>
+                        <td>0.141</td>
+                        <td class="model-sample">SEIKO Selection SCVE053 Black Mechanical Automatic Men's Wat</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SCVE053&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SCVE053&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Selection <span style="font-size: 0.9em; color: #666;">（販売数: 394個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>SBTQ071</strong></td>
+                        <td>118</td>
+                        <td>$106</td>
+                        <td>0.134</td>
+                        <td class="model-sample">Seiko SBTQ071 Selection Chronograph Quartz Silver Blue From </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBTQ071&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBTQ071&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>SARV001</strong></td>
+                        <td>66</td>
+                        <td>$158</td>
+                        <td>0.051</td>
+                        <td class="model-sample">SEIKO Selection SARV001 Automatic Mechanical 42mm Men's Watc</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SARV001&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SARV001&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>SBTR017</strong></td>
+                        <td>35</td>
+                        <td>$150</td>
+                        <td>0.126</td>
+                        <td class="model-sample">Seiko Selection SBTR017 Green Gold Dial Chronograph Quartz W</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBTR017&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBTR017&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>SBTM323</strong></td>
+                        <td>28</td>
+                        <td>$286</td>
+                        <td>0.000</td>
+                        <td class="model-sample">SEIKO Selection SBTM323 Black Solar Atomic Radio Men's Watch</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBTM323&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBTM323&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>SBTR026</strong></td>
+                        <td>21</td>
+                        <td>$147</td>
+                        <td>0.022</td>
+                        <td class="model-sample">SEIKO Seiko Selection SBTR026 Gray Chronograph Men's Watch N</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBTR026&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBTR026&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Presage <span style="font-size: 0.9em; color: #666;">（販売数: 267個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>SARY187</strong></td>
+                        <td>54</td>
+                        <td>$411</td>
+                        <td>0.068</td>
+                        <td class="model-sample">SEIKO PRESAGE SARY187 Japanese garden Automatic Men's Watch </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SARY187&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SARY187&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>SARY095</strong></td>
+                        <td>32</td>
+                        <td>$350</td>
+                        <td>0.144</td>
+                        <td class="model-sample">SEIKO PRESAGE BASIC SARY095 White Automatic Mechanical Men's</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SARY095&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SARY095&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>SARY238</strong></td>
+                        <td>23</td>
+                        <td>$435</td>
+                        <td>0.110</td>
+                        <td class="model-sample">SEIKO Presage SARY238 Japanese Garden Automatic Mechanical E</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SARY238&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SARY238&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>SARY132</strong></td>
+                        <td>8</td>
+                        <td>$460</td>
+                        <td>0.077</td>
+                        <td class="model-sample">SEIKO PRESAGE Basic Line SARY132 Automatic Mechanical men Wa</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SARY132&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SARY132&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>SARY161</strong></td>
+                        <td>8</td>
+                        <td>$296</td>
+                        <td>0.017</td>
+                        <td class="model-sample">SEIKO PRESAGE BASIC SARY161 Ice Blue Skydiving Automatic Men</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SARY161&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SARY161&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Dolce <span style="font-size: 0.9em; color: #666;">（販売数: 249個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>7731-5120</strong></td>
                         <td>10</td>
                         <td>$130</td>
                         <td>0.201</td>
+                        <td class="model-sample">▶️New Belt 【N MINT】 Vintage SEIKO Dolce 7731-5120 Gold Quart</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7731-5120&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <a href="https://jp.mercari.com/search?keyword=SEIKO%207731-5120&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
@@ -1893,11 +2327,12 @@
                     </tr>
         
                     <tr>
-                        <td><strong class="seiko-accent">3</strong></td>
-                        <td>9521-5210</td>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>9521-5210</strong></td>
                         <td>10</td>
                         <td>$195</td>
                         <td>0.082</td>
+                        <td class="model-sample">[Exc+5] SEIKO Dolce 9521-5210 Mens Vintage Watch 2P Diamond </td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+9521-5210&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <a href="https://jp.mercari.com/search?keyword=SEIKO%209521-5210&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
@@ -1905,26 +2340,929 @@
                     </tr>
         
                     <tr>
-                        <td><strong class="seiko-accent">4</strong></td>
-                        <td>7009-3110</td>
-                        <td>8</td>
-                        <td>$224</td>
-                        <td>0.357</td>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>7731-5110</strong></td>
+                        <td>6</td>
+                        <td>$168</td>
+                        <td>0.242</td>
+                        <td class="model-sample">▶️[Near MINT] Seiko Dolce 7731-5110 Vintage 1984 Gold Tank Q</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7009-3110&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207009-3110&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7731-5110&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207731-5110&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>7730-5020</strong></td>
+                        <td>5</td>
+                        <td>$140</td>
+                        <td>0.280</td>
+                        <td class="model-sample">[Near MINT] SEIKO Dolce 7730-5020 25mm Gold Dial Tank Quartz</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7730-5020&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207730-5020&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                         </td>
                     </tr>
         
                     <tr>
                         <td><strong class="seiko-accent">5</strong></td>
-                        <td>5606-7000</td>
+                        <td><strong>7741-5130</strong></td>
+                        <td>5</td>
+                        <td>$220</td>
+                        <td>0.104</td>
+                        <td class="model-sample">[Excellent] Vintage SEIKO DOLCE 7741-5130 Gold Rectangle Qua</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+7741-5130&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%207741-5130&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            ALBA <span style="font-size: 0.9em; color: #666;">（販売数: 210個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>ACCK411</strong></td>
+                        <td>63</td>
+                        <td>$67</td>
+                        <td>0.092</td>
+                        <td class="model-sample">Seiko ALBA Studio Ghibli Collabo Model Kiki's Delivery Servi</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+ACCK411&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20ACCK411&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>ACCK406</strong></td>
+                        <td>25</td>
+                        <td>$56</td>
+                        <td>0.293</td>
+                        <td class="model-sample">ALBA SEIKO Studio Ghibli Watch My Neighbor Totoro Japan ACCK</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+ACCK406&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20ACCK406&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>AQPJ401</strong></td>
+                        <td>25</td>
+                        <td>$76</td>
+                        <td>0.098</td>
+                        <td class="model-sample">SEIKO ALBA AQPJ401 Titanium Analog Quartz Watch Cream Dial 3</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+AQPJ401&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20AQPJ401&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>AQPJ402</strong></td>
+                        <td>23</td>
+                        <td>$72</td>
+                        <td>0.091</td>
+                        <td class="model-sample">Brand New Seiko Alba AQPJ402 Quartz Titanium Sport Watch 10A</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+AQPJ402&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20AQPJ402&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>ACCK402</strong></td>
+                        <td>3</td>
+                        <td>$62</td>
+                        <td>0.134</td>
+                        <td class="model-sample">ALBA Seiko Ghibli Collaboration Totoro ACCK402 Watch Studio </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+ACCK402&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20ACCK402&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Prospex <span style="font-size: 0.9em; color: #666;">（販売数: 197個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>SBEJ005</strong></td>
+                        <td>23</td>
+                        <td>$851</td>
+                        <td>0.051</td>
+                        <td class="model-sample">Seiko Prospex Alpinist SBEJ005 Mechanical GMT Leather band M</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBEJ005&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBEJ005&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>SBDC171</strong></td>
+                        <td>10</td>
+                        <td>$822</td>
+                        <td>0.000</td>
+                        <td class="model-sample">SEIKO Prospex SBDC171 SPB313J1 Diver Scuba Automatic Men's W</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBDC171&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBDC171&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>SBDL085</strong></td>
+                        <td>10</td>
+                        <td>$412</td>
+                        <td>0.134</td>
+                        <td class="model-sample">SEIKO PROSPEX SPEEDTIMER SBDL085 White Solar Chronograph Men</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBDL085&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBDL085&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>SBDC105</strong></td>
+                        <td>6</td>
+                        <td>$93</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Seiko Prospex Genuine Watch Band 20mm Black R03E011J0 for SB</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBDC105&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBDC105&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>SBDL095</strong></td>
+                        <td>6</td>
+                        <td>$494</td>
+                        <td>0.094</td>
+                        <td class="model-sample">Seiko Prospex Speedtimer Solar V192-0AH0 SBDL095 Mens Watch </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBDL095&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBDL095&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Astron <span style="font-size: 0.9em; color: #666;">（販売数: 168個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>SSEH002</strong></td>
+                        <td>83</td>
+                        <td>$188</td>
+                        <td>0.042</td>
+                        <td class="model-sample">Seiko Watch SSEH002 Seiko Selection nano universe Collaborat</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SSEH002&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SSEH002&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>SSEH001</strong></td>
+                        <td>16</td>
+                        <td>$202</td>
+                        <td>0.060</td>
+                        <td class="model-sample">SEIKO Selection nano universe Collaboration SSEH001 Ladies Q</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SSEH001&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SSEH001&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>SSEH004</strong></td>
                         <td>8</td>
-                        <td>$333</td>
-                        <td>0.240</td>
+                        <td>$198</td>
+                        <td>0.033</td>
+                        <td class="model-sample">SEIKO Selection nano universe Collaboration SSEH004 Ladies Q</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SSEH004&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SSEH004&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>SSEH006</strong></td>
+                        <td>4</td>
+                        <td>$196</td>
+                        <td>0.048</td>
+                        <td class="model-sample">SEIKO Selection nano・universe collaboration SSEH006 White Wo</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SSEH006&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SSEH006&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>SBXB007</strong></td>
+                        <td>2</td>
+                        <td>$765</td>
+                        <td>0.135</td>
+                        <td class="model-sample">[N MINT] 1 DAY SHIP Seiko Astron SBXB007 GPS Solar 8X82-0AB0</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBXB007&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBXB007&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Grand Seiko <span style="font-size: 0.9em; color: #666;">（販売数: 104個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>5646-7010</strong></td>
+                        <td>4</td>
+                        <td>$840</td>
+                        <td>0.334</td>
+                        <td class="model-sample">Serviced  Vintage 1973 JAPAN GRAND SEIKO WEEKDATER 5646-7010</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5646-7010&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205646-7010&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>9581-7000</strong></td>
+                        <td>4</td>
+                        <td>$546</td>
+                        <td>0.227</td>
+                        <td class="model-sample">[Near MINT] Grand Seiko 9581-7000 GS Quartz Silver Dial New </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+9581-7000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%209581-7000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>SBGT001</strong></td>
+                        <td>3</td>
+                        <td>$1000</td>
+                        <td>0.121</td>
+                        <td class="model-sample">[MINT w/Box] Grand Seiko 9F83-9A00 GS SBGT001 Day Date Quart</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBGT001&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBGT001&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>SBGW267G</strong></td>
+                        <td>3</td>
+                        <td>$262</td>
+                        <td>0.000</td>
+                        <td class="model-sample">GRAND SEIKO Genuine Watch Leather Band 19mm Brown C03W011J0 </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SBGW267G&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SBGW267G&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>4520-8000</strong></td>
+                        <td>2</td>
+                        <td>$1455</td>
+                        <td>0.442</td>
+                        <td class="model-sample">Vintage[Exc+5] Grand Seiko 4520-8000 HI-BEAT Gold Hand-windi</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+4520-8000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%204520-8000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Credor <span style="font-size: 0.9em; color: #666;">（販売数: 93個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>6730-5330</strong></td>
+                        <td>4</td>
+                        <td>$195</td>
+                        <td>0.158</td>
+                        <td class="model-sample">[New Battery]Seiko Credor 6730-5330 Quartz Watch Blue Black </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+6730-5330&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%206730-5330&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>8420-5370</strong></td>
+                        <td>3</td>
+                        <td>$170</td>
+                        <td>0.101</td>
+                        <td class="model-sample">Vtg 1982 [Near MINT] Seiko Credor 8420-5370 Gold 24mm Quartz</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+8420-5370&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%208420-5370&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>9571-6000</strong></td>
+                        <td>3</td>
+                        <td>$169</td>
+                        <td>0.118</td>
+                        <td class="model-sample">1993 [Near MINT] SEIKO Credor Signo 9571-6000 Silver Quartz </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+9571-6000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%209571-6000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>1271-5030</strong></td>
+                        <td>2</td>
+                        <td>$124</td>
+                        <td>0.068</td>
+                        <td class="model-sample">[Near MINT]  Vintage SEIKO CREDOR 1271-5030 Silver Dial Wome</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+1271-5030&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%201271-5030&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>8420-5360</strong></td>
+                        <td>2</td>
+                        <td>$315</td>
+                        <td>0.067</td>
+                        <td class="model-sample">[Near MINT] Vintage SEIKO CREDOR 8420-5360 Gold 18K 14K Quar</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+8420-5360&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%208420-5360&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            King Seiko <span style="font-size: 0.9em; color: #666;">（販売数: 56個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>5625-7000</strong></td>
+                        <td>8</td>
+                        <td>$400</td>
+                        <td>0.197</td>
+                        <td class="model-sample">1970 King Seiko Hi-Beat 5625-7000 Automatic Men's Watch Vint</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5625-7000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205625-7000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>5626-7000</strong></td>
+                        <td>4</td>
+                        <td>$732</td>
+                        <td>0.243</td>
+                        <td class="model-sample">Serviced Vintage 1969 JAPAN KING SEIKO CALENDAR 5626-7000 25</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5626-7000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205626-7000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>4402-8000</strong></td>
+                        <td>3</td>
+                        <td>$752</td>
+                        <td>0.395</td>
+                        <td class="model-sample">▶️ Vintage[Exc+4 w/Box] KING SEIKO 4402-8000 Hand-Winding Me</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+4402-8000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%204402-8000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>5626-7110</strong></td>
+                        <td>3</td>
+                        <td>$601</td>
+                        <td>0.088</td>
+                        <td class="model-sample">Vintage 1971 [Near MINT OH] King Seiko Hi-Beat 56KS 5626-711</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5626-7110&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205626-7110&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>5621-7000</strong></td>
+                        <td>2</td>
+                        <td>$446</td>
+                        <td>0.209</td>
+                        <td class="model-sample">Vintage 1971 King Seiko KS HI-BEAT 5621-7000 Black Dial Auto</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5621-7000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205621-7000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Lord Matic <span style="font-size: 0.9em; color: #666;">（販売数: 54個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>5606-7000</strong></td>
+                        <td>6</td>
+                        <td>$354</td>
+                        <td>0.251</td>
+                        <td class="model-sample">[N MINT] Vintage SEIKO Lord Matic 5606-7000 Day/Date Automat</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5606-7000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <a href="https://jp.mercari.com/search?keyword=SEIKO%205606-7000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>5606-7040</strong></td>
+                        <td>4</td>
+                        <td>$198</td>
+                        <td>0.493</td>
+                        <td class="model-sample">CLA’d 1968y [ EXC+5 ] Vintage SEIKO Lord Matic 5606-7040 LM </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5606-7040&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205606-7040&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>5606-7010</strong></td>
+                        <td>3</td>
+                        <td>$140</td>
+                        <td>0.523</td>
+                        <td class="model-sample">[EXCELLENT+5] Seiko Lord Matic 5606-7010 Line Dial Silver Au</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5606-7010&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205606-7010&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>5206-6100</strong></td>
+                        <td>2</td>
+                        <td>$325</td>
+                        <td>0.022</td>
+                        <td class="model-sample">[Near MINT] SEIKO LORD MATIC 5206-6100 Blue Automatic Men's </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5206-6100&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205206-6100&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">5</strong></td>
+                        <td><strong>5216-6050</strong></td>
+                        <td>2</td>
+                        <td>$320</td>
+                        <td>0.265</td>
+                        <td class="model-sample">Vintage 1973 [N MINT] Seiko Lord Matic Special 5216-6050 At </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5216-6050&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205216-6050&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Exceline <span style="font-size: 0.9em; color: #666;">（販売数: 45個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>1221-5080</strong></td>
+                        <td>3</td>
+                        <td>$100</td>
+                        <td>0.100</td>
+                        <td class="model-sample">Vintage 1982 [N MINT] SEIKO Exceline 1221-5080 Gold Quartz W</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+1221-5080&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%201221-5080&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>1221-0100</strong></td>
+                        <td>2</td>
+                        <td>$142</td>
+                        <td>0.124</td>
+                        <td class="model-sample">Vintage 1997 N MINT Seiko Exceline 1221-0100 Gold Qz 27mm Wo</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+1221-0100&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%201221-0100&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>1221-5010</strong></td>
+                        <td>2</td>
+                        <td>$115</td>
+                        <td>0.185</td>
+                        <td class="model-sample">Vintage 1983 [Near MINT] SEIKO EXCELINE 1221-5010 20mm Women</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+1221-5010&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%201221-5010&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">4</strong></td>
+                        <td><strong>1221-5770</strong></td>
+                        <td>2</td>
+                        <td>$132</td>
+                        <td>0.032</td>
+                        <td class="model-sample">[EXC+5] SEIKO EXCELINE 1221-5770 Gold Tank Quartz Womens Vin</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+1221-5770&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%201221-5770&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            キャラクターウォッチ <span style="font-size: 0.9em; color: #666;">（販売数: 40個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>AGAK714</strong></td>
+                        <td>3</td>
+                        <td>$143</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Seiko Watch Tokyo Revengers Collaboration Model AGAK714 Men'</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+AGAK714&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20AGAK714&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>5000-8000</strong></td>
+                        <td>2</td>
+                        <td>$188</td>
+                        <td>0.663</td>
+                        <td class="model-sample">Vintage SEIKO Cheshire Cat Disney Manual Wind Watch 5000-800</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5000-8000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205000-8000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Chariot <span style="font-size: 0.9em; color: #666;">（販売数: 28個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>2220-0430</strong></td>
+                        <td>4</td>
+                        <td>$213</td>
+                        <td>0.277</td>
+                        <td class="model-sample">[Exc+5] Vintage Seiko Chariot 2220-0430 36mm SNOWFLAKE Hand </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+2220-0430&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%202220-0430&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>2220-0180</strong></td>
+                        <td>3</td>
+                        <td>$142</td>
+                        <td>0.207</td>
+                        <td class="model-sample">SEIKO CHARIOT 2220-0180 men with manual winding Gold Dial Wa</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+2220-0180&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%202220-0180&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>5930-5460</strong></td>
+                        <td>2</td>
+                        <td>$132</td>
+                        <td>0.400</td>
+                        <td class="model-sample">Vintage 1982 SEIKO Chariot 5930-5460 Gold Tank Men's Quartz </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5930-5460&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205930-5460&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Lukia <span style="font-size: 0.9em; color: #666;">（販売数: 15個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>SSVR141</strong></td>
+                        <td>2</td>
+                        <td>$282</td>
+                        <td>0.000</td>
+                        <td class="model-sample">SEIKO LUKIA SSVR141 Black Solar Women's Watch New in Box</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SSVR141&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SSVR141&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">2</strong></td>
+                        <td><strong>SSVW212</strong></td>
+                        <td>2</td>
+                        <td>$413</td>
+                        <td>0.000</td>
+                        <td class="model-sample">SEIKO LUKIA Grow SSVW212 White square leather belt Women's W</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SSVW212&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SSVW212&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong class="seiko-accent">3</strong></td>
+                        <td><strong>SSWA008</strong></td>
+                        <td>2</td>
+                        <td>$350</td>
+                        <td>0.000</td>
+                        <td class="model-sample">Seiko LUKIA SSWA008 Grow Series Elegant Gold Case Sapphire G</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+SSWA008&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%20SSWA008&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    
+        <h4 style="color: #0051a5; margin-top: 25px; border-bottom: 2px solid #0051a5; padding-bottom: 5px;">
+            Lord Marvel <span style="font-size: 0.9em; color: #666;">（販売数: 12個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong class="seiko-accent">1</strong></td>
+                        <td><strong>5740-8000</strong></td>
+                        <td>9</td>
+                        <td>$370</td>
+                        <td>0.183</td>
+                        <td class="model-sample">Vintage 1975 [Exc+5] Seiko Lord Marvel 36000 5740-8000 Gold </td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+5740-8000&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://jp.mercari.com/search?keyword=SEIKO%205740-8000&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                         </td>
                     </tr>
         
@@ -2214,12 +3552,10 @@
     </div>
 
         <script>
-        // SEIKOブランドカラー定義
         const seikoBlue = '#0051a5';
         const seikoOrange = '#ff6b35';
         const seikoGradient = ['#0051a5', '#0066cc', '#0080ff', '#3399ff', '#66b3ff'];
 
-        // 価格帯棒グラフ
         Plotly.newPlot('seiko_price_chart', [{
             x: ['$0-50', '$50-100', '$100-150', '$150-200', '$200-250', '$250-300', '$300-350', '$350-400', '$400-450', '$450-500', '$500-550', '$550-600', '$600-650'],
             y: [0, 0, 24, 41, 17, 0, 8, 22, 0, 0, 4, 0, 0],
@@ -2237,7 +3573,6 @@
             paper_bgcolor: 'white'
         }, {responsive: true});
 
-        // 駆動方式円グラフ
         Plotly.newPlot('seiko_movement_chart', [{
             labels: ['クオーツ', '自動巻', 'ソーラー', '手巻き', 'デジタル', 'スマートウォッチ'],
             values: [1013, 530, 139, 56, 7, 2],
@@ -2250,7 +3585,6 @@
             paper_bgcolor: 'white'
         }, {responsive: true});
 
-        // 性別円グラフ
         Plotly.newPlot('seiko_gender_chart', [{
             labels: ['メンズ', 'レディース', 'ユニセックス', 'ボーイズ/キッズ'],
             values: [1471, 69, 23, 6],
