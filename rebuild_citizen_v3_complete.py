@@ -187,16 +187,24 @@ df_citizen['ライン'] = df_citizen['タイトル_upper'].apply(classify_citize
 CHARACTER_KEYWORDS = [
     # コラボ一般
     'COLLABORATION', 'COLLAB',
-    # 企業コラボ
-    'ANA ', ' ANA', 'HONDA', 'TOYOTA', 'NISSAN',
-    'MARVEL', 'STAR WARS',
+    # 企業コラボ（最重要）
+    ' ANA ', 'ANA-', 'ANA ORIGINAL', 'ANA COCKPIT',  # ANA関連（198個！）- スペース前後でマッチ
+    'HONDA', 'TOYOTA', 'NISSAN', 'MAZDA',
+    'BLUE ANGELS',  # Promaster限定
     # キャラクター
     'DISNEY', 'MICKEY', 'MINNIE',
-    'HELLO KITTY', 'KITTY',
-    'SNOOPY', 'PEANUTS',
-    # アニメ
-    'ONE PIECE', 'NARUTO', 'EVANGELION', 'EVA',
+    'HELLO KITTY', 'KITTY', 'SANRIO',
+    'SNOOPY', 'PEANUTS', 'WOODSTOCK',
+    # アニメ・ゲーム
+    'FINAL FANTASY', 'FFXIV', 'FF14',
     'GUNDAM',
+    'EVANGELION', ' EVA ',
+    'ONE PIECE', 'NARUTO',
+    ' 86 ', 'EIGHTY SIX', '86 COLLABORATION',  # アニメ86
+    # その他
+    'MARVEL', 'STAR WARS',
+    # 限定モデル（幅広く検出）
+    'LIMITED EDITION', 'SPECIAL EDITION', 'EXCLUSIVE',
 ]
 
 def is_character_collab(title_upper):
@@ -458,11 +466,20 @@ character_median = character_data['価格'].median() if len(character_data) > 0 
 # キャラクター別集計
 character_breakdown = {}
 char_keywords_display = {
-    'ANA': 'ANA（全日空）',
+    'ANA': 'ANA（全日空コラボ）',
     'HONDA': 'ホンダ',
-    'MARVEL': 'マーベル',
-    'STAR WARS': 'スターウォーズ',
+    'BLUE ANGELS': 'Blue Angels',
+    'SNOOPY': 'スヌーピー',
+    'PEANUTS': 'ピーナッツ',
+    'DISNEY': 'ディズニー',
     'HELLO KITTY': 'ハローキティ',
+    'FINAL FANTASY': 'ファイナルファンタジー',
+    '86': '86（アニメ）',
+    'GUNDAM': 'ガンダム',
+    'EVANGELION': 'エヴァンゲリオン',
+    'STAR WARS': 'スターウォーズ',
+    'TOYOTA': 'トヨタ',
+    'NISSAN': '日産',
 }
 
 for kw_en, kw_jp in char_keywords_display.items():
