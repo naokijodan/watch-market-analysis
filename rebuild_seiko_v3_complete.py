@@ -623,7 +623,8 @@ new_seiko_tab = (
 )
 
 # 既存のSEIKOタブを置換
-pattern = r'<div id="SEIKO" class="tab-content">.*?</div>\s*(?=<div id="|</div>\s*<script>)'
+# SEIKOタブの開始から、次のタブ（CASIO/CITIZEN）または閉じタグの直前まで
+pattern = r'<div id="SEIKO" class="tab-content">.*?</div>(?=\s*<div id="(?:CASIO|CITIZEN)")'
 html = re.sub(pattern, new_seiko_tab, html, flags=re.DOTALL, count=1)
 
 # 保存

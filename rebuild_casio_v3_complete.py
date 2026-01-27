@@ -665,7 +665,8 @@ new_casio_tab = (
 )
 
 # 既存のCASIOタブを置換
-pattern = r'<div id="CASIO" class="tab-content">.*?</div>\s*(?=<div id="|</div>\s*<script>)'
+# CASIOタブの開始から、次のタブ（CITIZEN）または閉じタグの直前まで
+pattern = r'<div id="CASIO" class="tab-content">.*?</div>(?=\s*<div id="CITIZEN")'
 html = re.sub(pattern, new_casio_tab, html, flags=re.DOTALL, count=1)
 
 # 保存
