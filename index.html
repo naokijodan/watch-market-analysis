@@ -1333,6 +1333,15 @@
         document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
         document.getElementById(tabId).classList.add('active');
         event.target.classList.add('active');
+
+        // OMEGAタブが表示されたときにグラフをリサイズ
+        if (tabId === 'OMEGA') {
+            setTimeout(() => {
+                if (window.omegaCharts) {
+                    window.omegaCharts.forEach(chart => chart.resize());
+                }
+            }, 100);
+        }
     }
 
     // おすすめモード切替
@@ -17626,95 +17635,10 @@
 </div>
 
 
-
-<script>
-// OMEGA 価格帯別分布
-new Chart(document.getElementById('omegaPriceDistChart'), {
-    type: 'bar',
-    data: {
-        labels: ["~$200", "$200-500", "$500-1K", "$1K-2K", "$2K~"],
-        datasets: [{
-            label: '商品数',
-            data: [66, 243, 149, 97, 126],
-            backgroundColor: 'rgba(102, 126, 234, 0.8)'
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            title: { display: true, text: 'OMEGA 価格帯別分布' }
-        }
-    }
-});
-
-// OMEGA ライン別分布
-new Chart(document.getElementById('omegaLineDistChart'), {
-    type: 'pie',
-    data: {
-        labels: ["De Ville", "Seamaster", "Speedmaster", "\u305d\u306e\u4ed6OMEGA", "Constellation", "Geneve"],
-        datasets: [{
-            data: [231, 211, 83, 64, 48, 44],
-            backgroundColor: [
-                'rgba(102, 126, 234, 0.8)',
-                'rgba(118, 75, 162, 0.8)',
-                'rgba(255, 99, 132, 0.8)',
-                'rgba(255, 159, 64, 0.8)',
-                'rgba(255, 205, 86, 0.8)',
-                'rgba(75, 192, 192, 0.8)',
-                'rgba(54, 162, 235, 0.8)',
-                'rgba(153, 102, 255, 0.8)'
-            ]
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            title: { display: true, text: 'OMEGA ライン別分布' }
-        }
-    }
-});
-
-// OMEGA 特徴別分布
-new Chart(document.getElementById('omegaFeatureDistChart'), {
-    type: 'bar',
-    data: {
-        labels: ["Vintage", "Gold", "Chronograph", "Co-Axial", "Chronometer", "Limited"],
-        datasets: [{
-            label: '商品数',
-            data: [307, 182, 59, 19, 19, 9],
-            backgroundColor: 'rgba(118, 75, 162, 0.8)'
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            title: { display: true, text: 'OMEGA 特徴別分布' }
-        }
-    }
-});
-
-// OMEGA Top7ライン売上
-new Chart(document.getElementById('omegaTopLinesChart'), {
-    type: 'bar',
-    data: {
-        labels: ["De Ville", "Seamaster", "Speedmaster", "\u305d\u306e\u4ed6OMEGA", "Constellation", "Geneve"],
-        datasets: [{
-            label: '販売数',
-            data: [232, 211, 85, 629, 48, 44],
-            backgroundColor: 'rgba(102, 126, 234, 0.8)'
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            title: { display: true, text: 'OMEGA Top7ライン販売数' }
-        }
-    }
-});
-</script>
-
-
 </div>
+
+
+
 
 
 <div id="OMEGA" class="tab-content">
@@ -20633,6 +20557,101 @@ new Chart(document.getElementById('omegaTopLinesChart'), {
         });
     </script>
 
+
+
+
+<script>
+// OMEGA グラフを初期化（グローバル配列に保存）
+window.omegaCharts = window.omegaCharts || [];
+
+// OMEGA 価格帯別分布
+window.omegaCharts.push(new Chart(document.getElementById('omegaPriceDistChart'), {
+    type: 'bar',
+    data: {
+        labels: ["~$200", "$200-500", "$500-1K", "$1K-2K", "$2K~"],
+        datasets: [{
+            label: '商品数',
+            data: [66, 243, 149, 97, 126],
+            backgroundColor: 'rgba(102, 126, 234, 0.8)'
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+            title: { display: true, text: 'OMEGA 価格帯別分布' }
+        }
+    }
+}));
+
+// OMEGA ライン別分布
+window.omegaCharts.push(new Chart(document.getElementById('omegaLineDistChart'), {
+    type: 'pie',
+    data: {
+        labels: ["De Ville", "Seamaster", "Speedmaster", "その他OMEGA", "Constellation", "Geneve"],
+        datasets: [{
+            data: [231, 211, 83, 64, 48, 44],
+            backgroundColor: [
+                'rgba(102, 126, 234, 0.8)',
+                'rgba(118, 75, 162, 0.8)',
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(255, 159, 64, 0.8)',
+                'rgba(255, 205, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(153, 102, 255, 0.8)'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+            title: { display: true, text: 'OMEGA ライン別分布' }
+        }
+    }
+}));
+
+// OMEGA 特徴別分布
+window.omegaCharts.push(new Chart(document.getElementById('omegaFeatureDistChart'), {
+    type: 'bar',
+    data: {
+        labels: ["Vintage", "Gold", "Chronograph", "Co-Axial", "Chronometer", "Limited"],
+        datasets: [{
+            label: '商品数',
+            data: [307, 182, 59, 19, 19, 9],
+            backgroundColor: 'rgba(118, 75, 162, 0.8)'
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+            title: { display: true, text: 'OMEGA 特徴別分布' }
+        }
+    }
+}));
+
+// OMEGA Top7ライン売上
+window.omegaCharts.push(new Chart(document.getElementById('omegaTopLinesChart'), {
+    type: 'bar',
+    data: {
+        labels: ["De Ville", "Seamaster", "Speedmaster", "その他OMEGA", "Constellation", "Geneve"],
+        datasets: [{
+            label: '販売数',
+            data: [232, 211, 85, 629, 48, 44],
+            backgroundColor: 'rgba(102, 126, 234, 0.8)'
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+            title: { display: true, text: 'OMEGA Top7ライン販売数' }
+        }
+    }
+}));
+</script>
 
 </body>
 </html>

@@ -492,8 +492,11 @@ for line in top7_lines:
 
 graph_script = f"""
 <script>
+// OMEGA グラフを初期化（グローバル配列に保存）
+window.omegaCharts = window.omegaCharts || [];
+
 // OMEGA 価格帯別分布
-new Chart(document.getElementById('omegaPriceDistChart'), {{
+window.omegaCharts.push(new Chart(document.getElementById('omegaPriceDistChart'), {{
     type: 'bar',
     data: {{
         labels: {json.dumps(price_ranges)},
@@ -505,14 +508,15 @@ new Chart(document.getElementById('omegaPriceDistChart'), {{
     }},
     options: {{
         responsive: true,
+        maintainAspectRatio: true,
         plugins: {{
             title: {{ display: true, text: 'OMEGA 価格帯別分布' }}
         }}
     }}
-}});
+}}));
 
 // OMEGA ライン別分布
-new Chart(document.getElementById('omegaLineDistChart'), {{
+window.omegaCharts.push(new Chart(document.getElementById('omegaLineDistChart'), {{
     type: 'pie',
     data: {{
         labels: {json.dumps(line_names)},
@@ -532,14 +536,15 @@ new Chart(document.getElementById('omegaLineDistChart'), {{
     }},
     options: {{
         responsive: true,
+        maintainAspectRatio: true,
         plugins: {{
             title: {{ display: true, text: 'OMEGA ライン別分布' }}
         }}
     }}
-}});
+}}));
 
 // OMEGA 特徴別分布
-new Chart(document.getElementById('omegaFeatureDistChart'), {{
+window.omegaCharts.push(new Chart(document.getElementById('omegaFeatureDistChart'), {{
     type: 'bar',
     data: {{
         labels: {json.dumps(feature_names)},
@@ -551,14 +556,15 @@ new Chart(document.getElementById('omegaFeatureDistChart'), {{
     }},
     options: {{
         responsive: true,
+        maintainAspectRatio: true,
         plugins: {{
             title: {{ display: true, text: 'OMEGA 特徴別分布' }}
         }}
     }}
-}});
+}}));
 
 // OMEGA Top7ライン売上
-new Chart(document.getElementById('omegaTopLinesChart'), {{
+window.omegaCharts.push(new Chart(document.getElementById('omegaTopLinesChart'), {{
     type: 'bar',
     data: {{
         labels: {json.dumps(top7_lines)},
@@ -570,11 +576,12 @@ new Chart(document.getElementById('omegaTopLinesChart'), {{
     }},
     options: {{
         responsive: true,
+        maintainAspectRatio: true,
         plugins: {{
             title: {{ display: true, text: 'OMEGA Top7ライン販売数' }}
         }}
     }}
-}});
+}}));
 </script>
 """
 
@@ -588,8 +595,6 @@ omega_content = f"""
 {html_features}
 {html_line_top15}
 {html_top30}
-
-{graph_script}
 """
 
 # === HTML置換 ===
@@ -633,6 +638,10 @@ omega_tab_html = f"""
 """
 
 html = html[:rado_end] + omega_tab_html + html[rado_end:]
+
+# グラフスクリプトを</body>の前に挿入（RADOタブと同じ方式）
+body_pos = html.find('</body>')
+html = html[:body_pos] + "\n" + graph_script + "\n" + html[body_pos:]
 
 # HTMLを保存
 with open('index.html', 'w', encoding='utf-8') as f:
