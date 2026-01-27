@@ -182,7 +182,47 @@ all_models_from_csv = sorted(all_models_from_csv, key=lambda x: x['count'], reve
 top_models = all_models_from_csv[:30]
 
 # ===========================
-# 6. HTML生成
+# 6. 価格帯別分析
+# ===========================
+
+price_bins = list(range(0, 1000, 50))
+price_labels = [f'${i}-{i+50}' for i in range(0, 950, 50)]
+df_orient['価格帯'] = pd.cut(df_orient['価格'], bins=price_bins, labels=price_labels, right=False)
+price_dist = df_orient.groupby('価格帯', observed=True)['販売数'].sum()
+price_dist_filtered = price_dist[price_dist > 0].sort_index()
+
+# Plotly用データ
+price_x = price_dist_filtered.index.tolist()
+price_y = price_dist_filtered.values.tolist()
+
+# ライン別売上比率
+line_sales = df_orient.groupby('ライン')['販売数'].sum().sort_values(ascending=False)
+line_labels = line_sales.index.tolist()
+line_values = line_sales.values.tolist()
+
+# ===========================
+# 7. キャラクター/コラボ分析
+# ===========================
+
+CHARACTER_KEYWORDS = [
+    'LIMITED EDITION', 'SPECIAL EDITION', 'EXCLUSIVE',
+    'ANNIVERSARY', '75TH', '70TH',
+    'DISNEY', 'MARVEL', 'STAR WARS',
+    'HELLO KITTY', 'SNOOPY',
+]
+
+collab_data = []
+for keyword in CHARACTER_KEYWORDS:
+    mask = df_orient['TITLE_UPPER'].str.contains(keyword, na=False, regex=False)
+    count = mask.sum()
+    if count > 0:
+        sales = df_orient[mask]['販売数'].sum()
+        collab_data.append({'keyword': keyword, 'count': count, 'sales': int(sales)})
+
+collab_data = sorted(collab_data, key=lambda x: x['sales'], reverse=True)
+
+# ===========================
+# 8. HTML生成
 # ===========================
 
 # Orient専用カラー（オレンジ系）
@@ -226,6 +266,59 @@ orient_html = f'''
             </ul>
         </div>
 
+        <!-- 市場分析グラフ -->
+        <h3 class="section-title" style="color: {orient_color};">📊 市場分析グラフ</h3>
+        <div class="chart-grid">
+            <div class="chart-container">
+                <h4 style="color: {orient_color};">価格帯別分析（50ドル刻み）</h4>
+                <div id="orient_price_chart" style="height: 350px;"></div>
+            </div>
+            <div class="chart-container">
+                <h4 style="color: {orient_color};">ライン別売上比率</h4>
+                <div id="orient_line_chart" style="height: 350px;"></div>
+            </div>
+        </div>
+
+        <!-- 限定モデル/記念モデル分析 -->
+        <h3 class="section-title" style="color: {orient_color};">🎁 限定モデル/記念モデル分析</h3>
+        <p style="color: #666; margin-bottom: 20px;">LIMITED EDITION、ANNIVERSARY等の特別モデルの分析</p>
+'''
+
+# キャラクター/コラボテーブル
+if len(collab_data) > 0:
+    orient_html += '''
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>モデルタイプ</th>
+                        <th>商品数</th>
+                        <th>販売数</th>
+                        <th>比率</th>
+                    </tr>
+                </thead>
+                <tbody>
+'''
+    total_collab_sales = sum(c['sales'] for c in collab_data)
+    for collab in collab_data:
+        ratio = collab['sales'] / df_orient['販売数'].sum() * 100
+        orient_html += f'''
+                    <tr>
+                        <td><strong>{collab['keyword']}</strong></td>
+                        <td>{collab['count']}</td>
+                        <td>{collab['sales']}</td>
+                        <td style="color: {orient_color};">{ratio:.1f}%</td>
+                    </tr>
+'''
+    orient_html += '''
+                </tbody>
+            </table>
+        </div>
+'''
+else:
+    orient_html += '<p style="color: #999;">該当する特別モデルは検出されませんでした。</p>'
+
+orient_html += f'''
         <!-- ライン別詳細分析 -->
         <h3 class="section-title" style="color: {orient_color};">🟠 ライン別詳細分析</h3>
 '''
@@ -364,10 +457,51 @@ orient_html += '''
             </table>
         </div>
     </div>
+
+    <script>
+    const orientColor = '#FF6B35';
+    const orientGradient = ['#FF6B35', '#FF8C61', '#FFB399', '#FFD9CC'];
+
+    // 価格帯別分析グラフ
+    Plotly.newPlot('orient_price_chart', [{{
+        x: {price_x},
+        y: {price_y},
+        type: 'bar',
+        marker: {{
+            color: orientColor,
+            line: {{ width: 1, color: '#fff' }}
+        }},
+        text: {price_y},
+        textposition: 'outside',
+        hovertemplate: '<b>%{{x}}</b><br>販売数: %{{y}}<extra></extra>'
+    }}], {{
+        margin: {{l: 40, r: 20, t: 20, b: 60}},
+        xaxis: {{ title: '価格帯', tickangle: -45 }},
+        yaxis: {{ title: '販売数' }},
+        paper_bgcolor: 'white',
+        plot_bgcolor: '#fafafa'
+    }}, {{responsive: true}});
+
+    // ライン別売上比率
+    Plotly.newPlot('orient_line_chart', [{{
+        labels: {line_labels},
+        values: {line_values},
+        type: 'pie',
+        marker: {{
+            colors: orientGradient.concat(['#FFE5D9', '#FFF0E9', '#FFF8F4', '#E6E6E6', '#D0D0D0', '#B8B8B8', '#A0A0A0'])
+        }},
+        textinfo: 'label+percent',
+        textposition: 'outside',
+        hovertemplate: '<b>%{{label}}</b><br>販売数: %{{value}}<br>比率: %{{percent}}<extra></extra>'
+    }}], {{
+        margin: {{l: 20, r: 20, t: 20, b: 20}},
+        paper_bgcolor: 'white'
+    }}, {{responsive: true}});
+    </script>
 '''
 
 # ===========================
-# 7. HTML置換（安全な文字列位置ベース）
+# 9. HTML置換（安全な文字列位置ベース）
 # ===========================
 
 html_path = Path.cwd() / 'index.html'
@@ -423,4 +557,6 @@ print("  ✓ 元CSVから正確にライン分類")
 print(f"  ✓ {len(line_stats)}ラインを認識")
 print("  ✓ 各ラインの実際の人気モデルTop15を抽出")
 print("  ✓ 全ライン横断 型番Top30を表示")
+print("  ✓ 市場分析グラフ（価格帯別・ライン別売上比率）")
+print(f"  ✓ 限定/記念モデル分析（{len(collab_data)}種類）")
 print("  ✓ 安全な文字列位置ベースのHTML置換")
