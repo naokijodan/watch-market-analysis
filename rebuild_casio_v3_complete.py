@@ -693,10 +693,37 @@ new_casio_tab = (
     graph_js
 )
 
-# 既存のCASIOタブを置換
-# CASIOタブの開始から、次のタブ（CITIZEN）または閉じタグの直前まで
-pattern = r'<div id="CASIO" class="tab-content">.*?</div>(?=\s*<div id="CITIZEN")'
-html = re.sub(pattern, new_casio_tab, html, flags=re.DOTALL, count=1)
+# 既存のCASIOタブを置換（ネストカウント方式）
+def find_tab_position(html, brand_name):
+    """タブ位置をネストカウントで特定"""
+    tab_start_tag = f'<div id="{brand_name}" class="tab-content">'
+    tab_start = html.find(tab_start_tag)
+
+    if tab_start == -1:
+        raise ValueError(f"{brand_name}タブが見つかりません")
+
+    # ネストカウント
+    div_count = 1
+    search_pos = tab_start + len(tab_start_tag)
+
+    while div_count > 0 and search_pos < len(html):
+        next_open = html.find('<div', search_pos)
+        next_close = html.find('</div>', search_pos)
+
+        if next_close == -1:
+            raise ValueError(f"{brand_name}タブの閉じタグが見つかりません")
+
+        if next_open != -1 and next_open < next_close:
+            div_count += 1
+            search_pos = next_open + 4
+        else:
+            div_count -= 1
+            if div_count == 0:
+                return (tab_start, next_close + 6)
+            search_pos = next_close + 6
+
+start_pos, end_pos = find_tab_position(html, 'CASIO')
+html = html[:start_pos] + new_casio_tab + html[end_pos:]
 
 # 保存
 with open('index.html', 'w', encoding='utf-8') as f:

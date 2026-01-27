@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-SEIKOタブにチェックボックスを追加（既存コンテンツ保持）
+Orientタブにチェックボックスを追加（既存コンテンツ保持）
 """
 import re
 
-print("🔄 SEIKOタブにチェックボックスを追加中...")
+print("🔄 Orientタブにチェックボックスを追加中...")
 print("=" * 60)
 
 # index.html読み込み
@@ -44,38 +44,38 @@ def find_tab_position(html, brand_name):
             search_pos = next_close + 6
 
 
-# SEIKOタブを抽出
-print("\n📍 SEIKOタブを抽出中...")
-start_pos, end_pos = find_tab_position(html, 'SEIKO')
-seiko_html = html[start_pos:end_pos]
-print(f"✓ 抽出完了: {len(seiko_html):,}文字")
+# Orientタブを抽出
+print("\n📍 Orientタブを抽出中...")
+start_pos, end_pos = find_tab_position(html, 'Orient')
+orient_html = html[start_pos:end_pos]
+print(f"✓ 抽出完了: {len(orient_html):,}文字")
 
 # 全ての検索リンクの後ろにチェックボックスを追加
 print("\n🔵 検索リンクにチェックボックス追加中...")
 
 # eBayリンクの後ろにチェックボックスを追加
 ebay_pattern = r'(<a href="https://www\.ebay\.com/[^"]*" target="_blank" class="link-btn link-ebay">eBay</a>)'
-seiko_html = re.sub(
+orient_html = re.sub(
     ebay_pattern,
     r'\1\n                            <input type="checkbox" class="search-checkbox">',
-    seiko_html
+    orient_html
 )
 
 # メルカリリンクの後ろにチェックボックスを追加
 mercari_pattern = r'(<a href="https://jp\.mercari\.com/[^"]*" target="_blank" class="link-btn link-mercari">メルカリ</a>)'
-seiko_html = re.sub(
+orient_html = re.sub(
     mercari_pattern,
     r'\1\n                            <input type="checkbox" class="search-checkbox">',
-    seiko_html
+    orient_html
 )
 
 # 変更数をカウント
-checkbox_count = seiko_html.count('class="search-checkbox"')
+checkbox_count = orient_html.count('class="search-checkbox"')
 print(f"✓ チェックボックス追加完了: {checkbox_count}個")
 
-# SEIKOタブを置換
-print("\n🔄 SEIKOタブを置換中...")
-html = html[:start_pos] + seiko_html + html[end_pos:]
+# Orientタブを置換
+print("\n🔄 Orientタブを置換中...")
+html = html[:start_pos] + orient_html + html[end_pos:]
 print("✓ 置換完了")
 
 # 保存
@@ -85,5 +85,5 @@ with open('index.html', 'w', encoding='utf-8') as f:
 
 print(f"✓ 保存完了: {len(html) / 1024:.1f} KB")
 print("\n" + "=" * 60)
-print("✅ SEIKOタブにチェックボックス追加完了")
+print("✅ Orientタブにチェックボックス追加完了")
 print("=" * 60)
