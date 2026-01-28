@@ -259,6 +259,16 @@
         #TAG_HEUER .highlight {
             background: linear-gradient(135deg, #00000025 0%, #00000010 100%);
         }
+
+        /* ROLEX固有のスタイル */
+        #ROLEX .stat-card {
+            background: linear-gradient(135deg, #00603915 0%, #00603905 100%);
+            border-top: 3px solid #006039;
+        }
+
+        #ROLEX .highlight {
+            background: linear-gradient(135deg, #C9B03725 0%, #C9B03710 100%);
+        }
 </style>
 </head>
 <body>
@@ -20766,6 +20776,2130 @@
 
             </div>
 
+            <div id="ROLEX" class="tab-content">
+                <h2 style="color: #006039; border-bottom: 4px solid #006039; padding-bottom: 15px; margin-bottom: 25px;">
+                    👑 ROLEX 詳細分析
+                </h2>
+
+                <h3 style="color: #006039; border-bottom: 3px solid #006039; padding-bottom: 10px;">
+                    📈 基本統計
+                </h3>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">296</div>
+                        <div class="stat-label">総販売数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$173</div>
+                        <div class="stat-label">中央値（全体）</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">2.56</div>
+                        <div class="stat-label">CV値（ばらつき）</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">44.9%</div>
+                        <div class="stat-label">型番抽出率</div>
+                    </div>
+                </div>
+
+
+                <h3 style="color: #006039; border-bottom: 3px solid #006039; padding-bottom: 10px; margin-top: 30px;">
+                    💡 仕入戦略
+                </h3>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #00603915 0%, #00603905 100%); border-left: 4px solid #006039;">
+                    <h4 style="color: #006039; margin-top: 0;">⚠️ 重要：データの特性</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>ボックス・パーツ販売が多数</strong>（215個/296個）</li>
+                        <li>時計本体: 81個のみ</li>
+                        <li>中央値$173は<strong>ボックス価格</strong>を反映</li>
+                        <li>時計本体の実際の価格帯: $2,000-10,000+</li>
+                        <li>CV値2.560は極めて高い（価格幅が広い）</li>
+                    </ul>
+                </div>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #C9B03715 0%, #C9B03705 100%); border-left: 4px solid #C9B037;">
+                    <h4 style="color: #C9B037; margin-top: 0;">💎 時計本体の狙い目</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>Submariner</strong>（16610等）: 人気・流動性高</li>
+                        <li><strong>Datejust</strong>（16233等）: 安定需要・幅広い価格帯</li>
+                        <li><strong>Explorer</strong>（114270等）: エントリーモデル</li>
+                        <li>型番明確・駆動方式記載のみ対象</li>
+                        <li>完品（箱・保証書付き）は高値安定</li>
+                    </ul>
+                </div>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #FF6B6B15 0%, #FF6B6B05 100%); border-left: 4px solid #FF6B6B;">
+                    <h4 style="color: #FF6B6B; margin-top: 0;">⚠️ 避けるべき条件</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li>ボックス・パーツのみ（利益率低・真贋リスク）</li>
+                        <li>型番不明（"ROLEX Watch"のみの表記）</li>
+                        <li>駆動方式不明（状態確認困難）</li>
+                        <li>過度に低価格（$1000未満は要注意）</li>
+                        <li>偽物リスク（専門知識必須）</li>
+                    </ul>
+                </div>
+
+
+                <h3 style="color: #006039; border-bottom: 3px solid #006039; padding-bottom: 10px; margin-top: 30px;">
+                    📊 市場分析グラフ
+                </h3>
+
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <div id="rolex_price_chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="rolex_category_chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="rolex_movement_chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="rolex_line_chart"></div>
+                    </div>
+                </div>
+
+
+                <h3 style="color: #006039; border-bottom: 3px solid #006039; padding-bottom: 10px; margin-top: 30px;">
+                    📦 ボックス・パーツ vs 時計本体
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>カテゴリ</th>
+                            <th>販売数</th>
+                            <th>比率</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong>ボックス・パーツ</strong></td>
+                            <td>215</td>
+                            <td>72.6%</td>
+                            <td>$159</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥16,019</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>時計本体</strong></td>
+                            <td>81</td>
+                            <td>27.4%</td>
+                            <td>$452</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥45,574</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <h3 style="color: #006039; border-bottom: 3px solid #006039; padding-bottom: 10px; margin-top: 30px;">
+                    🏆 ライン別 人気型番 Top15
+                </h3>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    その他ROLEX <span style="font-size: 0.9em; color: #666;">（販売数: 28個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>6694</strong></td>
+                            <td>4</td>
+                            <td>$1175</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥118,423</td>
+                            <td>1.057</td>
+                            <td style="font-size: 0.85em;">ROLEX Oysterdate 6694 Black Case Size 34mm x 34mm ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6694" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6694" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>78360</strong></td>
+                            <td>2</td>
+                            <td>$135</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥13,601</td>
+                            <td>0.052</td>
+                            <td style="font-size: 0.85em;">ROLEX Genuine 3 Link Oyster Bracelet 78360 78690 7...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+78360" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+78360" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">3</strong></td>
+                            <td><strong>179173</strong></td>
+                            <td>2</td>
+                            <td>$405</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥40,844</td>
+                            <td>0.164</td>
+                            <td style="font-size: 0.85em;">Rolex 179173 Watch K18YG-SS 2pc Set Gold Silver 12...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+179173" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+179173" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">4</strong></td>
+                            <td><strong>1500</strong></td>
+                            <td>1</td>
+                            <td>$110</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥11,082</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex genuine spring bar 19mm 1 set Vintage 1500 1...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+1500" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+1500" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">5</strong></td>
+                            <td><strong>5035</strong></td>
+                            <td>1</td>
+                            <td>$65</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥6,548</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Genuine ROLEX parts 5035-5094 date wheel</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+5035" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+5035" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">6</strong></td>
+                            <td><strong>9050</strong></td>
+                            <td>1</td>
+                            <td>$1300</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥130,975</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TUDOR Ranger Ref.9050 Vintage Automatic Date ETA 2...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+9050" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+9050" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">7</strong></td>
+                            <td><strong>79174</strong></td>
+                            <td>1</td>
+                            <td>$190</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥19,142</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX 79174 14.00.01 WATCH BOX CASE Booklet Tag 10...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+79174" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+79174" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">8</strong></td>
+                            <td><strong>76080</strong></td>
+                            <td>1</td>
+                            <td>$115</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥11,586</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Genuine Rolex 76080 Watch Box Case Guarantee 11.00...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+76080" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+76080" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">9</strong></td>
+                            <td><strong>6620</strong></td>
+                            <td>1</td>
+                            <td>$350</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥35,262</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Cal. 6620 Cellini Movement + White Dial, Man...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6620" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6620" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">10</strong></td>
+                            <td><strong>6430</strong></td>
+                            <td>1</td>
+                            <td>$1825</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥183,834</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Oyster Speedking 6430 Steel Hand-Winding Mid...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6430" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6430" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">11</strong></td>
+                            <td><strong>6426</strong></td>
+                            <td>1</td>
+                            <td>$200</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥20,150</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex 6426 Case Back Watch Part Rare Genuine Vinta...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6426" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6426" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">12</strong></td>
+                            <td><strong>53491</strong></td>
+                            <td>1</td>
+                            <td>$330</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥33,246</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex genuine watch Box case Latest Model 2025~ 53...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+53491" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+53491" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">13</strong></td>
+                            <td><strong>4777</strong></td>
+                            <td>1</td>
+                            <td>$4000</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥403,000</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[For repair] Vintage ROLEX Bubbleback 4777 14KYG s...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+4777" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+4777" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">14</strong></td>
+                            <td><strong>1600</strong></td>
+                            <td>1</td>
+                            <td>$325</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥32,743</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Genuine Movement Cellini Cal.1600 Gray Dial ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+1600" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+1600" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">15</strong></td>
+                            <td><strong>2611</strong></td>
+                            <td>1</td>
+                            <td>$2001</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥201,600</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex 2611 Precision Silver Dial Stainless Steel M...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+2611" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+2611" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Datejust <span style="font-size: 0.9em; color: #666;">（販売数: 48個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>16233</strong></td>
+                            <td>5</td>
+                            <td>$170</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥17,126</td>
+                            <td>0.096</td>
+                            <td style="font-size: 0.85em;">Genuine Rolex Datejust 16233 Watch Box Case 68.00....</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16233" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16233" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>179174</strong></td>
+                            <td>5</td>
+                            <td>$120</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥12,090</td>
+                            <td>0.566</td>
+                            <td style="font-size: 0.85em;">ROLEX Authentic link for Datejust 179174 price for...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+179174" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+179174" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">3</strong></td>
+                            <td><strong>69173</strong></td>
+                            <td>4</td>
+                            <td>$114</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥11,485</td>
+                            <td>0.176</td>
+                            <td style="font-size: 0.85em;">Rolex Datejust 69173 Genuine watch box 14.00.02 Bo...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+69173" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+69173" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">4</strong></td>
+                            <td><strong>69174</strong></td>
+                            <td>3</td>
+                            <td>$110</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥11,082</td>
+                            <td>0.183</td>
+                            <td style="font-size: 0.85em;">Genuine Rolex Datejust 69174 Guarantee Links Watch...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+69174" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+69174" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">5</strong></td>
+                            <td><strong>16234</strong></td>
+                            <td>2</td>
+                            <td>$172</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥17,329</td>
+                            <td>0.189</td>
+                            <td style="font-size: 0.85em;">ROLEX 16234 Datejust Watch 5PCS Silver Stainless S...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16234" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16234" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">6</strong></td>
+                            <td><strong>126233</strong></td>
+                            <td>2</td>
+                            <td>$11934</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥1,202,300</td>
+                            <td>0.011</td>
+                            <td style="font-size: 0.85em;">ROLEX DATEJUST 36 126233 Champagne Fluted motif ba...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+126233" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+126233" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">7</strong></td>
+                            <td><strong>68278</strong></td>
+                            <td>2</td>
+                            <td>$144</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥14,508</td>
+                            <td>0.049</td>
+                            <td style="font-size: 0.85em;">Genuine Rolex Datejust 68278  Watch Box Case /U161...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+68278" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+68278" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">8</strong></td>
+                            <td><strong>68274</strong></td>
+                            <td>2</td>
+                            <td>$95</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥9,572</td>
+                            <td>0.432</td>
+                            <td style="font-size: 0.85em;">Genuine Rolex Datejust 68274 Watch Box Case 68.00....</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+68274" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+68274" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">9</strong></td>
+                            <td><strong>16013</strong></td>
+                            <td>2</td>
+                            <td>$1340</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥135,005</td>
+                            <td>1.224</td>
+                            <td style="font-size: 0.85em;">Rolex Datejust 16013 Gold/SS Champagne Dial 1985 -...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">10</strong></td>
+                            <td><strong>2135</strong></td>
+                            <td>2</td>
+                            <td>$1474</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥148,461</td>
+                            <td>1.191</td>
+                            <td style="font-size: 0.85em;">ROLEX Ladies' Datejust Movement 10 Diamonds Cal. 2...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+2135" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+2135" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">11</strong></td>
+                            <td><strong>178313</strong></td>
+                            <td>1</td>
+                            <td>$12060</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥1,215,085</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Datejust 178313 Silver VI Roman Jubilee Box/...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+178313" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+178313" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">12</strong></td>
+                            <td><strong>68279</strong></td>
+                            <td>1</td>
+                            <td>$133</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥13,399</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex 68279 Datejust Watch Box Case 53.00.08 Brown...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+68279" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+68279" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">13</strong></td>
+                            <td><strong>6517</strong></td>
+                            <td>1</td>
+                            <td>$2313</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥233,037</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex Datejust 6517 1973 Stainless Steel White Gol...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6517" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6517" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">14</strong></td>
+                            <td><strong>279173</strong></td>
+                            <td>1</td>
+                            <td>$9954</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥1,002,844</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Datejust28 279173 Champagne Date Warranty 20...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+279173" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+279173" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">15</strong></td>
+                            <td><strong>278273</strong></td>
+                            <td>1</td>
+                            <td>$13372</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥1,347,229</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Datejust 278273 white Roman 5 row jubilee br...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+278273" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+278273" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Submariner <span style="font-size: 0.9em; color: #666;">（販売数: 12個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>16610</strong></td>
+                            <td>8</td>
+                            <td>$160</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥16,069</td>
+                            <td>0.381</td>
+                            <td style="font-size: 0.85em;">Rolex 16610 Submariner Watch Box Case 64.00.01 Men...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16610" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16610" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>14060</strong></td>
+                            <td>1</td>
+                            <td>$262</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥26,396</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX 14060 Submariner Paper Genuine r71126021</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+14060" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+14060" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">3</strong></td>
+                            <td><strong>1570</strong></td>
+                            <td>1</td>
+                            <td>$19037</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥1,917,977</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX SUBMARINER Date Red Sub Cal.1570 Hacked 1680...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+1570" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+1570" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">4</strong></td>
+                            <td><strong>16600</strong></td>
+                            <td>1</td>
+                            <td>$74</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥7,498</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex Submariner Anchor 1220 m 4000 ft Japan Sea D...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16600" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16600" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">5</strong></td>
+                            <td><strong>5512</strong></td>
+                            <td>1</td>
+                            <td>$250</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥25,187</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Authentic Rolex Anchor 200m 660ft Submariner Watch...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+5512" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+5512" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（5モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Oyster Perpetual <span style="font-size: 0.9em; color: #666;">（販売数: 18個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>6917</strong></td>
+                            <td>5</td>
+                            <td>$2774</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥279,482</td>
+                            <td>0.865</td>
+                            <td style="font-size: 0.85em;">Rolex 6917/3 Oyster Perpetual Date Watch Box Case ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6917" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6917" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>15210</strong></td>
+                            <td>2</td>
+                            <td>$145</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥14,583</td>
+                            <td>0.144</td>
+                            <td style="font-size: 0.85em;">Rolex 15210 Oyster Perpetual Watch Paper Genuine r...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+15210" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+15210" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">3</strong></td>
+                            <td><strong>67180</strong></td>
+                            <td>2</td>
+                            <td>$92</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥9,218</td>
+                            <td>0.008</td>
+                            <td style="font-size: 0.85em;">Rolex 67180 Oyster Perpetual Watch Box Case 11.00....</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+67180" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+67180" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">4</strong></td>
+                            <td><strong>144182</strong></td>
+                            <td>1</td>
+                            <td>$2309</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥232,661</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Oyster perpetual date 6517 vintage Cal.1161 ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+144182" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+144182" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">5</strong></td>
+                            <td><strong>15010</strong></td>
+                            <td>1</td>
+                            <td>$122</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥12,291</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex 15010 Oyster Perpetual Date Watch Box Case 1...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+15010" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+15010" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">6</strong></td>
+                            <td><strong>176234</strong></td>
+                            <td>1</td>
+                            <td>$216</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥21,762</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX 176234 Oyster Perpetual Paper Genuine r70120...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+176234" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+176234" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">7</strong></td>
+                            <td><strong>6517</strong></td>
+                            <td>1</td>
+                            <td>$1742</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥175,461</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Oyster Perpetual Date 6517 18K Gold Steel La...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6517" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6517" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">8</strong></td>
+                            <td><strong>6519</strong></td>
+                            <td>1</td>
+                            <td>$1692</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥170,448</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Oyster Perpetual Date 6519 cal.1161 Silver D...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6519" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6519" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">9</strong></td>
+                            <td><strong>6548</strong></td>
+                            <td>1</td>
+                            <td>$2070</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥208,552</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Oyster Perpetual 6548 TO242810</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6548" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6548" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">10</strong></td>
+                            <td><strong>76193</strong></td>
+                            <td>1</td>
+                            <td>$357</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥35,946</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex 5 links Oyster Perpetual Lady 76193 watch be...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+76193" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+76193" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">11</strong></td>
+                            <td><strong>77080</strong></td>
+                            <td>1</td>
+                            <td>$120</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥12,088</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex Genuine Oyster Perpetual 77080 watch Box 11....</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+77080" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+77080" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">12</strong></td>
+                            <td><strong>79240</strong></td>
+                            <td>1</td>
+                            <td>$90</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥9,067</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex 79240 Oyster Perpetual Date Watch Box Case 1...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+79240" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+79240" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（12モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Daytona <span style="font-size: 0.9em; color: #666;">（販売数: 5個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>116528</strong></td>
+                            <td>2</td>
+                            <td>$582</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥58,686</td>
+                            <td>0.713</td>
+                            <td style="font-size: 0.85em;">Genuine Rolex Daytona 116528 Watch Box Case 81.00....</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+116528" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+116528" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>16523</strong></td>
+                            <td>2</td>
+                            <td>$399</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥40,199</td>
+                            <td>0.698</td>
+                            <td style="font-size: 0.85em;">Rolex Warranty Tag For Daytona 16523 A177485 A Ser...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16523" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16523" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">3</strong></td>
+                            <td><strong>16519</strong></td>
+                            <td>1</td>
+                            <td>$210</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥21,157</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Genuine Rolex Daytona 16519 Watch Box Case 81.00.0...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16519" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16519" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（3モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Explorer <span style="font-size: 0.9em; color: #666;">（販売数: 7個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>114270</strong></td>
+                            <td>4</td>
+                            <td>$182</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥18,336</td>
+                            <td>1.803</td>
+                            <td style="font-size: 0.85em;">Genuine Rolex Explorer 114270 Watch Box Case 68.00...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+114270" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+114270" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>16570</strong></td>
+                            <td>2</td>
+                            <td>$214</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥21,610</td>
+                            <td>0.234</td>
+                            <td style="font-size: 0.85em;">ROLEX Explorer II 16570  watch  paper  A serial #9...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16570" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16570" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">3</strong></td>
+                            <td><strong>16550</strong></td>
+                            <td>1</td>
+                            <td>$212</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥21,408</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Genuine ROLEX Explorer II 16550 Watch Band Bracele...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16550" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16550" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（3モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Day-Date <span style="font-size: 0.9em; color: #666;">（販売数: 2個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>18038</strong></td>
+                            <td>1</td>
+                            <td>$334</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥33,690</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX watch case box Day-Date 18038 Solid Gold Lea...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+18038" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+18038" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>18238</strong></td>
+                            <td>1</td>
+                            <td>$66</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥6,649</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex Day-Date President 18238 Vintage Hang Tag</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+18238" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+18238" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（2モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    GMT-Master <span style="font-size: 0.9em; color: #666;">（販売数: 3個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>126710</strong></td>
+                            <td>1</td>
+                            <td>$3250</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥327,437</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex Jubilee Bracelet 69200 - GMT Master II 12671...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+126710" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+126710" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>16713</strong></td>
+                            <td>1</td>
+                            <td>$450</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥45,337</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex Box GMT Master 16713 Spare 18K & S S link Bo...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16713" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16713" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">3</strong></td>
+                            <td><strong>78360</strong></td>
+                            <td>1</td>
+                            <td>$139</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥14,041</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex genuine SWISS Oyster bracelet 78360 78690 78...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+78360" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+78360" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（3モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Yacht-Master <span style="font-size: 0.9em; color: #666;">（販売数: 6個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>116680</strong></td>
+                            <td>2</td>
+                            <td>$8957</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥902,437</td>
+                            <td>1.370</td>
+                            <td style="font-size: 0.85em;">ROLEX Watch Box Case 39137.02 Booklet of Yacht-Mas...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+116680" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+116680" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>116681</strong></td>
+                            <td>2</td>
+                            <td>$21262</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥2,142,149</td>
+                            <td>0.008</td>
+                            <td style="font-size: 0.85em;">ROLEX Yacht Master II 116681 White Mercedes Hands ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+116681" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+116681" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">3</strong></td>
+                            <td><strong>168622</strong></td>
+                            <td>1</td>
+                            <td>$6973</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥702,529</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Yacht master 168622 Silver M Number second h...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+168622" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+168622" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">4</strong></td>
+                            <td><strong>268621</strong></td>
+                            <td>1</td>
+                            <td>$250</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥25,187</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Link for YACHT-MASTER 268621 PG×SS 14mm×10mm...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+268621" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+268621" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（4モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Sea-Dweller <span style="font-size: 0.9em; color: #666;">（販売数: 2個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>116660</strong></td>
+                            <td>1</td>
+                            <td>$9500</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥957,125</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX Sea Dweller Deep Sea 116660 Black Warranty 2...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+116660" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+116660" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>93160</strong></td>
+                            <td>1</td>
+                            <td>$143</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥14,449</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Genuine Rolex SWISS Oyster Bracelet 93160 78360 Li...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+93160" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+93160" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（2モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Milgauss <span style="font-size: 0.9em; color: #666;">（販売数: 1個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>116400</strong></td>
+                            <td>1</td>
+                            <td>$19000</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥1,914,250</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Rolex Milgauss 116400 Label Noir Custom</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+116400" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+116400" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（1モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #006039; margin-top: 25px; border-bottom: 2px solid #006039; padding-bottom: 5px;">
+                    Sky-Dweller <span style="font-size: 0.9em; color: #666;">（販売数: 1個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>326235</strong></td>
+                            <td>1</td>
+                            <td>$33689</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥3,394,166</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">ROLEX SKY-DWELLER 326235 white Random Number secon...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+326235" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+326235" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（1モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <h3 style="color: #006039; border-bottom: 3px solid #006039; padding-bottom: 10px; margin-top: 30px;">
+                    📊 ライン別 詳細分析
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ライン名</th>
+                            <th>販売数</th>
+                            <th>比率</th>
+                            <th>中央値</th>
+                            <th>CV値</th>
+                            <th>安定性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong>その他ROLEX</strong></td>
+                            <td>131</td>
+                            <td>44.3%</td>
+                            <td>$135</td>
+                            <td>2.082</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Datejust</strong></td>
+                            <td>64</td>
+                            <td>21.6%</td>
+                            <td>$180</td>
+                            <td>1.701</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Submariner</strong></td>
+                            <td>23</td>
+                            <td>7.8%</td>
+                            <td>$235</td>
+                            <td>1.492</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Oyster Perpetual</strong></td>
+                            <td>20</td>
+                            <td>6.8%</td>
+                            <td>$172</td>
+                            <td>1.222</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Daytona</strong></td>
+                            <td>17</td>
+                            <td>5.7%</td>
+                            <td>$270</td>
+                            <td>2.668</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Explorer</strong></td>
+                            <td>9</td>
+                            <td>3.0%</td>
+                            <td>$205</td>
+                            <td>2.316</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Day-Date</strong></td>
+                            <td>7</td>
+                            <td>2.4%</td>
+                            <td>$315</td>
+                            <td>0.673</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>GMT-Master</strong></td>
+                            <td>7</td>
+                            <td>2.4%</td>
+                            <td>$270</td>
+                            <td>2.020</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Yacht-Master</strong></td>
+                            <td>6</td>
+                            <td>2.0%</td>
+                            <td>$12304</td>
+                            <td>0.888</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Sea-Dweller</strong></td>
+                            <td>5</td>
+                            <td>1.7%</td>
+                            <td>$154</td>
+                            <td>2.068</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Milgauss</strong></td>
+                            <td>3</td>
+                            <td>1.0%</td>
+                            <td>$12186</td>
+                            <td>0.376</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Sky-Dweller</strong></td>
+                            <td>2</td>
+                            <td>0.7%</td>
+                            <td>$16894</td>
+                            <td>1.406</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Air-King</strong></td>
+                            <td>2</td>
+                            <td>0.7%</td>
+                            <td>$2282</td>
+                            <td>1.371</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <h3 style="color: #006039; border-bottom: 3px solid #006039; padding-bottom: 10px; margin-top: 30px;">
+                    🌟 全ライン横断 Top30 型番
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>ライン</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C9B037; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">1</strong></td>
+                            <td><strong>16610</strong></td>
+                            <td>Submariner</td>
+                            <td>8</td>
+                            <td>$160</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥16,069</td>
+                            <td>0.381</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16610" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16610" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">2</strong></td>
+                            <td><strong>179174</strong></td>
+                            <td>Datejust</td>
+                            <td>5</td>
+                            <td>$120</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥12,090</td>
+                            <td>0.566</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+179174" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+179174" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">3</strong></td>
+                            <td><strong>16233</strong></td>
+                            <td>Datejust</td>
+                            <td>5</td>
+                            <td>$170</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥17,126</td>
+                            <td>0.096</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16233" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16233" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">4</strong></td>
+                            <td><strong>6917</strong></td>
+                            <td>Oyster Perpetual</td>
+                            <td>5</td>
+                            <td>$2774</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥279,482</td>
+                            <td>0.865</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6917" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6917" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">5</strong></td>
+                            <td><strong>114270</strong></td>
+                            <td>Explorer</td>
+                            <td>4</td>
+                            <td>$182</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥18,336</td>
+                            <td>1.803</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+114270" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+114270" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">6</strong></td>
+                            <td><strong>69173</strong></td>
+                            <td>Datejust</td>
+                            <td>4</td>
+                            <td>$114</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥11,485</td>
+                            <td>0.176</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+69173" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+69173" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">7</strong></td>
+                            <td><strong>6694</strong></td>
+                            <td>その他ROLEX</td>
+                            <td>4</td>
+                            <td>$1175</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥118,423</td>
+                            <td>1.057</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6694" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6694" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">8</strong></td>
+                            <td><strong>69174</strong></td>
+                            <td>Datejust</td>
+                            <td>3</td>
+                            <td>$110</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥11,082</td>
+                            <td>0.183</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+69174" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+69174" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">9</strong></td>
+                            <td><strong>116680</strong></td>
+                            <td>Yacht-Master</td>
+                            <td>2</td>
+                            <td>$8957</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥902,437</td>
+                            <td>1.370</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+116680" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+116680" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">10</strong></td>
+                            <td><strong>116528</strong></td>
+                            <td>Daytona</td>
+                            <td>2</td>
+                            <td>$582</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥58,686</td>
+                            <td>0.713</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+116528" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+116528" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">11</strong></td>
+                            <td><strong>16570</strong></td>
+                            <td>Explorer</td>
+                            <td>2</td>
+                            <td>$214</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥21,610</td>
+                            <td>0.234</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16570" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16570" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">12</strong></td>
+                            <td><strong>16234</strong></td>
+                            <td>Datejust</td>
+                            <td>2</td>
+                            <td>$172</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥17,329</td>
+                            <td>0.189</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16234" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16234" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">13</strong></td>
+                            <td><strong>116681</strong></td>
+                            <td>Yacht-Master</td>
+                            <td>2</td>
+                            <td>$21262</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥2,142,149</td>
+                            <td>0.008</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+116681" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+116681" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">14</strong></td>
+                            <td><strong>2135</strong></td>
+                            <td>Datejust</td>
+                            <td>2</td>
+                            <td>$1474</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥148,461</td>
+                            <td>1.191</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+2135" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+2135" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">15</strong></td>
+                            <td><strong>67180</strong></td>
+                            <td>Oyster Perpetual</td>
+                            <td>2</td>
+                            <td>$92</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥9,218</td>
+                            <td>0.008</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+67180" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+67180" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">16</strong></td>
+                            <td><strong>16013</strong></td>
+                            <td>Datejust</td>
+                            <td>2</td>
+                            <td>$1340</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥135,005</td>
+                            <td>1.224</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">17</strong></td>
+                            <td><strong>68274</strong></td>
+                            <td>Datejust</td>
+                            <td>2</td>
+                            <td>$95</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥9,572</td>
+                            <td>0.432</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+68274" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+68274" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">18</strong></td>
+                            <td><strong>15210</strong></td>
+                            <td>Oyster Perpetual</td>
+                            <td>2</td>
+                            <td>$145</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥14,583</td>
+                            <td>0.144</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+15210" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+15210" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">19</strong></td>
+                            <td><strong>68278</strong></td>
+                            <td>Datejust</td>
+                            <td>2</td>
+                            <td>$144</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥14,508</td>
+                            <td>0.049</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+68278" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+68278" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">20</strong></td>
+                            <td><strong>179173</strong></td>
+                            <td>その他ROLEX</td>
+                            <td>2</td>
+                            <td>$405</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥40,844</td>
+                            <td>0.164</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+179173" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+179173" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">21</strong></td>
+                            <td><strong>78360</strong></td>
+                            <td>その他ROLEX</td>
+                            <td>2</td>
+                            <td>$135</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥13,601</td>
+                            <td>0.052</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+78360" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+78360" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">22</strong></td>
+                            <td><strong>126233</strong></td>
+                            <td>Datejust</td>
+                            <td>2</td>
+                            <td>$11934</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥1,202,300</td>
+                            <td>0.011</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+126233" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+126233" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">23</strong></td>
+                            <td><strong>16523</strong></td>
+                            <td>Daytona</td>
+                            <td>2</td>
+                            <td>$399</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥40,199</td>
+                            <td>0.698</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+16523" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+16523" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">24</strong></td>
+                            <td><strong>326235</strong></td>
+                            <td>Sky-Dweller</td>
+                            <td>1</td>
+                            <td>$33689</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥3,394,166</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+326235" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+326235" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">25</strong></td>
+                            <td><strong>279173</strong></td>
+                            <td>Datejust</td>
+                            <td>1</td>
+                            <td>$9954</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥1,002,844</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+279173" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+279173" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">26</strong></td>
+                            <td><strong>6426</strong></td>
+                            <td>その他ROLEX</td>
+                            <td>1</td>
+                            <td>$200</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥20,150</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+6426" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+6426" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">27</strong></td>
+                            <td><strong>278273</strong></td>
+                            <td>Datejust</td>
+                            <td>1</td>
+                            <td>$13372</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥1,347,229</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+278273" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+278273" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">28</strong></td>
+                            <td><strong>93150</strong></td>
+                            <td>その他ROLEX</td>
+                            <td>1</td>
+                            <td>$149</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥15,011</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+93150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+93150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">29</strong></td>
+                            <td><strong>268621</strong></td>
+                            <td>Yacht-Master</td>
+                            <td>1</td>
+                            <td>$250</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥25,187</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+268621" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+268621" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C9B037;">30</strong></td>
+                            <td><strong>4777</strong></td>
+                            <td>その他ROLEX</td>
+                            <td>1</td>
+                            <td>$4000</td>
+                            <td class="highlight" style="color: #C9B037; font-weight: bold;">¥403,000</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+4777" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=ROLEX+4777" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+
 
 
 
@@ -22226,6 +24360,47 @@ function initOmegaCharts() {
                 paper_bgcolor: '#ffffff'
             };
             Plotly.newPlot('tagheuer_line_chart', tagheuer_line_data, tagheuer_line_layout, {responsive: true});
+        </script>
+
+
+        <script>
+            // ROLEX - 価格帯別分析
+            var rolex_price_data = [{'x': ['$0-200', '$200-500', '$500-1000', '$1000-2000', '$2000-5000', '$5000-10000', '$10000+'], 'y': [174, 52, 9, 8, 17, 9, 27], 'type': 'bar', 'marker': {'color': '#006039'}}];
+            var rolex_price_layout = {
+                title: '価格帯別 販売分布',
+                xaxis: {title: '価格帯'},
+                yaxis: {title: '販売数'},
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('rolex_price_chart', rolex_price_data, rolex_price_layout, {responsive: true});
+
+            // ROLEX - ボックス vs 時計本体
+            var rolex_category_data = [{'labels': ['ボックス・パーツ', '時計本体'], 'values': [215, 81], 'type': 'pie', 'marker': {'colors': ['#006039', '#C9B037']}}];
+            var rolex_category_layout = {
+                title: 'ボックス・パーツ vs 時計本体',
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('rolex_category_chart', rolex_category_data, rolex_category_layout, {responsive: true});
+
+            // ROLEX - 駆動方式別分布
+            var rolex_movement_data = [{'labels': ['不明', '自動巻', '手巻き'], 'values': [265, 23, 8], 'type': 'pie', 'marker': {'colors': ['#006039', '#C9B037', '#666666', '#999999']}}];
+            var rolex_movement_layout = {
+                title: '駆動方式別 分布',
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('rolex_movement_chart', rolex_movement_data, rolex_movement_layout, {responsive: true});
+
+            // ROLEX - ライン別売上比率
+            var rolex_line_data = [{'labels': ['その他ROLEX', 'Datejust', 'Submariner', 'Oyster Perpetual', 'Daytona', 'Explorer', 'Day-Date', 'GMT-Master', 'Yacht-Master', 'Sea-Dweller'], 'values': [131, 64, 23, 20, 17, 9, 7, 7, 6, 5], 'type': 'pie', 'hole': 0.4}];
+            var rolex_line_layout = {
+                title: 'ライン別 売上比率（Top10）',
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('rolex_line_chart', rolex_line_data, rolex_line_layout, {responsive: true});
         </script>
 
 </body>
