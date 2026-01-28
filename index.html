@@ -663,6 +663,58 @@
         }
     }
 
+
+    .isseymiyake-primary { color: #2C3E50; }
+    .isseymiyake-accent { color: #E74C3C; font-weight: bold; }
+    .isseymiyake-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 20px 0;
+    }
+    .isseymiyake-chart-container {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .isseymiyake-chart-container h4 {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+        .isseymiyake-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    .tissot-primary { color: #C8102E; }
+    .tissot-accent { color: #FFFFFF; font-weight: bold; }
+    .tissot-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 20px 0;
+    }
+    .tissot-chart-container {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .tissot-chart-container h4 {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+        .tissot-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -26673,6 +26725,12 @@
     </div>
 
 
+    
+
+
+    
+
+
     <div id="NIXON" class="tab-content">
         <h2 class="section-title nixon-primary">🏄 NIXON 詳細分析</h2>
 
@@ -32201,136 +32259,8 @@ function initOmegaCharts() {
 
 
 
-        <script>
-        const isseymiyakePrimary = '#2C3E50';
-        const isseymiyakeAccent = '#E74C3C';
-        const isseymiyakeGradient = ['#2C3E50', '#7b68ee', '#9370db', '#ba55d3', '#da70d6'];
-
-        // 準備中のダミーグラフ
-        Plotly.newPlot('isseymiyake_price_chart', [{
-            x: ['~$100', '$100-200', '$200-300', '$300-500', '$500-1K', '$1K+'],
-            y: [0, 0, 0, 0, 0, 0],
-            type: 'bar',
-            marker: {
-                color: isseymiyakePrimary,
-                line: {color: isseymiyakeAccent, width: 1}
-            },
-            text: ['データ<br>準備中', '', '', '', '', ''],
-            textposition: 'inside',
-            hovertemplate: '<b>%{x}</b><br>データ準備中<extra></extra>'
-        }], {
-            xaxis: {title: '価格帯', tickangle: -45},
-            yaxis: {title: '販売数'},
-            margin: {l: 50, r: 20, t: 20, b: 80},
-            plot_bgcolor: '#f8f9fa',
-            paper_bgcolor: 'white'
-        }, {responsive: true});
-
-        Plotly.newPlot('isseymiyake_movement_chart', [{
-            labels: ['データ準備中'],
-            values: [1],
-            type: 'pie',
-            marker: {colors: isseymiyakeGradient},
-            textposition: 'inside',
-            textinfo: 'label',
-            hovertemplate: 'データ準備中<extra></extra>'
-        }], {
-            margin: {l: 20, r: 20, t: 20, b: 20},
-            paper_bgcolor: 'white'
-        }, {responsive: true});
-
-        Plotly.newPlot('isseymiyake_gender_chart', [{
-            labels: ['データ準備中'],
-            values: [1],
-            type: 'pie',
-            marker: {colors: isseymiyakeGradient},
-            textposition: 'inside',
-            textinfo: 'label',
-            hovertemplate: 'データ準備中<extra></extra>'
-        }], {
-            margin: {l: 20, r: 20, t: 20, b: 20},
-            paper_bgcolor: 'white'
-        }, {responsive: true});
-
-        Plotly.newPlot('isseymiyake_line_chart', [{
-            labels: ['データ準備中'],
-            values: [1],
-            type: 'pie',
-            marker: {colors: isseymiyakeGradient},
-            textposition: 'inside',
-            textinfo: 'label',
-            hovertemplate: 'データ準備中<extra></extra>'
-        }], {
-            margin: {l: 20, r: 20, t: 20, b: 20},
-            paper_bgcolor: 'white'
-        }, {responsive: true});
-        </script>
 
 
-        <script>
-        const tissotPrimary = '#C41E3A';
-        const tissotAccent = '#FFD700';
-        const tissotGradient = ['#C41E3A', '#7b68ee', '#9370db', '#ba55d3', '#da70d6'];
-
-        // 準備中のダミーグラフ
-        Plotly.newPlot('tissot_price_chart', [{
-            x: ['~$100', '$100-200', '$200-300', '$300-500', '$500-1K', '$1K+'],
-            y: [0, 0, 0, 0, 0, 0],
-            type: 'bar',
-            marker: {
-                color: tissotPrimary,
-                line: {color: tissotAccent, width: 1}
-            },
-            text: ['データ<br>準備中', '', '', '', '', ''],
-            textposition: 'inside',
-            hovertemplate: '<b>%{x}</b><br>データ準備中<extra></extra>'
-        }], {
-            xaxis: {title: '価格帯', tickangle: -45},
-            yaxis: {title: '販売数'},
-            margin: {l: 50, r: 20, t: 20, b: 80},
-            plot_bgcolor: '#f8f9fa',
-            paper_bgcolor: 'white'
-        }, {responsive: true});
-
-        Plotly.newPlot('tissot_movement_chart', [{
-            labels: ['データ準備中'],
-            values: [1],
-            type: 'pie',
-            marker: {colors: tissotGradient},
-            textposition: 'inside',
-            textinfo: 'label',
-            hovertemplate: 'データ準備中<extra></extra>'
-        }], {
-            margin: {l: 20, r: 20, t: 20, b: 20},
-            paper_bgcolor: 'white'
-        }, {responsive: true});
-
-        Plotly.newPlot('tissot_gender_chart', [{
-            labels: ['データ準備中'],
-            values: [1],
-            type: 'pie',
-            marker: {colors: tissotGradient},
-            textposition: 'inside',
-            textinfo: 'label',
-            hovertemplate: 'データ準備中<extra></extra>'
-        }], {
-            margin: {l: 20, r: 20, t: 20, b: 20},
-            paper_bgcolor: 'white'
-        }, {responsive: true});
-
-        Plotly.newPlot('tissot_line_chart', [{
-            labels: ['データ準備中'],
-            values: [1],
-            type: 'pie',
-            marker: {colors: tissotGradient},
-            textposition: 'inside',
-            textinfo: 'label',
-            hovertemplate: 'データ準備中<extra></extra>'
-        }], {
-            margin: {l: 20, r: 20, t: 20, b: 20},
-            paper_bgcolor: 'white'
-        }, {responsive: true});
-        </script>
 
 
         <script>
@@ -32656,6 +32586,132 @@ function initOmegaCharts() {
 
 
 
+
+
+        <script>
+        const isseymiyakePrimary = '#2C3E50';
+        const isseymiyakeAccent = '#E74C3C';
+        const isseymiyakeGradient = ['#2C3E50', '#7b68ee', '#9370db', '#ba55d3', '#da70d6'];
+
+        Plotly.newPlot('isseymiyake_price_chart', [{
+            x: ['~$100', '$100-150', '$150-200', '$200-300', '$300-500', '$500-1K', '$1K-2K', '$2K~'],
+            y: [6, 5, 3, 9, 7, 3, 0, 1],
+            type: 'bar',
+            marker: {
+                color: isseymiyakePrimary,
+                line: {color: isseymiyakeAccent, width: 1}
+            },
+            hovertemplate: '<b>%{x}</b><br>販売数: %{y}<extra></extra>'
+        }], {
+            xaxis: {title: '価格帯', tickangle: -45},
+            yaxis: {title: '販売数'},
+            margin: {l: 50, r: 20, t: 20, b: 80},
+            plot_bgcolor: '#f8f9fa',
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('isseymiyake_movement_chart', [{
+            labels: ['クオーツ'],
+            values: [25],
+            type: 'pie',
+            marker: {colors: isseymiyakeGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('isseymiyake_gender_chart', [{
+            labels: ['メンズ'],
+            values: [35],
+            type: 'pie',
+            marker: {colors: isseymiyakeGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('isseymiyake_line_chart', [{
+            labels: ['TO', 'その他ISSEY MIYAKE', 'OVO', 'VAKIO'],
+            values: [47, 13, 2, 2],
+            type: 'pie',
+            marker: {colors: isseymiyakeGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+        </script>
+
+
+        <script>
+        const tissotPrimary = '#C8102E';
+        const tissotAccent = '#FFFFFF';
+        const tissotGradient = ['#C8102E', '#7b68ee', '#9370db', '#ba55d3', '#da70d6'];
+
+        Plotly.newPlot('tissot_price_chart', [{
+            x: ['~$100', '$100-150', '$150-200', '$200-300', '$300-500', '$500-1K', '$1K-2K', '$2K~'],
+            y: [1, 4, 7, 17, 13, 7, 3, 1],
+            type: 'bar',
+            marker: {
+                color: tissotPrimary,
+                line: {color: tissotAccent, width: 1}
+            },
+            hovertemplate: '<b>%{x}</b><br>販売数: %{y}<extra></extra>'
+        }], {
+            xaxis: {title: '価格帯', tickangle: -45},
+            yaxis: {title: '販売数'},
+            margin: {l: 50, r: 20, t: 20, b: 80},
+            plot_bgcolor: '#f8f9fa',
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('tissot_movement_chart', [{
+            labels: ['クオーツ', 'ソーラー', '手巻き', '自動巻'],
+            values: [24, 2, 3, 16],
+            type: 'pie',
+            marker: {colors: tissotGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('tissot_gender_chart', [{
+            labels: ['メンズ', 'レディース'],
+            values: [26, 1],
+            type: 'pie',
+            marker: {colors: tissotGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('tissot_line_chart', [{
+            labels: ['その他Tissot', 'PRX', 'Heritage', 'Powermatic', 'Seastar'],
+            values: [33, 10, 6, 2, 2],
+            type: 'pie',
+            marker: {colors: tissotGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+        </script>
 
 </body>
 </html>
