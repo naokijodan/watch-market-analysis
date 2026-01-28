@@ -14683,9 +14683,34 @@
         grid-template-columns: 1fr;
     }
 }
+
+.omega-purple { color: #667eea; }
+.omega-accent { color: #764ba2; font-weight: bold; }
+.omega-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+.omega-chart-container {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.omega-chart-container h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .omega-grid {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 
-    
+
 <style>
 .rado-grid {
     display: grid;
@@ -15773,1879 +15798,314 @@
     </div>
 
 
+    <div id="OMEGA" class="tab-content">
+        <h2 class="section-title omega-purple">🟣 OMEGA 詳細分析</h2>
 
-
-
-
-<div id="OMEGA" class="tab-content">
-
-<h2 style="color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; margin-top: 30px;">🟣 OMEGA 詳細分析</h2>
-
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 15px; margin: 20px 0; box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-        <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; backdrop-filter: blur(10px);">
-            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 8px;">📦 完品商品数</div>
-            <div style="font-size: 32px; font-weight: bold;">681</div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">総販売数</div>
+                <div class="value">1,249</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">中央値</div>
+                <div class="value">$589.99</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">CV（変動係数）</div>
+                <div class="value">1.095</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">型番抽出率</div>
+                <div class="value omega-accent">41.7%</div>
+            </div>
         </div>
-        <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; backdrop-filter: blur(10px);">
-            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 8px;">📈 総販売数</div>
-            <div style="font-size: 32px; font-weight: bold;">1249</div>
+
+        <div class="insight-box" style="border-left: 5px solid #667eea;">
+            <h3 class="omega-purple">🎯 仕入れ戦略（実践ガイド）</h3>
+            <div style="display: grid; gap: 15px;">
+                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">✅ 狙い目条件</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong class="omega-accent">Seamaster/De Ville</strong>の2大主力ライン（市場の66%）</li>
+                        <li>型番が<strong>明確に記載</strong>されている商品</li>
+                        <li><strong class="omega-accent">Co-Axial/Chronometer</strong>機構搭載モデル</li>
+                        <li>ヴィンテージで状態が良好なもの</li>
+                    </ul>
+                </div>
+                <div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 4px solid #764ba2;">
+                    <h4 style="color: #ff6b35; margin-bottom: 10px;">⚠️ 避けるべき条件</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>型番不明の「その他OMEGA」</li>
+                        <li>状態不明・箱なし品</li>
+                        <li>マイナーライン（Cosmic、Dynamic等）</li>
+                        <li>修理歴不明のヴィンテージ品</li>
+                    </ul>
+                </div>
+                <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #7b1fa2;">
+                    <h4 style="color: #7b1fa2; margin-bottom: 10px;">💰 仕入れ価格目安</h4>
+                    <p style="margin: 0;"><strong>通常モデル:</strong> ¥25,000以下</p>
+                    <p style="margin: 5px 0 0 0;"><strong class="omega-accent">Seamaster/De Ville:</strong> ¥40,000前後が上限</p>
+                </div>
+            </div>
         </div>
-        <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; backdrop-filter: blur(10px);">
-            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 8px;">💰 平均落札価格</div>
-            <div style="font-size: 32px; font-weight: bold;">$1,075</div>
+
+        <h3 class="section-title omega-purple">📊 市場分析グラフ</h3>
+        <div class="omega-grid">
+            <div class="omega-chart-container">
+                <h4 class="omega-purple">価格帯別分析（50ドル刻み）</h4>
+                <div id="omega_price_chart" style="height: 350px;"></div>
+            </div>
+            <div class="omega-chart-container">
+                <h4 class="omega-purple">駆動方式別分布</h4>
+                <div id="omega_movement_chart" style="height: 350px;"></div>
+            </div>
+            <div class="omega-chart-container">
+                <h4 class="omega-purple">性別・カテゴリー別分布</h4>
+                <div id="omega_gender_chart" style="height: 300px;"></div>
+            </div>
+            <div class="omega-chart-container">
+                <h4 class="omega-purple">ライン別売上比率</h4>
+                <div id="omega_line_chart" style="height: 350px;"></div>
+            </div>
         </div>
-        <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; backdrop-filter: blur(10px);">
-            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 8px;">📊 価格変動係数</div>
-            <div style="font-size: 32px; font-weight: bold;">1.10</div>
+
+        <h3 class="section-title omega-purple">🔵 ライン別詳細分析（全6ライン）</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ライン</th>
+                        <th>販売数</th>
+                        <th class="omega-accent">比率</th>
+                        <th>中央値</th>
+                        <th class="omega-accent">仕入上限(¥)</th>
+                        <th>CV値</th>
+                        <th>安定度</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>その他OMEGA</strong></td>
+                        <td>629</td>
+                        <td class="omega-accent">50.4%</td>
+                        <td>$189</td>
+                        <td class="highlight omega-accent">¥19,017</td>
+                        <td>0.990</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+その他OMEGA+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20その他OMEGA%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>De Ville</strong></td>
+                        <td>232</td>
+                        <td class="omega-accent">18.6%</td>
+                        <td>$370</td>
+                        <td class="highlight omega-accent">¥37,267</td>
+                        <td>1.075</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+De+Ville+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20De%20Ville%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Seamaster</strong></td>
+                        <td>211</td>
+                        <td class="omega-accent">16.9%</td>
+                        <td>$1058</td>
+                        <td class="highlight omega-accent">¥106,561</td>
+                        <td>0.771</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Seamaster+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Seamaster%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Speedmaster</strong></td>
+                        <td>85</td>
+                        <td class="omega-accent">6.8%</td>
+                        <td>$2195</td>
+                        <td class="highlight omega-accent">¥221,146</td>
+                        <td>0.635</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Speedmaster+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Speedmaster%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Constellation</strong></td>
+                        <td>48</td>
+                        <td class="omega-accent">3.8%</td>
+                        <td>$847</td>
+                        <td class="highlight omega-accent">¥85,285</td>
+                        <td>0.637</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Constellation+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Constellation%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Geneve</strong></td>
+                        <td>44</td>
+                        <td class="omega-accent">3.5%</td>
+                        <td>$430</td>
+                        <td class="highlight omega-accent">¥43,321</td>
+                        <td>0.504</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Geneve+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Geneve%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
         </div>
+
+
+        <h3 class="section-title omega-purple">🎭 特徴・価値軸分析</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>特徴</th>
+                        <th>商品数</th>
+                        <th>中央値</th>
+                        <th class="omega-accent">仕入上限(¥)</th>
+                        <th>CV値</th>
+                        <th>安定度</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>Vintage</strong></td>
+                        <td>315</td>
+                        <td>$399</td>
+                        <td class="highlight omega-accent">¥40,199</td>
+                        <td>0.725</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Vintage+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Vintage%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Chronograph</strong></td>
+                        <td>59</td>
+                        <td>$1990</td>
+                        <td class="highlight omega-accent">¥200,492</td>
+                        <td>0.554</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Chronograph+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Chronograph%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Co-Axial</strong></td>
+                        <td>19</td>
+                        <td>$2776</td>
+                        <td class="highlight omega-accent">¥279,636</td>
+                        <td>0.289</td>
+                        <td>★☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Co-Axial+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Co-Axial%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Chronometer</strong></td>
+                        <td>19</td>
+                        <td>$1119</td>
+                        <td class="highlight omega-accent">¥112,769</td>
+                        <td>0.930</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Chronometer+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Chronometer%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Limited Edition</strong></td>
+                        <td>11</td>
+                        <td>$1400</td>
+                        <td class="highlight omega-accent">¥141,048</td>
+                        <td>1.405</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Limited+Edition+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Limited%20Edition%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>GMT/World Time</strong></td>
+                        <td>3</td>
+                        <td>$2674</td>
+                        <td class="highlight omega-accent">¥269,366</td>
+                        <td>0.274</td>
+                        <td>★☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+GMT%2FWorld+Time+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20GMT%2FWorld%20Time%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
     </div>
-</div>
 
 
-<h3 style="color: #667eea; border-left: 5px solid #667eea; padding-left: 15px; margin-top: 30px;">🎯 OMEGA 仕入れ戦略</h3>
-<div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-        <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
-            <div style="font-weight: bold; color: #667eea; margin-bottom: 8px;">🎯 主力ライン</div>
-            <div style="font-size: 14px;">De Ville（34%）、Seamaster（32%）が市場の2/3を占有。Speedmaster（13%）も安定需要。</div>
-        </div>
-        <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #764ba2;">
-            <div style="font-weight: bold; color: #764ba2; margin-bottom: 8px;">💎 価値軸</div>
-            <div style="font-size: 14px;">Vintage（45%）が最大セグメント。Co-Axial、Chronometer等の高級機構も人気。</div>
-        </div>
-        <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
-            <div style="font-weight: bold; color: #667eea; margin-bottom: 8px;">🔍 仕入れポイント</div>
-            <div style="font-size: 14px;">型番明記商品を優先。Seamaster・De Villeのヴィンテージモデルは高回転。</div>
-        </div>
-    </div>
-</div>
 
 
-<h3 style="color: #667eea; border-left: 5px solid #667eea; padding-left: 15px; margin-top: 30px;">📊 市場分析グラフ</h3>
-<div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-        <div style="background: white; padding: 15px; border-radius: 8px;">
-            <canvas id="omegaPriceDistChart"></canvas>
-        </div>
-        <div style="background: white; padding: 15px; border-radius: 8px;">
-            <canvas id="omegaLineDistChart"></canvas>
-        </div>
-        <div style="background: white; padding: 15px; border-radius: 8px;">
-            <canvas id="omegaFeatureDistChart"></canvas>
-        </div>
-        <div style="background: white; padding: 15px; border-radius: 8px;">
-            <canvas id="omegaTopLinesChart"></canvas>
-        </div>
-    </div>
-</div>
 
 
-<h3 style="color: #667eea; border-left: 5px solid #667eea; padding-left: 15px; margin-top: 30px;">🔵 ライン別詳細分析</h3>
-<div style="overflow-x: auto;">
-<table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-    <thead>
-        <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-            <th style="padding: 15px; text-align: left;">ライン名</th>
-            <th style="padding: 15px; text-align: center;">商品数</th>
-            <th style="padding: 15px; text-align: right;">平均価格</th>
-            <th style="padding: 15px; text-align: center;">価格変動係数</th>
-            <th style="padding: 15px; text-align: center;">検索</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>De Ville</strong></td>
-            <td style="padding: 12px; text-align: center;">231</td>
-            <td style="padding: 12px; text-align: right;">$490</td>
-            <td style="padding: 12px; text-align: center;">1.07</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+De+Ville+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20De%20Ville%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Seamaster</strong></td>
-            <td style="padding: 12px; text-align: center;">211</td>
-            <td style="padding: 12px; text-align: right;">$1,493</td>
-            <td style="padding: 12px; text-align: center;">0.77</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Seamaster+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Seamaster%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Speedmaster</strong></td>
-            <td style="padding: 12px; text-align: center;">83</td>
-            <td style="padding: 12px; text-align: right;">$2,569</td>
-            <td style="padding: 12px; text-align: center;">0.64</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Speedmaster+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Speedmaster%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>その他OMEGA</strong></td>
-            <td style="padding: 12px; text-align: center;">64</td>
-            <td style="padding: 12px; text-align: right;">$349</td>
-            <td style="padding: 12px; text-align: center;">0.99</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+その他OMEGA+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20その他OMEGA%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Constellation</strong></td>
-            <td style="padding: 12px; text-align: center;">48</td>
-            <td style="padding: 12px; text-align: right;">$1,018</td>
-            <td style="padding: 12px; text-align: center;">0.64</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Constellation+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Constellation%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Geneve</strong></td>
-            <td style="padding: 12px; text-align: center;">44</td>
-            <td style="padding: 12px; text-align: right;">$437</td>
-            <td style="padding: 12px; text-align: center;">0.50</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Geneve+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Geneve%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-</div>
 
 
-<h3 style="color: #667eea; border-left: 5px solid #667eea; padding-left: 15px; margin-top: 30px;">🎭 特徴・価値軸分析</h3>
-<div style="overflow-x: auto;">
-<table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-    <thead>
-        <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-            <th style="padding: 15px; text-align: left;">特徴</th>
-            <th style="padding: 15px; text-align: center;">商品数</th>
-            <th style="padding: 15px; text-align: right;">平均価格</th>
-            <th style="padding: 15px; text-align: center;">価格変動係数</th>
-            <th style="padding: 15px; text-align: center;">検索</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Vintage</strong></td>
-            <td style="padding: 12px; text-align: center;">307</td>
-            <td style="padding: 12px; text-align: right;">$487</td>
-            <td style="padding: 12px; text-align: center;">0.73</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Vintage+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Vintage%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Gold</strong></td>
-            <td style="padding: 12px; text-align: center;">182</td>
-            <td style="padding: 12px; text-align: right;">$448</td>
-            <td style="padding: 12px; text-align: center;">0.78</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Gold+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Gold%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Chronograph</strong></td>
-            <td style="padding: 12px; text-align: center;">59</td>
-            <td style="padding: 12px; text-align: right;">$2,136</td>
-            <td style="padding: 12px; text-align: center;">0.55</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Chronograph+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Chronograph%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Co-Axial</strong></td>
-            <td style="padding: 12px; text-align: center;">19</td>
-            <td style="padding: 12px; text-align: right;">$3,206</td>
-            <td style="padding: 12px; text-align: center;">0.29</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Co-Axial+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Co-Axial%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Chronometer</strong></td>
-            <td style="padding: 12px; text-align: center;">19</td>
-            <td style="padding: 12px; text-align: right;">$1,584</td>
-            <td style="padding: 12px; text-align: center;">0.93</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Chronometer+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Chronometer%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px;"><strong>Limited</strong></td>
-            <td style="padding: 12px; text-align: center;">9</td>
-            <td style="padding: 12px; text-align: right;">$2,851</td>
-            <td style="padding: 12px; text-align: center;">1.36</td>
-            <td style="padding: 12px; text-align: center;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Limited+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20Limited%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-</div>
-
-
-<h3 style="color: #667eea; border-left: 5px solid #667eea; padding-left: 15px; margin-top: 30px;">📌 各ラインの人気モデルTop15</h3>
-
-<h4 style="color: #667eea; margin-top: 20px;">🔹 De Ville</h4>
-<div style="overflow-x: auto;">
-<table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
-    <thead>
-        <tr style="background: #667eea; color: white;">
-            <th style="padding: 12px; text-align: center;">順位</th>
-            <th style="padding: 12px; text-align: left;">型番</th>
-            <th style="padding: 12px; text-align: left;">商品タイトル例</th>
-            <th style="padding: 12px; text-align: center;">出品数</th>
-            <th style="padding: 12px; text-align: right;">平均価格</th>
-            <th style="padding: 12px; text-align: center;">検索</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>1</strong></td>
-            <td style="padding: 10px;"><strong>424.20.37.20.02.002</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA De Ville Prestige Co-Axial 424.20.37.20.02.0...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,856</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+424+20+37+20+02+002+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20424%2020%2037%2020%2002%20002%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>2</strong></td>
-            <td style="padding: 10px;"><strong>151.0039</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Vintage 1972 Omega De Ville Cal.711 Ref.151.0039 G...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥469</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+151+0039+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20151%200039%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>3</strong></td>
-            <td style="padding: 10px;"><strong>591.0015</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA De Ville Mens Vintage Watch Silver New batte...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥238</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+591+0015+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20591%200015%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>4</strong></td>
-            <td style="padding: 10px;"><strong>195.0076</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Reserved OMEGA De Ville Cal.1378 Ref.195.0076 26mm...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥373</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+195+0076+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20195%200076%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>5</strong></td>
-            <td style="padding: 10px;"><strong>511.0473</strong></td>
-            <td style="padding: 10px; font-size: 13px;">VINTAGE 1970s OMEGA De Ville 511.0473 Cal.625 Gold...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥280</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0473+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200473%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>6</strong></td>
-            <td style="padding: 10px;"><strong>4500.31</strong></td>
-            <td style="padding: 10px; font-size: 13px;">[Near MINT w/Paper] OMEGA De Ville 4500.31 Cal.112...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥1,000</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+4500+31+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%204500%2031%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>7</strong></td>
-            <td style="padding: 10px;"><strong>4503.31</strong></td>
-            <td style="padding: 10px; font-size: 13px;">[NEAR MINT] OMEGA DeVille Prestige Cal.1120 4503.3...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥1,300</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+4503+31+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%204503%2031%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>8</strong></td>
-            <td style="padding: 10px;"><strong>4531.51</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA WATCH DE VILLE CO-AXIAL CHRONOMETER 4531.51 ...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥2,265</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+4531+51+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%204531%2051%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>9</strong></td>
-            <td style="padding: 10px;"><strong>4532.51</strong></td>
-            <td style="padding: 10px; font-size: 13px;">discount OMEGA De Ville 4532.51 Date CO-AXIAL Auto...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥2,729</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+4532+51+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%204532%2051%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>10</strong></td>
-            <td style="padding: 10px;"><strong>4550.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA De Ville Chronoscope 4550.30 Coaxial Silver ...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥2,742</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+4550+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%204550%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>11</strong></td>
-            <td style="padding: 10px;"><strong>4570.31</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA De Ville Prestige 4570.31 Silver Dial Quartz...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥457</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+4570+31+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%204570%2031%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>12</strong></td>
-            <td style="padding: 10px;"><strong>511.0371</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Vintage Omega De Ville Gold Dial Manual Wind Cal.6...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥200</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0371+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200371%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>13</strong></td>
-            <td style="padding: 10px;"><strong>511.0392</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Vintage 1970s OMEGA De Ville 511.0392 Cal.625 Gold...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥285</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0392+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200392%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>14</strong></td>
-            <td style="padding: 10px;"><strong>511.0413</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Vintage 1970s Omega De Ville Gold Dial Cal.625 Ref...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥280</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0413+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200413%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>15</strong></td>
-            <td style="padding: 10px;"><strong>511.0471</strong></td>
-            <td style="padding: 10px; font-size: 13px;">1978 [Near MINT] OMEGA De Ville 511.0471 Cal.625 G...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥360</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0471+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200471%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-    </tbody>
-</table>
-</div>
-
-<h4 style="color: #667eea; margin-top: 20px;">🔹 Seamaster</h4>
-<div style="overflow-x: auto;">
-<table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
-    <thead>
-        <tr style="background: #667eea; color: white;">
-            <th style="padding: 12px; text-align: center;">順位</th>
-            <th style="padding: 12px; text-align: left;">型番</th>
-            <th style="padding: 12px; text-align: left;">商品タイトル例</th>
-            <th style="padding: 12px; text-align: center;">出品数</th>
-            <th style="padding: 12px; text-align: right;">平均価格</th>
-            <th style="padding: 12px; text-align: center;">検索</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>1</strong></td>
-            <td style="padding: 10px;"><strong>2511.81</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Omega Seamaster 120 2511.81 Navy Dial 36mm Quartz ...</td>
-            <td style="padding: 10px; text-align: center;">6</td>
-            <td style="padding: 10px; text-align: right;">¥940</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2511+81+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202511%2081%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>2</strong></td>
-            <td style="padding: 10px;"><strong>2561.80</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Seamaster Professional 300M Steel Mid Size W...</td>
-            <td style="padding: 10px; text-align: center;">4</td>
-            <td style="padding: 10px; text-align: right;">¥1,602</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2561+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202561%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>3</strong></td>
-            <td style="padding: 10px;"><strong>2531.80</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Omega Seamaster 2531.80 Navy Dial 41mm Automatic M...</td>
-            <td style="padding: 10px; text-align: center;">4</td>
-            <td style="padding: 10px; text-align: right;">¥2,525</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2531+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202531%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>4</strong></td>
-            <td style="padding: 10px;"><strong>2501.81</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Seamaster 2501.81 Date chronometer Automatic...</td>
-            <td style="padding: 10px; text-align: center;">3</td>
-            <td style="padding: 10px; text-align: right;">¥1,309</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2501+81+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202501%2081%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>5</strong></td>
-            <td style="padding: 10px;"><strong>196.1501</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Near MINT OMEGA Seamaster 120m 196.1501 Cal.1438 S...</td>
-            <td style="padding: 10px; text-align: center;">3</td>
-            <td style="padding: 10px; text-align: right;">¥845</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+196+1501+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20196%201501%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>6</strong></td>
-            <td style="padding: 10px;"><strong>2551.80</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Seamaster Professional 2551.80.00 Automatic ...</td>
-            <td style="padding: 10px; text-align: center;">3</td>
-            <td style="padding: 10px; text-align: right;">¥1,899</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2551+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202551%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>7</strong></td>
-            <td style="padding: 10px;"><strong>2541.80</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Seamaster Professional 300m Full Size 41mm Q...</td>
-            <td style="padding: 10px; text-align: center;">3</td>
-            <td style="padding: 10px; text-align: right;">¥1,973</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2541+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202541%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>8</strong></td>
-            <td style="padding: 10px;"><strong>2201.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Omega Seamaster 2201.50 Black Dial Men's Watch GZl...</td>
-            <td style="padding: 10px; text-align: center;">3</td>
-            <td style="padding: 10px; text-align: right;">¥2,834</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2201+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202201%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>9</strong></td>
-            <td style="padding: 10px;"><strong>2200.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Seamaster600 Planet Ocean 2200.50 black Dial...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,667</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2200+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202200%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>10</strong></td>
-            <td style="padding: 10px;"><strong>2264.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Seamaster 300 2264.50 Black Case Size 41mm M...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,679</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2264+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202264%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>11</strong></td>
-            <td style="padding: 10px;"><strong>2255.80</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Seamaster 300 2255.80 Date Blue Dial Automat...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,155</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2255+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202255%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>12</strong></td>
-            <td style="padding: 10px;"><strong>2254.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Seamaster300 2254.50 Date Black Dial Automat...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,710</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2254+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202254%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>13</strong></td>
-            <td style="padding: 10px;"><strong>2225.80</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Seamaster300 2225.80 Date Chronograph Navy D...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,666</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2225+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202225%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>14</strong></td>
-            <td style="padding: 10px;"><strong>2253.80</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA SEAMASTER 300 2253.80 36mm SS Blue Dial Auto...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,353</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2253+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202253%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>15</strong></td>
-            <td style="padding: 10px;"><strong>212.30.41.20.01.003</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Authentic OMEGA Seamaster professional 212.30.41.2...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥3,078</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+212+30+41+20+01+003+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20212%2030%2041%2020%2001%20003%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-    </tbody>
-</table>
-</div>
-
-<h4 style="color: #667eea; margin-top: 20px;">🔹 Speedmaster</h4>
-<div style="overflow-x: auto;">
-<table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
-    <thead>
-        <tr style="background: #667eea; color: white;">
-            <th style="padding: 12px; text-align: center;">順位</th>
-            <th style="padding: 12px; text-align: left;">型番</th>
-            <th style="padding: 12px; text-align: left;">商品タイトル例</th>
-            <th style="padding: 12px; text-align: center;">出品数</th>
-            <th style="padding: 12px; text-align: right;">平均価格</th>
-            <th style="padding: 12px; text-align: center;">検索</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>1</strong></td>
-            <td style="padding: 10px;"><strong>3520.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Polished OMEGA Speedmaster Mark 40 Steel Automatic...</td>
-            <td style="padding: 10px; text-align: center;">8</td>
-            <td style="padding: 10px; text-align: right;">¥1,907</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3520+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203520%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>2</strong></td>
-            <td style="padding: 10px;"><strong>3523.80</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Watch 3523.80 Speedmaster Triple Calendar Ch...</td>
-            <td style="padding: 10px; text-align: center;">5</td>
-            <td style="padding: 10px; text-align: right;">¥1,961</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3523+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203523%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>3</strong></td>
-            <td style="padding: 10px;"><strong>3510.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Speedmaster Chronograph Reduced Automatic Wa...</td>
-            <td style="padding: 10px; text-align: center;">5</td>
-            <td style="padding: 10px; text-align: right;">¥2,382</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3510+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203510%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>4</strong></td>
-            <td style="padding: 10px;"><strong>326.30.40.50.03.001</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Speedmaster Racing 326.30.40.50.03.001 Chron...</td>
-            <td style="padding: 10px; text-align: center;">3</td>
-            <td style="padding: 10px; text-align: right;">¥2,949</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+326+30+40+50+03+001+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20326%2030%2040%2050%2003%20001%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>5</strong></td>
-            <td style="padding: 10px;"><strong>3513.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Authentic OMEGA Speedmaster Date 3513.50 SS Automa...</td>
-            <td style="padding: 10px; text-align: center;">3</td>
-            <td style="padding: 10px; text-align: right;">¥1,621</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3513+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203513%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>6</strong></td>
-            <td style="padding: 10px;"><strong>3511.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Speedmaster Watches 3511.50 cal.1152 blackDi...</td>
-            <td style="padding: 10px; text-align: center;">3</td>
-            <td style="padding: 10px; text-align: right;">¥1,767</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3511+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203511%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>7</strong></td>
-            <td style="padding: 10px;"><strong>3210.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">with paper OMEGA Speedmaster 3210.50 Chronograph D...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,274</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3210+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203210%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>8</strong></td>
-            <td style="padding: 10px;"><strong>3521.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Speedmaster Chronograph Automatic Triple Cal...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥1,602</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3521+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203521%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>9</strong></td>
-            <td style="padding: 10px;"><strong>326.30.40.50.01.002</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Omega Speedmaster Racing Co-axial 326.30.40.50.01....</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,462</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+326+30+40+50+01+002+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20326%2030%2040%2050%2001%20002%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>10</strong></td>
-            <td style="padding: 10px;"><strong>3521.80</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Omega Speedmaster 3521.80 Triple Calendar Automati...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥1,798</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3521+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203521%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>11</strong></td>
-            <td style="padding: 10px;"><strong>3513.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Speedmaster 3513.30 Chronograph Date Automat...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥1,444</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3513+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203513%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>12</strong></td>
-            <td style="padding: 10px;"><strong>3510.12</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA 3510.12 Speedmaster Schumacher WATCH yellow ...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,528</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3510+12+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203510%2012%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>13</strong></td>
-            <td style="padding: 10px;"><strong>3523.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">with paper OMEGA Speedmaster 3523.30 Triple calend...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥1,973</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3523+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203523%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>14</strong></td>
-            <td style="padding: 10px;"><strong>3510.61</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Speedmaster Racing Schumacher 3510.61 Automa...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥2,482</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3510+61+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203510%2061%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>15</strong></td>
-            <td style="padding: 10px;"><strong>3523.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Authentic OMEGA Speedmaster Day Date LIMITED 3523....</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥2,632</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3523+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203523%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-    </tbody>
-</table>
-</div>
-
-<h4 style="color: #667eea; margin-top: 20px;">🔹 その他OMEGA</h4>
-<div style="overflow-x: auto;">
-<table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
-    <thead>
-        <tr style="background: #667eea; color: white;">
-            <th style="padding: 12px; text-align: center;">順位</th>
-            <th style="padding: 12px; text-align: left;">型番</th>
-            <th style="padding: 12px; text-align: left;">商品タイトル例</th>
-            <th style="padding: 12px; text-align: center;">出品数</th>
-            <th style="padding: 12px; text-align: right;">平均価格</th>
-            <th style="padding: 12px; text-align: center;">検索</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>1</strong></td>
-            <td style="padding: 10px;"><strong>166.0117</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Genève Day-Date 166.0117 Gold-Plated Automat...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥980</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+166+0117+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20166%200117%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>2</strong></td>
-            <td style="padding: 10px;"><strong>3300.10</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Classic 3300.10 YG2 tone Gold Dial Automatic...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥1,130</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3300+10+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203300%2010%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>3</strong></td>
-            <td style="padding: 10px;"><strong>3370.20</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Classic 3370.20 Date White Dial Automatic La...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥778</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3370+20+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203370%2020%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>4</strong></td>
-            <td style="padding: 10px;"><strong>3380.20</strong></td>
-            <td style="padding: 10px; font-size: 13px;">discount OMEGA Classic 3380.20 Moon Phase Pointer ...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥1,884</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3380+20+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203380%2020%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>5</strong></td>
-            <td style="padding: 10px;"><strong>511.0411</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Vintage [Exc+5] OMEGA Cal.625 Women's Gold Watch 5...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥152</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0411+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200411%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>6</strong></td>
-            <td style="padding: 10px;"><strong>511.0508</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Vintage 1970s Omega Genève Gold Dial Roman Index L...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥250</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0508+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200508%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>7</strong></td>
-            <td style="padding: 10px;"><strong>5203.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Classic 5203.30 Date Silver Dial Automatic M...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥815</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+5203+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%205203%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-    </tbody>
-</table>
-</div>
-
-<h4 style="color: #667eea; margin-top: 20px;">🔹 Constellation</h4>
-<div style="overflow-x: auto;">
-<table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
-    <thead>
-        <tr style="background: #667eea; color: white;">
-            <th style="padding: 12px; text-align: center;">順位</th>
-            <th style="padding: 12px; text-align: left;">型番</th>
-            <th style="padding: 12px; text-align: left;">商品タイトル例</th>
-            <th style="padding: 12px; text-align: center;">出品数</th>
-            <th style="padding: 12px; text-align: right;">平均価格</th>
-            <th style="padding: 12px; text-align: center;">検索</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>1</strong></td>
-            <td style="padding: 10px;"><strong>1502.40</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Constellation 1502.40 Date gray Dial Automat...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥1,089</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1502+40+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201502%2040%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>2</strong></td>
-            <td style="padding: 10px;"><strong>1562.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Constellation 1562.30 Silver Dial Quartz Lad...</td>
-            <td style="padding: 10px; text-align: center;">2</td>
-            <td style="padding: 10px; text-align: right;">¥534</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1562+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201562%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>3</strong></td>
-            <td style="padding: 10px;"><strong>121.92.41.50.01.001</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Omega Constellation Double Eagle 121.92.41.50.01.0...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥1,918</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+121+92+41+50+01+001+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20121%2092%2041%2050%2001%20001%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>4</strong></td>
-            <td style="padding: 10px;"><strong>1512.40</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Constellation 1512.40 Date Gray Dial Quartz ...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥710</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1512+40+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201512%2040%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>5</strong></td>
-            <td style="padding: 10px;"><strong>396.1201</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Near MINT OMEGA Constellation 396.1201 Cal.1532 Un...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥850</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+396+1201+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20396%201201%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>6</strong></td>
-            <td style="padding: 10px;"><strong>396.1070</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Constellation day-date Watches 396.1070 Silv...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥902</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+396+1070+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20396%201070%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>7</strong></td>
-            <td style="padding: 10px;"><strong>1594.50</strong></td>
-            <td style="padding: 10px; font-size: 13px;">discount OMEGA Constellation 2000 limited model 15...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥779</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1594+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201594%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>8</strong></td>
-            <td style="padding: 10px;"><strong>1572.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">[Exc+4] Omega Constellation Watch Stainless Steel ...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥520</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1572+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201572%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>9</strong></td>
-            <td style="padding: 10px;"><strong>1564.65</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA  Constellation 1564.65 10P Diamond Cindy Cra...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥1,025</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1564+65+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201564%2065%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>10</strong></td>
-            <td style="padding: 10px;"><strong>1562.65</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Vintage [Exc+5 Box] Omega Constellation Mini 1562....</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥855</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1562+65+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201562%2065%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>11</strong></td>
-            <td style="padding: 10px;"><strong>1512.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Constellation 1512.30 Date Silver Dial Quart...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥703</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1512+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201512%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>12</strong></td>
-            <td style="padding: 10px;"><strong>1262.70</strong></td>
-            <td style="padding: 10px; font-size: 13px;">[ Exc+4 ] OMEGA Constellation 1262.70 18K Gold Ste...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥800</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1262+70+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201262%2070%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>13</strong></td>
-            <td style="padding: 10px;"><strong>1510.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">【NEAR MINT】OMEGA Constellation 1510.30 Cal.1438 Wh...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥500</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1510+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201510%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>14</strong></td>
-            <td style="padding: 10px;"><strong>1360.79</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Constellation Mini Iris 1360.79 Ladies Used ...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥2,644</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1360+79+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201360%2079%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>15</strong></td>
-            <td style="padding: 10px;"><strong>1312.30</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Constellation 1312.30 Harf bar Date Silver D...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥1,076</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1312+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%201312%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-    </tbody>
-</table>
-</div>
-
-<h4 style="color: #667eea; margin-top: 20px;">🔹 Geneve</h4>
-<div style="overflow-x: auto;">
-<table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
-    <thead>
-        <tr style="background: #667eea; color: white;">
-            <th style="padding: 12px; text-align: center;">順位</th>
-            <th style="padding: 12px; text-align: left;">型番</th>
-            <th style="padding: 12px; text-align: left;">商品タイトル例</th>
-            <th style="padding: 12px; text-align: center;">出品数</th>
-            <th style="padding: 12px; text-align: right;">平均価格</th>
-            <th style="padding: 12px; text-align: center;">検索</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>1</strong></td>
-            <td style="padding: 10px;"><strong>166.0098</strong></td>
-            <td style="padding: 10px; font-size: 13px;">OMEGA Geneve 166.0098 Date Cal.1481 Silver Dial Au...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥610</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+166+0098+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20166%200098%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>2</strong></td>
-            <td style="padding: 10px;"><strong>166.0117</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Omega Geneve Day-Date 166.0117 Automatic Watch Fre...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥552</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+166+0117+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20166%200117%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>3</strong></td>
-            <td style="padding: 10px;"><strong>511.0411</strong></td>
-            <td style="padding: 10px; font-size: 13px;">*EXC+5* Vintage OMEGA Geneve 511.0411 Gold Dial Ha...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥200</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0411+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200411%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>4</strong></td>
-            <td style="padding: 10px;"><strong>511.0426</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Vintage 1972 OMEGA Geneve Ref.511.0426 Cal.485 Han...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥260</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0426+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200426%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>5</strong></td>
-            <td style="padding: 10px;"><strong>511.0454</strong></td>
-            <td style="padding: 10px; font-size: 13px;">Vtg 1975 [ N MINT] OMEGA Geneve Cal.1070 Ref.511.0...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥250</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0454+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200454%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 10px; text-align: center;"><strong>6</strong></td>
-            <td style="padding: 10px;"><strong>511.0457</strong></td>
-            <td style="padding: 10px; font-size: 13px;">*Near MINT* OMEGA Geneve 511.0457 Cal.625 Manual W...</td>
-            <td style="padding: 10px; text-align: center;">1</td>
-            <td style="padding: 10px; text-align: right;">¥330</td>
-            <td style="padding: 10px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0457+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200457%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-        
-    </tbody>
-</table>
-</div>
-
-
-<h3 style="color: #667eea; border-left: 5px solid #667eea; padding-left: 15px; margin-top: 30px;">🏆 全ライン横断 人気モデルTop30</h3>
-<div style="overflow-x: auto;">
-<table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-    <thead>
-        <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-            <th style="padding: 15px; text-align: center;">順位</th>
-            <th style="padding: 15px; text-align: left;">型番</th>
-            <th style="padding: 15px; text-align: left;">ライン</th>
-            <th style="padding: 15px; text-align: left;">商品タイトル例</th>
-            <th style="padding: 15px; text-align: center;">出品数</th>
-            <th style="padding: 15px; text-align: right;">平均価格</th>
-            <th style="padding: 15px; text-align: center;">検索</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong>🥇 1</strong></td>
-            <td style="padding: 12px;"><strong>3520.50</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">Polished OMEGA Speedmaster Mark 40 Steel Automatic...</td>
-            <td style="padding: 12px; text-align: center;">8</td>
-            <td style="padding: 12px; text-align: right;">$1,907</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3520+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203520%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong>🥈 2</strong></td>
-            <td style="padding: 12px;"><strong>2511.81</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">Omega Seamaster 120 2511.81 Navy Dial 36mm Quartz ...</td>
-            <td style="padding: 12px; text-align: center;">6</td>
-            <td style="padding: 12px; text-align: right;">$940</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2511+81+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202511%2081%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong>🥉 3</strong></td>
-            <td style="padding: 12px;"><strong>3523.80</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Watch 3523.80 Speedmaster Triple Calendar Ch...</td>
-            <td style="padding: 12px; text-align: center;">5</td>
-            <td style="padding: 12px; text-align: right;">$1,961</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3523+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203523%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 4</strong></td>
-            <td style="padding: 12px;"><strong>3510.50</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Speedmaster Chronograph Reduced Automatic Wa...</td>
-            <td style="padding: 12px; text-align: center;">5</td>
-            <td style="padding: 12px; text-align: right;">$2,382</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3510+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203510%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 5</strong></td>
-            <td style="padding: 12px;"><strong>2531.80</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">Omega Seamaster 2531.80 Navy Dial 41mm Automatic M...</td>
-            <td style="padding: 12px; text-align: center;">4</td>
-            <td style="padding: 12px; text-align: right;">$2,525</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2531+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202531%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 6</strong></td>
-            <td style="padding: 12px;"><strong>2561.80</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Seamaster Professional 300M Steel Mid Size W...</td>
-            <td style="padding: 12px; text-align: center;">4</td>
-            <td style="padding: 12px; text-align: right;">$1,602</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2561+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202561%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 7</strong></td>
-            <td style="padding: 12px;"><strong>2551.80</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Seamaster Professional 2551.80.00 Automatic ...</td>
-            <td style="padding: 12px; text-align: center;">3</td>
-            <td style="padding: 12px; text-align: right;">$1,899</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2551+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202551%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 8</strong></td>
-            <td style="padding: 12px;"><strong>3511.50</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Speedmaster Watches 3511.50 cal.1152 blackDi...</td>
-            <td style="padding: 12px; text-align: center;">3</td>
-            <td style="padding: 12px; text-align: right;">$1,767</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3511+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203511%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 9</strong></td>
-            <td style="padding: 12px;"><strong>3513.50</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">Authentic OMEGA Speedmaster Date 3513.50 SS Automa...</td>
-            <td style="padding: 12px; text-align: center;">3</td>
-            <td style="padding: 12px; text-align: right;">$1,621</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3513+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203513%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 10</strong></td>
-            <td style="padding: 12px;"><strong>326.30.40.50.03.001</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Speedmaster Racing 326.30.40.50.03.001 Chron...</td>
-            <td style="padding: 12px; text-align: center;">3</td>
-            <td style="padding: 12px; text-align: right;">$2,949</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+326+30+40+50+03+001+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20326%2030%2040%2050%2003%20001%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 11</strong></td>
-            <td style="padding: 12px;"><strong>196.1501</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">Near MINT OMEGA Seamaster 120m 196.1501 Cal.1438 S...</td>
-            <td style="padding: 12px; text-align: center;">3</td>
-            <td style="padding: 12px; text-align: right;">$845</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+196+1501+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20196%201501%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 12</strong></td>
-            <td style="padding: 12px;"><strong>2541.80</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Seamaster Professional 300m Full Size 41mm Q...</td>
-            <td style="padding: 12px; text-align: center;">3</td>
-            <td style="padding: 12px; text-align: right;">$1,973</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2541+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202541%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 13</strong></td>
-            <td style="padding: 12px;"><strong>2501.81</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Seamaster 2501.81 Date chronometer Automatic...</td>
-            <td style="padding: 12px; text-align: center;">3</td>
-            <td style="padding: 12px; text-align: right;">$1,309</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2501+81+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202501%2081%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 14</strong></td>
-            <td style="padding: 12px;"><strong>2201.50</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">Omega Seamaster 2201.50 Black Dial Men's Watch GZl...</td>
-            <td style="padding: 12px; text-align: center;">3</td>
-            <td style="padding: 12px; text-align: right;">$2,834</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2201+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202201%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 15</strong></td>
-            <td style="padding: 12px;"><strong>3513.30</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Speedmaster 3513.30 Chronograph Date Automat...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$1,444</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3513+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203513%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 16</strong></td>
-            <td style="padding: 12px;"><strong>3523.30</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">with paper OMEGA Speedmaster 3523.30 Triple calend...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$1,973</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3523+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203523%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 17</strong></td>
-            <td style="padding: 12px;"><strong>3510.61</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Speedmaster Racing Schumacher 3510.61 Automa...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$2,482</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3510+61+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203510%2061%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 18</strong></td>
-            <td style="padding: 12px;"><strong>2200.50</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Seamaster600 Planet Ocean 2200.50 black Dial...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$2,667</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2200+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202200%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 19</strong></td>
-            <td style="padding: 12px;"><strong>2253.80</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA SEAMASTER 300 2253.80 36mm SS Blue Dial Auto...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$2,353</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2253+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202253%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 20</strong></td>
-            <td style="padding: 12px;"><strong>195.0076</strong></td>
-            <td style="padding: 12px;">De Ville</td>
-            <td style="padding: 12px; font-size: 13px;">Reserved OMEGA De Ville Cal.1378 Ref.195.0076 26mm...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$373</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+195+0076+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20195%200076%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 21</strong></td>
-            <td style="padding: 12px;"><strong>3521.30</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Speedmaster Chronograph Automatic Triple Cal...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$1,602</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3521+30+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203521%2030%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 22</strong></td>
-            <td style="padding: 12px;"><strong>3521.80</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">Omega Speedmaster 3521.80 Triple Calendar Automati...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$1,798</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3521+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203521%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 23</strong></td>
-            <td style="padding: 12px;"><strong>2254.50</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Seamaster300 2254.50 Date Black Dial Automat...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$2,710</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2254+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202254%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 24</strong></td>
-            <td style="padding: 12px;"><strong>212.30.41.20.01.003</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">Authentic OMEGA Seamaster professional 212.30.41.2...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$3,078</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+212+30+41+20+01+003+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20212%2030%2041%2020%2001%20003%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 25</strong></td>
-            <td style="padding: 12px;"><strong>2255.80</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Seamaster 300 2255.80 Date Blue Dial Automat...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$2,155</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2255+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202255%2080%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 26</strong></td>
-            <td style="padding: 12px;"><strong>396.1022</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">*Near MINT* OMEGA Seamaster Polaris Cal.1444 396.1...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$544</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+396+1022+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20396%201022%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 27</strong></td>
-            <td style="padding: 12px;"><strong>2264.50</strong></td>
-            <td style="padding: 12px;">Seamaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA Seamaster 300 2264.50 Black Case Size 41mm M...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$2,679</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2264+50+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%202264%2050%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 28</strong></td>
-            <td style="padding: 12px;"><strong>511.0411</strong></td>
-            <td style="padding: 12px;">その他OMEGA</td>
-            <td style="padding: 12px; font-size: 13px;">Vintage [Exc+5] OMEGA Cal.625 Women's Gold Watch 5...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$176</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+511+0411+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20511%200411%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: white; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 29</strong></td>
-            <td style="padding: 12px;"><strong>424.20.37.20.02.002</strong></td>
-            <td style="padding: 12px;">De Ville</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA De Ville Prestige Co-Axial 424.20.37.20.02.0...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$2,856</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+424+20+37+20+02+002+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%20424%2020%2037%2020%2002%20002%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-        <tr style="background: #f8f9fa; border-bottom: 1px solid #e0e0e0;">
-            <td style="padding: 12px; text-align: center;"><strong> 30</strong></td>
-            <td style="padding: 12px;"><strong>3510.12</strong></td>
-            <td style="padding: 12px;">Speedmaster</td>
-            <td style="padding: 12px; font-size: 13px;">OMEGA 3510.12 Speedmaster Schumacher WATCH yellow ...</td>
-            <td style="padding: 12px; text-align: center;">2</td>
-            <td style="padding: 12px; text-align: right;">$2,528</td>
-            <td style="padding: 12px; text-align: center; white-space: nowrap;">
-                <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3510+12+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                <input type="checkbox" class="search-checkbox">
-                <a href="https://jp.mercari.com/search?keyword=OMEGA%203510%2012%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                <input type="checkbox" class="search-checkbox">
-            </td>
-        </tr>
-    
-    </tbody>
-</table>
-</div>
-
-
-</div>
 
 
 
@@ -18794,6 +17254,69 @@ function initOmegaCharts() {
     }));
 }
 </script>
+
+
+        <script>
+        const omegaPurple = '#667eea';
+        const omegaAccent = '#764ba2';
+        const omegaGradient = ['#667eea', '#7b68ee', '#9370db', '#ba55d3', '#da70d6'];
+
+        Plotly.newPlot('omega_price_chart', [{
+            x: ['~$100', '$100-150', '$150-200', '$200-300', '$300-500', '$500-1K', '$1K-2K', '$2K~'],
+            y: [13, 25, 28, 77, 166, 149, 97, 126],
+            type: 'bar',
+            marker: {
+                color: omegaPurple,
+                line: {color: omegaAccent, width: 1}
+            },
+            hovertemplate: '<b>%{x}</b><br>販売数: %{y}<extra></extra>'
+        }], {
+            xaxis: {title: '価格帯', tickangle: -45},
+            yaxis: {title: '販売数'},
+            margin: {l: 50, r: 20, t: 20, b: 80},
+            plot_bgcolor: '#f8f9fa',
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('omega_movement_chart', [{
+            labels: ['クオーツ', '不明', '手巻き', '自動巻'],
+            values: [218, 723, 90, 218],
+            type: 'pie',
+            marker: {colors: omegaGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('omega_gender_chart', [{
+            labels: ['メンズ', 'レディース', 'ユニセックス', 'ボーイズ/キッズ'],
+            values: [409, 71, 7, 5],
+            type: 'pie',
+            marker: {colors: omegaGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('omega_line_chart', [{
+            labels: ['その他OMEGA', 'De Ville', 'Seamaster', 'Speedmaster', 'Constellation', 'Geneve'],
+            values: [629, 232, 211, 85, 48, 44],
+            type: 'pie',
+            marker: {colors: omegaGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+        </script>
 
 </body>
 </html>
