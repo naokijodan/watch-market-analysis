@@ -920,7 +920,7 @@
         </div>
 
         
-        <h2 class="section-title">📦 完品データ統計</h2>
+                <h2 class="section-title">📦 完品データ統計</h2>
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="icon">📦</div>
@@ -930,21 +930,21 @@
             <div class="stat-card">
                 <div class="icon">💰</div>
                 <div class="label">完品総売上</div>
-                <div class="value">$5,179,090</div>
+                <div class="value">$5,323,339</div>
             </div>
             <div class="stat-card">
                 <div class="icon">📊</div>
                 <div class="label">完品平均価格</div>
-                <div class="value">$558.39</div>
+                <div class="value">$550.56</div>
             </div>
             <div class="stat-card">
                 <div class="icon">📈</div>
                 <div class="label">完品中央値</div>
-                <div class="value">$229.99</div>
+                <div class="value">$230.00</div>
             </div>
         </div>
 
-<h2 class="section-title">🏷️ ブランド別分析（Top20）</h2>
+        <h2 class="section-title">🏷️ ブランド別分析（Top20）</h2>
         <div class="chart-grid">
             <div class="chart-container"><div id="brandBarChart"></div></div>
             <div class="chart-container"><div id="brandPieChart"></div></div>
@@ -955,9 +955,6 @@
         <div class="chart-container"><div id="monthlyTrendChart"></div></div>
 
         
-        <h2 class="section-title">📅 月別販売数推移</h2>
-        <div class="chart-container"><div id="monthlyTrendChart"></div></div>
-
         <h2 class="section-title">💰 価格帯分布（完品のみ）</h2>
         <div class="chart-container"><div id="priceDistChart"></div></div>
     </div>
@@ -2049,14 +2046,14 @@
 
     // ブランド別棒グラフ
     function drawBrandBarChart() {
-        const data = [{"y": ["CASIO", "SEIKO", "OMEGA", "CITIZEN", "Orient", "TAG HEUER", "GUCCI", "ROLEX", "Hamilton", "Longines", "G-SHOCK", "Cartier", "RADO", "Swatch", "BREITLING", "NIXON", "ISSEY MIYAKE", "Tissot", "DIOR", "SAINT LAURENT"], "x": [3813, 3278, 419, 361, 300, 230, 138, 106, 98, 90, 66, 57, 53, 49, 40, 40, 34, 33, 31, 29], "type": "bar", "orientation": "h", "marker": {"color": "#0D47A1"}}];
+        const data = [{"y": ["SEIKO", "CASIO", "OMEGA", "(不明)", "Tissot", "GUCCI", "CITIZEN", "TAG HEUER", "ROLEX", "Longines", "Orient", "Hamilton", "Cartier", "BREITLING", "RADO", "HERMES", "TUDOR", "Oris", "G-SHOCK", "SAINT LAURENT"], "x": [2563, 1748, 681, 606, 442, 396, 376, 372, 237, 218, 210, 183, 150, 104, 96, 75, 66, 65, 63, 59], "type": "bar", "orientation": "h", "marker": {"color": "#0D47A1"}}];
         const layout = {...plotlyLayout, title: 'ブランド別販売数（Top20）', xaxis: {title: '販売数'}, height: 500};
         Plotly.newPlot('brandBarChart', data, layout, plotlyConfig);
     }
 
     // ブランド別円グラフ
     function drawBrandPieChart() {
-        const data = [{"labels": ["CASIO", "SEIKO", "OMEGA", "CITIZEN", "Orient", "TAG HEUER", "GUCCI", "ROLEX", "Hamilton", "Longines"], "values": [3813, 3278, 419, 361, 300, 230, 138, 106, 98, 90], "type": "pie"}];
+        const data = [{"labels": ["SEIKO", "CASIO", "OMEGA", "(不明)", "Tissot", "GUCCI", "CITIZEN", "TAG HEUER", "ROLEX", "Longines"], "values": [2563, 1748, 681, 606, 442, 396, 376, 372, 237, 218], "type": "pie"}];
         const layout = {...plotlyLayout, title: 'ブランド別シェア（Top10）'};
         Plotly.newPlot('brandPieChart', data, layout, plotlyConfig);
     }
@@ -2065,18 +2062,18 @@
     
     // 月別販売数推移
     function drawMonthlyTrendChart() {
-        const months = ["2025-12", "2026-01"];
+        const months = ["2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01"];
         const movementData = {};
 
         // 各駆動方式ごとのデータを準備
-        [{"month": "2025-12", "data": {"クオーツ": 159, "スマートウォッチ": 2, "ソーラー": 45, "デジタル": 26, "不明": 146, "手巻き": 17, "自動巻": 63}}, {"month": "2026-01", "data": {"クオーツ": 2841, "スマートウォッチ": 29, "ソーラー": 878, "デジタル": 278, "不明": 2984, "手巻き": 254, "自動巻": 1553}}].forEach(item => {
+        [{"month": "2025-01", "data": {"クオーツ": 1, "スマートウォッチ": 0, "ソーラー": 0, "デジタル": 0, "不明": 0, "手巻き": 0, "自動巻": 0}}, {"month": "2025-02", "data": {"クオーツ": 10, "スマートウォッチ": 0, "ソーラー": 0, "デジタル": 0, "不明": 0, "手巻き": 2, "自動巻": 6}}, {"month": "2025-03", "data": {"クオーツ": 19, "スマートウォッチ": 0, "ソーラー": 0, "デジタル": 0, "不明": 0, "手巻き": 3, "自動巻": 6}}, {"month": "2025-04", "data": {"クオーツ": 20, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 3, "自動巻": 10}}, {"month": "2025-05", "data": {"クオーツ": 11, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 4, "自動巻": 4}}, {"month": "2025-06", "data": {"クオーツ": 20, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 1, "自動巻": 10}}, {"month": "2025-07", "data": {"クオーツ": 21, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 3, "自動巻": 8}}, {"month": "2025-08", "data": {"クオーツ": 15, "スマートウォッチ": 0, "ソーラー": 2, "デジタル": 0, "不明": 0, "手巻き": 2, "自動巻": 1}}, {"month": "2025-09", "data": {"クオーツ": 8, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 5, "自動巻": 13}}, {"month": "2025-10", "data": {"クオーツ": 6, "スマートウォッチ": 0, "ソーラー": 0, "デジタル": 0, "不明": 0, "手巻き": 1, "自動巻": 12}}, {"month": "2025-11", "data": {"クオーツ": 11, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 2, "自動巻": 8}}, {"month": "2025-12", "data": {"クオーツ": 170, "スマートウォッチ": 2, "ソーラー": 45, "デジタル": 26, "不明": 146, "手巻き": 21, "自動巻": 71}}, {"month": "2026-01", "data": {"クオーツ": 2844, "スマートウォッチ": 29, "ソーラー": 878, "デジタル": 278, "不明": 2984, "手巻き": 254, "自動巻": 1556}}].forEach(item => {
             Object.keys(item.data).forEach(movement => {
                 if (!movementData[movement]) movementData[movement] = [];
             });
         });
 
         Object.keys(movementData).forEach(movement => {
-            [{"month": "2025-12", "data": {"クオーツ": 159, "スマートウォッチ": 2, "ソーラー": 45, "デジタル": 26, "不明": 146, "手巻き": 17, "自動巻": 63}}, {"month": "2026-01", "data": {"クオーツ": 2841, "スマートウォッチ": 29, "ソーラー": 878, "デジタル": 278, "不明": 2984, "手巻き": 254, "自動巻": 1553}}].forEach(item => {
+            [{"month": "2025-01", "data": {"クオーツ": 1, "スマートウォッチ": 0, "ソーラー": 0, "デジタル": 0, "不明": 0, "手巻き": 0, "自動巻": 0}}, {"month": "2025-02", "data": {"クオーツ": 10, "スマートウォッチ": 0, "ソーラー": 0, "デジタル": 0, "不明": 0, "手巻き": 2, "自動巻": 6}}, {"month": "2025-03", "data": {"クオーツ": 19, "スマートウォッチ": 0, "ソーラー": 0, "デジタル": 0, "不明": 0, "手巻き": 3, "自動巻": 6}}, {"month": "2025-04", "data": {"クオーツ": 20, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 3, "自動巻": 10}}, {"month": "2025-05", "data": {"クオーツ": 11, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 4, "自動巻": 4}}, {"month": "2025-06", "data": {"クオーツ": 20, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 1, "自動巻": 10}}, {"month": "2025-07", "data": {"クオーツ": 21, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 3, "自動巻": 8}}, {"month": "2025-08", "data": {"クオーツ": 15, "スマートウォッチ": 0, "ソーラー": 2, "デジタル": 0, "不明": 0, "手巻き": 2, "自動巻": 1}}, {"month": "2025-09", "data": {"クオーツ": 8, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 5, "自動巻": 13}}, {"month": "2025-10", "data": {"クオーツ": 6, "スマートウォッチ": 0, "ソーラー": 0, "デジタル": 0, "不明": 0, "手巻き": 1, "自動巻": 12}}, {"month": "2025-11", "data": {"クオーツ": 11, "スマートウォッチ": 0, "ソーラー": 1, "デジタル": 0, "不明": 0, "手巻き": 2, "自動巻": 8}}, {"month": "2025-12", "data": {"クオーツ": 170, "スマートウォッチ": 2, "ソーラー": 45, "デジタル": 26, "不明": 146, "手巻き": 21, "自動巻": 71}}, {"month": "2026-01", "data": {"クオーツ": 2844, "スマートウォッチ": 29, "ソーラー": 878, "デジタル": 278, "不明": 2984, "手巻き": 254, "自動巻": 1556}}].forEach(item => {
                 movementData[movement].push(item.data[movement] || 0);
             });
         });
@@ -2093,486 +2090,6 @@
         const layout = {...plotlyLayout, title: '月別販売数推移（完品のみ）', xaxis: {title: '年月'}, yaxis: {title: '販売数'}};
         Plotly.newPlot('monthlyTrendChart', traces, layout, plotlyConfig);
     }
-
-    
-    // 月別販売数推移
-    function drawMonthlyTrendChart() {
-        const months = ["2025-12", "2026-01"];
-        const movementData = {};
-
-        // 各駆動方式ごとのデータを準備
-        [{"month": "2025-12", "data": {"クオーツ": 159, "スマートウォッチ": 2, "ソーラー": 45, "デジタル": 26, "不明": 146, "手巻き": 17, "自動巻": 63}}, {"month": "2026-01", "data": {"クオーツ": 2841, "スマートウォッチ": 29, "ソーラー": 878, "デジタル": 278, "不明": 2984, "手巻き": 254, "自動巻": 1553}}].forEach(item => {
-            Object.keys(item.data).forEach(movement => {
-                if (!movementData[movement]) movementData[movement] = [];
-            });
-        });
-
-        Object.keys(movementData).forEach(movement => {
-            [{"month": "2025-12", "data": {"クオーツ": 159, "スマートウォッチ": 2, "ソーラー": 45, "デジタル": 26, "不明": 146, "手巻き": 17, "自動巻": 63}}, {"month": "2026-01", "data": {"クオーツ": 2841, "スマートウォッチ": 29, "ソーラー": 878, "デジタル": 278, "不明": 2984, "手巻き": 254, "自動巻": 1553}}].forEach(item => {
-                movementData[movement].push(item.data[movement] || 0);
-            });
-        });
-
-        const traces = Object.keys(movementData).map(movement => ({
-            x: months,
-            y: movementData[movement],
-            name: movement,
-            type: 'scatter',
-            mode: 'lines+markers',
-            stackgroup: 'one'
-        }));
-
-        const layout = {...plotlyLayout, title: '月別販売数推移（完品のみ）', xaxis: {title: '年月'}, yaxis: {title: '販売数'}};
-        Plotly.newPlot('monthlyTrendChart', traces, layout, plotlyConfig);
-    }
-
-    // 価格帯分布（50ドル刻み）
-    function drawPriceDistChart() {
-        const data = [{
-            x: ['$0-49', '$50-99', '$100-149', '$150-199', '$200-249', '$250-299', '$300-349', '$350-399', '$400-449', '$450-499', '$500-549', '$550-599', '$600-649', '$650-699', '$700-749', '$750-799', '$800-849', '$850-899', '$900-949', '$950-999', '$1000+'],
-            y: [21, 1015, 1706, 1417, 823, 719, 522, 461, 270, 254, 168, 149, 104, 112, 80, 110, 79, 90, 52, 68, 1055],
-            type: 'bar',
-            marker: {color: '#1976D2'}
-        }];
-        const layout = {...plotlyLayout, title: '価格帯分布（完品のみ・50ドル刻み）', xaxis: {title: '価格帯'}, yaxis: {title: '件数'}};
-        Plotly.newPlot('priceDistChart', data, layout, plotlyConfig);
-    }
-    </script>
-
-    
-    
-    
-    
-    
-    <div id="automatic" class="tab-content">
-        <h2 class="section-title">⚙️ 自動巻ウォッチ市場分析</h2>
-
-        <!-- 統計カード -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="label">総販売数</div>
-                <div class="value">1,705</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">ユニークモデル数</div>
-                <div class="value">1,705</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">平均価格</div>
-                <div class="value">$942.31</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">中央値</div>
-                <div class="value">$499.90</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">最高価格</div>
-                <div class="value">$20,760.00</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">総売上</div>
-                <div class="value">$1,606,638</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">CV値（価格安定性）</div>
-                <div class="value">1.167</div>
-            </div>
-            <div class="stat-card">
-                <div class="label">仕入れ上限中央値</div>
-                <div class="value">¥58,988</div>
-            </div>
-        </div>
-
-        <!-- グラフエリア -->
-        <h3 class="section-title">📊 市場分析グラフ</h3>
-        <div class="chart-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div class="chart-container"><div id="automatic_brand_bar"></div></div>
-            <div class="chart-container"><div id="automatic_brand_pie"></div></div>
-            <div class="chart-container"><div id="automatic_price_dist"></div></div>
-            <div class="chart-container"><div id="automatic_dept_pie"></div></div>
-        </div>
-
-        <!-- ブランド別集計テーブル -->
-        <h3 class="section-title">🏷️ ブランド別集計（Top20）</h3>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ブランド</th>
-                        <th>販売数</th>
-                        <th>最低価格</th>
-                        <th>最高価格</th>
-                        <th>中央値($)</th>
-                        <th>中央値(¥)</th>
-                        <th>仕入上限(¥)</th>
-                        <th>CV値</th>
-                        <th>検索</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td><strong>セイコー</strong> (SEIKO)</td>
-                        <td>609</td>
-                        <td>$50.00</td>
-                        <td>$5099.32</td>
-                        <td>$279.90</td>
-                        <td>¥43,384</td>
-                        <td class="highlight">¥31,708</td>
-                        <td>1.181</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_SEIKO_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BB%E3%82%A4%E3%82%B3%E3%83%BC+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_SEIKO_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>オメガ</strong> (OMEGA)</td>
-                        <td>218</td>
-                        <td>$118.00</td>
-                        <td>$5382.34</td>
-                        <td>$1556.66</td>
-                        <td>¥241,282</td>
-                        <td class="highlight">¥190,026</td>
-                        <td>0.605</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_OMEGA_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%A1%E3%82%AC+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_OMEGA_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>ティソ</strong> (Tissot)</td>
-                        <td>105</td>
-                        <td>$27.00</td>
-                        <td>$1459.53</td>
-                        <td>$450.00</td>
-                        <td>¥69,750</td>
-                        <td class="highlight">¥52,800</td>
-                        <td>0.595</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Tissot_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%83%86%E3%82%A3%E3%82%BD+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Tissot_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>オリエント</strong> (Orient)</td>
-                        <td>101</td>
-                        <td>$62.99</td>
-                        <td>$904.18</td>
-                        <td>$271.06</td>
-                        <td>¥42,014</td>
-                        <td class="highlight">¥30,611</td>
-                        <td>0.476</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Orient_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%AA%E3%82%A8%E3%83%B3%E3%83%88+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Orient_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>不明</strong> ((不明))</td>
-                        <td>93</td>
-                        <td>$76.50</td>
-                        <td>$5258.57</td>
-                        <td>$700.00</td>
-                        <td>¥108,500</td>
-                        <td class="highlight">¥83,800</td>
-                        <td>1.054</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=%28%E4%B8%8D%E6%98%8E%29+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_(不明)_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E4%B8%8D%E6%98%8E+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_(不明)_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>ブライトリング</strong> (BREITLING)</td>
-                        <td>68</td>
-                        <td>$135.00</td>
-                        <td>$5902.40</td>
-                        <td>$2392.95</td>
-                        <td>¥370,907</td>
-                        <td class="highlight">¥293,726</td>
-                        <td>0.422</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=BREITLING+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_BREITLING_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%83%96%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%83%B3%E3%82%B0+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_BREITLING_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>ハミルトン</strong> (Hamilton)</td>
-                        <td>62</td>
-                        <td>$289.90</td>
-                        <td>$1992.00</td>
-                        <td>$500.00</td>
-                        <td>¥77,499</td>
-                        <td class="highlight">¥58,999</td>
-                        <td>0.497</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Hamilton_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%83%8F%E3%83%9F%E3%83%AB%E3%83%88%E3%83%B3+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Hamilton_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>タグホイヤー</strong> (TAG HEUER)</td>
-                        <td>61</td>
-                        <td>$199.99</td>
-                        <td>$4480.09</td>
-                        <td>$1258.30</td>
-                        <td>¥195,036</td>
-                        <td class="highlight">¥153,029</td>
-                        <td>0.577</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG%20HEUER+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_TAG HEUER_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BF%E3%82%B0%E3%83%9B%E3%82%A4%E3%83%A4%E3%83%BC+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_TAG HEUER_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>TUDOR</strong> (TUDOR)</td>
-                        <td>53</td>
-                        <td>$897.34</td>
-                        <td>$3862.40</td>
-                        <td>$1900.18</td>
-                        <td>¥294,528</td>
-                        <td class="highlight">¥232,622</td>
-                        <td>0.338</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=TUDOR+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_TUDOR_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=TUDOR+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_TUDOR_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>オリス</strong> (Oris)</td>
-                        <td>41</td>
-                        <td>$179.90</td>
-                        <td>$1830.00</td>
-                        <td>$844.02</td>
-                        <td>¥130,823</td>
-                        <td class="highlight">¥101,658</td>
-                        <td>0.388</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Oris+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Oris_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%AA%E3%82%B9+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Oris_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>ロンジン</strong> (Longines)</td>
-                        <td>37</td>
-                        <td>$200.00</td>
-                        <td>$1836.30</td>
-                        <td>$799.99</td>
-                        <td>¥123,998</td>
-                        <td class="highlight">¥96,199</td>
-                        <td>0.506</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Longines_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%B3%E3%82%B8%E3%83%B3+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Longines_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>シチズン</strong> (CITIZEN)</td>
-                        <td>34</td>
-                        <td>$82.99</td>
-                        <td>$1900.00</td>
-                        <td>$246.49</td>
-                        <td>¥38,206</td>
-                        <td class="highlight">¥27,565</td>
-                        <td>0.968</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_CITIZEN_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%82%B7%E3%83%81%E3%82%BA%E3%83%B3+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_CITIZEN_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>ラドー</strong> (RADO)</td>
-                        <td>32</td>
-                        <td>$94.00</td>
-                        <td>$1006.40</td>
-                        <td>$275.00</td>
-                        <td>¥42,624</td>
-                        <td class="highlight">¥31,099</td>
-                        <td>0.591</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=RADO+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_RADO_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%83%A9%E3%83%89%E3%83%BC+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_RADO_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>カルティエ</strong> (Cartier)</td>
-                        <td>21</td>
-                        <td>$1298.00</td>
-                        <td>$4669.36</td>
-                        <td>$2486.55</td>
-                        <td>¥385,415</td>
-                        <td class="highlight">¥305,332</td>
-                        <td>0.327</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Cartier+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Cartier_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AB%E3%83%AB%E3%83%86%E3%82%A3%E3%82%A8+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Cartier_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>BVLGARI</strong> (BVLGARI)</td>
-                        <td>20</td>
-                        <td>$489.00</td>
-                        <td>$2109.44</td>
-                        <td>$1133.45</td>
-                        <td>¥175,685</td>
-                        <td class="highlight">¥137,548</td>
-                        <td>0.391</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=BVLGARI+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_BVLGARI_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=BVLGARI+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_BVLGARI_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>ロレックス</strong> (ROLEX)</td>
-                        <td>20</td>
-                        <td>$90.00</td>
-                        <td>$6342.86</td>
-                        <td>$200.50</td>
-                        <td>¥31,078</td>
-                        <td class="highlight">¥21,862</td>
-                        <td>1.283</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_ROLEX_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_ROLEX_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>SINN</strong> (SINN)</td>
-                        <td>14</td>
-                        <td>$1188.60</td>
-                        <td>$4199.25</td>
-                        <td>$2215.85</td>
-                        <td>¥343,456</td>
-                        <td class="highlight">¥271,765</td>
-                        <td>0.366</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=SINN+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_SINN_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=SINN+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_SINN_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>IWC</strong> (IWC)</td>
-                        <td>11</td>
-                        <td>$532.44</td>
-                        <td>$20760.00</td>
-                        <td>$1791.80</td>
-                        <td>¥277,729</td>
-                        <td class="highlight">¥219,183</td>
-                        <td>1.619</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=IWC+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_IWC_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=IWC+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_IWC_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>Zenith</strong> (Zenith)</td>
-                        <td>9</td>
-                        <td>$1054.55</td>
-                        <td>$5066.64</td>
-                        <td>$3286.40</td>
-                        <td>¥509,392</td>
-                        <td class="highlight">¥404,514</td>
-                        <td>0.409</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Zenith+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Zenith_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=Zenith+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_Zenith_mercari">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>JUNGHANS</strong> (JUNGHANS)</td>
-                        <td>9</td>
-                        <td>$640.00</td>
-                        <td>$2080.00</td>
-                        <td>$844.95</td>
-                        <td>¥130,967</td>
-                        <td class="highlight">¥101,774</td>
-                        <td>0.505</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=JUNGHANS+Watch+Automatic&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_JUNGHANS_ebay">
-                            <a href="https://jp.mercari.com/search?keyword=JUNGHANS+時計+%E8%87%AA%E5%8B%95%E5%B7%BB&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox" data-id="automatic_brand_JUNGHANS_mercari">
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <script>
-
-    // ブランド別販売数（横棒グラフ）
-    Plotly.newPlot('automatic_brand_bar', [{
-        x: [609, 218, 105, 101, 93, 68, 62, 61, 53, 41],
-        y: ["\u30bb\u30a4\u30b3\u30fc", "\u30aa\u30e1\u30ac", "\u30c6\u30a3\u30bd", "\u30aa\u30ea\u30a8\u30f3\u30c8", "\u4e0d\u660e", "\u30d6\u30e9\u30a4\u30c8\u30ea\u30f3\u30b0", "\u30cf\u30df\u30eb\u30c8\u30f3", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "TUDOR", "\u30aa\u30ea\u30b9"],
-        type: 'bar',
-        orientation: 'h',
-        marker: {color: '#E65100'}
-    }], {...plotlyLayout, title: 'ブランド別販売数（Top10）', xaxis: {title: '販売数'}, yaxis: {title: 'ブランド'}}, plotlyConfig);
-
-    // ブランド別シェア（円グラフ）
-    Plotly.newPlot('automatic_brand_pie', [{
-        labels: ["\u30bb\u30a4\u30b3\u30fc", "\u30aa\u30e1\u30ac", "\u30c6\u30a3\u30bd", "\u30aa\u30ea\u30a8\u30f3\u30c8", "\u4e0d\u660e", "\u30d6\u30e9\u30a4\u30c8\u30ea\u30f3\u30b0", "\u30cf\u30df\u30eb\u30c8\u30f3", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "TUDOR", "\u30aa\u30ea\u30b9"],
-        values: [609, 218, 105, 101, 93, 68, 62, 61, 53, 41],
-        type: 'pie'
-    }], {...plotlyLayout, title: 'ブランド別シェア（Top10）'}, plotlyConfig);
 
     // 価格帯分布
     Plotly.newPlot('automatic_price_dist', [{
@@ -34353,7 +33870,7 @@
                         <li><strong>箱・保証書付き:</strong> 付属品完備で価値向上</li>
                     </ul>
                 </div>
-                <div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 4px solid #FFFFFF;">
+                <div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 4px solid #ff6b35;">
                     <h4 style="color: #ff6b35; margin-bottom: 10px;">⚠️ 避けるべき条件</h4>
                     <ul style="margin-left: 20px;">
                         <li>型番が不明瞭な商品（抽出率47.2%）</li>
@@ -34427,7 +33944,7 @@
                         <td>106</td>
                         <td class="tissot-accent">23.3%</td>
                         <td>$450</td>
-                        <td class="highlight tissot-accent">¥45,337</td>
+                        <td class="tissot-accent">¥45,337</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Automatic+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
@@ -34441,7 +33958,7 @@
                         <td>72</td>
                         <td class="tissot-accent">15.9%</td>
                         <td>$174</td>
-                        <td class="highlight tissot-accent">¥17,490</td>
+                        <td class="tissot-accent">¥17,490</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Vintage+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
@@ -34455,7 +33972,7 @@
                         <td>66</td>
                         <td class="tissot-accent">14.5%</td>
                         <td>$255</td>
-                        <td class="highlight tissot-accent">¥25,716</td>
+                        <td class="tissot-accent">¥25,716</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Chronograph+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
@@ -34469,7 +33986,7 @@
                         <td>23</td>
                         <td class="tissot-accent">5.1%</td>
                         <td>$220</td>
-                        <td class="highlight tissot-accent">¥22,154</td>
+                        <td class="tissot-accent">¥22,154</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Gold+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
@@ -34483,7 +34000,7 @@
                         <td>16</td>
                         <td class="tissot-accent">3.5%</td>
                         <td>$499</td>
-                        <td class="highlight tissot-accent">¥50,319</td>
+                        <td class="tissot-accent">¥50,319</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Limited+Edition+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
@@ -34497,7 +34014,7 @@
                         <td>11</td>
                         <td class="tissot-accent">2.4%</td>
                         <td>$636</td>
-                        <td class="highlight tissot-accent">¥64,056</td>
+                        <td class="tissot-accent">¥64,056</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Powermatic+80+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
@@ -34511,7 +34028,7 @@
                         <td>8</td>
                         <td class="tissot-accent">1.8%</td>
                         <td>$998</td>
-                        <td class="highlight tissot-accent">¥100,549</td>
+                        <td class="tissot-accent">¥100,549</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Anniversary+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
@@ -34552,7 +34069,7 @@
                         <td><strong>T362</strong></td>
                         <td>8</td>
                         <td>$176</td>
-                        <td class="highlight tissot-accent">¥17,782</td>
+                        <td class="tissot-accent">¥17,782</td>
                         <td>0.396</td>
                         <td class="model-sample">[Near MINT w/ Box] Tissot PRS200 T362/462 Chronograph QZ Men</td>
                         <td>
@@ -34568,7 +34085,7 @@
                         <td><strong>Z150</strong></td>
                         <td>4</td>
                         <td>$536</td>
-                        <td class="highlight tissot-accent">¥53,951</td>
+                        <td class="tissot-accent">¥53,951</td>
                         <td>0.310</td>
                         <td class="model-sample">Tissot Lisboa Z150 Manual winding Tank Limited Edition Men's</td>
                         <td>
@@ -34584,7 +34101,7 @@
                         <td><strong>T044.417.21</strong></td>
                         <td>3</td>
                         <td>$260</td>
-                        <td class="highlight tissot-accent">¥26,195</td>
+                        <td class="tissot-accent">¥26,195</td>
                         <td>0.257</td>
                         <td class="model-sample">TISSOT T044.417.21.031.00 T-Sport PRS516 Chronograph Quartz </td>
                         <td>
@@ -34600,7 +34117,7 @@
                         <td><strong>Z181</strong></td>
                         <td>3</td>
                         <td>$270</td>
-                        <td class="highlight tissot-accent">¥27,201</td>
+                        <td class="tissot-accent">¥27,201</td>
                         <td>0.105</td>
                         <td class="model-sample">Vintage Near MINT New Battery TISSOT Banana Watch Z181 Men's</td>
                         <td>
@@ -34616,7 +34133,7 @@
                         <td><strong>C229/329C</strong></td>
                         <td>2</td>
                         <td>$195</td>
-                        <td class="highlight tissot-accent">¥19,640</td>
+                        <td class="tissot-accent">¥19,640</td>
                         <td>0.254</td>
                         <td class="model-sample">[Near MINT] TISSOT Ballade C229/329C 27mm Automatic Date Wom</td>
                         <td>
@@ -34632,7 +34149,7 @@
                         <td><strong>C279/379C</strong></td>
                         <td>2</td>
                         <td>$260</td>
-                        <td class="highlight tissot-accent">¥26,193</td>
+                        <td class="tissot-accent">¥26,193</td>
                         <td>0.000</td>
                         <td class="model-sample">[Near MINT] Tissot Ballade C279/379C Automatic Silver Gold M</td>
                         <td>
@@ -34648,7 +34165,7 @@
                         <td><strong>T044430A</strong></td>
                         <td>2</td>
                         <td>$442</td>
-                        <td class="highlight tissot-accent">¥44,581</td>
+                        <td class="tissot-accent">¥44,581</td>
                         <td>0.184</td>
                         <td class="model-sample">[N MINT /Box ] TISSOT PRS516 T044430A Blue AT Day/Date 42mm </td>
                         <td>
@@ -34664,7 +34181,7 @@
                         <td><strong>T063637</strong></td>
                         <td>2</td>
                         <td>$269</td>
-                        <td class="highlight tissot-accent">¥27,151</td>
+                        <td class="tissot-accent">¥27,151</td>
                         <td>0.102</td>
                         <td class="model-sample">[EXC+5] Tissot Leather T063637 A  Perpetual Calendar Quartz </td>
                         <td>
@@ -34680,7 +34197,7 @@
                         <td><strong>T070405A</strong></td>
                         <td>2</td>
                         <td>$999</td>
-                        <td class="highlight tissot-accent">¥100,694</td>
+                        <td class="tissot-accent">¥100,694</td>
                         <td>0.001</td>
                         <td class="model-sample">*EXC+5 Box/Papers* Tissot T-Complication Squelette Mechanica</td>
                         <td>
@@ -34696,7 +34213,7 @@
                         <td><strong>T099405A</strong></td>
                         <td>2</td>
                         <td>$979</td>
-                        <td class="highlight tissot-accent">¥98,634</td>
+                        <td class="tissot-accent">¥98,634</td>
                         <td>0.013</td>
                         <td class="model-sample">[Box Paper] TISSOT Chemin Des Tourelles Skeleton T099405A Go</td>
                         <td>
@@ -34712,7 +34229,7 @@
                         <td><strong>T106417A</strong></td>
                         <td>2</td>
                         <td>$298</td>
-                        <td class="highlight tissot-accent">¥29,999</td>
+                        <td class="tissot-accent">¥29,999</td>
                         <td>0.191</td>
                         <td class="model-sample">Tissot Watch T106417A T-SPORT Outdoor Sports V8 Series Quart</td>
                         <td>
@@ -34728,7 +34245,7 @@
                         <td><strong>T121.420.47</strong></td>
                         <td>2</td>
                         <td>$792</td>
-                        <td class="highlight tissot-accent">¥79,779</td>
+                        <td class="tissot-accent">¥79,779</td>
                         <td>0.343</td>
                         <td class="model-sample">TISSOT T121.420.47.051.03 T-Touch Connect</td>
                         <td>
@@ -34744,7 +34261,7 @@
                         <td><strong>T121420A</strong></td>
                         <td>2</td>
                         <td>$505</td>
-                        <td class="highlight tissot-accent">¥50,878</td>
+                        <td class="tissot-accent">¥50,878</td>
                         <td>0.238</td>
                         <td class="model-sample">[ w/Box, Paper ] Tissot T-Touch Connect T121420A Titanium So</td>
                         <td>
@@ -34760,7 +34277,7 @@
                         <td><strong>T125.617.33</strong></td>
                         <td>2</td>
                         <td>$460</td>
-                        <td class="highlight tissot-accent">¥46,370</td>
+                        <td class="tissot-accent">¥46,370</td>
                         <td>0.538</td>
                         <td class="model-sample">Tissot Super Sport Chrono T125.617.33.051</td>
                         <td>
@@ -34776,7 +34293,7 @@
                         <td><strong>T166</strong></td>
                         <td>2</td>
                         <td>$563</td>
-                        <td class="highlight tissot-accent">¥56,719</td>
+                        <td class="tissot-accent">¥56,719</td>
                         <td>0.284</td>
                         <td class="model-sample">TISSOT T-Lord Valju T166/266 Day Date Black Chrono Automatic</td>
                         <td>
@@ -34815,7 +34332,7 @@
                         <td><strong>T117509A</strong></td>
                         <td>15</td>
                         <td>$330</td>
-                        <td class="highlight tissot-accent">¥33,237</td>
+                        <td class="tissot-accent">¥33,237</td>
                         <td>0.204</td>
                         <td class="model-sample">Full Set [Near MINT] Vintage TISSOT Heritage T117509A 27mm Q</td>
                         <td>
@@ -34831,7 +34348,7 @@
                         <td><strong>T019430B</strong></td>
                         <td>5</td>
                         <td>$450</td>
-                        <td class="highlight tissot-accent">¥45,337</td>
+                        <td class="tissot-accent">¥45,337</td>
                         <td>0.128</td>
                         <td class="model-sample">[ Box Paper ] Tissot Visodate Heritage Automatic T019430B Sw</td>
                         <td>
@@ -34847,7 +34364,7 @@
                         <td><strong>T124.427.16</strong></td>
                         <td>2</td>
                         <td>$1258</td>
-                        <td class="highlight tissot-accent">¥126,741</td>
+                        <td class="tissot-accent">¥126,741</td>
                         <td>0.147</td>
                         <td class="model-sample">Tissot Heritage 1973 Chronograph T124.427.16.041.00 #Su498</td>
                         <td>
@@ -34863,7 +34380,7 @@
                         <td><strong>Z181</strong></td>
                         <td>2</td>
                         <td>$276</td>
-                        <td class="highlight tissot-accent">¥27,806</td>
+                        <td class="tissot-accent">¥27,806</td>
                         <td>0.072</td>
                         <td class="model-sample">Tissot Banana Z181 White Dial Blue Hands Heritage Watch NEW </td>
                         <td>
@@ -34902,7 +34419,7 @@
                         <td><strong>T006407B</strong></td>
                         <td>4</td>
                         <td>$402</td>
-                        <td class="highlight tissot-accent">¥40,534</td>
+                        <td class="tissot-accent">¥40,534</td>
                         <td>0.072</td>
                         <td class="model-sample">[Near MINT] Tissot Le Locle Powermatic 80 T006407B Black Aut</td>
                         <td>
@@ -34918,7 +34435,7 @@
                         <td><strong>T120407A</strong></td>
                         <td>4</td>
                         <td>$484</td>
-                        <td class="highlight tissot-accent">¥48,807</td>
+                        <td class="tissot-accent">¥48,807</td>
                         <td>0.150</td>
                         <td class="model-sample">[ MINT ] TISSOT SEASTAR T120407A Powermatic 80 Blue Men's Au</td>
                         <td>
@@ -34934,7 +34451,7 @@
                         <td><strong>T127.407.11</strong></td>
                         <td>3</td>
                         <td>$537</td>
-                        <td class="highlight tissot-accent">¥54,102</td>
+                        <td class="tissot-accent">¥54,102</td>
                         <td>0.238</td>
                         <td class="model-sample">Tissot Gentleman Automatic Powermatic 80 T127.407.11.091.01 </td>
                         <td>
@@ -34950,7 +34467,7 @@
                         <td><strong>T055430A</strong></td>
                         <td>2</td>
                         <td>$374</td>
-                        <td class="highlight tissot-accent">¥37,631</td>
+                        <td class="tissot-accent">¥37,631</td>
                         <td>0.165</td>
                         <td class="model-sample">[Near MINT] TISSOT Powermatic 80 T055430A 40mm White Automat</td>
                         <td>
@@ -34966,7 +34483,7 @@
                         <td><strong>T120.407.37</strong></td>
                         <td>2</td>
                         <td>$504</td>
-                        <td class="highlight tissot-accent">¥50,819</td>
+                        <td class="tissot-accent">¥50,819</td>
                         <td>0.240</td>
                         <td class="model-sample">TISSOT Seastar 1000 Powermatic 80 T120.407.37.041.00 Men's A</td>
                         <td>
@@ -34982,7 +34499,7 @@
                         <td><strong>T139.807.11</strong></td>
                         <td>2</td>
                         <td>$704</td>
-                        <td class="highlight tissot-accent">¥70,878</td>
+                        <td class="tissot-accent">¥70,878</td>
                         <td>0.136</td>
                         <td class="model-sample">Tissot Chemin des Tourelles Powermatic 80 T139.807.11.061.00</td>
                         <td>
@@ -35021,7 +34538,7 @@
                         <td><strong>T137.407.11</strong></td>
                         <td>8</td>
                         <td>$488</td>
-                        <td class="highlight tissot-accent">¥49,115</td>
+                        <td class="tissot-accent">¥49,115</td>
                         <td>0.269</td>
                         <td class="model-sample">New Tissot PRX Powermatic 80 Automatic Blue Men's Watch T137</td>
                         <td>
@@ -35037,7 +34554,7 @@
                         <td><strong>T137.407.21</strong></td>
                         <td>3</td>
                         <td>$299</td>
-                        <td class="highlight tissot-accent">¥30,124</td>
+                        <td class="tissot-accent">¥30,124</td>
                         <td>0.941</td>
                         <td class="model-sample">TISSOT PRX POWERMATIC 80 SS 40 MM TWO TONE AUTOMATIC WATCH T</td>
                         <td>
@@ -35053,7 +34570,7 @@
                         <td><strong>T137407A</strong></td>
                         <td>3</td>
                         <td>$610</td>
-                        <td class="highlight tissot-accent">¥61,456</td>
+                        <td class="tissot-accent">¥61,456</td>
                         <td>0.217</td>
                         <td class="model-sample">Tissot PRX Powermatic 80 T137407A Automatic Exhibition 10ATM</td>
                         <td>
@@ -35069,7 +34586,7 @@
                         <td><strong>T137.207.11</strong></td>
                         <td>2</td>
                         <td>$472</td>
-                        <td class="highlight tissot-accent">¥47,541</td>
+                        <td class="tissot-accent">¥47,541</td>
                         <td>0.047</td>
                         <td class="model-sample">Authentic Tissot PRX Powermatic 80 T137.207.11.051.00 SS Aut</td>
                         <td>
@@ -35085,7 +34602,7 @@
                         <td><strong>T137427A</strong></td>
                         <td>2</td>
                         <td>$1050</td>
-                        <td class="highlight tissot-accent">¥105,787</td>
+                        <td class="tissot-accent">¥105,787</td>
                         <td>0.067</td>
                         <td class="model-sample">[w/Box ] TISSOT PRX T137427A Automatic Chronograph Date SS N</td>
                         <td>
@@ -35101,7 +34618,7 @@
                         <td><strong>T931.407.41</strong></td>
                         <td>2</td>
                         <td>$1269</td>
-                        <td class="highlight tissot-accent">¥127,826</td>
+                        <td class="tissot-accent">¥127,826</td>
                         <td>0.000</td>
                         <td class="model-sample">Authentic Tissot PRX Powermatic 80 RG Combi T931.407.41.031.</td>
                         <td>
@@ -35140,7 +34657,7 @@
                         <td><strong>T011417A</strong></td>
                         <td>2</td>
                         <td>$315</td>
-                        <td class="highlight tissot-accent">¥31,731</td>
+                        <td class="tissot-accent">¥31,731</td>
                         <td>0.068</td>
                         <td class="model-sample">[Exc+5 / Box Papers] Tissot T-Race T011417A Black Chronograp</td>
                         <td>
@@ -35156,7 +34673,7 @@
                         <td><strong>T048417</strong></td>
                         <td>2</td>
                         <td>$230</td>
-                        <td class="highlight tissot-accent">¥23,171</td>
+                        <td class="tissot-accent">¥23,171</td>
                         <td>0.430</td>
                         <td class="model-sample">Tissot T-Race 100m Quartz Watch T048417 45mm From Japan 070 </td>
                         <td>
@@ -35172,7 +34689,7 @@
                         <td><strong>T115417</strong></td>
                         <td>2</td>
                         <td>$400</td>
-                        <td class="highlight tissot-accent">¥40,300</td>
+                        <td class="tissot-accent">¥40,300</td>
                         <td>0.000</td>
                         <td class="model-sample">*Mint* Box TISSOT T-RACE T115417 A Chronograph Silver Quartz</td>
                         <td>
@@ -35188,7 +34705,7 @@
                         <td><strong>T141417A</strong></td>
                         <td>2</td>
                         <td>$361</td>
-                        <td class="highlight tissot-accent">¥36,406</td>
+                        <td class="tissot-accent">¥36,406</td>
                         <td>0.073</td>
                         <td class="model-sample">Boxed Tissot T141417A T-Race Chrono Marc Marquez Limited edi</td>
                         <td>
@@ -35227,7 +34744,7 @@
                         <td><strong>T461</strong></td>
                         <td>4</td>
                         <td>$210</td>
-                        <td class="highlight tissot-accent">¥21,151</td>
+                        <td class="tissot-accent">¥21,151</td>
                         <td>0.195</td>
                         <td class="model-sample">TISSOT T461 PRC 200 Chronograph Quartz Analog Watch White Ne</td>
                         <td>
@@ -35266,7 +34783,7 @@
                         <td><strong>T063637A</strong></td>
                         <td>3</td>
                         <td>$279</td>
-                        <td class="highlight tissot-accent">¥28,101</td>
+                        <td class="tissot-accent">¥28,101</td>
                         <td>0.122</td>
                         <td class="model-sample">Tissot Tradition Perpetual Calendar T063637A</td>
                         <td>
@@ -35282,7 +34799,7 @@
                         <td><strong>T063637</strong></td>
                         <td>2</td>
                         <td>$322</td>
-                        <td class="highlight tissot-accent">¥32,440</td>
+                        <td class="tissot-accent">¥32,440</td>
                         <td>0.162</td>
                         <td class="model-sample">Tissot Tradition Perpetual Calendar T063637 Quartz Men's Wat</td>
                         <td>
@@ -35320,7 +34837,7 @@
                         <td>266</td>
                         <td class="tissot-accent">58.6%</td>
                         <td>$237</td>
-                        <td class="highlight tissot-accent">¥23,927</td>
+                        <td class="tissot-accent">¥23,927</td>
                         <td>0.910</td>
                         <td>☆☆☆</td>
                         <td>
@@ -35336,7 +34853,7 @@
                         <td>40</td>
                         <td class="tissot-accent">8.8%</td>
                         <td>$395</td>
-                        <td class="highlight tissot-accent">¥39,791</td>
+                        <td class="tissot-accent">¥39,791</td>
                         <td>0.633</td>
                         <td>☆☆☆</td>
                         <td>
@@ -35352,7 +34869,7 @@
                         <td>33</td>
                         <td class="tissot-accent">7.3%</td>
                         <td>$230</td>
-                        <td class="highlight tissot-accent">¥23,171</td>
+                        <td class="tissot-accent">¥23,171</td>
                         <td>0.854</td>
                         <td>☆☆☆</td>
                         <td>
@@ -35368,7 +34885,7 @@
                         <td>30</td>
                         <td class="tissot-accent">6.6%</td>
                         <td>$440</td>
-                        <td class="highlight tissot-accent">¥44,330</td>
+                        <td class="tissot-accent">¥44,330</td>
                         <td>0.283</td>
                         <td>★☆☆</td>
                         <td>
@@ -35384,7 +34901,7 @@
                         <td>29</td>
                         <td class="tissot-accent">6.4%</td>
                         <td>$662</td>
-                        <td class="highlight tissot-accent">¥66,696</td>
+                        <td class="tissot-accent">¥66,696</td>
                         <td>0.621</td>
                         <td>☆☆☆</td>
                         <td>
@@ -35400,7 +34917,7 @@
                         <td>19</td>
                         <td class="tissot-accent">4.2%</td>
                         <td>$380</td>
-                        <td class="highlight tissot-accent">¥38,283</td>
+                        <td class="tissot-accent">¥38,283</td>
                         <td>1.057</td>
                         <td>☆☆☆</td>
                         <td>
@@ -35416,7 +34933,7 @@
                         <td>12</td>
                         <td class="tissot-accent">2.6%</td>
                         <td>$238</td>
-                        <td class="highlight tissot-accent">¥23,946</td>
+                        <td class="tissot-accent">¥23,946</td>
                         <td>0.421</td>
                         <td>☆☆☆</td>
                         <td>
@@ -35432,7 +34949,7 @@
                         <td>7</td>
                         <td class="tissot-accent">1.5%</td>
                         <td>$410</td>
-                        <td class="highlight tissot-accent">¥41,307</td>
+                        <td class="tissot-accent">¥41,307</td>
                         <td>0.424</td>
                         <td>☆☆☆</td>
                         <td>
@@ -35448,7 +34965,7 @@
                         <td>7</td>
                         <td class="tissot-accent">1.5%</td>
                         <td>$300</td>
-                        <td class="highlight tissot-accent">¥30,223</td>
+                        <td class="tissot-accent">¥30,223</td>
                         <td>0.147</td>
                         <td>★★★</td>
                         <td>
@@ -35464,7 +34981,7 @@
                         <td>5</td>
                         <td class="tissot-accent">1.1%</td>
                         <td>$255</td>
-                        <td class="highlight tissot-accent">¥25,691</td>
+                        <td class="tissot-accent">¥25,691</td>
                         <td>0.225</td>
                         <td>★★☆</td>
                         <td>
@@ -35480,7 +34997,7 @@
                         <td>3</td>
                         <td class="tissot-accent">0.7%</td>
                         <td>$408</td>
-                        <td class="highlight tissot-accent">¥41,106</td>
+                        <td class="tissot-accent">¥41,106</td>
                         <td>0.383</td>
                         <td>☆☆☆</td>
                         <td>
@@ -35496,7 +35013,7 @@
                         <td>3</td>
                         <td class="tissot-accent">0.7%</td>
                         <td>$500</td>
-                        <td class="highlight tissot-accent">¥50,373</td>
+                        <td class="tissot-accent">¥50,373</td>
                         <td>0.576</td>
                         <td>☆☆☆</td>
                         <td>
@@ -35533,7 +35050,7 @@
                         <td>T117509A</td>
                         <td>15</td>
                         <td>$329.90</td>
-                        <td class="highlight tissot-accent">¥33,237</td>
+                        <td class="tissot-accent">¥33,237</td>
                         <td>0.204</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T117509A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35548,7 +35065,7 @@
                         <td>T137.407.11</td>
                         <td>8</td>
                         <td>$487.50</td>
-                        <td class="highlight tissot-accent">¥49,115</td>
+                        <td class="tissot-accent">¥49,115</td>
                         <td>0.269</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T137.407.11&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35563,7 +35080,7 @@
                         <td>T362</td>
                         <td>8</td>
                         <td>$176.50</td>
-                        <td class="highlight tissot-accent">¥17,782</td>
+                        <td class="tissot-accent">¥17,782</td>
                         <td>0.396</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T362&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35578,7 +35095,7 @@
                         <td>T461</td>
                         <td>6</td>
                         <td>$219.40</td>
-                        <td class="highlight tissot-accent">¥22,104</td>
+                        <td class="tissot-accent">¥22,104</td>
                         <td>0.152</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T461&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35593,7 +35110,7 @@
                         <td>T019430B</td>
                         <td>5</td>
                         <td>$450.00</td>
-                        <td class="highlight tissot-accent">¥45,337</td>
+                        <td class="tissot-accent">¥45,337</td>
                         <td>0.128</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T019430B&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35608,7 +35125,7 @@
                         <td>Z181</td>
                         <td>5</td>
                         <td>$269.99</td>
-                        <td class="highlight tissot-accent">¥27,201</td>
+                        <td class="tissot-accent">¥27,201</td>
                         <td>0.086</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Z181&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35623,7 +35140,7 @@
                         <td>T006407B</td>
                         <td>4</td>
                         <td>$402.33</td>
-                        <td class="highlight tissot-accent">¥40,534</td>
+                        <td class="tissot-accent">¥40,534</td>
                         <td>0.072</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T006407B&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35638,7 +35155,7 @@
                         <td>T063637</td>
                         <td>4</td>
                         <td>$287.00</td>
-                        <td class="highlight tissot-accent">¥28,914</td>
+                        <td class="tissot-accent">¥28,914</td>
                         <td>0.154</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T063637&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35653,7 +35170,7 @@
                         <td>T120407A</td>
                         <td>4</td>
                         <td>$484.44</td>
-                        <td class="highlight tissot-accent">¥48,807</td>
+                        <td class="tissot-accent">¥48,807</td>
                         <td>0.150</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T120407A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35668,7 +35185,7 @@
                         <td>Z150</td>
                         <td>4</td>
                         <td>$535.50</td>
-                        <td class="highlight tissot-accent">¥53,951</td>
+                        <td class="tissot-accent">¥53,951</td>
                         <td>0.310</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Z150&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35683,7 +35200,7 @@
                         <td>T044.417.21</td>
                         <td>3</td>
                         <td>$260.00</td>
-                        <td class="highlight tissot-accent">¥26,195</td>
+                        <td class="tissot-accent">¥26,195</td>
                         <td>0.257</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T044.417.21&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35698,7 +35215,7 @@
                         <td>T063637A</td>
                         <td>3</td>
                         <td>$278.92</td>
-                        <td class="highlight tissot-accent">¥28,101</td>
+                        <td class="tissot-accent">¥28,101</td>
                         <td>0.122</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T063637A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35713,7 +35230,7 @@
                         <td>T127.407.11</td>
                         <td>3</td>
                         <td>$537.00</td>
-                        <td class="highlight tissot-accent">¥54,102</td>
+                        <td class="tissot-accent">¥54,102</td>
                         <td>0.238</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T127.407.11&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35728,7 +35245,7 @@
                         <td>T137.407.21</td>
                         <td>3</td>
                         <td>$299.00</td>
-                        <td class="highlight tissot-accent">¥30,124</td>
+                        <td class="tissot-accent">¥30,124</td>
                         <td>0.941</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T137.407.21&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35743,7 +35260,7 @@
                         <td>T137407A</td>
                         <td>3</td>
                         <td>$609.99</td>
-                        <td class="highlight tissot-accent">¥61,456</td>
+                        <td class="tissot-accent">¥61,456</td>
                         <td>0.217</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T137407A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35758,7 +35275,7 @@
                         <td>T139.807.11</td>
                         <td>3</td>
                         <td>$635.80</td>
-                        <td class="highlight tissot-accent">¥64,056</td>
+                        <td class="tissot-accent">¥64,056</td>
                         <td>0.164</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T139.807.11&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35773,7 +35290,7 @@
                         <td>T141417A</td>
                         <td>3</td>
                         <td>$379.99</td>
-                        <td class="highlight tissot-accent">¥38,283</td>
+                        <td class="tissot-accent">¥38,283</td>
                         <td>0.268</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T141417A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35788,7 +35305,7 @@
                         <td>C229/329C</td>
                         <td>2</td>
                         <td>$194.94</td>
-                        <td class="highlight tissot-accent">¥19,640</td>
+                        <td class="tissot-accent">¥19,640</td>
                         <td>0.254</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+C229/329C&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35803,7 +35320,7 @@
                         <td>C279/379C</td>
                         <td>2</td>
                         <td>$259.99</td>
-                        <td class="highlight tissot-accent">¥26,193</td>
+                        <td class="tissot-accent">¥26,193</td>
                         <td>0.000</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+C279/379C&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35818,7 +35335,7 @@
                         <td>T011417A</td>
                         <td>2</td>
                         <td>$314.95</td>
-                        <td class="highlight tissot-accent">¥31,731</td>
+                        <td class="tissot-accent">¥31,731</td>
                         <td>0.068</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T011417A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35833,7 +35350,7 @@
                         <td>T044430A</td>
                         <td>2</td>
                         <td>$442.50</td>
-                        <td class="highlight tissot-accent">¥44,581</td>
+                        <td class="tissot-accent">¥44,581</td>
                         <td>0.184</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T044430A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35848,7 +35365,7 @@
                         <td>T048417</td>
                         <td>2</td>
                         <td>$230.00</td>
-                        <td class="highlight tissot-accent">¥23,171</td>
+                        <td class="tissot-accent">¥23,171</td>
                         <td>0.430</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T048417&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35863,7 +35380,7 @@
                         <td>T055417A</td>
                         <td>2</td>
                         <td>$158.00</td>
-                        <td class="highlight tissot-accent">¥15,917</td>
+                        <td class="tissot-accent">¥15,917</td>
                         <td>0.197</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T055417A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35878,7 +35395,7 @@
                         <td>T055430A</td>
                         <td>2</td>
                         <td>$373.51</td>
-                        <td class="highlight tissot-accent">¥37,631</td>
+                        <td class="tissot-accent">¥37,631</td>
                         <td>0.165</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T055430A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35893,7 +35410,7 @@
                         <td>T070405A</td>
                         <td>2</td>
                         <td>$999.45</td>
-                        <td class="highlight tissot-accent">¥100,694</td>
+                        <td class="tissot-accent">¥100,694</td>
                         <td>0.001</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T070405A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35908,7 +35425,7 @@
                         <td>T099405A</td>
                         <td>2</td>
                         <td>$979.00</td>
-                        <td class="highlight tissot-accent">¥98,634</td>
+                        <td class="tissot-accent">¥98,634</td>
                         <td>0.013</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T099405A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35923,7 +35440,7 @@
                         <td>T100430A</td>
                         <td>2</td>
                         <td>$462.50</td>
-                        <td class="highlight tissot-accent">¥46,596</td>
+                        <td class="tissot-accent">¥46,596</td>
                         <td>0.115</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T100430A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35938,7 +35455,7 @@
                         <td>T106417A</td>
                         <td>2</td>
                         <td>$297.76</td>
-                        <td class="highlight tissot-accent">¥29,999</td>
+                        <td class="tissot-accent">¥29,999</td>
                         <td>0.191</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T106417A&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35953,7 +35470,7 @@
                         <td>T115417</td>
                         <td>2</td>
                         <td>$400.00</td>
-                        <td class="highlight tissot-accent">¥40,300</td>
+                        <td class="tissot-accent">¥40,300</td>
                         <td>0.000</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T115417&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
@@ -35968,7 +35485,7 @@
                         <td>T120.407.37</td>
                         <td>2</td>
                         <td>$504.41</td>
-                        <td class="highlight tissot-accent">¥50,819</td>
+                        <td class="tissot-accent">¥50,819</td>
                         <td>0.240</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+T120.407.37&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
