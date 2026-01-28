@@ -184,6 +184,38 @@ if len(df_omega_character) > 0:
 
 print(f"✓ キャラクター/コラボ統計: {len(character_stats)}種類、{len(df_omega_character)}商品")
 
+# 各ライン別の型番Top15を抽出
+line_models_dict = {}
+for line, group in df_omega.groupby('ライン'):
+    if len(group) < 2:
+        continue
+
+    model_group = group[group['型番抽出'].notna()].copy()
+    line_model_stats = []
+
+    if len(model_group) > 0:
+        for model, mg in model_group.groupby('型番抽出'):
+            model_sales = mg['販売数'].sum()
+            if model_sales >= 2:
+                prices = mg['価格'].values
+                line_model_stats.append({
+                    'model': model,
+                    'count': int(model_sales),
+                    'median': float(np.median(prices)),
+                    'cv': float(calculate_cv(prices)),
+                    'title_sample': mg.iloc[0]['タイトル'][:60]
+                })
+
+    line_model_stats = sorted(line_model_stats, key=lambda x: x['count'], reverse=True)[:15]
+
+    if len(line_model_stats) > 0:
+        line_models_dict[line] = {
+            'count': int(group['販売数'].sum()),
+            'models': line_model_stats
+        }
+
+print(f"✓ 各ライン別型番Top15: {len(line_models_dict)}ライン")
+
 # 型番別Top30を抽出
 model_stats = []
 model_group = df_omega[df_omega['型番抽出'].notna()].copy()
@@ -374,6 +406,61 @@ omega_html += '''
             </table>
         </div>
 
+
+<h3 class="section-title omega-purple">📌 各ラインの人気モデル（実データより）Top15</h3><p style="color: #666; margin-bottom: 20px;">元CSVデータから再分類した正確な人気モデルTop15</p>
+'''
+
+# 各ライン別の型番Top15テーブル
+for line_name, line_data in sorted(line_models_dict.items(), key=lambda x: x[1]['count'], reverse=True):
+    omega_html += f'''
+        <h4 style="color: #667eea; margin-top: 25px; border-bottom: 2px solid #667eea; padding-bottom: 5px;">
+            {line_name} <span style="font-size: 0.9em; color: #666;">（販売数: {line_data['count']}個）</span>
+        </h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値</th>
+                        <th class="omega-accent">仕入上限(¥)</th>
+                        <th>CV値</th>
+                        <th>商品例</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+    '''
+
+    for rank, model_data in enumerate(line_data['models'], 1):
+        breakeven = int(model_data['median'] * 155 * 0.65)
+
+        omega_html += f'''
+                    <tr>
+                        <td><strong class="omega-accent">{rank}</strong></td>
+                        <td><strong>{model_data['model']}</strong></td>
+                        <td>{model_data['count']}</td>
+                        <td>${model_data['median']:.0f}</td>
+                        <td class="highlight omega-accent">¥{breakeven:,}</td>
+                        <td>{model_data['cv']:.3f}</td>
+                        <td class="model-sample">{model_data['title_sample']}</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+{model_data['model'].replace(' ', '+')}&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20{model_data['model'].replace(' ', '%20')}&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+        '''
+
+    omega_html += '''
+                </tbody>
+            </table>
+        </div>
+    '''
+
+omega_html += '''
 
         <h3 class="section-title omega-purple">🔵 ライン別詳細分析（全{len(line_stats)}ライン）</h3>
         <div class="table-container">
