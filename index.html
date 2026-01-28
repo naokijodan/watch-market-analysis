@@ -873,9 +873,6 @@
             <div class="chart-container"><div id="brandPieChart"></div></div>
         </div>
 
-        <h2 class="section-title">📅 月別販売数推移（季節性分析）</h2>
-        <div class="chart-container"><div id="monthlyTrendChart"></div></div>
-
         <h2 class="section-title">💰 価格帯分布</h2>
         <div class="chart-container"><div id="priceDistChart"></div></div>
     </div>
@@ -1946,7 +1943,6 @@
         drawMovementPieChart();
         drawBrandBarChart();
         drawBrandPieChart();
-        drawMonthlyTrendChart();
         drawPriceDistChart();
     });
 
@@ -1979,46 +1975,15 @@
     }
 
     // 月別推移グラフ
-    function drawMonthlyTrendChart() {
-        const months = ["2025-12", "2026-01"];
-        const movementData = {};
-        
-        // 各駆動方式ごとのデータを準備
-        [{"month": "2025-12", "data": {"\u4e0d\u660e": 190, "\u30af\u30aa\u30fc\u30c4": 174, "\u30bd\u30fc\u30e9\u30fc": 50, "\u81ea\u52d5\u5dfb": 65, "\u30c7\u30b8\u30bf\u30eb": 27, "\u624b\u5dfb\u304d": 17, "\u30b9\u30de\u30fc\u30c8\u30a6\u30a9\u30c3\u30c1": 3}}, {"month": "2026-01", "data": {"\u30bd\u30fc\u30e9\u30fc": 3231, "\u30af\u30aa\u30fc\u30c4": 4546, "\u81ea\u52d5\u5dfb": 3461, "\u4e0d\u660e": 9806, "\u624b\u5dfb\u304d": 270, "\u30c7\u30b8\u30bf\u30eb": 843, "\u30b9\u30de\u30fc\u30c8\u30a6\u30a9\u30c3\u30c1": 70}}].forEach(item => {
-            Object.keys(item.data).forEach(movement => {
-                if (!movementData[movement]) movementData[movement] = [];
-            });
-        });
-
-        Object.keys(movementData).forEach(movement => {
-            [{"month": "2025-12", "data": {"\u4e0d\u660e": 190, "\u30af\u30aa\u30fc\u30c4": 174, "\u30bd\u30fc\u30e9\u30fc": 50, "\u81ea\u52d5\u5dfb": 65, "\u30c7\u30b8\u30bf\u30eb": 27, "\u624b\u5dfb\u304d": 17, "\u30b9\u30de\u30fc\u30c8\u30a6\u30a9\u30c3\u30c1": 3}}, {"month": "2026-01", "data": {"\u30bd\u30fc\u30e9\u30fc": 3231, "\u30af\u30aa\u30fc\u30c4": 4546, "\u81ea\u52d5\u5dfb": 3461, "\u4e0d\u660e": 9806, "\u624b\u5dfb\u304d": 270, "\u30c7\u30b8\u30bf\u30eb": 843, "\u30b9\u30de\u30fc\u30c8\u30a6\u30a9\u30c3\u30c1": 70}}].forEach(item => {
-                movementData[movement].push(item.data[movement] || 0);
-            });
-        });
-
-        const traces = Object.keys(movementData).map(movement => ({
-            x: months,
-            y: movementData[movement],
-            name: movement,
-            type: 'scatter',
-            mode: 'lines+markers',
-            stackgroup: 'one'
-        }));
-
-        const layout = {...plotlyLayout, title: '月別販売数推移', xaxis: {title: '月'}, yaxis: {title: '販売数'}};
-        Plotly.newPlot('monthlyTrendChart', traces, layout, plotlyConfig);
-    }
-
-    // 価格帯分布
+    // 価格帯分布（50ドル刻み）
     function drawPriceDistChart() {
-        // 簡易的な価格帯データ（実際はサーバー側で計算すべき）
         const data = [{
-            x: ['$0-100', '$100-200', '$200-300', '$300-500', '$500-1000', '$1000+'],
-            y: [3500, 2800, 1500, 800, 400, 100],
+            x: ['$0-49', '$50-99', '$100-149', '$150-199', '$200-249', '$250-299', '$300-349', '$350-399', '$400-449', '$450-499', '$500-549', '$550-599', '$600-649', '$650-699', '$700-749', '$750-799', '$800-849', '$850-899', '$900-949', '$950-999', '$1000+'],
+            y: [21, 1015, 1706, 1417, 823, 719, 522, 461, 270, 254, 168, 149, 104, 112, 80, 110, 79, 90, 52, 68, 1055],
             type: 'bar',
             marker: {color: '#1976D2'}
         }];
-        const layout = {...plotlyLayout, title: '価格帯分布', xaxis: {title: '価格帯'}, yaxis: {title: '件数'}};
+        const layout = {...plotlyLayout, title: '価格帯分布（50ドル刻み）', xaxis: {title: '価格帯'}, yaxis: {title: '件数'}};
         Plotly.newPlot('priceDistChart', data, layout, plotlyConfig);
     }
     </script>
