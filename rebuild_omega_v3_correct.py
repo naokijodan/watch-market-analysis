@@ -151,6 +151,59 @@ for feature_name in OMEGA_FEATURES.keys():
 
 print(f"✓ 特徴別統計: {len(feature_stats)}特徴")
 
+# キャラクター/コラボ判定
+OMEGA_CHARACTERS = {
+    'Swatch': ['SWATCH', 'MOONSWATCH'],
+    'Snoopy': ['SNOOPY', 'PEANUTS'],
+    'NASA': ['NASA', 'APOLLO'],
+    '007': ['007', 'JAMES BOND', 'BOND'],
+    'Olympics': ['OLYMPIC', 'OLYMPICS'],
+}
+
+def detect_omega_character(title_upper):
+    """キャラクター/コラボを検出"""
+    for character_name, keywords in OMEGA_CHARACTERS.items():
+        for kw in keywords:
+            if kw in title_upper:
+                return character_name
+    return None
+
+df_omega['キャラクター'] = df_omega['タイトル_upper'].apply(detect_omega_character)
+df_omega_character = df_omega[df_omega['キャラクター'].notna()].copy()
+
+character_stats = {}
+if len(df_omega_character) > 0:
+    for character, group in df_omega_character.groupby('キャラクター'):
+        if len(group) >= 1:
+            prices = group['価格'].values
+            character_stats[character] = {
+                'count': int(group['販売数'].sum()),
+                'median': float(np.median(prices)),
+                'ratio': float(group['販売数'].sum() / total_line_sales * 100),
+            }
+
+print(f"✓ キャラクター/コラボ統計: {len(character_stats)}種類、{len(df_omega_character)}商品")
+
+# 型番別Top30を抽出
+model_stats = []
+model_group = df_omega[df_omega['型番抽出'].notna()].copy()
+
+if len(model_group) > 0:
+    for model, mg in model_group.groupby('型番抽出'):
+        model_sales = mg['販売数'].sum()
+        if model_sales >= 2:
+            prices = mg['価格'].values
+            model_stats.append({
+                'model': model,
+                'count': int(model_sales),
+                'median': float(np.median(prices)),
+                'cv': float(calculate_cv(prices)),
+            })
+
+model_stats = sorted(model_stats, key=lambda x: x['count'], reverse=True)[:30]
+
+print(f"✓ 型番Top30: {len(model_stats)}モデル")
+
 # 基本統計
 total_sales = int(df_omega['販売数'].sum())
 median_price = float(df_omega['価格'].median())
@@ -185,6 +238,10 @@ line_labels = [line[0] for line in top_lines]
 line_values = [line[1]['count'] for line in top_lines]
 
 print(f"✓ グラフデータ準備完了")
+
+# キャラクター統計の事前計算
+character_median = float(df_omega_character['価格'].median()) if len(df_omega_character) > 0 else 0
+character_ratio = float(len(df_omega_character) / len(df_omega) * 100)
 
 # ===== HTML生成 =====
 omega_html = f'''
@@ -258,6 +315,65 @@ omega_html = f'''
                 <div id="omega_line_chart" style="height: 350px;"></div>
             </div>
         </div>
+
+        <h3 class="section-title omega-purple">🎭 キャラクター/コラボ分析（複数視点）</h3>
+        <p style="color: #666; margin-bottom: 15px;">同じ商品を別の角度から分析 - 例：Swatch コラボは「Seamasterライン」と「Swatchコラボ」の両方に該当</p>
+
+        <div class="stats-grid" style="margin-bottom: 20px;">
+            <div class="stat-card">
+                <div class="label">キャラクター商品数</div>
+                <div class="value omega-accent">{len(df_omega_character)}個</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">中央値</div>
+                <div class="value">${character_median:.0f}</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">全体比率</div>
+                <div class="value omega-accent">{character_ratio:.1f}%</div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>キャラクター</th>
+                        <th>販売数</th>
+                        <th>比率</th>
+                        <th>中央値</th>
+                        <th class="omega-accent">仕入上限(¥)</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+'''
+
+# キャラクター別詳細テーブル
+for character_name, data in sorted(character_stats.items(), key=lambda x: x[1]['count'], reverse=True):
+    breakeven = int(data['median'] * 155 * 0.65)
+
+    omega_html += f'''
+                    <tr>
+                        <td><strong>{character_name}</strong></td>
+                        <td>{data['count']}</td>
+                        <td class="omega-accent">{data['ratio']:.1f}%</td>
+                        <td>${data['median']:.0f}</td>
+                        <td class="highlight omega-accent">¥{breakeven:,}</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+{character_name.replace(' ', '+')}+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20{character_name.replace(' ', '%20')}%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    '''
+
+omega_html += '''
+                </tbody>
+            </table>
+        </div>
+
 
         <h3 class="section-title omega-purple">🔵 ライン別詳細分析（全{len(line_stats)}ライン）</h3>
         <div class="table-container">
@@ -343,6 +459,50 @@ for feature_name, data in sorted(feature_stats.items(), key=lambda x: x[1]['coun
                             <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+{feature_name.replace(' ', '+').replace('/', '%2F')}+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
                             <a href="https://jp.mercari.com/search?keyword=OMEGA%20{feature_name.replace(' ', '%20').replace('/', '%2F')}%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    '''
+
+omega_html += '''
+                </tbody>
+            </table>
+        </div>
+
+
+        <h3 class="section-title omega-purple">🏆 全ライン横断 型番分析Top30</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th class="omega-accent">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+'''
+
+# 型番Top30テーブル
+for rank, model_data in enumerate(model_stats, 1):
+    breakeven = int(model_data['median'] * 155 * 0.65)
+
+    omega_html += f'''
+                    <tr>
+                        <td><strong class="omega-accent">{rank}</strong></td>
+                        <td>{model_data['model']}</td>
+                        <td>{model_data['count']}</td>
+                        <td>${model_data['median']:.2f}</td>
+                        <td class="highlight omega-accent">¥{breakeven:,}</td>
+                        <td>{model_data['cv']:.3f}</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+{model_data['model'].replace(' ', '+')}&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20{model_data['model'].replace(' ', '%20')}&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>

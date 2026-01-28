@@ -15869,7 +15869,114 @@
             </div>
         </div>
 
-        <h3 class="section-title omega-purple">🔵 ライン別詳細分析（全6ライン）</h3>
+        <h3 class="section-title omega-purple">🎭 キャラクター/コラボ分析（複数視点）</h3>
+        <p style="color: #666; margin-bottom: 15px;">同じ商品を別の角度から分析 - 例：Swatch コラボは「Seamasterライン」と「Swatchコラボ」の両方に該当</p>
+
+        <div class="stats-grid" style="margin-bottom: 20px;">
+            <div class="stat-card">
+                <div class="label">キャラクター商品数</div>
+                <div class="value omega-accent">33個</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">中央値</div>
+                <div class="value">$584</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">全体比率</div>
+                <div class="value omega-accent">4.8%</div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>キャラクター</th>
+                        <th>販売数</th>
+                        <th>比率</th>
+                        <th>中央値</th>
+                        <th class="omega-accent">仕入上限(¥)</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>Swatch</strong></td>
+                        <td>44</td>
+                        <td class="omega-accent">3.5%</td>
+                        <td>$572</td>
+                        <td class="highlight omega-accent">¥57,628</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Swatch+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Swatch%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>007</strong></td>
+                        <td>16</td>
+                        <td class="omega-accent">1.3%</td>
+                        <td>$1084</td>
+                        <td class="highlight omega-accent">¥109,239</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+007+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20007%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>NASA</strong></td>
+                        <td>1</td>
+                        <td class="omega-accent">0.1%</td>
+                        <td>$7486</td>
+                        <td class="highlight omega-accent">¥754,239</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+NASA+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20NASA%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Olympics</strong></td>
+                        <td>1</td>
+                        <td class="omega-accent">0.1%</td>
+                        <td>$4094</td>
+                        <td class="highlight omega-accent">¥412,520</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Olympics+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Olympics%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Snoopy</strong></td>
+                        <td>1</td>
+                        <td class="omega-accent">0.1%</td>
+                        <td>$12700</td>
+                        <td class="highlight omega-accent">¥1,279,525</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Snoopy+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20Snoopy%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
+
+        <h3 class="section-title omega-purple">🔵 ライン別詳細分析（全{len(line_stats)}ライン）</h3>
         <div class="table-container">
             <table>
                 <thead>
@@ -16097,7 +16204,482 @@
             </table>
         </div>
 
+
+        <h3 class="section-title omega-purple">🏆 全ライン横断 型番分析Top30</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th class="omega-accent">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong class="omega-accent">1</strong></td>
+                        <td>3520.50</td>
+                        <td>8</td>
+                        <td>$1897.87</td>
+                        <td class="highlight omega-accent">¥191,210</td>
+                        <td>0.132</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3520.50&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%203520.50&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">2</strong></td>
+                        <td>2511.81</td>
+                        <td>6</td>
+                        <td>$879.99</td>
+                        <td class="highlight omega-accent">¥88,658</td>
+                        <td>0.192</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2511.81&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202511.81&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">3</strong></td>
+                        <td>3510.50</td>
+                        <td>5</td>
+                        <td>$2330.00</td>
+                        <td class="highlight omega-accent">¥234,747</td>
+                        <td>0.197</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3510.50&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%203510.50&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">4</strong></td>
+                        <td>3523.80</td>
+                        <td>5</td>
+                        <td>$2022.44</td>
+                        <td class="highlight omega-accent">¥203,760</td>
+                        <td>0.146</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3523.80&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%203523.80&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">5</strong></td>
+                        <td>2531.80</td>
+                        <td>4</td>
+                        <td>$2372.50</td>
+                        <td class="highlight omega-accent">¥239,029</td>
+                        <td>0.211</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2531.80&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202531.80&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">6</strong></td>
+                        <td>2561.80</td>
+                        <td>4</td>
+                        <td>$1582.50</td>
+                        <td class="highlight omega-accent">¥159,436</td>
+                        <td>0.159</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2561.80&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202561.80&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">7</strong></td>
+                        <td>196.1501</td>
+                        <td>3</td>
+                        <td>$850.00</td>
+                        <td class="highlight omega-accent">¥85,637</td>
+                        <td>0.016</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+196.1501&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20196.1501&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">8</strong></td>
+                        <td>2201.50</td>
+                        <td>3</td>
+                        <td>$2586.55</td>
+                        <td class="highlight omega-accent">¥260,594</td>
+                        <td>0.182</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2201.50&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202201.50&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">9</strong></td>
+                        <td>2501.81</td>
+                        <td>3</td>
+                        <td>$1158.00</td>
+                        <td class="highlight omega-accent">¥116,668</td>
+                        <td>0.226</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2501.81&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202501.81&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">10</strong></td>
+                        <td>2541.80</td>
+                        <td>3</td>
+                        <td>$1890.00</td>
+                        <td class="highlight omega-accent">¥190,417</td>
+                        <td>0.105</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2541.80&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202541.80&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">11</strong></td>
+                        <td>2551.80</td>
+                        <td>3</td>
+                        <td>$1900.00</td>
+                        <td class="highlight omega-accent">¥191,425</td>
+                        <td>0.013</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2551.80&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202551.80&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">12</strong></td>
+                        <td>326.30.40.50.03.001</td>
+                        <td>3</td>
+                        <td>$3026.80</td>
+                        <td class="highlight omega-accent">¥304,950</td>
+                        <td>0.052</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+326.30.40.50.03.001&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20326.30.40.50.03.001&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">13</strong></td>
+                        <td>3511.50</td>
+                        <td>3</td>
+                        <td>$1800.00</td>
+                        <td class="highlight omega-accent">¥181,350</td>
+                        <td>0.059</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3511.50&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%203511.50&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">14</strong></td>
+                        <td>3513.50</td>
+                        <td>3</td>
+                        <td>$1573.56</td>
+                        <td class="highlight omega-accent">¥158,536</td>
+                        <td>0.063</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+3513.50&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%203513.50&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">15</strong></td>
+                        <td>1502.40</td>
+                        <td>2</td>
+                        <td>$1088.95</td>
+                        <td class="highlight omega-accent">¥109,712</td>
+                        <td>0.268</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1502.40&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%201502.40&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">16</strong></td>
+                        <td>151.0039</td>
+                        <td>2</td>
+                        <td>$468.69</td>
+                        <td class="highlight omega-accent">¥47,220</td>
+                        <td>0.034</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+151.0039&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20151.0039&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">17</strong></td>
+                        <td>1562.30</td>
+                        <td>2</td>
+                        <td>$533.97</td>
+                        <td class="highlight omega-accent">¥53,797</td>
+                        <td>0.000</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+1562.30&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%201562.30&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">18</strong></td>
+                        <td>166.0117</td>
+                        <td>2</td>
+                        <td>$766.00</td>
+                        <td class="highlight omega-accent">¥77,174</td>
+                        <td>0.395</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+166.0117&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20166.0117&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">19</strong></td>
+                        <td>195.0076</td>
+                        <td>2</td>
+                        <td>$373.45</td>
+                        <td class="highlight omega-accent">¥37,625</td>
+                        <td>0.214</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+195.0076&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20195.0076&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">20</strong></td>
+                        <td>212.30.41.20.01.003</td>
+                        <td>2</td>
+                        <td>$3078.28</td>
+                        <td class="highlight omega-accent">¥310,136</td>
+                        <td>0.139</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+212.30.41.20.01.003&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%20212.30.41.20.01.003&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">21</strong></td>
+                        <td>2200.50</td>
+                        <td>2</td>
+                        <td>$2667.18</td>
+                        <td class="highlight omega-accent">¥268,717</td>
+                        <td>0.019</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2200.50&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202200.50&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">22</strong></td>
+                        <td>2225.80</td>
+                        <td>2</td>
+                        <td>$2665.90</td>
+                        <td class="highlight omega-accent">¥268,589</td>
+                        <td>0.057</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2225.80&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202225.80&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">23</strong></td>
+                        <td>2253.80</td>
+                        <td>2</td>
+                        <td>$2353.00</td>
+                        <td class="highlight omega-accent">¥237,064</td>
+                        <td>0.208</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2253.80&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202253.80&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">24</strong></td>
+                        <td>2254.50</td>
+                        <td>2</td>
+                        <td>$2709.80</td>
+                        <td class="highlight omega-accent">¥273,012</td>
+                        <td>0.034</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2254.50&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202254.50&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">25</strong></td>
+                        <td>2255.80</td>
+                        <td>2</td>
+                        <td>$2155.40</td>
+                        <td class="highlight omega-accent">¥217,156</td>
+                        <td>0.063</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2255.80&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202255.80&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">26</strong></td>
+                        <td>2264.50</td>
+                        <td>2</td>
+                        <td>$2679.07</td>
+                        <td class="highlight omega-accent">¥269,916</td>
+                        <td>0.098</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2264.50&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202264.50&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">27</strong></td>
+                        <td>2503.60</td>
+                        <td>2</td>
+                        <td>$3663.90</td>
+                        <td class="highlight omega-accent">¥369,137</td>
+                        <td>0.025</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2503.60&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202503.60&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">28</strong></td>
+                        <td>2511.80</td>
+                        <td>2</td>
+                        <td>$920.00</td>
+                        <td class="highlight omega-accent">¥92,689</td>
+                        <td>0.215</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2511.80&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202511.80&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">29</strong></td>
+                        <td>2514.50</td>
+                        <td>2</td>
+                        <td>$1097.50</td>
+                        <td class="highlight omega-accent">¥110,573</td>
+                        <td>0.190</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2514.50&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202514.50&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="omega-accent">30</strong></td>
+                        <td>2521.81</td>
+                        <td>2</td>
+                        <td>$813.10</td>
+                        <td class="highlight omega-accent">¥81,919</td>
+                        <td>0.023</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+2521.81&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=OMEGA%202521.81&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
     </div>
+
+
+
+    
 
 
 
@@ -17254,6 +17836,69 @@ function initOmegaCharts() {
     }));
 }
 </script>
+
+
+        <script>
+        const omegaPurple = '#667eea';
+        const omegaAccent = '#764ba2';
+        const omegaGradient = ['#667eea', '#7b68ee', '#9370db', '#ba55d3', '#da70d6'];
+
+        Plotly.newPlot('omega_price_chart', [{
+            x: ['~$100', '$100-150', '$150-200', '$200-300', '$300-500', '$500-1K', '$1K-2K', '$2K~'],
+            y: [13, 25, 28, 77, 166, 149, 97, 126],
+            type: 'bar',
+            marker: {
+                color: omegaPurple,
+                line: {color: omegaAccent, width: 1}
+            },
+            hovertemplate: '<b>%{x}</b><br>販売数: %{y}<extra></extra>'
+        }], {
+            xaxis: {title: '価格帯', tickangle: -45},
+            yaxis: {title: '販売数'},
+            margin: {l: 50, r: 20, t: 20, b: 80},
+            plot_bgcolor: '#f8f9fa',
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('omega_movement_chart', [{
+            labels: ['クオーツ', '不明', '手巻き', '自動巻'],
+            values: [218, 723, 90, 218],
+            type: 'pie',
+            marker: {colors: omegaGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('omega_gender_chart', [{
+            labels: ['メンズ', 'レディース', 'ユニセックス', 'ボーイズ/キッズ'],
+            values: [409, 71, 7, 5],
+            type: 'pie',
+            marker: {colors: omegaGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+
+        Plotly.newPlot('omega_line_chart', [{
+            labels: ['その他OMEGA', 'De Ville', 'Seamaster', 'Speedmaster', 'Constellation', 'Geneve'],
+            values: [629, 232, 211, 85, 48, 44],
+            type: 'pie',
+            marker: {colors: omegaGradient},
+            textposition: 'inside',
+            textinfo: 'label+percent',
+            hovertemplate: '<b>%{label}</b><br>販売数: %{value}<br>割合: %{percent}<extra></extra>'
+        }], {
+            margin: {l: 20, r: 20, t: 20, b: 20},
+            paper_bgcolor: 'white'
+        }, {responsive: true});
+        </script>
 
 
         <script>
