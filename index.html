@@ -249,6 +249,16 @@
         }
     }
 
+
+        /* TAG HEUER固有のスタイル */
+        #TAG_HEUER .stat-card {
+            background: linear-gradient(135deg, #D0021B15 0%, #D0021B05 100%);
+            border-top: 3px solid #D0021B;
+        }
+
+        #TAG_HEUER .highlight {
+            background: linear-gradient(135deg, #00000025 0%, #00000010 100%);
+        }
 </style>
 </head>
 <body>
@@ -18702,6 +18712,2061 @@
 
     </div>
 
+            <div id="TAG_HEUER" class="tab-content">
+                <h2 style="color: #D0021B; border-bottom: 4px solid #D0021B; padding-bottom: 15px; margin-bottom: 25px;">
+                    🔴 TAG HEUER 詳細分析
+                </h2>
+
+                <h3 style="color: #D0021B; border-bottom: 3px solid #D0021B; padding-bottom: 10px;">
+                    📈 基本統計
+                </h3>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">403</div>
+                        <div class="stat-label">総販売数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$405</div>
+                        <div class="stat-label">中央値</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">1.02</div>
+                        <div class="stat-label">CV値（ばらつき）</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">64.0%</div>
+                        <div class="stat-label">型番抽出率</div>
+                    </div>
+                </div>
+
+
+                <h3 style="color: #D0021B; border-bottom: 3px solid #D0021B; padding-bottom: 10px; margin-top: 30px;">
+                    💡 仕入戦略
+                </h3>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #D0021B15 0%, #D0021B05 100%); border-left: 4px solid #D0021B;">
+                    <h4 style="color: #D0021B; margin-top: 0;">💎 狙い目の条件</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>Professional</strong>シリーズ（販売数最多・安定）</li>
+                        <li><strong>Formula 1</strong>エントリーモデル（$300-500）</li>
+                        <li>型番：<strong>CAZ1011, WK1110, 962.208</strong>など人気モデル</li>
+                        <li><strong>Ayrton Senna</strong>限定版（プレミアム価格）</li>
+                        <li>クロノグラフ機能付き（需要高）</li>
+                    </ul>
+                </div>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #FF6B6B15 0%, #FF6B6B05 100%); border-left: 4px solid #FF6B6B;">
+                    <h4 style="color: #FF6B6B; margin-top: 0;">⚠️ 避けるべき条件</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li>CV値 &gt; 1.0 の高ばらつきモデル</li>
+                        <li>Connected（スマートウォッチ）は価値下落リスク</li>
+                        <li>レディースモデル（需要限定的）</li>
+                        <li>状態不明・箱なし（減額要因）</li>
+                        <li>古すぎるS系・3桁型番（部品入手困難）</li>
+                    </ul>
+                </div>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #4ECDC415 0%, #4ECDC405 100%); border-left: 4px solid #4ECDC4;">
+                    <h4 style="color: #4ECDC4; margin-top: 0;">📊 価格帯別ガイド</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>$200-400</strong>: Professional・Formula 1 クオーツ（回転早）</li>
+                        <li><strong>$400-800</strong>: Carrera・Link 自動巻（安定需要）</li>
+                        <li><strong>$800-1,500</strong>: Carrera クロノグラフ（利益率高）</li>
+                        <li><strong>$1,500+</strong>: Monaco・Autavia・限定版（要専門知識）</li>
+                    </ul>
+                </div>
+
+
+                <h3 style="color: #D0021B; border-bottom: 3px solid #D0021B; padding-bottom: 10px; margin-top: 30px;">
+                    📊 市場分析グラフ
+                </h3>
+
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <div id="tagheuer_price_chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="tagheuer_movement_chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="tagheuer_gender_chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="tagheuer_line_chart"></div>
+                    </div>
+                </div>
+
+
+                <h3 style="color: #D0021B; border-bottom: 3px solid #D0021B; padding-bottom: 10px; margin-top: 30px;">
+                    🤝 コラボレーション・特別版 分析
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>コラボレーション</th>
+                            <th>販売数</th>
+                            <th>比率</th>
+                            <th>中央値</th>
+                            <th style="background: #000000; color: white;">仕入上限(¥)</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong>Ayrton Senna</strong></td>
+                            <td>10</td>
+                            <td>90.9%</td>
+                            <td>$1031</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥103,870</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+Ayrton+Senna" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+Ayrton+Senna" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Gulf</strong></td>
+                            <td>1</td>
+                            <td>9.1%</td>
+                            <td>$844</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥85,035</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+Gulf" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+Gulf" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <h3 style="color: #D0021B; border-bottom: 3px solid #D0021B; padding-bottom: 10px; margin-top: 30px;">
+                    🏆 ライン別 人気型番 Top15
+                </h3>
+
+                <h4 style="color: #D0021B; margin-top: 25px; border-bottom: 2px solid #D0021B; padding-bottom: 5px;">
+                    Professional <span style="font-size: 0.9em; color: #666;">（販売数: 141個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #000000; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #000000;">1</strong></td>
+                            <td><strong>932.213</strong></td>
+                            <td>5</td>
+                            <td>$400</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥40,289</td>
+                            <td>0.141</td>
+                            <td style="font-size: 0.85em;">[Exc+5] Tag Heuer Professional 932.213 Quartz Date...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+932.213" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+932.213" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">2</strong></td>
+                            <td><strong>962.208</strong></td>
+                            <td>5</td>
+                            <td>$229</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥23,071</td>
+                            <td>0.080</td>
+                            <td style="font-size: 0.85em;">[Near MINT] TAG Heuer 2000 Professional 962.208-2 ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+962.208" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+962.208" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">3</strong></td>
+                            <td><strong>WK1112</strong></td>
+                            <td>4</td>
+                            <td>$430</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥43,371</td>
+                            <td>0.192</td>
+                            <td style="font-size: 0.85em;">[NEAR MINT] TAG Heuer Professional 2000 WK1112 Sil...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WK1112" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WK1112" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">4</strong></td>
+                            <td><strong>962.213R</strong></td>
+                            <td>4</td>
+                            <td>$318</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥31,988</td>
+                            <td>0.068</td>
+                            <td style="font-size: 0.85em;">Vintage [MINT] TAG Heuer 2000 962.213R Gray Dial S...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+962.213R" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+962.213R" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">5</strong></td>
+                            <td><strong>964.006</strong></td>
+                            <td>3</td>
+                            <td>$250</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥25,186</td>
+                            <td>0.050</td>
+                            <td style="font-size: 0.85em;">[Near Mint] TAG Heuer 2000 964.006 40mm Gold Dial ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+964.006" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+964.006" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">6</strong></td>
+                            <td><strong>964.013</strong></td>
+                            <td>3</td>
+                            <td>$235</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥23,676</td>
+                            <td>0.049</td>
+                            <td style="font-size: 0.85em;">Tag Heuer 964.013 2000 Professional Men's Quartz G...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+964.013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+964.013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">7</strong></td>
+                            <td><strong>WK1110</strong></td>
+                            <td>3</td>
+                            <td>$435</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥43,786</td>
+                            <td>0.178</td>
+                            <td style="font-size: 0.85em;">TAG Heuer Professional WK1110 Black Dial Stainless...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WK1110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WK1110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">8</strong></td>
+                            <td><strong>962.213</strong></td>
+                            <td>3</td>
+                            <td>$320</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥32,238</td>
+                            <td>0.098</td>
+                            <td style="font-size: 0.85em;">[EXC+5] TAG Heuer 2000 Professional 962.213 34mm G...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+962.213" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+962.213" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">9</strong></td>
+                            <td><strong>934.215</strong></td>
+                            <td>3</td>
+                            <td>$183</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥18,436</td>
+                            <td>0.132</td>
+                            <td style="font-size: 0.85em;">TAG HEUER 3000 Professional 200M Men’s Watch 934.2...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+934.215" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+934.215" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">10</strong></td>
+                            <td><strong>972.013</strong></td>
+                            <td>3</td>
+                            <td>$310</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥31,232</td>
+                            <td>0.213</td>
+                            <td style="font-size: 0.85em;">【EXC+4】TAG Heuer 2000 Professional 972.013 Silver ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+972.013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+972.013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">11</strong></td>
+                            <td><strong>WE1210</strong></td>
+                            <td>3</td>
+                            <td>$370</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥37,276</td>
+                            <td>0.067</td>
+                            <td style="font-size: 0.85em;">[N MINT w/case] TAG HEUER Professional 2000 WE1210...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WE1210" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WE1210" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">12</strong></td>
+                            <td><strong>934.213</strong></td>
+                            <td>2</td>
+                            <td>$280</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥28,210</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">【 EXC+5】TAG Heuer Professional 934.213 Quartz Dive...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+934.213" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+934.213" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">13</strong></td>
+                            <td><strong>WG1113</strong></td>
+                            <td>2</td>
+                            <td>$350</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥35,261</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT] Tag Heuer S/el Professional WG1113 37m...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WG1113" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WG1113" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">14</strong></td>
+                            <td><strong>962.213F</strong></td>
+                            <td>2</td>
+                            <td>$300</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥30,225</td>
+                            <td>0.094</td>
+                            <td style="font-size: 0.85em;">[EXC+5] Tag Heuer 2000 Series 962.213F Silver Gray...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+962.213F" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+962.213F" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">15</strong></td>
+                            <td><strong>973.006</strong></td>
+                            <td>2</td>
+                            <td>$442</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥44,581</td>
+                            <td>0.184</td>
+                            <td style="font-size: 0.85em;">[Exc+5] TAG HEUER 2000 Professional 973.006 Black ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+973.006" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+973.006" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #D0021B; margin-top: 25px; border-bottom: 2px solid #D0021B; padding-bottom: 5px;">
+                    その他TAG HEUER <span style="font-size: 0.9em; color: #666;">（販売数: 46個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #000000; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #000000;">1</strong></td>
+                            <td><strong>CG1123-0</strong></td>
+                            <td>5</td>
+                            <td>$900</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥90,673</td>
+                            <td>0.129</td>
+                            <td style="font-size: 0.85em;">▶️Vintage 【N MINT】 TAG HEUER S/el CG1123-0 Chronog...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CG1123-0" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CG1123-0" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">2</strong></td>
+                            <td><strong>S99.013</strong></td>
+                            <td>2</td>
+                            <td>$320</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥32,238</td>
+                            <td>0.044</td>
+                            <td style="font-size: 0.85em;">[ N MINT ] TAG Heuer S/el SEL S99.013 White Dial 2...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S99.013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S99.013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">3</strong></td>
+                            <td><strong>CG1111-0</strong></td>
+                            <td>2</td>
+                            <td>$795</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥80,095</td>
+                            <td>0.080</td>
+                            <td style="font-size: 0.85em;">HOLIDAY SALE【TOP MINT in BOX】TAG HEUER SEL CG1111-...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CG1111-0" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CG1111-0" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">4</strong></td>
+                            <td><strong>S04.708M</strong></td>
+                            <td>2</td>
+                            <td>$300</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥30,223</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT] TAG Heuer SEL S04.708M 23mm Beige Dial...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S04.708M" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S04.708M" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">5</strong></td>
+                            <td><strong>S89.706</strong></td>
+                            <td>2</td>
+                            <td>$542</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥54,650</td>
+                            <td>0.176</td>
+                            <td style="font-size: 0.85em;">【NEAR MINT】TAG Heuer SEL S89.706 White Dial Men's ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S89.706" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S89.706" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">6</strong></td>
+                            <td><strong>380.513</strong></td>
+                            <td>1</td>
+                            <td>$500</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥50,373</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">*Near MINT* Vintage TAG Heuer 380.513/1 Black & Ye...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+380.513" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+380.513" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">7</strong></td>
+                            <td><strong>WAJ2110</strong></td>
+                            <td>1</td>
+                            <td>$832</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥83,856</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Aqua racer WAJ2110 Caliber 5 Date black ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAJ2110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAJ2110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">8</strong></td>
+                            <td><strong>S99.006K</strong></td>
+                            <td>1</td>
+                            <td>$330</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥33,246</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT] TAG Heuer SEL S99.006K White Dial Silv...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S99.006K" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S99.006K" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">9</strong></td>
+                            <td><strong>S99.013M</strong></td>
+                            <td>1</td>
+                            <td>$301</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥30,329</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER S99.013M SEL Watch 37mm 200m Vintage Whi...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S99.013M" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S99.013M" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">10</strong></td>
+                            <td><strong>S99.208M</strong></td>
+                            <td>1</td>
+                            <td>$250</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥25,186</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">▶️ [ Near MINT ] TAG HEUER S/el S99.208M Gray Dial...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S99.208M" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S99.208M" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">11</strong></td>
+                            <td><strong>S99.313C</strong></td>
+                            <td>1</td>
+                            <td>$330</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥33,246</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT] Tag Heuer S/el 200m S99.313C Black Dia...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S99.313C" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S99.313C" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">12</strong></td>
+                            <td><strong>WAB2011</strong></td>
+                            <td>1</td>
+                            <td>$1000</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥100,748</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">*NEAR MINT* TAG HEUER Aqua racer WAB2011 Date blue...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAB2011" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAB2011" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">13</strong></td>
+                            <td><strong>WAN2111.BA0822</strong></td>
+                            <td>1</td>
+                            <td>$873</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥87,956</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Aqua racer WAN2111.BA0822 Caliber 5 Date...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAN2111.BA0822" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAN2111.BA0822" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">14</strong></td>
+                            <td><strong>WAN2111</strong></td>
+                            <td>1</td>
+                            <td>$850</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥85,637</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Aqua racer WAN2111 Caliber 5 Date Automa...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAN2111" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAN2111" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">15</strong></td>
+                            <td><strong>S95.806</strong></td>
+                            <td>1</td>
+                            <td>$330</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥33,246</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">NEW Batt [Near MINT] TAG Heuer S/el S95.806 Quartz...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S95.806" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S95.806" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #D0021B; margin-top: 25px; border-bottom: 2px solid #D0021B; padding-bottom: 5px;">
+                    Formula 1 <span style="font-size: 0.9em; color: #666;">（販売数: 43個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #000000; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #000000;">1</strong></td>
+                            <td><strong>CAZ1011</strong></td>
+                            <td>5</td>
+                            <td>$774</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥78,029</td>
+                            <td>0.467</td>
+                            <td style="font-size: 0.85em;">【N MINT w/Box】TAG Heuer CAZ1011.BA0843  Formula 1 ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAZ1011" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAZ1011" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">2</strong></td>
+                            <td><strong>381.513</strong></td>
+                            <td>3</td>
+                            <td>$435</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥43,826</td>
+                            <td>0.080</td>
+                            <td style="font-size: 0.85em;">*Near MINT* TAG HEUER Formula 1 381.513/1 Quartz B...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+381.513" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+381.513" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">3</strong></td>
+                            <td><strong>373.508</strong></td>
+                            <td>3</td>
+                            <td>$275</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥27,706</td>
+                            <td>0.611</td>
+                            <td style="font-size: 0.85em;">TAG Heuer Formula 1 373.508 Orange Dial Quartz Wat...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+373.508" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+373.508" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">4</strong></td>
+                            <td><strong>371.508</strong></td>
+                            <td>2</td>
+                            <td>$244</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥24,583</td>
+                            <td>0.012</td>
+                            <td style="font-size: 0.85em;">[Exc+5] TAG Heuer 371.508 Formula 1 Women's Quartz...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+371.508" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+371.508" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">5</strong></td>
+                            <td><strong>383.513</strong></td>
+                            <td>2</td>
+                            <td>$380</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥38,285</td>
+                            <td>0.074</td>
+                            <td style="font-size: 0.85em;">NEW Battery 【MINT】 TAG Heuer Formula 1 383.513/1 B...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+383.513" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+383.513" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">6</strong></td>
+                            <td><strong>CAZ1010</strong></td>
+                            <td>2</td>
+                            <td>$1120</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥112,838</td>
+                            <td>0.543</td>
+                            <td style="font-size: 0.85em;">New Tag Heuer Formula 1 Black Men's Watch CAZ1010....</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAZ1010" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAZ1010" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">7</strong></td>
+                            <td><strong>380.513</strong></td>
+                            <td>2</td>
+                            <td>$525</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥52,887</td>
+                            <td>0.202</td>
+                            <td style="font-size: 0.85em;">[Exc+5] TAG HEUER Formula 1 380.513/1 Black Yellow...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+380.513" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+380.513" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">8</strong></td>
+                            <td><strong>CAZ1014</strong></td>
+                            <td>1</td>
+                            <td>$1815</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥182,861</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">New Tag Heuer Formula 1 Blue Men's Watch CAZ1014.B...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAZ1014" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAZ1014" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">9</strong></td>
+                            <td><strong>CAZ2012</strong></td>
+                            <td>1</td>
+                            <td>$2000</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥201,500</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Formula 1 caliber 16 CAZ2012.BA0876 Auto...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAZ2012" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAZ2012" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">10</strong></td>
+                            <td><strong>WAC1113</strong></td>
+                            <td>1</td>
+                            <td>$700</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥70,514</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Formula 1 WAC1113 BA0850 Red Dial Quartz...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAC1113" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAC1113" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">11</strong></td>
+                            <td><strong>WAC1213</strong></td>
+                            <td>1</td>
+                            <td>$860</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥86,643</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[ w/Paper ] TAG Heuer Formula 1 WAC1213 Orange Dia...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAC1213" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAC1213" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">12</strong></td>
+                            <td><strong>361.508</strong></td>
+                            <td>1</td>
+                            <td>$310</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥31,232</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Vintage[MINT]  TAG HEUER Formula 1 361.508 Cream 2...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+361.508" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+361.508" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">13</strong></td>
+                            <td><strong>WAH1013</strong></td>
+                            <td>1</td>
+                            <td>$844</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥85,035</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Formula 1 Grand Date Gulf WAH1013 Date Q...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAH1013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAH1013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">14</strong></td>
+                            <td><strong>WAH1111</strong></td>
+                            <td>1</td>
+                            <td>$700</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥70,523</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">【MINT】TAG HEUER  Formula 1 WAH1111 White Dial 200M...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAH1111" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAH1111" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">15</strong></td>
+                            <td><strong>WAH1210</strong></td>
+                            <td>1</td>
+                            <td>$722</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥72,757</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Formula 1 WAH1210 Date black Dial Quartz...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAH1210" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAH1210" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #D0021B; margin-top: 25px; border-bottom: 2px solid #D0021B; padding-bottom: 5px;">
+                    Carrera <span style="font-size: 0.9em; color: #666;">（販売数: 13個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #000000; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #000000;">1</strong></td>
+                            <td><strong>CAR2111</strong></td>
+                            <td>3</td>
+                            <td>$1299</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥130,879</td>
+                            <td>0.106</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Carrera caliber 1887 CAR2111-4 Chronogra...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAR2111" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAR2111" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">2</strong></td>
+                            <td><strong>CAR2014</strong></td>
+                            <td>1</td>
+                            <td>$1042</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥105,021</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Carrera Caliber 1887 CAR2014 Chronograph...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAR2014" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAR2014" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">3</strong></td>
+                            <td><strong>CAR2090</strong></td>
+                            <td>1</td>
+                            <td>$2404</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥242,238</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">discount with paper TAG HEUER Carrera CAR2090.FT60...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAR2090" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAR2090" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">4</strong></td>
+                            <td><strong>CAV5115</strong></td>
+                            <td>1</td>
+                            <td>$3002</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥302,459</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Tag Heuer Grand Carrera Calibre 36 CAV5115.BA0902 ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAV5115" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAV5115" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">5</strong></td>
+                            <td><strong>CBN2011</strong></td>
+                            <td>1</td>
+                            <td>$2769</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥279,019</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Authentic TAG Heuer CARRERA Chronograph CBN2011.BA...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CBN2011" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CBN2011" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">6</strong></td>
+                            <td><strong>CV2014</strong></td>
+                            <td>1</td>
+                            <td>$1490</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥150,134</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Tag Heuer Carrera Cv2014.Ba0794</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CV2014" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CV2014" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">7</strong></td>
+                            <td><strong>WAS2111</strong></td>
+                            <td>1</td>
+                            <td>$969</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥97,656</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Carrera Heritage WAS2111 Date Calibre 6 ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAS2111" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAS2111" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">8</strong></td>
+                            <td><strong>WBK1312</strong></td>
+                            <td>1</td>
+                            <td>$1039</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥104,714</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">discount TAG HEUER Carrera WBK1312 Date blue Dial ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBK1312" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBK1312" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">9</strong></td>
+                            <td><strong>WBK1312.BA0652</strong></td>
+                            <td>1</td>
+                            <td>$1791</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥180,443</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Carrera Lady Quartz WBK1312.BA0652 SW041...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBK1312.BA0652" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBK1312.BA0652" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">10</strong></td>
+                            <td><strong>WBN2111</strong></td>
+                            <td>1</td>
+                            <td>$1849</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥186,316</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Carrera Caliber 5 WBN2111-0 Date Silver ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBN2111" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBN2111" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">11</strong></td>
+                            <td><strong>WBN2113.BA0639</strong></td>
+                            <td>1</td>
+                            <td>$1547</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥155,890</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Carrera Caliber 5 WBN2113.BA0639 Date Au...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBN2113.BA0639" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBN2113.BA0639" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（11モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #D0021B; margin-top: 25px; border-bottom: 2px solid #D0021B; padding-bottom: 5px;">
+                    Link <span style="font-size: 0.9em; color: #666;">（販売数: 6個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #000000; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #000000;">1</strong></td>
+                            <td><strong>WAT1110.BA0950</strong></td>
+                            <td>1</td>
+                            <td>$661</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥66,575</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Link WAT1110.BA0950 Date black Dial Quar...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAT1110.BA0950" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAT1110.BA0950" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">2</strong></td>
+                            <td><strong>WAT2114</strong></td>
+                            <td>1</td>
+                            <td>$938</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥94,483</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Link Calibre 6 WAT2114 Date black Dial A...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAT2114" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAT2114" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">3</strong></td>
+                            <td><strong>WAT2150</strong></td>
+                            <td>1</td>
+                            <td>$1280</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥128,960</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Link WAT2150 Case Size 40mm Men's Used W...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAT2150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAT2150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">4</strong></td>
+                            <td><strong>WG1120</strong></td>
+                            <td>1</td>
+                            <td>$300</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥30,223</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">▶️ TAG Heuer BB0424 Mens SEL Watch Bracelet Band L...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WG1120" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WG1120" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">5</strong></td>
+                            <td><strong>WJF2010</strong></td>
+                            <td>1</td>
+                            <td>$825</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥83,070</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Link caliber 5 WJF2010 Day date black Di...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WJF2010" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WJF2010" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">6</strong></td>
+                            <td><strong>WJF2110</strong></td>
+                            <td>1</td>
+                            <td>$680</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥68,499</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Exc+5] Tag Heuer Link WJF2110 Automatic 200M 40mm...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WJF2110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WJF2110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（6モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #D0021B; margin-top: 25px; border-bottom: 2px solid #D0021B; padding-bottom: 5px;">
+                    Aquaracer <span style="font-size: 0.9em; color: #666;">（販売数: 7個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #000000; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #000000;">1</strong></td>
+                            <td><strong>WAY1111.BA0928</strong></td>
+                            <td>1</td>
+                            <td>$690</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥69,517</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG Heuer Aquaracer WAY1111.BA0928 Quartz Overhaul...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WAY1111.BA0928" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WAY1111.BA0928" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">2</strong></td>
+                            <td><strong>WBD1111.BA0928</strong></td>
+                            <td>1</td>
+                            <td>$1100</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥110,825</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER WBD1111.BA0928 Watch Aquaracer</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBD1111.BA0928" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBD1111.BA0928" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">3</strong></td>
+                            <td><strong>WBD1412</strong></td>
+                            <td>1</td>
+                            <td>$652</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥65,640</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG Heuer Aquaracer WBD1412 Blue Dial Women's Watc...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBD1412" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBD1412" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">4</strong></td>
+                            <td><strong>WBD1413.BA0741</strong></td>
+                            <td>1</td>
+                            <td>$2900</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥292,175</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER  Aquaracer  WOMEN WBD1413.BA0741</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBD1413.BA0741" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBD1413.BA0741" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">5</strong></td>
+                            <td><strong>WBD2110.BA0928</strong></td>
+                            <td>1</td>
+                            <td>$1249</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥125,836</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Tag Heuer Aquaracer Automatic 41mm Wbd2110.Ba0928</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBD2110.BA0928" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBD2110.BA0928" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">6</strong></td>
+                            <td><strong>WBD2113</strong></td>
+                            <td>1</td>
+                            <td>$1757</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥177,017</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Tag Heuer Aquaracer WBD2113 BA0928 Automatic Stain...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBD2113" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBD2113" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">7</strong></td>
+                            <td><strong>WBP5111.BA0013</strong></td>
+                            <td>1</td>
+                            <td>$2400</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥241,800</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Aquaracer WBP5111.BA0013 Automatic Men's...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBP5111.BA0013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBP5111.BA0013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（7モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #D0021B; margin-top: 25px; border-bottom: 2px solid #D0021B; padding-bottom: 5px;">
+                    Autavia <span style="font-size: 0.9em; color: #666;">（販売数: 2個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #000000; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #000000;">1</strong></td>
+                            <td><strong>CBE2110</strong></td>
+                            <td>1</td>
+                            <td>$2959</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥298,082</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Heritige Autavia Chronograph Mens Watch ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CBE2110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CBE2110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">2</strong></td>
+                            <td><strong>WBE5110</strong></td>
+                            <td>1</td>
+                            <td>$1858</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥187,233</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">TAG HEUER Autavia Isograph WBE5110 Date Gray Dial ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WBE5110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WBE5110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（2モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <h3 style="color: #D0021B; border-bottom: 3px solid #D0021B; padding-bottom: 10px; margin-top: 30px;">
+                    📊 ライン別 詳細分析
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ライン名</th>
+                            <th>販売数</th>
+                            <th>比率</th>
+                            <th>中央値</th>
+                            <th>CV値</th>
+                            <th>安定性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong>Professional</strong></td>
+                            <td>175</td>
+                            <td>43.4%</td>
+                            <td>$335</td>
+                            <td>0.870</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>その他TAG HEUER</strong></td>
+                            <td>79</td>
+                            <td>19.6%</td>
+                            <td>$400</td>
+                            <td>1.071</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Formula 1</strong></td>
+                            <td>67</td>
+                            <td>16.6%</td>
+                            <td>$550</td>
+                            <td>0.675</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Carrera</strong></td>
+                            <td>40</td>
+                            <td>9.9%</td>
+                            <td>$1519</td>
+                            <td>0.587</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Link</strong></td>
+                            <td>21</td>
+                            <td>5.2%</td>
+                            <td>$695</td>
+                            <td>0.605</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Aquaracer</strong></td>
+                            <td>13</td>
+                            <td>3.2%</td>
+                            <td>$1249</td>
+                            <td>0.520</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Connected</strong></td>
+                            <td>5</td>
+                            <td>1.2%</td>
+                            <td>$529</td>
+                            <td>0.524</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Autavia</strong></td>
+                            <td>2</td>
+                            <td>0.5%</td>
+                            <td>$2409</td>
+                            <td>0.323</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Monaco</strong></td>
+                            <td>1</td>
+                            <td>0.2%</td>
+                            <td>$3195</td>
+                            <td>nan</td>
+                            <td>☆☆☆</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <h3 style="color: #D0021B; border-bottom: 3px solid #D0021B; padding-bottom: 10px; margin-top: 30px;">
+                    🌟 全ライン横断 Top30 型番
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>ライン</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #000000; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #000000;">1</strong></td>
+                            <td><strong>CAZ1011</strong></td>
+                            <td>Formula 1</td>
+                            <td>5</td>
+                            <td>$774</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥78,029</td>
+                            <td>0.467</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAZ1011" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAZ1011" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">2</strong></td>
+                            <td><strong>962.208</strong></td>
+                            <td>Professional</td>
+                            <td>5</td>
+                            <td>$229</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥23,071</td>
+                            <td>0.080</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+962.208" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+962.208" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">3</strong></td>
+                            <td><strong>932.213</strong></td>
+                            <td>Professional</td>
+                            <td>5</td>
+                            <td>$400</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥40,289</td>
+                            <td>0.141</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+932.213" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+932.213" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">4</strong></td>
+                            <td><strong>CG1123-0</strong></td>
+                            <td>その他TAG HEUER</td>
+                            <td>5</td>
+                            <td>$900</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥90,673</td>
+                            <td>0.129</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CG1123-0" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CG1123-0" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">5</strong></td>
+                            <td><strong>962.213R</strong></td>
+                            <td>Professional</td>
+                            <td>4</td>
+                            <td>$318</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥31,988</td>
+                            <td>0.068</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+962.213R" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+962.213R" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">6</strong></td>
+                            <td><strong>WK1112</strong></td>
+                            <td>Professional</td>
+                            <td>4</td>
+                            <td>$430</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥43,371</td>
+                            <td>0.192</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WK1112" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WK1112" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">7</strong></td>
+                            <td><strong>373.508</strong></td>
+                            <td>Formula 1</td>
+                            <td>3</td>
+                            <td>$275</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥27,706</td>
+                            <td>0.611</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+373.508" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+373.508" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">8</strong></td>
+                            <td><strong>381.513</strong></td>
+                            <td>Formula 1</td>
+                            <td>3</td>
+                            <td>$435</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥43,826</td>
+                            <td>0.080</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+381.513" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+381.513" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">9</strong></td>
+                            <td><strong>972.013</strong></td>
+                            <td>Professional</td>
+                            <td>3</td>
+                            <td>$310</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥31,232</td>
+                            <td>0.213</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+972.013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+972.013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">10</strong></td>
+                            <td><strong>WK1110</strong></td>
+                            <td>Professional</td>
+                            <td>3</td>
+                            <td>$435</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥43,786</td>
+                            <td>0.178</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WK1110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WK1110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">11</strong></td>
+                            <td><strong>WE1210</strong></td>
+                            <td>Professional</td>
+                            <td>3</td>
+                            <td>$370</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥37,276</td>
+                            <td>0.067</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WE1210" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WE1210" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">12</strong></td>
+                            <td><strong>964.006</strong></td>
+                            <td>Professional</td>
+                            <td>3</td>
+                            <td>$250</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥25,186</td>
+                            <td>0.050</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+964.006" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+964.006" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">13</strong></td>
+                            <td><strong>934.215</strong></td>
+                            <td>Professional</td>
+                            <td>3</td>
+                            <td>$183</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥18,436</td>
+                            <td>0.132</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+934.215" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+934.215" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">14</strong></td>
+                            <td><strong>CAR2111</strong></td>
+                            <td>Carrera</td>
+                            <td>3</td>
+                            <td>$1299</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥130,879</td>
+                            <td>0.106</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CAR2111" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CAR2111" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">15</strong></td>
+                            <td><strong>964.013</strong></td>
+                            <td>Professional</td>
+                            <td>3</td>
+                            <td>$235</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥23,676</td>
+                            <td>0.049</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+964.013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+964.013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">16</strong></td>
+                            <td><strong>962.213</strong></td>
+                            <td>Professional</td>
+                            <td>3</td>
+                            <td>$320</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥32,238</td>
+                            <td>0.098</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+962.213" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+962.213" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">17</strong></td>
+                            <td><strong>S04.708M</strong></td>
+                            <td>その他TAG HEUER</td>
+                            <td>2</td>
+                            <td>$300</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥30,223</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S04.708M" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S04.708M" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">18</strong></td>
+                            <td><strong>934.208</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$192</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥19,344</td>
+                            <td>0.265</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+934.208" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+934.208" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">19</strong></td>
+                            <td><strong>964.008</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$212</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥21,359</td>
+                            <td>0.020</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+964.008" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+964.008" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">20</strong></td>
+                            <td><strong>CG1111-0</strong></td>
+                            <td>その他TAG HEUER</td>
+                            <td>2</td>
+                            <td>$795</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥80,095</td>
+                            <td>0.080</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+CG1111-0" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+CG1111-0" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">21</strong></td>
+                            <td><strong>932.206</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$405</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥40,802</td>
+                            <td>0.087</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+932.206" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+932.206" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">22</strong></td>
+                            <td><strong>WG1113</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$350</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥35,261</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+WG1113" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+WG1113" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">23</strong></td>
+                            <td><strong>962.213F</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$300</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥30,225</td>
+                            <td>0.094</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+962.213F" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+962.213F" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">24</strong></td>
+                            <td><strong>570.206</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$532</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥53,548</td>
+                            <td>0.036</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+570.206" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+570.206" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">25</strong></td>
+                            <td><strong>934.213</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$280</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥28,210</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+934.213" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+934.213" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">26</strong></td>
+                            <td><strong>934.206</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$358</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥36,069</td>
+                            <td>0.625</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+934.206" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+934.206" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">27</strong></td>
+                            <td><strong>S99.013</strong></td>
+                            <td>その他TAG HEUER</td>
+                            <td>2</td>
+                            <td>$320</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥32,238</td>
+                            <td>0.044</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S99.013" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S99.013" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">28</strong></td>
+                            <td><strong>383.513</strong></td>
+                            <td>Formula 1</td>
+                            <td>2</td>
+                            <td>$380</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥38,285</td>
+                            <td>0.074</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+383.513" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+383.513" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">29</strong></td>
+                            <td><strong>S95.708</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$224</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥22,547</td>
+                            <td>0.466</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+S95.708" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+S95.708" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #000000;">30</strong></td>
+                            <td><strong>973.006</strong></td>
+                            <td>Professional</td>
+                            <td>2</td>
+                            <td>$442</td>
+                            <td class="highlight" style="color: #000000; font-weight: bold;">¥44,581</td>
+                            <td>0.184</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+973.006" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+973.006" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+
 
 
 
@@ -20118,6 +22183,49 @@ function initOmegaCharts() {
             margin: {l: 20, r: 20, t: 20, b: 20},
             paper_bgcolor: 'white'
         }, {responsive: true});
+        </script>
+
+
+        <script>
+            // TAG HEUER - 価格帯別分析
+            var tagheuer_price_data = [{'x': ['$0-200', '$200-400', '$400-600', '$600-800', '$800-1000', '$1000-1500', '$1500-2000', '$2000+'], 'y': [36, 165, 59, 36, 31, 32, 20, 23], 'type': 'bar', 'marker': {'color': '#D0021B'}}];
+            var tagheuer_price_layout = {
+                title: '価格帯別 販売分布',
+                xaxis: {title: '価格帯'},
+                yaxis: {title: '販売数'},
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('tagheuer_price_chart', tagheuer_price_data, tagheuer_price_layout, {responsive: true});
+
+            // TAG HEUER - 駆動方式別分布
+            var tagheuer_movement_data = [{'labels': ['クオーツ', '不明', '自動巻', 'スマートウォッチ', 'デジタル'], 'values': [230, 97, 73, 2, 1], 'type': 'pie', 'marker': {'colors': ['#D0021B', '#000000', '#666666', '#999999', '#CCCCCC']}}];
+            var tagheuer_movement_layout = {
+                title: '駆動方式別 分布',
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('tagheuer_movement_chart', tagheuer_movement_data, tagheuer_movement_layout, {responsive: true});
+
+            // TAG HEUER - 性別・カテゴリー別
+            var tagheuer_gender_data = [{'x': ['メンズ', '不明', 'レディース', 'ユニセックス', 'ボーイズ/キッズ'], 'y': [274, 100, 18, 7, 4], 'type': 'bar', 'marker': {'color': '#000000'}}];
+            var tagheuer_gender_layout = {
+                title: '性別・カテゴリー別 販売数',
+                xaxis: {title: 'カテゴリー'},
+                yaxis: {title: '販売数'},
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('tagheuer_gender_chart', tagheuer_gender_data, tagheuer_gender_layout, {responsive: true});
+
+            // TAG HEUER - ライン別売上比率
+            var tagheuer_line_data = [{'labels': ['Professional', 'その他TAG HEUER', 'Formula 1', 'Carrera', 'Link', 'Aquaracer', 'Connected', 'Autavia'], 'values': [175, 79, 67, 40, 21, 13, 5, 2], 'type': 'pie', 'hole': 0.4}];
+            var tagheuer_line_layout = {
+                title: 'ライン別 売上比率',
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('tagheuer_line_chart', tagheuer_line_data, tagheuer_line_layout, {responsive: true});
         </script>
 
 </body>
