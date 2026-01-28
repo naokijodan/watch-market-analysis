@@ -427,8 +427,10 @@ line_detail_html = f'''
                             <th>販売数</th>
                             <th>比率</th>
                             <th>中央値</th>
+                            <th style="background: {brand_color_accent}; color: white;">仕入上限(¥)</th>
                             <th>CV値</th>
                             <th>安定性</th>
+                            <th>検索</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -439,6 +441,7 @@ for line_name, count in line_counts.items():
     median = line_data['価格'].median()
     cv = line_data['価格'].std() / line_data['価格'].mean()
     ratio = count / len(complete_data) * 100
+    purchase_limit = int(median * 155 * 0.65)
 
     # 安定性評価
     if cv <= 0.15:
@@ -450,14 +453,24 @@ for line_name, count in line_counts.items():
     else:
         stability = '☆☆☆'
 
+    # 検索キーワード
+    search_keyword = line_name.replace(' ', '+')
+
     line_detail_html += f'''
                         <tr>
                             <td><strong>{line_name}</strong></td>
                             <td>{count}</td>
                             <td>{ratio:.1f}%</td>
                             <td>${median:.0f}</td>
+                            <td class="highlight" style="color: {brand_color_accent}; font-weight: bold;">¥{purchase_limit:,}</td>
                             <td>{cv:.3f}</td>
                             <td>{stability}</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=TAG+HEUER+{search_keyword}" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=TAG+HEUER+{search_keyword}" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
                         </tr>
 '''
 
