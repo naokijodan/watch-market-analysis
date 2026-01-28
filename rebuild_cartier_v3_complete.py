@@ -578,7 +578,7 @@ section8_scripts = f'''
             {{
                 const data = [{{
                     x: {list(price_dist.index.astype(str))},
-                    y: {list(price_dist.values)},
+                    y: {price_dist.values.tolist()},
                     type: 'bar',
                     marker: {{color: '{BRAND_COLOR_PRIMARY}'}}
                 }}];
@@ -594,7 +594,7 @@ section8_scripts = f'''
             // 2. 駆動方式別
             {{
                 const data = [{{
-                    values: {list(movement_dist.values)},
+                    values: {movement_dist.values.tolist()},
                     labels: {list(movement_dist.index.astype(str))},
                     type: 'pie',
                     marker: {{colors: ['{BRAND_COLOR_PRIMARY}', '{BRAND_COLOR_ACCENT}', '#6c757d']}}
@@ -609,7 +609,7 @@ section8_scripts = f'''
             // 3. 性別・カテゴリー別
             {{
                 const data = [{{
-                    values: {list(gender_dist.values)},
+                    values: {gender_dist.values.tolist()},
                     labels: {list(gender_dist.index.astype(str))},
                     type: 'pie',
                     marker: {{colors: ['{BRAND_COLOR_PRIMARY}', '{BRAND_COLOR_ACCENT}', '#6c757d']}}
@@ -624,7 +624,7 @@ section8_scripts = f'''
             // 4. ライン別売上比率
             {{
                 const data = [{{
-                    values: {list(line_dist.values)},
+                    values: {line_dist.values.tolist()},
                     labels: {list(line_dist.index.astype(str))},
                     type: 'pie',
                     marker: {{colors: ['{BRAND_COLOR_PRIMARY}', '{BRAND_COLOR_ACCENT}', '#17a2b8', '#ffc107', '#28a745', '#dc3545', '#6610f2', '#fd7e14']}}
