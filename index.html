@@ -802,6 +802,10 @@
         <button class="tab" onclick="showTab('manual')">🔧 手巻き</button>
         <button class="tab" onclick="showTab('smart')">📱 スマートウォッチ</button>
         <button class="tab" onclick="showTab('digital')">🔢 デジタル</button>
+        <button class="tab" onclick="showTab('belt-material')">🔗 ベルト素材</button>
+        <button class="tab" onclick="showTab('case-material')">📦 ケース素材</button>
+        <button class="tab" onclick="showTab('dial-color')">🎨 文字盤色</button>
+        <button class="tab" onclick="showTab('case-size')">📏 ケースサイズ</button>
         <button class="tab" onclick="showTab('parts')">🔩 パーツ</button>
         <button class="tab" onclick="showTab('bundle')">📦 まとめ売り</button>
         <button class="tab" onclick="showTab('recommend')">⭐ おすすめ出品順序</button>
@@ -4594,6 +4598,1818 @@
             </table>
         </div>
     </div>
+    <div id="belt-material" class="tab-content">
+        <h2 class="section-title">🔗 ベルト素材別市場分析</h2>
+
+        <div class="info-box" style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-bottom: 20px;">
+            <strong>📊 データ判別率</strong><br>
+            タイトルから判別可能なデータ: <strong>512件</strong> / 全体 9,275件<br>
+            判別率: <strong>5.5%</strong><br>
+            <em>※「不明」は除外して分析しています</em>
+        </div>
+
+        <!-- 統計カード -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">総販売数</div>
+                <div class="value">512</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">ユニークモデル数</div>
+                <div class="value">512</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">平均価格</div>
+                <div class="value">$555.02</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">中央値</div>
+                <div class="value">$169.92</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">最高価格</div>
+                <div class="value">$16,548.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">総売上</div>
+                <div class="value">$284,170</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">CV値（価格安定性）</div>
+                <div class="value">3.069</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">仕入れ上限中央値</div>
+                <div class="value">¥18,069</div>
+            </div>
+        </div>
+
+        <!-- グラフエリア -->
+        <h3 class="section-title">📊 市場分析グラフ</h3>
+        <div class="chart-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="chart-container"><div id="belt-material_brand_bar"></div></div>
+            <div class="chart-container"><div id="belt-material_brand_pie"></div></div>
+            <div class="chart-container"><div id="belt-material_price_dist"></div></div>
+            <div class="chart-container"><div id="belt-material_attr_pie"></div></div>
+        </div>
+
+        <!-- ブランド別集計テーブル -->
+        <h3 class="section-title">🏷️ ブランド別集計（Top20）</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>最低価格</th>
+                        <th>最高価格</th>
+                        <th>中央値($)</th>
+                        <th>中央値(¥)</th>
+                        <th>仕入上限(¥)</th>
+                        <th>CV値</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>セイコー</strong> (SEIKO)</td>
+                        <td>107</td>
+                        <td>$40.00</td>
+                        <td>$1345.00</td>
+                        <td>$149.00</td>
+                        <td>¥23,095</td>
+                        <td class="highlight">¥15,476</td>
+                        <td>0.959</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_SEIKO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BB%E3%82%A4%E3%82%B3%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_SEIKO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>不明</strong> ((不明))</td>
+                        <td>51</td>
+                        <td>$50.00</td>
+                        <td>$1108.45</td>
+                        <td>$180.00</td>
+                        <td>¥27,900</td>
+                        <td class="highlight">¥19,320</td>
+                        <td>0.816</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=%28%E4%B8%8D%E6%98%8E%29+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_(不明)_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E4%B8%8D%E6%98%8E+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_(不明)_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ロレックス</strong> (ROLEX)</td>
+                        <td>47</td>
+                        <td>$55.00</td>
+                        <td>$16548.00</td>
+                        <td>$255.00</td>
+                        <td>¥39,525</td>
+                        <td class="highlight">¥28,620</td>
+                        <td>1.671</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_ROLEX_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_ROLEX_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>カシオ</strong> (CASIO)</td>
+                        <td>44</td>
+                        <td>$32.48</td>
+                        <td>$762.32</td>
+                        <td>$91.22</td>
+                        <td>¥14,139</td>
+                        <td class="highlight">¥8,311</td>
+                        <td>0.962</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_CASIO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AB%E3%82%B7%E3%82%AA+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_CASIO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オメガ</strong> (OMEGA)</td>
+                        <td>32</td>
+                        <td>$88.82</td>
+                        <td>$800.00</td>
+                        <td>$199.00</td>
+                        <td>¥30,844</td>
+                        <td class="highlight">¥21,675</td>
+                        <td>0.605</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_OMEGA_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%A1%E3%82%AC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_OMEGA_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>グッチ</strong> (GUCCI)</td>
+                        <td>20</td>
+                        <td>$120.00</td>
+                        <td>$680.00</td>
+                        <td>$201.00</td>
+                        <td>¥31,155</td>
+                        <td class="highlight">¥21,924</td>
+                        <td>0.632</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=GUCCI+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_GUCCI_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%B0%E3%83%83%E3%83%81+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_GUCCI_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>シチズン</strong> (CITIZEN)</td>
+                        <td>17</td>
+                        <td>$50.16</td>
+                        <td>$1450.00</td>
+                        <td>$196.00</td>
+                        <td>¥30,380</td>
+                        <td class="highlight">¥21,304</td>
+                        <td>1.273</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_CITIZEN_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%B7%E3%83%81%E3%82%BA%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_CITIZEN_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>タグホイヤー</strong> (TAG HEUER)</td>
+                        <td>14</td>
+                        <td>$50.00</td>
+                        <td>$332.19</td>
+                        <td>$69.50</td>
+                        <td>¥10,772</td>
+                        <td class="highlight">¥5,618</td>
+                        <td>0.745</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG%20HEUER+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_TAG HEUER_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BF%E3%82%B0%E3%83%9B%E3%82%A4%E3%83%A4%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_TAG HEUER_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オリエント</strong> (Orient)</td>
+                        <td>14</td>
+                        <td>$124.78</td>
+                        <td>$536.60</td>
+                        <td>$205.03</td>
+                        <td>¥31,780</td>
+                        <td class="highlight">¥22,424</td>
+                        <td>0.466</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Orient_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%AA%E3%82%A8%E3%83%B3%E3%83%88+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Orient_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Patek Philippe</strong> (Patek Philippe)</td>
+                        <td>11</td>
+                        <td>$62.99</td>
+                        <td>$1025.00</td>
+                        <td>$93.67</td>
+                        <td>¥14,519</td>
+                        <td class="highlight">¥8,615</td>
+                        <td>1.344</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Patek%20Philippe+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Patek Philippe_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=Patek%20Philippe+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Patek Philippe_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Audemars Piguet</strong> (Audemars Piguet)</td>
+                        <td>9</td>
+                        <td>$70.99</td>
+                        <td>$974.99</td>
+                        <td>$155.00</td>
+                        <td>¥24,025</td>
+                        <td class="highlight">¥16,220</td>
+                        <td>1.182</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Audemars%20Piguet+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Audemars Piguet_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=Audemars%20Piguet+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Audemars Piguet_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ロンジン</strong> (Longines)</td>
+                        <td>8</td>
+                        <td>$108.00</td>
+                        <td>$1495.15</td>
+                        <td>$158.50</td>
+                        <td>¥24,568</td>
+                        <td class="highlight">¥16,654</td>
+                        <td>1.489</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Longines_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%B3%E3%82%B8%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Longines_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>カルティエ</strong> (Cartier)</td>
+                        <td>8</td>
+                        <td>$54.49</td>
+                        <td>$769.30</td>
+                        <td>$182.25</td>
+                        <td>¥28,249</td>
+                        <td class="highlight">¥19,599</td>
+                        <td>0.995</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Cartier+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Cartier_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AB%E3%83%AB%E3%83%86%E3%82%A3%E3%82%A8+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Cartier_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ハミルトン</strong> (Hamilton)</td>
+                        <td>8</td>
+                        <td>$224.13</td>
+                        <td>$898.00</td>
+                        <td>$485.63</td>
+                        <td>¥75,273</td>
+                        <td class="highlight">¥57,219</td>
+                        <td>0.488</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Hamilton_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%8F%E3%83%9F%E3%83%AB%E3%83%88%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Hamilton_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>HERMES</strong> (HERMES)</td>
+                        <td>8</td>
+                        <td>$243.97</td>
+                        <td>$1835.41</td>
+                        <td>$447.40</td>
+                        <td>¥69,348</td>
+                        <td class="highlight">¥52,478</td>
+                        <td>0.905</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=HERMES+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_HERMES_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=HERMES+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_HERMES_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>NIXON</strong> (NIXON)</td>
+                        <td>6</td>
+                        <td>$70.00</td>
+                        <td>$212.78</td>
+                        <td>$134.34</td>
+                        <td>¥20,823</td>
+                        <td class="highlight">¥13,658</td>
+                        <td>0.387</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=NIXON+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_NIXON_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=NIXON+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_NIXON_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>TUDOR</strong> (TUDOR)</td>
+                        <td>6</td>
+                        <td>$897.00</td>
+                        <td>$3862.40</td>
+                        <td>$1474.99</td>
+                        <td>¥228,624</td>
+                        <td class="highlight">¥179,899</td>
+                        <td>0.620</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TUDOR+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_TUDOR_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=TUDOR+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_TUDOR_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Swatch</strong> (Swatch)</td>
+                        <td>5</td>
+                        <td>$90.00</td>
+                        <td>$150.00</td>
+                        <td>$122.89</td>
+                        <td>¥19,048</td>
+                        <td class="highlight">¥12,238</td>
+                        <td>0.209</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Swatch+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Swatch_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=Swatch+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Swatch_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>DIESEL</strong> (DIESEL)</td>
+                        <td>4</td>
+                        <td>$110.00</td>
+                        <td>$142.99</td>
+                        <td>$139.50</td>
+                        <td>¥21,622</td>
+                        <td class="highlight">¥14,298</td>
+                        <td>0.116</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=DIESEL+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_DIESEL_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=DIESEL+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_DIESEL_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Vacheron Constantin</strong> (Vacheron Constantin)</td>
+                        <td>4</td>
+                        <td>$150.00</td>
+                        <td>$410.00</td>
+                        <td>$325.00</td>
+                        <td>¥50,374</td>
+                        <td class="highlight">¥37,299</td>
+                        <td>0.414</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Vacheron%20Constantin+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Vacheron Constantin_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=Vacheron%20Constantin+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="belt-material_brand_Vacheron Constantin_mercari">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+    // ブランド別販売数（横棒グラフ）
+    Plotly.newPlot('belt-material_brand_bar', [{
+        x: [107, 51, 47, 44, 32, 20, 17, 14, 14, 11],
+        y: ["\u30bb\u30a4\u30b3\u30fc", "\u4e0d\u660e", "\u30ed\u30ec\u30c3\u30af\u30b9", "\u30ab\u30b7\u30aa", "\u30aa\u30e1\u30ac", "\u30b0\u30c3\u30c1", "\u30b7\u30c1\u30ba\u30f3", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "\u30aa\u30ea\u30a8\u30f3\u30c8", "Patek Philippe"],
+        type: 'bar',
+        orientation: 'h',
+        marker: {color: '#795548'}
+    }], {...plotlyLayout, title: 'ブランド別販売数（Top10）', xaxis: {title: '販売数'}, yaxis: {title: 'ブランド'}}, plotlyConfig);
+
+    // ブランド別シェア（円グラフ）
+    Plotly.newPlot('belt-material_brand_pie', [{
+        labels: ["\u30bb\u30a4\u30b3\u30fc", "\u4e0d\u660e", "\u30ed\u30ec\u30c3\u30af\u30b9", "\u30ab\u30b7\u30aa", "\u30aa\u30e1\u30ac", "\u30b0\u30c3\u30c1", "\u30b7\u30c1\u30ba\u30f3", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "\u30aa\u30ea\u30a8\u30f3\u30c8", "Patek Philippe"],
+        values: [107, 51, 47, 44, 32, 20, 17, 14, 14, 11],
+        type: 'pie'
+    }], {...plotlyLayout, title: 'ブランド別シェア（Top10）'}, plotlyConfig);
+
+    // 価格帯分布
+    Plotly.newPlot('belt-material_price_dist', [{
+        x: ["$0-49", "$50-99", "$100-149", "$150-199", "$200-249", "$250-299", "$300-349", "$350-399", "$400-449", "$450-499", "$500-549", "$550-599", "$600-649", "$650-699", "$700-749", "$750-799", "$800-849", "$850-899", "$900-949", "$950-999", "$1000+"],
+        y: [3, 113, 95, 75, 65, 29, 22, 14, 8, 6, 9, 5, 1, 6, 4, 3, 3, 4, 2, 3, 35],
+        type: 'bar',
+        marker: {color: '#795548'}
+    }], {...plotlyLayout, title: '価格帯分布（50ドル刻み）', xaxis: {title: '価格帯'}, yaxis: {title: '件数'}}, plotlyConfig);
+
+    // ベルト素材別分布
+    Plotly.newPlot('belt-material_attr_pie', [{
+        labels: ["\u9769\u30d9\u30eb\u30c8", "\u30b9\u30c1\u30fc\u30eb\u30d9\u30eb\u30c8", "\u30e9\u30d0\u30fc\u30d9\u30eb\u30c8", "\u30ca\u30a4\u30ed\u30f3\u30d9\u30eb\u30c8"],
+        values: [277, 134, 67, 34],
+        type: 'pie'
+    }], {...plotlyLayout, title: 'ベルト素材別分布（Top10）'}, plotlyConfig);
+    </script>
+
+    <div id="case-material" class="tab-content">
+        <h2 class="section-title">📦 ケース素材別市場分析</h2>
+
+        <div class="info-box" style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-bottom: 20px;">
+            <strong>📊 データ判別率</strong><br>
+            タイトルから判別可能なデータ: <strong>683件</strong> / 全体 9,275件<br>
+            判別率: <strong>7.4%</strong><br>
+            <em>※「不明」は除外して分析しています</em>
+        </div>
+
+        <!-- 統計カード -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">総販売数</div>
+                <div class="value">683</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">ユニークモデル数</div>
+                <div class="value">683</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">平均価格</div>
+                <div class="value">$686.69</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">中央値</div>
+                <div class="value">$229.99</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">最高価格</div>
+                <div class="value">$28,075.57</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">総売上</div>
+                <div class="value">$469,008</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">CV値（価格安定性）</div>
+                <div class="value">2.686</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">仕入れ上限中央値</div>
+                <div class="value">¥25,519</div>
+            </div>
+        </div>
+
+        <!-- グラフエリア -->
+        <h3 class="section-title">📊 市場分析グラフ</h3>
+        <div class="chart-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="chart-container"><div id="case-material_brand_bar"></div></div>
+            <div class="chart-container"><div id="case-material_brand_pie"></div></div>
+            <div class="chart-container"><div id="case-material_price_dist"></div></div>
+            <div class="chart-container"><div id="case-material_attr_pie"></div></div>
+        </div>
+
+        <!-- ブランド別集計テーブル -->
+        <h3 class="section-title">🏷️ ブランド別集計（Top20）</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>最低価格</th>
+                        <th>最高価格</th>
+                        <th>中央値($)</th>
+                        <th>中央値(¥)</th>
+                        <th>仕入上限(¥)</th>
+                        <th>CV値</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>セイコー</strong> (SEIKO)</td>
+                        <td>201</td>
+                        <td>$57.09</td>
+                        <td>$4122.00</td>
+                        <td>$168.00</td>
+                        <td>¥26,040</td>
+                        <td class="highlight">¥17,832</td>
+                        <td>1.662</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_SEIKO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BB%E3%82%A4%E3%82%B3%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_SEIKO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>カシオ</strong> (CASIO)</td>
+                        <td>146</td>
+                        <td>$32.48</td>
+                        <td>$3050.00</td>
+                        <td>$177.83</td>
+                        <td>¥27,564</td>
+                        <td class="highlight">¥19,051</td>
+                        <td>1.521</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_CASIO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AB%E3%82%B7%E3%82%AA+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_CASIO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>シチズン</strong> (CITIZEN)</td>
+                        <td>64</td>
+                        <td>$63.23</td>
+                        <td>$2400.00</td>
+                        <td>$290.71</td>
+                        <td>¥45,060</td>
+                        <td class="highlight">¥33,048</td>
+                        <td>1.105</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_CITIZEN_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%B7%E3%83%81%E3%82%BA%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_CITIZEN_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オメガ</strong> (OMEGA)</td>
+                        <td>40</td>
+                        <td>$82.17</td>
+                        <td>$3289.90</td>
+                        <td>$549.60</td>
+                        <td>¥85,188</td>
+                        <td class="highlight">¥65,150</td>
+                        <td>0.921</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_OMEGA_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%A1%E3%82%AC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_OMEGA_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>不明</strong> ((不明))</td>
+                        <td>35</td>
+                        <td>$5.99</td>
+                        <td>$4997.85</td>
+                        <td>$181.00</td>
+                        <td>¥28,055</td>
+                        <td class="highlight">¥19,444</td>
+                        <td>1.860</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=%28%E4%B8%8D%E6%98%8E%29+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_(不明)_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E4%B8%8D%E6%98%8E+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_(不明)_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>グッチ</strong> (GUCCI)</td>
+                        <td>16</td>
+                        <td>$99.99</td>
+                        <td>$351.43</td>
+                        <td>$217.50</td>
+                        <td>¥33,712</td>
+                        <td class="highlight">¥23,969</td>
+                        <td>0.404</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=GUCCI+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_GUCCI_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%B0%E3%83%83%E3%83%81+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_GUCCI_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ロレックス</strong> (ROLEX)</td>
+                        <td>15</td>
+                        <td>$50.00</td>
+                        <td>$21375.00</td>
+                        <td>$1049.99</td>
+                        <td>¥162,748</td>
+                        <td class="highlight">¥127,199</td>
+                        <td>1.820</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_ROLEX_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_ROLEX_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>カルティエ</strong> (Cartier)</td>
+                        <td>13</td>
+                        <td>$960.38</td>
+                        <td>$6868.00</td>
+                        <td>$2499.00</td>
+                        <td>¥387,345</td>
+                        <td class="highlight">¥306,876</td>
+                        <td>0.616</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Cartier+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Cartier_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AB%E3%83%AB%E3%83%86%E3%82%A3%E3%82%A8+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Cartier_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>タグホイヤー</strong> (TAG HEUER)</td>
+                        <td>13</td>
+                        <td>$150.00</td>
+                        <td>$1757.00</td>
+                        <td>$405.63</td>
+                        <td>¥62,873</td>
+                        <td class="highlight">¥47,298</td>
+                        <td>0.777</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG%20HEUER+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_TAG HEUER_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BF%E3%82%B0%E3%83%9B%E3%82%A4%E3%83%A4%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_TAG HEUER_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>NIXON</strong> (NIXON)</td>
+                        <td>13</td>
+                        <td>$50.00</td>
+                        <td>$369.99</td>
+                        <td>$170.38</td>
+                        <td>¥26,409</td>
+                        <td class="highlight">¥18,127</td>
+                        <td>0.496</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=NIXON+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_NIXON_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=NIXON+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_NIXON_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ロンジン</strong> (Longines)</td>
+                        <td>9</td>
+                        <td>$80.00</td>
+                        <td>$4778.50</td>
+                        <td>$450.00</td>
+                        <td>¥69,750</td>
+                        <td class="highlight">¥52,800</td>
+                        <td>1.630</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Longines_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%B3%E3%82%B8%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Longines_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>HERMES</strong> (HERMES)</td>
+                        <td>6</td>
+                        <td>$375.00</td>
+                        <td>$646.00</td>
+                        <td>$403.00</td>
+                        <td>¥62,464</td>
+                        <td class="highlight">¥46,971</td>
+                        <td>0.226</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=HERMES+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_HERMES_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=HERMES+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_HERMES_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ハミルトン</strong> (Hamilton)</td>
+                        <td>6</td>
+                        <td>$130.00</td>
+                        <td>$758.70</td>
+                        <td>$589.95</td>
+                        <td>¥91,442</td>
+                        <td class="highlight">¥70,154</td>
+                        <td>0.474</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Hamilton_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%8F%E3%83%9F%E3%83%AB%E3%83%88%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Hamilton_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>CHANEL</strong> (CHANEL)</td>
+                        <td>6</td>
+                        <td>$529.00</td>
+                        <td>$8738.00</td>
+                        <td>$6783.00</td>
+                        <td>¥1,051,365</td>
+                        <td class="highlight">¥838,092</td>
+                        <td>0.680</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CHANEL+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_CHANEL_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=CHANEL+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_CHANEL_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オリエント</strong> (Orient)</td>
+                        <td>6</td>
+                        <td>$178.98</td>
+                        <td>$521.54</td>
+                        <td>$304.17</td>
+                        <td>¥47,146</td>
+                        <td class="highlight">¥34,717</td>
+                        <td>0.388</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Orient_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%AA%E3%82%A8%E3%83%B3%E3%83%88+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Orient_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ラドー</strong> (RADO)</td>
+                        <td>5</td>
+                        <td>$85.00</td>
+                        <td>$420.00</td>
+                        <td>$348.40</td>
+                        <td>¥54,002</td>
+                        <td class="highlight">¥40,202</td>
+                        <td>0.473</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=RADO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_RADO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%A9%E3%83%89%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_RADO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>FENDI</strong> (FENDI)</td>
+                        <td>5</td>
+                        <td>$130.00</td>
+                        <td>$276.00</td>
+                        <td>$188.00</td>
+                        <td>¥29,140</td>
+                        <td class="highlight">¥20,312</td>
+                        <td>0.311</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=FENDI+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_FENDI_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=FENDI+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_FENDI_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>BVLGARI</strong> (BVLGARI)</td>
+                        <td>5</td>
+                        <td>$600.78</td>
+                        <td>$909.30</td>
+                        <td>$802.40</td>
+                        <td>¥124,372</td>
+                        <td class="highlight">¥96,498</td>
+                        <td>0.159</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=BVLGARI+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_BVLGARI_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=BVLGARI+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_BVLGARI_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>BURBERRY</strong> (BURBERRY)</td>
+                        <td>4</td>
+                        <td>$152.00</td>
+                        <td>$186.99</td>
+                        <td>$165.99</td>
+                        <td>¥25,728</td>
+                        <td class="highlight">¥17,583</td>
+                        <td>0.086</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=BURBERRY+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_BURBERRY_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=BURBERRY+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_BURBERRY_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オリス</strong> (Oris)</td>
+                        <td>4</td>
+                        <td>$165.00</td>
+                        <td>$1233.00</td>
+                        <td>$713.03</td>
+                        <td>¥110,520</td>
+                        <td class="highlight">¥85,416</td>
+                        <td>0.701</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Oris+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Oris_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%AA%E3%82%B9+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-material_brand_Oris_mercari">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+    // ブランド別販売数（横棒グラフ）
+    Plotly.newPlot('case-material_brand_bar', [{
+        x: [201, 146, 64, 40, 35, 16, 15, 13, 13, 13],
+        y: ["\u30bb\u30a4\u30b3\u30fc", "\u30ab\u30b7\u30aa", "\u30b7\u30c1\u30ba\u30f3", "\u30aa\u30e1\u30ac", "\u4e0d\u660e", "\u30b0\u30c3\u30c1", "\u30ed\u30ec\u30c3\u30af\u30b9", "\u30ab\u30eb\u30c6\u30a3\u30a8", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "NIXON"],
+        type: 'bar',
+        orientation: 'h',
+        marker: {color: '#607D8B'}
+    }], {...plotlyLayout, title: 'ブランド別販売数（Top10）', xaxis: {title: '販売数'}, yaxis: {title: 'ブランド'}}, plotlyConfig);
+
+    // ブランド別シェア（円グラフ）
+    Plotly.newPlot('case-material_brand_pie', [{
+        labels: ["\u30bb\u30a4\u30b3\u30fc", "\u30ab\u30b7\u30aa", "\u30b7\u30c1\u30ba\u30f3", "\u30aa\u30e1\u30ac", "\u4e0d\u660e", "\u30b0\u30c3\u30c1", "\u30ed\u30ec\u30c3\u30af\u30b9", "\u30ab\u30eb\u30c6\u30a3\u30a8", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "NIXON"],
+        values: [201, 146, 64, 40, 35, 16, 15, 13, 13, 13],
+        type: 'pie'
+    }], {...plotlyLayout, title: 'ブランド別シェア（Top10）'}, plotlyConfig);
+
+    // 価格帯分布
+    Plotly.newPlot('case-material_price_dist', [{
+        x: ["$0-49", "$50-99", "$100-149", "$150-199", "$200-249", "$250-299", "$300-349", "$350-399", "$400-449", "$450-499", "$500-549", "$550-599", "$600-649", "$650-699", "$700-749", "$750-799", "$800-849", "$850-899", "$900-949", "$950-999", "$1000+"],
+        y: [3, 80, 116, 111, 60, 44, 28, 32, 19, 20, 20, 10, 13, 5, 5, 6, 7, 4, 3, 8, 85],
+        type: 'bar',
+        marker: {color: '#607D8B'}
+    }], {...plotlyLayout, title: '価格帯分布（50ドル刻み）', xaxis: {title: '価格帯'}, yaxis: {title: '件数'}}, plotlyConfig);
+
+    // ケース素材別分布
+    Plotly.newPlot('case-material_attr_pie', [{
+        labels: ["\u30b9\u30c6\u30f3\u30ec\u30b9", "\u30c1\u30bf\u30f3", "\u30b4\u30fc\u30eb\u30c9", "\u6a39\u8102"],
+        values: [296, 202, 141, 44],
+        type: 'pie'
+    }], {...plotlyLayout, title: 'ケース素材別分布（Top10）'}, plotlyConfig);
+    </script>
+
+    <div id="dial-color" class="tab-content">
+        <h2 class="section-title">🎨 文字盤色別市場分析</h2>
+
+        <div class="info-box" style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-bottom: 20px;">
+            <strong>📊 データ判別率</strong><br>
+            タイトルから判別可能なデータ: <strong>5,076件</strong> / 全体 9,275件<br>
+            判別率: <strong>54.7%</strong><br>
+            <em>※「不明」は除外して分析しています</em>
+        </div>
+
+        <!-- 統計カード -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">総販売数</div>
+                <div class="value">5,076</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">ユニークモデル数</div>
+                <div class="value">5,076</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">平均価格</div>
+                <div class="value">$508.66</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">中央値</div>
+                <div class="value">$219.99</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">最高価格</div>
+                <div class="value">$34,296.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">総売上</div>
+                <div class="value">$2,581,957</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">CV値（価格安定性）</div>
+                <div class="value">2.559</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">仕入れ上限中央値</div>
+                <div class="value">¥24,279</div>
+            </div>
+        </div>
+
+        <!-- グラフエリア -->
+        <h3 class="section-title">📊 市場分析グラフ</h3>
+        <div class="chart-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="chart-container"><div id="dial-color_brand_bar"></div></div>
+            <div class="chart-container"><div id="dial-color_brand_pie"></div></div>
+            <div class="chart-container"><div id="dial-color_price_dist"></div></div>
+            <div class="chart-container"><div id="dial-color_attr_pie"></div></div>
+        </div>
+
+        <!-- ブランド別集計テーブル -->
+        <h3 class="section-title">🏷️ ブランド別集計（Top20）</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>最低価格</th>
+                        <th>最高価格</th>
+                        <th>中央値($)</th>
+                        <th>中央値(¥)</th>
+                        <th>仕入上限(¥)</th>
+                        <th>CV値</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>セイコー</strong> (SEIKO)</td>
+                        <td>1497</td>
+                        <td>$40.00</td>
+                        <td>$4199.90</td>
+                        <td>$178.99</td>
+                        <td>¥27,743</td>
+                        <td class="highlight">¥19,195</td>
+                        <td>1.240</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_SEIKO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BB%E3%82%A4%E3%82%B3%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_SEIKO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>カシオ</strong> (CASIO)</td>
+                        <td>796</td>
+                        <td>$32.48</td>
+                        <td>$3050.00</td>
+                        <td>$154.68</td>
+                        <td>¥23,975</td>
+                        <td class="highlight">¥16,180</td>
+                        <td>0.993</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_CASIO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AB%E3%82%B7%E3%82%AA+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_CASIO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オメガ</strong> (OMEGA)</td>
+                        <td>390</td>
+                        <td>$62.61</td>
+                        <td>$4000.00</td>
+                        <td>$444.95</td>
+                        <td>¥68,967</td>
+                        <td class="highlight">¥52,174</td>
+                        <td>1.036</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_OMEGA_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%A1%E3%82%AC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_OMEGA_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>グッチ</strong> (GUCCI)</td>
+                        <td>351</td>
+                        <td>$54.40</td>
+                        <td>$670.00</td>
+                        <td>$169.99</td>
+                        <td>¥26,348</td>
+                        <td class="highlight">¥18,079</td>
+                        <td>0.468</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=GUCCI+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_GUCCI_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%B0%E3%83%83%E3%83%81+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_GUCCI_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>不明</strong> ((不明))</td>
+                        <td>236</td>
+                        <td>$25.91</td>
+                        <td>$5000.00</td>
+                        <td>$200.00</td>
+                        <td>¥31,000</td>
+                        <td class="highlight">¥21,800</td>
+                        <td>1.634</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=%28%E4%B8%8D%E6%98%8E%29+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_(不明)_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E4%B8%8D%E6%98%8E+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_(不明)_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>タグホイヤー</strong> (TAG HEUER)</td>
+                        <td>216</td>
+                        <td>$50.00</td>
+                        <td>$4480.09</td>
+                        <td>$366.49</td>
+                        <td>¥56,806</td>
+                        <td class="highlight">¥42,445</td>
+                        <td>0.958</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG%20HEUER+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_TAG HEUER_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BF%E3%82%B0%E3%83%9B%E3%82%A4%E3%83%A4%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_TAG HEUER_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>シチズン</strong> (CITIZEN)</td>
+                        <td>184</td>
+                        <td>$25.29</td>
+                        <td>$2572.57</td>
+                        <td>$234.41</td>
+                        <td>¥36,334</td>
+                        <td class="highlight">¥26,067</td>
+                        <td>1.113</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_CITIZEN_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%B7%E3%83%81%E3%82%BA%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_CITIZEN_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ロンジン</strong> (Longines)</td>
+                        <td>164</td>
+                        <td>$80.00</td>
+                        <td>$1836.30</td>
+                        <td>$233.19</td>
+                        <td>¥36,144</td>
+                        <td class="highlight">¥25,916</td>
+                        <td>0.877</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Longines_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%B3%E3%82%B8%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Longines_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ハミルトン</strong> (Hamilton)</td>
+                        <td>113</td>
+                        <td>$160.00</td>
+                        <td>$2032.50</td>
+                        <td>$380.97</td>
+                        <td>¥59,050</td>
+                        <td class="highlight">¥44,240</td>
+                        <td>0.653</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Hamilton_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%8F%E3%83%9F%E3%83%AB%E3%83%88%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Hamilton_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ロレックス</strong> (ROLEX)</td>
+                        <td>101</td>
+                        <td>$52.00</td>
+                        <td>$34296.00</td>
+                        <td>$229.50</td>
+                        <td>¥35,572</td>
+                        <td class="highlight">¥25,458</td>
+                        <td>1.728</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_ROLEX_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_ROLEX_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>カルティエ</strong> (Cartier)</td>
+                        <td>91</td>
+                        <td>$54.49</td>
+                        <td>$5550.00</td>
+                        <td>$1325.00</td>
+                        <td>¥205,375</td>
+                        <td class="highlight">¥161,300</td>
+                        <td>0.738</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Cartier+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Cartier_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AB%E3%83%AB%E3%83%86%E3%82%A3%E3%82%A8+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Cartier_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オリエント</strong> (Orient)</td>
+                        <td>90</td>
+                        <td>$64.92</td>
+                        <td>$904.18</td>
+                        <td>$243.17</td>
+                        <td>¥37,691</td>
+                        <td class="highlight">¥27,152</td>
+                        <td>0.471</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Orient_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%AA%E3%82%A8%E3%83%B3%E3%83%88+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Orient_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ラドー</strong> (RADO)</td>
+                        <td>76</td>
+                        <td>$60.00</td>
+                        <td>$519.99</td>
+                        <td>$189.99</td>
+                        <td>¥29,448</td>
+                        <td class="highlight">¥20,559</td>
+                        <td>0.502</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=RADO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_RADO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%A9%E3%83%89%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_RADO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>HERMES</strong> (HERMES)</td>
+                        <td>60</td>
+                        <td>$99.99</td>
+                        <td>$3323.31</td>
+                        <td>$399.99</td>
+                        <td>¥61,998</td>
+                        <td class="highlight">¥46,599</td>
+                        <td>0.918</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=HERMES+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_HERMES_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=HERMES+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_HERMES_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>TUDOR</strong> (TUDOR)</td>
+                        <td>55</td>
+                        <td>$159.00</td>
+                        <td>$5176.00</td>
+                        <td>$1959.12</td>
+                        <td>¥303,664</td>
+                        <td class="highlight">¥239,931</td>
+                        <td>0.452</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TUDOR+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_TUDOR_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=TUDOR+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_TUDOR_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ブライトリング</strong> (BREITLING)</td>
+                        <td>54</td>
+                        <td>$102.13</td>
+                        <td>$5902.40</td>
+                        <td>$2191.70</td>
+                        <td>¥339,714</td>
+                        <td class="highlight">¥268,771</td>
+                        <td>0.445</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=BREITLING+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_BREITLING_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%96%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%83%B3%E3%82%B0+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_BREITLING_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>SAINT LAURENT</strong> (SAINT LAURENT)</td>
+                        <td>42</td>
+                        <td>$79.99</td>
+                        <td>$1340.00</td>
+                        <td>$152.49</td>
+                        <td>¥23,636</td>
+                        <td class="highlight">¥15,909</td>
+                        <td>1.065</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SAINT%20LAURENT+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_SAINT LAURENT_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=SAINT%20LAURENT+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_SAINT LAURENT_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>DIOR</strong> (DIOR)</td>
+                        <td>41</td>
+                        <td>$129.99</td>
+                        <td>$650.00</td>
+                        <td>$229.99</td>
+                        <td>¥35,648</td>
+                        <td class="highlight">¥25,519</td>
+                        <td>0.410</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=DIOR+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_DIOR_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=DIOR+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_DIOR_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>NIXON</strong> (NIXON)</td>
+                        <td>39</td>
+                        <td>$50.00</td>
+                        <td>$369.99</td>
+                        <td>$132.00</td>
+                        <td>¥20,460</td>
+                        <td class="highlight">¥13,368</td>
+                        <td>0.465</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=NIXON+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_NIXON_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=NIXON+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_NIXON_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オリス</strong> (Oris)</td>
+                        <td>39</td>
+                        <td>$83.00</td>
+                        <td>$1485.00</td>
+                        <td>$750.00</td>
+                        <td>¥116,250</td>
+                        <td class="highlight">¥90,000</td>
+                        <td>0.562</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Oris+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Oris_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%AA%E3%82%B9+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="dial-color_brand_Oris_mercari">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+    // ブランド別販売数（横棒グラフ）
+    Plotly.newPlot('dial-color_brand_bar', [{
+        x: [1497, 796, 390, 351, 236, 216, 184, 164, 113, 101],
+        y: ["\u30bb\u30a4\u30b3\u30fc", "\u30ab\u30b7\u30aa", "\u30aa\u30e1\u30ac", "\u30b0\u30c3\u30c1", "\u4e0d\u660e", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "\u30b7\u30c1\u30ba\u30f3", "\u30ed\u30f3\u30b8\u30f3", "\u30cf\u30df\u30eb\u30c8\u30f3", "\u30ed\u30ec\u30c3\u30af\u30b9"],
+        type: 'bar',
+        orientation: 'h',
+        marker: {color: '#9C27B0'}
+    }], {...plotlyLayout, title: 'ブランド別販売数（Top10）', xaxis: {title: '販売数'}, yaxis: {title: 'ブランド'}}, plotlyConfig);
+
+    // ブランド別シェア（円グラフ）
+    Plotly.newPlot('dial-color_brand_pie', [{
+        labels: ["\u30bb\u30a4\u30b3\u30fc", "\u30ab\u30b7\u30aa", "\u30aa\u30e1\u30ac", "\u30b0\u30c3\u30c1", "\u4e0d\u660e", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "\u30b7\u30c1\u30ba\u30f3", "\u30ed\u30f3\u30b8\u30f3", "\u30cf\u30df\u30eb\u30c8\u30f3", "\u30ed\u30ec\u30c3\u30af\u30b9"],
+        values: [1497, 796, 390, 351, 236, 216, 184, 164, 113, 101],
+        type: 'pie'
+    }], {...plotlyLayout, title: 'ブランド別シェア（Top10）'}, plotlyConfig);
+
+    // 価格帯分布
+    Plotly.newPlot('dial-color_price_dist', [{
+        x: ["$0-49", "$50-99", "$100-149", "$150-199", "$200-249", "$250-299", "$300-349", "$350-399", "$400-449", "$450-499", "$500-549", "$550-599", "$600-649", "$650-699", "$700-749", "$750-799", "$800-849", "$850-899", "$900-949", "$950-999", "$1000+"],
+        y: [7, 524, 1007, 834, 470, 403, 294, 257, 133, 158, 93, 86, 43, 54, 27, 48, 36, 44, 31, 33, 474],
+        type: 'bar',
+        marker: {color: '#9C27B0'}
+    }], {...plotlyLayout, title: '価格帯分布（50ドル刻み）', xaxis: {title: '価格帯'}, yaxis: {title: '件数'}}, plotlyConfig);
+
+    // 文字盤色別分布
+    Plotly.newPlot('dial-color_attr_pie', [{
+        labels: ["\u9ed2", "\u30b4\u30fc\u30eb\u30c9", "\u30b7\u30eb\u30d0\u30fc", "\u767d", "\u9752", "\u8d64", "\u7dd1", "\u8336"],
+        values: [1466, 1007, 841, 729, 542, 205, 183, 103],
+        type: 'pie'
+    }], {...plotlyLayout, title: '文字盤色別分布（Top10）'}, plotlyConfig);
+    </script>
+
+    <div id="case-size" class="tab-content">
+        <h2 class="section-title">📏 ケースサイズ別市場分析</h2>
+
+        <div class="info-box" style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-bottom: 20px;">
+            <strong>📊 データ判別率</strong><br>
+            タイトルから判別可能なデータ: <strong>1,725件</strong> / 全体 9,275件<br>
+            判別率: <strong>18.6%</strong><br>
+            <em>※「不明」は除外して分析しています</em>
+        </div>
+
+        <!-- 統計カード -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">総販売数</div>
+                <div class="value">1,725</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">ユニークモデル数</div>
+                <div class="value">1,725</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">平均価格</div>
+                <div class="value">$453.65</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">中央値</div>
+                <div class="value">$232.83</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">最高価格</div>
+                <div class="value">$14,470.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">総売上</div>
+                <div class="value">$782,554</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">CV値（価格安定性）</div>
+                <div class="value">1.740</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">仕入れ上限中央値</div>
+                <div class="value">¥25,871</div>
+            </div>
+        </div>
+
+        <!-- グラフエリア -->
+        <h3 class="section-title">📊 市場分析グラフ</h3>
+        <div class="chart-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="chart-container"><div id="case-size_brand_bar"></div></div>
+            <div class="chart-container"><div id="case-size_brand_pie"></div></div>
+            <div class="chart-container"><div id="case-size_price_dist"></div></div>
+            <div class="chart-container"><div id="case-size_attr_pie"></div></div>
+        </div>
+
+        <!-- ブランド別集計テーブル -->
+        <h3 class="section-title">🏷️ ブランド別集計（Top20）</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ブランド</th>
+                        <th>販売数</th>
+                        <th>最低価格</th>
+                        <th>最高価格</th>
+                        <th>中央値($)</th>
+                        <th>中央値(¥)</th>
+                        <th>仕入上限(¥)</th>
+                        <th>CV値</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>セイコー</strong> (SEIKO)</td>
+                        <td>459</td>
+                        <td>$24.00</td>
+                        <td>$4199.90</td>
+                        <td>$179.99</td>
+                        <td>¥27,898</td>
+                        <td class="highlight">¥19,319</td>
+                        <td>1.457</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SEIKO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_SEIKO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BB%E3%82%A4%E3%82%B3%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_SEIKO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オメガ</strong> (OMEGA)</td>
+                        <td>236</td>
+                        <td>$64.00</td>
+                        <td>$6500.00</td>
+                        <td>$484.94</td>
+                        <td>¥75,166</td>
+                        <td class="highlight">¥57,133</td>
+                        <td>0.973</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=OMEGA+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_OMEGA_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%A1%E3%82%AC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_OMEGA_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>グッチ</strong> (GUCCI)</td>
+                        <td>184</td>
+                        <td>$54.40</td>
+                        <td>$549.99</td>
+                        <td>$169.94</td>
+                        <td>¥26,341</td>
+                        <td class="highlight">¥18,073</td>
+                        <td>0.443</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=GUCCI+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_GUCCI_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%B0%E3%83%83%E3%83%81+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_GUCCI_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>不明</strong> ((不明))</td>
+                        <td>126</td>
+                        <td>$50.00</td>
+                        <td>$12821.60</td>
+                        <td>$184.50</td>
+                        <td>¥28,597</td>
+                        <td class="highlight">¥19,877</td>
+                        <td>2.677</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=%28%E4%B8%8D%E6%98%8E%29+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_(不明)_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E4%B8%8D%E6%98%8E+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_(不明)_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>タグホイヤー</strong> (TAG HEUER)</td>
+                        <td>109</td>
+                        <td>$175.44</td>
+                        <td>$4480.09</td>
+                        <td>$329.99</td>
+                        <td>¥51,148</td>
+                        <td class="highlight">¥37,919</td>
+                        <td>1.010</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=TAG%20HEUER+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_TAG HEUER_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%BF%E3%82%B0%E3%83%9B%E3%82%A4%E3%83%A4%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_TAG HEUER_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ロンジン</strong> (Longines)</td>
+                        <td>80</td>
+                        <td>$89.90</td>
+                        <td>$1199.90</td>
+                        <td>$199.99</td>
+                        <td>¥30,998</td>
+                        <td class="highlight">¥21,799</td>
+                        <td>0.754</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Longines_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%B3%E3%82%B8%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Longines_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>カシオ</strong> (CASIO)</td>
+                        <td>70</td>
+                        <td>$50.00</td>
+                        <td>$1088.00</td>
+                        <td>$150.88</td>
+                        <td>¥23,386</td>
+                        <td class="highlight">¥15,709</td>
+                        <td>0.818</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CASIO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_CASIO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AB%E3%82%B7%E3%82%AA+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_CASIO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ハミルトン</strong> (Hamilton)</td>
+                        <td>63</td>
+                        <td>$130.00</td>
+                        <td>$1450.00</td>
+                        <td>$369.90</td>
+                        <td>¥57,334</td>
+                        <td class="highlight">¥42,868</td>
+                        <td>0.523</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Hamilton_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%8F%E3%83%9F%E3%83%AB%E3%83%88%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Hamilton_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>シチズン</strong> (CITIZEN)</td>
+                        <td>53</td>
+                        <td>$50.16</td>
+                        <td>$1800.00</td>
+                        <td>$214.78</td>
+                        <td>¥33,291</td>
+                        <td class="highlight">¥23,633</td>
+                        <td>0.993</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=CITIZEN+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_CITIZEN_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%B7%E3%83%81%E3%82%BA%E3%83%B3+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_CITIZEN_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ラドー</strong> (RADO)</td>
+                        <td>41</td>
+                        <td>$69.99</td>
+                        <td>$519.99</td>
+                        <td>$189.99</td>
+                        <td>¥29,448</td>
+                        <td class="highlight">¥20,559</td>
+                        <td>0.489</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=RADO+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_RADO_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%A9%E3%83%89%E3%83%BC+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_RADO_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>カルティエ</strong> (Cartier)</td>
+                        <td>36</td>
+                        <td>$260.00</td>
+                        <td>$5550.00</td>
+                        <td>$1175.00</td>
+                        <td>¥182,125</td>
+                        <td class="highlight">¥142,700</td>
+                        <td>0.698</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Cartier+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Cartier_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AB%E3%83%AB%E3%83%86%E3%82%A3%E3%82%A8+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Cartier_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オリス</strong> (Oris)</td>
+                        <td>23</td>
+                        <td>$85.00</td>
+                        <td>$1830.00</td>
+                        <td>$499.99</td>
+                        <td>¥77,498</td>
+                        <td class="highlight">¥58,999</td>
+                        <td>0.717</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Oris+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Oris_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%AA%E3%82%B9+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Oris_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>HERMES</strong> (HERMES)</td>
+                        <td>23</td>
+                        <td>$175.00</td>
+                        <td>$5900.00</td>
+                        <td>$389.99</td>
+                        <td>¥60,448</td>
+                        <td class="highlight">¥45,359</td>
+                        <td>1.839</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=HERMES+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_HERMES_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=HERMES+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_HERMES_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>オリエント</strong> (Orient)</td>
+                        <td>22</td>
+                        <td>$68.87</td>
+                        <td>$554.32</td>
+                        <td>$255.76</td>
+                        <td>¥39,643</td>
+                        <td class="highlight">¥28,714</td>
+                        <td>0.405</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Orient+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Orient_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%82%AA%E3%83%AA%E3%82%A8%E3%83%B3%E3%83%88+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Orient_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ティソ</strong> (Tissot)</td>
+                        <td>21</td>
+                        <td>$119.00</td>
+                        <td>$2000.00</td>
+                        <td>$259.99</td>
+                        <td>¥40,298</td>
+                        <td class="highlight">¥29,239</td>
+                        <td>1.215</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Tissot+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Tissot_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%86%E3%82%A3%E3%82%BD+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Tissot_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>SAINT LAURENT</strong> (SAINT LAURENT)</td>
+                        <td>18</td>
+                        <td>$80.41</td>
+                        <td>$659.99</td>
+                        <td>$135.45</td>
+                        <td>¥20,995</td>
+                        <td class="highlight">¥13,796</td>
+                        <td>0.769</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=SAINT%20LAURENT+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_SAINT LAURENT_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=SAINT%20LAURENT+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_SAINT LAURENT_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>DIOR</strong> (DIOR)</td>
+                        <td>12</td>
+                        <td>$130.00</td>
+                        <td>$469.99</td>
+                        <td>$229.94</td>
+                        <td>¥35,641</td>
+                        <td class="highlight">¥25,513</td>
+                        <td>0.367</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=DIOR+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_DIOR_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=DIOR+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_DIOR_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ロレックス</strong> (ROLEX)</td>
+                        <td>11</td>
+                        <td>$100.00</td>
+                        <td>$14470.00</td>
+                        <td>$426.00</td>
+                        <td>¥66,030</td>
+                        <td class="highlight">¥49,824</td>
+                        <td>1.951</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=ROLEX+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_ROLEX_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=%E3%83%AD%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_ROLEX_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>FENDI</strong> (FENDI)</td>
+                        <td>10</td>
+                        <td>$99.99</td>
+                        <td>$589.99</td>
+                        <td>$169.50</td>
+                        <td>¥26,272</td>
+                        <td class="highlight">¥18,017</td>
+                        <td>0.674</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=FENDI+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_FENDI_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=FENDI+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_FENDI_mercari">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Apple Watch</strong> (Apple Watch)</td>
+                        <td>8</td>
+                        <td>$42.13</td>
+                        <td>$186.99</td>
+                        <td>$58.80</td>
+                        <td>¥9,113</td>
+                        <td class="highlight">¥4,291</td>
+                        <td>0.658</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Apple%20Watch+Watch&LH_Sold=1&LH_Complete=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Apple Watch_ebay">
+                            <a href="https://jp.mercari.com/search?keyword=Apple%20Watch+時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox" data-id="case-size_brand_Apple Watch_mercari">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+    // ブランド別販売数（横棒グラフ）
+    Plotly.newPlot('case-size_brand_bar', [{
+        x: [459, 236, 184, 126, 109, 80, 70, 63, 53, 41],
+        y: ["\u30bb\u30a4\u30b3\u30fc", "\u30aa\u30e1\u30ac", "\u30b0\u30c3\u30c1", "\u4e0d\u660e", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "\u30ed\u30f3\u30b8\u30f3", "\u30ab\u30b7\u30aa", "\u30cf\u30df\u30eb\u30c8\u30f3", "\u30b7\u30c1\u30ba\u30f3", "\u30e9\u30c9\u30fc"],
+        type: 'bar',
+        orientation: 'h',
+        marker: {color: '#00BCD4'}
+    }], {...plotlyLayout, title: 'ブランド別販売数（Top10）', xaxis: {title: '販売数'}, yaxis: {title: 'ブランド'}}, plotlyConfig);
+
+    // ブランド別シェア（円グラフ）
+    Plotly.newPlot('case-size_brand_pie', [{
+        labels: ["\u30bb\u30a4\u30b3\u30fc", "\u30aa\u30e1\u30ac", "\u30b0\u30c3\u30c1", "\u4e0d\u660e", "\u30bf\u30b0\u30db\u30a4\u30e4\u30fc", "\u30ed\u30f3\u30b8\u30f3", "\u30ab\u30b7\u30aa", "\u30cf\u30df\u30eb\u30c8\u30f3", "\u30b7\u30c1\u30ba\u30f3", "\u30e9\u30c9\u30fc"],
+        values: [459, 236, 184, 126, 109, 80, 70, 63, 53, 41],
+        type: 'pie'
+    }], {...plotlyLayout, title: 'ブランド別シェア（Top10）'}, plotlyConfig);
+
+    // 価格帯分布
+    Plotly.newPlot('case-size_price_dist', [{
+        x: ["$0-49", "$50-99", "$100-149", "$150-199", "$200-249", "$250-299", "$300-349", "$350-399", "$400-449", "$450-499", "$500-549", "$550-599", "$600-649", "$650-699", "$700-749", "$750-799", "$800-849", "$850-899", "$900-949", "$950-999", "$1000+"],
+        y: [7, 173, 278, 287, 168, 154, 102, 103, 55, 58, 29, 26, 20, 27, 7, 20, 15, 16, 6, 18, 154],
+        type: 'bar',
+        marker: {color: '#00BCD4'}
+    }], {...plotlyLayout, title: '価格帯分布（50ドル刻み）', xaxis: {title: '価格帯'}, yaxis: {title: '件数'}}, plotlyConfig);
+
+    // ケースサイズ別分布
+    Plotly.newPlot('case-size_attr_pie', [{
+        labels: ["\u5c0f\u578b(<36mm)", "\u4e2d\u578b(36-41mm)", "\u5927\u578b(42mm+)"],
+        values: [1159, 374, 192],
+        type: 'pie'
+    }], {...plotlyLayout, title: 'ケースサイズ別分布（Top10）'}, plotlyConfig);
+    </script>
+
 
     <script>
 
