@@ -289,6 +289,16 @@
         #TAG_HEUER .highlight {
             background: linear-gradient(135deg, #00000025 0%, #00000010 100%);
         }
+
+        /* Hamilton固有のスタイル */
+        #Hamilton .stat-card {
+            background: linear-gradient(135deg, #00285515 0%, #00285505 100%);
+            border-top: 3px solid #002855;
+        }
+
+        #Hamilton .highlight {
+            background: linear-gradient(135deg, #C8A88225 0%, #C8A88210 100%);
+        }
 </style>
 </head>
 <body>
@@ -23080,6 +23090,2327 @@
 
             </div>
 
+            <div id="Hamilton" class="tab-content">
+                <h2 style="color: #002855; border-bottom: 4px solid #002855; padding-bottom: 15px; margin-bottom: 25px;">
+                    ⚓ Hamilton 詳細分析
+                </h2>
+
+                <h3 style="color: #002855; border-bottom: 3px solid #002855; padding-bottom: 10px;">
+                    📈 基本統計
+                </h3>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">203</div>
+                        <div class="stat-label">総販売数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$400</div>
+                        <div class="stat-label">中央値</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">0.72</div>
+                        <div class="stat-label">CV値（ばらつき）</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">73.9%</div>
+                        <div class="stat-label">型番抽出率</div>
+                    </div>
+                </div>
+
+
+                <h3 style="color: #002855; border-bottom: 3px solid #002855; padding-bottom: 10px; margin-top: 30px;">
+                    💡 仕入戦略
+                </h3>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #00285515 0%, #00285505 100%); border-left: 4px solid #002855;">
+                    <h4 style="color: #002855; margin-top: 0;">💎 狙い目の条件</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>Ventura</strong>: アイコニックな三角形ケース、コレクター人気</li>
+                        <li><strong>Jazzmaster</strong>: 最多販売数、安定需要</li>
+                        <li><strong>Khaki Field</strong>: ミリタリースタイル、男性人気</li>
+                        <li>自動巻 &gt; クオーツ（付加価値高）</li>
+                        <li>Elvis Edition等の特別版（プレミアム価格）</li>
+                    </ul>
+                </div>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #FF6B6B15 0%, #FF6B6B05 100%); border-left: 4px solid #FF6B6B;">
+                    <h4 style="color: #FF6B6B; margin-top: 0;">⚠️ 避けるべき条件</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li>CV値 &gt; 0.8 の高ばらつきモデル</li>
+                        <li>型番不明（"Hamilton Watch"のみの表記）</li>
+                        <li>状態不明・箱なし（減額要因）</li>
+                        <li>レディースモデル（需要限定的）</li>
+                        <li>過度に低価格（$200未満は要注意）</li>
+                    </ul>
+                </div>
+
+                <div class="insight-box" style="background: linear-gradient(135deg, #C8A88215 0%, #C8A88205 100%); border-left: 4px solid #C8A882;">
+                    <h4 style="color: #C8A882; margin-top: 0;">📊 価格帯別ガイド</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>$200-400</strong>: Khaki Field クオーツ、エントリーモデル</li>
+                        <li><strong>$400-600</strong>: Jazzmaster・Khaki 自動巻（安定需要）</li>
+                        <li><strong>$600-1,000</strong>: Ventura・特別版（高利益率）</li>
+                        <li><strong>$1,000+</strong>: ヴィンテージ・限定版（要専門知識）</li>
+                    </ul>
+                </div>
+
+
+                <h3 style="color: #002855; border-bottom: 3px solid #002855; padding-bottom: 10px; margin-top: 30px;">
+                    📊 市場分析グラフ
+                </h3>
+
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <div id="hamilton_price_chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="hamilton_movement_chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="hamilton_gender_chart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="hamilton_line_chart"></div>
+                    </div>
+                </div>
+
+
+                <h3 style="color: #002855; border-bottom: 3px solid #002855; padding-bottom: 10px; margin-top: 30px;">
+                    ⭐ 特別版・限定モデル 分析
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>特別版</th>
+                            <th>販売数</th>
+                            <th>比率</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong>Elvis Edition</strong></td>
+                            <td>3</td>
+                            <td>75.0%</td>
+                            <td>$1215</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥122,411</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Elvis+Edition" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+Elvis+Edition" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Tokyo Cat Street</strong></td>
+                            <td>1</td>
+                            <td>25.0%</td>
+                            <td>$978</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥98,533</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Tokyo+Cat+Street" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+Tokyo+Cat+Street" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <h3 style="color: #002855; border-bottom: 3px solid #002855; padding-bottom: 10px; margin-top: 30px;">
+                    🏆 ライン別 人気型番 Top15
+                </h3>
+
+                <h4 style="color: #002855; margin-top: 25px; border-bottom: 2px solid #002855; padding-bottom: 5px;">
+                    その他Hamilton <span style="font-size: 0.9em; color: #666;">（販売数: 41個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">1</strong></td>
+                            <td><strong>H114110</strong></td>
+                            <td>3</td>
+                            <td>$210</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥21,156</td>
+                            <td>0.087</td>
+                            <td style="font-size: 0.85em;">[Near MINT] HAMILTON Ardmore H114110 Small Second ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H114110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H114110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">2</strong></td>
+                            <td><strong>H644510</strong></td>
+                            <td>3</td>
+                            <td>$300</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥30,214</td>
+                            <td>0.091</td>
+                            <td style="font-size: 0.85em;">[Near MINT] HAMILTON Khaki King H644510 Black Dial...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H644510" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H644510" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">3</strong></td>
+                            <td><strong>000221</strong></td>
+                            <td>2</td>
+                            <td>$412</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥41,559</td>
+                            <td>0.129</td>
+                            <td style="font-size: 0.85em;">[Exc+5] Hamilton 000221 Frank Lloyd Silver Dial Au...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+000221" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+000221" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">4</strong></td>
+                            <td><strong>H245150</strong></td>
+                            <td>2</td>
+                            <td>$428</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥43,070</td>
+                            <td>0.151</td>
+                            <td style="font-size: 0.85em;">HAMILTON h245150 Case Size 5.2 ×3.8cm Used Watch #...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H245150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H245150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">5</strong></td>
+                            <td><strong>H684410</strong></td>
+                            <td>1</td>
+                            <td>$300</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥30,223</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Vintage 【Near MINT】 Hamilton Khaki H684410 Black D...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H684410" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H684410" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">6</strong></td>
+                            <td><strong>H685510</strong></td>
+                            <td>1</td>
+                            <td>$340</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥34,244</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[N MINT w/Box,paper ] HAMILTON KHAKI H685510 40mm ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H685510" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H685510" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">7</strong></td>
+                            <td><strong>H693190</strong></td>
+                            <td>1</td>
+                            <td>$359</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥36,159</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT] HAMILTON Khaki H693190 33mm Black Dial...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H693190" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H693190" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">8</strong></td>
+                            <td><strong>H695190</strong></td>
+                            <td>1</td>
+                            <td>$329</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥33,146</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton Khaki Mechanical H695190 Date Manual Wind...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H695190" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H695190" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">9</strong></td>
+                            <td><strong>H703650</strong></td>
+                            <td>1</td>
+                            <td>$337</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥33,952</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON H703650 Case Size 4.1 ×3.3cm Used Watch #...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H703650" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H703650" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">10</strong></td>
+                            <td><strong>H705350</strong></td>
+                            <td>1</td>
+                            <td>$600</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥60,448</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Box Paper [Near MINT] HAMILTON Khaki H705350 Autom...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H705350" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H705350" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">11</strong></td>
+                            <td><strong>H766550</strong></td>
+                            <td>1</td>
+                            <td>$430</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥43,322</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HOLIDAY  SALE【NEAR MINT】H766550 Hamilton Aviation ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H766550" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H766550" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">12</strong></td>
+                            <td><strong>H683110</strong></td>
+                            <td>1</td>
+                            <td>$270</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥27,192</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Exc+5] HAMILTON KHAKI H683110 32mm Black Dial Dat...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H683110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H683110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">13</strong></td>
+                            <td><strong>H776120</strong></td>
+                            <td>1</td>
+                            <td>$270</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥27,202</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">READ! [N MINT] HAMILTON Khaki ETO H776120 Black Di...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H776120" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H776120" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">14</strong></td>
+                            <td><strong>H776160</strong></td>
+                            <td>1</td>
+                            <td>$763</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥76,919</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Khaki X Wind H776160 Day-Date Chronograph...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H776160" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H776160" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">15</strong></td>
+                            <td><strong>H776250</strong></td>
+                            <td>1</td>
+                            <td>$490</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥49,366</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Exc+5] Hamilton Khaki H776250 Silver 42mm Automat...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H776250" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H776250" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #002855; margin-top: 25px; border-bottom: 2px solid #002855; padding-bottom: 5px;">
+                    Jazzmaster <span style="font-size: 0.9em; color: #666;">（販売数: 34個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">1</strong></td>
+                            <td><strong>H325651</strong></td>
+                            <td>3</td>
+                            <td>$490</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥49,367</td>
+                            <td>0.020</td>
+                            <td style="font-size: 0.85em;">HAMILTON Jazzmaster Viewmatic H325651 Open Heart A...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H325651" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H325651" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">2</strong></td>
+                            <td><strong>H384110</strong></td>
+                            <td>3</td>
+                            <td>$241</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥24,279</td>
+                            <td>0.271</td>
+                            <td style="font-size: 0.85em;">[Near MINT w/Box] Hamilton Jazzmaster H384110 Gray...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H384110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H384110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">3</strong></td>
+                            <td><strong>H395150</strong></td>
+                            <td>2</td>
+                            <td>$323</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥32,532</td>
+                            <td>0.100</td>
+                            <td style="font-size: 0.85em;">▶️ [Exc+5] Hamilton Jazzmaster Automatic H395150 D...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H395150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H395150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">4</strong></td>
+                            <td><strong>H325150</strong></td>
+                            <td>2</td>
+                            <td>$352</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥35,514</td>
+                            <td>0.090</td>
+                            <td style="font-size: 0.85em;">[Exc+5] HAMILTON Viewmatic Jazzmaster H325150 Silv...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H325150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H325150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">5</strong></td>
+                            <td><strong>H326160</strong></td>
+                            <td>2</td>
+                            <td>$320</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥32,240</td>
+                            <td>0.928</td>
+                            <td style="font-size: 0.85em;">HAMILTON 3 Link Jazzmaster H326160 Mens Watch Part...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H326160" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H326160" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">6</strong></td>
+                            <td><strong>H326651</strong></td>
+                            <td>2</td>
+                            <td>$400</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥40,293</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT] HAMILTON Jazzmaster H326651 Silver Day...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H326651" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H326651" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">7</strong></td>
+                            <td><strong>H325050</strong></td>
+                            <td>2</td>
+                            <td>$405</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥40,793</td>
+                            <td>0.192</td>
+                            <td style="font-size: 0.85em;">[Near MINT w/BOX ] HAMILTON Jazzmaster H325050 Bla...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H325050" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H325050" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">8</strong></td>
+                            <td><strong>H327050</strong></td>
+                            <td>2</td>
+                            <td>$530</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥53,392</td>
+                            <td>0.187</td>
+                            <td style="font-size: 0.85em;">Full Set [N MINT] HAMILTON Jazzmaster H327050 Open...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H327050" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H327050" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">9</strong></td>
+                            <td><strong>H375120</strong></td>
+                            <td>2</td>
+                            <td>$217</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥21,882</td>
+                            <td>0.916</td>
+                            <td style="font-size: 0.85em;">[Near MINT] Hamilton Jazzmaster H375120 Quartz Chr...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H375120" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H375120" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">10</strong></td>
+                            <td><strong>H321150</strong></td>
+                            <td>1</td>
+                            <td>$502</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥50,598</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Jazzmaster Open Heart Silver Dial Automat...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H321150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H321150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">11</strong></td>
+                            <td><strong>H32866781</strong></td>
+                            <td>1</td>
+                            <td>$1992</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥200,694</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON H32866781 Jazzmaster Face2FaceII Chronogr...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H32866781" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H32866781" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">12</strong></td>
+                            <td><strong>H385250</strong></td>
+                            <td>1</td>
+                            <td>$381</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥38,382</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Jazzmaster Thinline H385250 Date Gray Dia...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H385250" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H385250" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">13</strong></td>
+                            <td><strong>H385110</strong></td>
+                            <td>1</td>
+                            <td>$150</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥15,112</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">N/Batt & Belt【EXC+5】HAMILTON Jazzmaster H385110 Da...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H385110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H385110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">14</strong></td>
+                            <td><strong>H384410</strong></td>
+                            <td>1</td>
+                            <td>$290</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥29,207</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Near MINT HAMILTON Jazzmaster H384410 Silver Small...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H384410" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H384410" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">15</strong></td>
+                            <td><strong>H326750</strong></td>
+                            <td>1</td>
+                            <td>$533</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥53,710</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Jazz master H326750 Open heart Green Dial...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H326750" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H326750" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #002855; margin-top: 25px; border-bottom: 2px solid #002855; padding-bottom: 5px;">
+                    Ventura <span style="font-size: 0.9em; color: #666;">（販売数: 23個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">1</strong></td>
+                            <td><strong>H244112</strong></td>
+                            <td>5</td>
+                            <td>$382</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥38,486</td>
+                            <td>0.355</td>
+                            <td style="font-size: 0.85em;">HAMILTON Ventura H244112 Black Dial Men’s Watch Qu...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H244112" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H244112" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">2</strong></td>
+                            <td><strong>H243010</strong></td>
+                            <td>3</td>
+                            <td>$550</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥55,402</td>
+                            <td>0.157</td>
+                            <td style="font-size: 0.85em;">HAMILTON Ventura H243010 H24301731 Quartz Black Di...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H243010" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H243010" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">3</strong></td>
+                            <td><strong>H244110</strong></td>
+                            <td>2</td>
+                            <td>$398</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥40,115</td>
+                            <td>0.291</td>
+                            <td style="font-size: 0.85em;">Hamilton Ventura H244110 Quartz Men's Wristwatch B...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H244110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H244110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">4</strong></td>
+                            <td><strong>H24101731</strong></td>
+                            <td>1</td>
+                            <td>$898</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥90,473</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Ventura H24101731 Black Leather Quartz Wo...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H24101731" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H24101731" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">5</strong></td>
+                            <td><strong>H242111</strong></td>
+                            <td>1</td>
+                            <td>$309</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥31,131</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON H242111 Ventura WATCH White shell SS/leat...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H242111" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H242111" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">6</strong></td>
+                            <td><strong>H24401731</strong></td>
+                            <td>1</td>
+                            <td>$1032</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥103,999</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Unused HAMILTON Ventura H24401731 Black Quartz, Me...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H24401731" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H24401731" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">7</strong></td>
+                            <td><strong>H244111</strong></td>
+                            <td>1</td>
+                            <td>$300</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥30,225</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton Ventura H244111 Watch Quartz 28mm Stainle...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H244111" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H244111" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">8</strong></td>
+                            <td><strong>H24411232</strong></td>
+                            <td>1</td>
+                            <td>$500</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥50,375</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Exc+5] HAMILTON Ventura Quartz Men's Watch H24411...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H24411232" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H24411232" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">9</strong></td>
+                            <td><strong>H244220</strong></td>
+                            <td>1</td>
+                            <td>$496</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥49,943</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Ventura H244220 Chronograph Date Silver D...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H244220" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H244220" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">10</strong></td>
+                            <td><strong>H24441521</strong></td>
+                            <td>1</td>
+                            <td>$1150</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥115,862</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton Ventura H24441521 H244410 1000 Limited Ed...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H24441521" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H24441521" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">11</strong></td>
+                            <td><strong>H245050</strong></td>
+                            <td>1</td>
+                            <td>$613</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥61,759</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton Ventura Elvis 80 H245050 White 43mm Auto ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H245050" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H245050" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">12</strong></td>
+                            <td><strong>H245150</strong></td>
+                            <td>1</td>
+                            <td>$550</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥55,411</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">*Near MINT* Hamilton Ventura H245150 Silver Dial 3...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H245150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H245150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">13</strong></td>
+                            <td><strong>H24535332</strong></td>
+                            <td>1</td>
+                            <td>$2032</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥204,774</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">​HAMILTON Ventura Elvis80 H24535332 Black Dragon S...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H24535332" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H24535332" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">14</strong></td>
+                            <td><strong>H245550</strong></td>
+                            <td>1</td>
+                            <td>$845</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥85,133</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">▶️ *MINT HAMILTON Ventura H245550 H24555331 Automa...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H245550" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H245550" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">15</strong></td>
+                            <td><strong>H246551</strong></td>
+                            <td>1</td>
+                            <td>$750</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥75,562</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[TOP MINT] HAMILTON Ventura H246551 Black Automati...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H246551" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H246551" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #002855; margin-top: 25px; border-bottom: 2px solid #002855; padding-bottom: 5px;">
+                    Khaki Field <span style="font-size: 0.9em; color: #666;">（販売数: 23個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">1</strong></td>
+                            <td><strong>H694190</strong></td>
+                            <td>4</td>
+                            <td>$380</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥38,283</td>
+                            <td>0.033</td>
+                            <td style="font-size: 0.85em;">[Near MINT] Hamilton Khaki Field H694190 38mm Gree...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H694190" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H694190" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">2</strong></td>
+                            <td><strong>H706150</strong></td>
+                            <td>3</td>
+                            <td>$350</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥35,262</td>
+                            <td>0.131</td>
+                            <td style="font-size: 0.85em;">*EXC+5 [Video] HAMILTON Khaki Field H706150 Automa...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H706150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H706150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">3</strong></td>
+                            <td><strong>H644510</strong></td>
+                            <td>2</td>
+                            <td>$360</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥36,259</td>
+                            <td>0.236</td>
+                            <td style="font-size: 0.85em;">[Near MINT w/Box] HAMILTON Khaki Field H644510 40m...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H644510" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H644510" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">4</strong></td>
+                            <td><strong>H704450</strong></td>
+                            <td>2</td>
+                            <td>$440</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥44,379</td>
+                            <td>0.191</td>
+                            <td style="font-size: 0.85em;">[Near MINT] HAMILTON Khaki Field H704450 38mm Blac...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H704450" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H704450" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">5</strong></td>
+                            <td><strong>000092</strong></td>
+                            <td>1</td>
+                            <td>$380</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥38,285</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">【NEAR MINT】Hamilton Khaki Field 40mm Blue Dial 000...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+000092" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+000092" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">6</strong></td>
+                            <td><strong>921980</strong></td>
+                            <td>1</td>
+                            <td>$350</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥35,261</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT] Hamilton Khaki Field 921980 Black Dial...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+921980" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+921980" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">7</strong></td>
+                            <td><strong>H644550</strong></td>
+                            <td>1</td>
+                            <td>$325</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥32,785</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">READ [ N MINT ] HAMILTON Khaki Field H644550 40mm ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H644550" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H644550" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">8</strong></td>
+                            <td><strong>H703050</strong></td>
+                            <td>1</td>
+                            <td>$500</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥50,373</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HOLIDAY SALE【MINT】 HAMILTON Khaki Field H703050 Wh...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H703050" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H703050" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">9</strong></td>
+                            <td><strong>H704550</strong></td>
+                            <td>1</td>
+                            <td>$345</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥34,778</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton Khaki Field Automatic Watch Black Dial Da...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H704550" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H704550" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">10</strong></td>
+                            <td><strong>H705350</strong></td>
+                            <td>1</td>
+                            <td>$842</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥84,852</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton Khaki Field Day Date H705350 Men's Workin...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H705350" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H705350" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">11</strong></td>
+                            <td><strong>H706050</strong></td>
+                            <td>1</td>
+                            <td>$550</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥55,412</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[w/Box] Hamilton Khaki Field H706050 Automatic Dat...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H706050" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H706050" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">12</strong></td>
+                            <td><strong>H706250</strong></td>
+                            <td>1</td>
+                            <td>$465</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥46,839</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[N MINT+ w/Box] HAMILTON Khaki Field H706250 Black...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H706250" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H706250" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">13</strong></td>
+                            <td><strong>H706550</strong></td>
+                            <td>1</td>
+                            <td>$500</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥50,373</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT w/ Box] Hamilton Khaki Field H706550 Bl...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H706550" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H706550" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">14</strong></td>
+                            <td><strong>H716260</strong></td>
+                            <td>1</td>
+                            <td>$650</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥65,486</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Khaki Field H716260 / H71626735 Chronogra...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H716260" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H716260" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">15</strong></td>
+                            <td><strong>H744511</strong></td>
+                            <td>1</td>
+                            <td>$313</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥31,534</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON | Hamilton H744511 Khaki Field  Analog Qu...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H744511" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H744511" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #002855; margin-top: 25px; border-bottom: 2px solid #002855; padding-bottom: 5px;">
+                    Khaki Aviation <span style="font-size: 0.9em; color: #666;">（販売数: 19個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">1</strong></td>
+                            <td><strong>H776160</strong></td>
+                            <td>2</td>
+                            <td>$592</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥59,593</td>
+                            <td>0.123</td>
+                            <td style="font-size: 0.85em;">Hamilton Khaki Aviation X-Wind H776160 Chronograph...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H776160" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H776160" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">2</strong></td>
+                            <td><strong>647150</strong></td>
+                            <td>1</td>
+                            <td>$567</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥57,120</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Khaki Pilot Watch Automatic Men's Black D...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+647150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+647150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">3</strong></td>
+                            <td><strong>H644250</strong></td>
+                            <td>1</td>
+                            <td>$432</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥43,524</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Khaki Aviation Pilot H644250 Day Date 39m...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H644250" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H644250" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">4</strong></td>
+                            <td><strong>H779120</strong></td>
+                            <td>1</td>
+                            <td>$430</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥43,357</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton Khaki X-Wind H779120 Men’s Chronograph Bl...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H779120" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H779120" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">5</strong></td>
+                            <td><strong>H776860</strong></td>
+                            <td>1</td>
+                            <td>$788</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥79,441</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton Khaki Aviation X-Wind H776860 Automatic M...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H776860" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H776860" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">6</strong></td>
+                            <td><strong>H77616133</strong></td>
+                            <td>1</td>
+                            <td>$1981</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥199,585</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Khaki Aviation X-Wind H77616133 Black Sta...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H77616133" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H77616133" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">7</strong></td>
+                            <td><strong>H776120</strong></td>
+                            <td>1</td>
+                            <td>$390</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥39,291</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT- / Box] Hamilton Khaki Aviation ETO H77...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H776120" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H776120" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">8</strong></td>
+                            <td><strong>H76552933</strong></td>
+                            <td>1</td>
+                            <td>$520</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥52,394</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Import duty included  Hamilton Khaki Aviation Pilo...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H76552933" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H76552933" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">9</strong></td>
+                            <td><strong>H765520</strong></td>
+                            <td>1</td>
+                            <td>$330</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥33,246</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Near MINT] Hamilton H765520 Khaki Aviation Pilot ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H765520" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H765520" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">10</strong></td>
+                            <td><strong>H765350</strong></td>
+                            <td>1</td>
+                            <td>$520</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥52,379</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Box, Papers [Near MINT] Hamilton Khaki Aviation Ai...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H765350" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H765350" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">11</strong></td>
+                            <td><strong>H765250</strong></td>
+                            <td>1</td>
+                            <td>$403</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥40,622</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Khaki Aviation Air Race H765250/H76525151...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H765250" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H765250" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">12</strong></td>
+                            <td><strong>H76456955</strong></td>
+                            <td>1</td>
+                            <td>$820</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥82,650</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Import duty included  Hamilton Khaki Pilot Pioneer...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H76456955" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H76456955" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">13</strong></td>
+                            <td><strong>H764190</strong></td>
+                            <td>1</td>
+                            <td>$650</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥65,486</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[MINT] HAMILTON Khaki Aviation Pilot Pioneer H7641...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H764190" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H764190" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">14</strong></td>
+                            <td><strong>H76205530</strong></td>
+                            <td>1</td>
+                            <td>$887</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥89,365</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">​HAMILTON Khaki Aviation Pilot Pioneer H76205530 B...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H76205530" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H76205530" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">15</strong></td>
+                            <td><strong>H64635560</strong></td>
+                            <td>1</td>
+                            <td>$1072</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥107,953</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">​HAMILTON Khaki Aviation Pilot H64635560 Green Day...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H64635560" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H64635560" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">... (15行まで続く)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #002855; margin-top: 25px; border-bottom: 2px solid #002855; padding-bottom: 5px;">
+                    American Classic <span style="font-size: 0.9em; color: #666;">（販売数: 7個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">1</strong></td>
+                            <td><strong>H134210</strong></td>
+                            <td>2</td>
+                            <td>$420</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥42,308</td>
+                            <td>0.068</td>
+                            <td style="font-size: 0.85em;">【New Battery installed】HAMILTON American Classic B...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H134210" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H134210" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">2</strong></td>
+                            <td><strong>H135190</strong></td>
+                            <td>2</td>
+                            <td>$680</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥68,510</td>
+                            <td>0.125</td>
+                            <td style="font-size: 0.85em;">[MINT /Box] Hamilton American Classic Bolton H1351...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H135190" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H135190" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">3</strong></td>
+                            <td><strong>H133210</strong></td>
+                            <td>1</td>
+                            <td>$349</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥35,161</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">N MINT* Hamilton American Classic Boulton H133210 ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H133210" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H133210" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">4</strong></td>
+                            <td><strong>H38716731</strong></td>
+                            <td>1</td>
+                            <td>$1915</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥192,974</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton American Classic Intra-Matic H38716731 ​​...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H38716731" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H38716731" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">5</strong></td>
+                            <td><strong>H42415591</strong></td>
+                            <td>1</td>
+                            <td>$587</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥59,140</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton American Classic Spirit of Liberty H42415...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H42415591" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H42415591" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（5モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #002855; margin-top: 25px; border-bottom: 2px solid #002855; padding-bottom: 5px;">
+                    Intra-Matic <span style="font-size: 0.9em; color: #666;">（販売数: 1個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">1</strong></td>
+                            <td><strong>H387160</strong></td>
+                            <td>1</td>
+                            <td>$1178</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥118,723</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">HAMILTON Intramatic 68 H387160/H38716731 Limited t...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H387160" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H387160" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（1モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 style="color: #002855; margin-top: 25px; border-bottom: 2px solid #002855; padding-bottom: 5px;">
+                    Khaki Navy <span style="font-size: 0.9em; color: #666;">（販売数: 2個）</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>商品例</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">1</strong></td>
+                            <td><strong>H777150</strong></td>
+                            <td>1</td>
+                            <td>$600</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥60,450</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">[Box, Paper] Hamilton Khaki Navy Pioneer H777150 A...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H777150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H777150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">2</strong></td>
+                            <td><strong>H822010</strong></td>
+                            <td>1</td>
+                            <td>$449</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥45,272</td>
+                            <td>0.000</td>
+                            <td style="font-size: 0.85em;">Hamilton Khaki Navy Scuba H822010 Quartz Rotating ...</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H822010" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H822010" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr style="background: #f8f9fa;">
+                            <td colspan="8" style="text-align: center; color: #666; padding: 15px;">（2モデルのみ）</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <h3 style="color: #002855; border-bottom: 3px solid #002855; padding-bottom: 10px; margin-top: 30px;">
+                    📊 ライン別 詳細分析
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ライン名</th>
+                            <th>販売数</th>
+                            <th>比率</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>安定性</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong>その他Hamilton</strong></td>
+                            <td>80</td>
+                            <td>39.4%</td>
+                            <td>$350</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥35,261</td>
+                            <td>0.843</td>
+                            <td>☆☆☆</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+その他Hamilton" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+その他Hamilton" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Jazzmaster</strong></td>
+                            <td>39</td>
+                            <td>19.2%</td>
+                            <td>$400</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥40,298</td>
+                            <td>0.748</td>
+                            <td>☆☆☆</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Jazzmaster" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+Jazzmaster" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Ventura</strong></td>
+                            <td>26</td>
+                            <td>12.8%</td>
+                            <td>$514</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥51,835</td>
+                            <td>0.634</td>
+                            <td>☆☆☆</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Ventura" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+Ventura" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Khaki Field</strong></td>
+                            <td>26</td>
+                            <td>12.8%</td>
+                            <td>$380</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥38,334</td>
+                            <td>0.375</td>
+                            <td>☆☆☆</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Khaki+Field" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+Khaki+Field" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Khaki Aviation</strong></td>
+                            <td>21</td>
+                            <td>10.3%</td>
+                            <td>$540</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥54,403</td>
+                            <td>0.592</td>
+                            <td>☆☆☆</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Khaki+Aviation" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+Khaki+Aviation" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>American Classic</strong></td>
+                            <td>7</td>
+                            <td>3.4%</td>
+                            <td>$587</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥59,140</td>
+                            <td>0.754</td>
+                            <td>☆☆☆</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+American+Classic" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+American+Classic" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Intra-Matic</strong></td>
+                            <td>2</td>
+                            <td>1.0%</td>
+                            <td>$817</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥82,320</td>
+                            <td>0.625</td>
+                            <td>☆☆☆</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Intra-Matic" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+Intra-Matic" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Khaki Navy</strong></td>
+                            <td>2</td>
+                            <td>1.0%</td>
+                            <td>$525</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥52,861</td>
+                            <td>0.203</td>
+                            <td>★★☆</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+Khaki+Navy" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+Khaki+Navy" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <h3 style="color: #002855; border-bottom: 3px solid #002855; padding-bottom: 10px; margin-top: 30px;">
+                    🌟 全ライン横断 Top30 型番
+                </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>型番</th>
+                            <th>ライン</th>
+                            <th>販売数</th>
+                            <th>中央値</th>
+                            <th style="background: #C8A882; color: white;">仕入上限(¥)</th>
+                            <th>CV値</th>
+                            <th>検索</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">1</strong></td>
+                            <td><strong>H244112</strong></td>
+                            <td>Ventura</td>
+                            <td>5</td>
+                            <td>$382</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥38,486</td>
+                            <td>0.355</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H244112" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H244112" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">2</strong></td>
+                            <td><strong>H694190</strong></td>
+                            <td>Khaki Field</td>
+                            <td>4</td>
+                            <td>$380</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥38,283</td>
+                            <td>0.033</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H694190" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H694190" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">3</strong></td>
+                            <td><strong>H644510</strong></td>
+                            <td>その他Hamilton</td>
+                            <td>3</td>
+                            <td>$300</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥30,214</td>
+                            <td>0.091</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H644510" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H644510" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">4</strong></td>
+                            <td><strong>H243010</strong></td>
+                            <td>Ventura</td>
+                            <td>3</td>
+                            <td>$550</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥55,402</td>
+                            <td>0.157</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H243010" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H243010" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">5</strong></td>
+                            <td><strong>H384110</strong></td>
+                            <td>Jazzmaster</td>
+                            <td>3</td>
+                            <td>$241</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥24,279</td>
+                            <td>0.271</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H384110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H384110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">6</strong></td>
+                            <td><strong>H706150</strong></td>
+                            <td>Khaki Field</td>
+                            <td>3</td>
+                            <td>$350</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥35,262</td>
+                            <td>0.131</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H706150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H706150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">7</strong></td>
+                            <td><strong>H325651</strong></td>
+                            <td>Jazzmaster</td>
+                            <td>3</td>
+                            <td>$490</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥49,367</td>
+                            <td>0.020</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H325651" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H325651" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">8</strong></td>
+                            <td><strong>H114110</strong></td>
+                            <td>その他Hamilton</td>
+                            <td>3</td>
+                            <td>$210</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥21,156</td>
+                            <td>0.087</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H114110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H114110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">9</strong></td>
+                            <td><strong>H776160</strong></td>
+                            <td>Khaki Aviation</td>
+                            <td>2</td>
+                            <td>$592</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥59,593</td>
+                            <td>0.123</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H776160" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H776160" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">10</strong></td>
+                            <td><strong>H375120</strong></td>
+                            <td>Jazzmaster</td>
+                            <td>2</td>
+                            <td>$217</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥21,882</td>
+                            <td>0.916</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H375120" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H375120" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">11</strong></td>
+                            <td><strong>H644510</strong></td>
+                            <td>Khaki Field</td>
+                            <td>2</td>
+                            <td>$360</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥36,259</td>
+                            <td>0.236</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H644510" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H644510" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">12</strong></td>
+                            <td><strong>H327050</strong></td>
+                            <td>Jazzmaster</td>
+                            <td>2</td>
+                            <td>$530</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥53,392</td>
+                            <td>0.187</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H327050" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H327050" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">13</strong></td>
+                            <td><strong>H326651</strong></td>
+                            <td>Jazzmaster</td>
+                            <td>2</td>
+                            <td>$400</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥40,293</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H326651" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H326651" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">14</strong></td>
+                            <td><strong>H326160</strong></td>
+                            <td>Jazzmaster</td>
+                            <td>2</td>
+                            <td>$320</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥32,240</td>
+                            <td>0.928</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H326160" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H326160" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">15</strong></td>
+                            <td><strong>H325050</strong></td>
+                            <td>Jazzmaster</td>
+                            <td>2</td>
+                            <td>$405</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥40,793</td>
+                            <td>0.192</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H325050" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H325050" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">16</strong></td>
+                            <td><strong>H704450</strong></td>
+                            <td>Khaki Field</td>
+                            <td>2</td>
+                            <td>$440</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥44,379</td>
+                            <td>0.191</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H704450" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H704450" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">17</strong></td>
+                            <td><strong>H244110</strong></td>
+                            <td>Ventura</td>
+                            <td>2</td>
+                            <td>$398</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥40,115</td>
+                            <td>0.291</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H244110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H244110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">18</strong></td>
+                            <td><strong>H395150</strong></td>
+                            <td>Jazzmaster</td>
+                            <td>2</td>
+                            <td>$323</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥32,532</td>
+                            <td>0.100</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H395150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H395150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">19</strong></td>
+                            <td><strong>H135190</strong></td>
+                            <td>American Classic</td>
+                            <td>2</td>
+                            <td>$680</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥68,510</td>
+                            <td>0.125</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H135190" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H135190" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">20</strong></td>
+                            <td><strong>H325150</strong></td>
+                            <td>Jazzmaster</td>
+                            <td>2</td>
+                            <td>$352</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥35,514</td>
+                            <td>0.090</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H325150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H325150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">21</strong></td>
+                            <td><strong>H134210</strong></td>
+                            <td>American Classic</td>
+                            <td>2</td>
+                            <td>$420</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥42,308</td>
+                            <td>0.068</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H134210" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H134210" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">22</strong></td>
+                            <td><strong>000221</strong></td>
+                            <td>その他Hamilton</td>
+                            <td>2</td>
+                            <td>$412</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥41,559</td>
+                            <td>0.129</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+000221" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+000221" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">23</strong></td>
+                            <td><strong>H245150</strong></td>
+                            <td>その他Hamilton</td>
+                            <td>2</td>
+                            <td>$428</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥43,070</td>
+                            <td>0.151</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H245150" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H245150" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">24</strong></td>
+                            <td><strong>H705350</strong></td>
+                            <td>その他Hamilton</td>
+                            <td>1</td>
+                            <td>$600</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥60,448</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H705350" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H705350" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">25</strong></td>
+                            <td><strong>H705350</strong></td>
+                            <td>Khaki Field</td>
+                            <td>1</td>
+                            <td>$842</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥84,852</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H705350" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H705350" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">26</strong></td>
+                            <td><strong>H704550</strong></td>
+                            <td>Khaki Field</td>
+                            <td>1</td>
+                            <td>$345</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥34,778</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H704550" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H704550" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">27</strong></td>
+                            <td><strong>H706050</strong></td>
+                            <td>Khaki Field</td>
+                            <td>1</td>
+                            <td>$550</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥55,412</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H706050" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H706050" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">28</strong></td>
+                            <td><strong>H64645131</strong></td>
+                            <td>その他Hamilton</td>
+                            <td>1</td>
+                            <td>$759</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥76,439</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H64645131" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H64645131" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">29</strong></td>
+                            <td><strong>H703650</strong></td>
+                            <td>その他Hamilton</td>
+                            <td>1</td>
+                            <td>$337</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥33,952</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H703650" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H703650" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong style="color: #C8A882;">30</strong></td>
+                            <td><strong>H683110</strong></td>
+                            <td>その他Hamilton</td>
+                            <td>1</td>
+                            <td>$270</td>
+                            <td class="highlight" style="color: #C8A882; font-weight: bold;">¥27,192</td>
+                            <td>0.000</td>
+                            <td>
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=Hamilton+H683110" target="_blank" class="link-btn link-ebay">eBay</a>
+                                <input type="checkbox" class="search-checkbox">
+                                <a href="https://jp.mercari.com/search?keyword=Hamilton+H683110" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                                <input type="checkbox" class="search-checkbox">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+
 
             
 
@@ -24669,6 +27000,49 @@ function initOmegaCharts() {
                 paper_bgcolor: '#ffffff'
             };
             Plotly.newPlot('tagheuer_line_chart', tagheuer_line_data, tagheuer_line_layout, {responsive: true});
+        </script>
+
+
+        <script>
+            // Hamilton - 価格帯別分析
+            var hamilton_price_data = [{'x': ['$0-200', '$200-400', '$400-600', '$600-800', '$800-1000', '$1000-1500', '$1500+'], 'y': [16, 90, 58, 18, 7, 7, 7], 'type': 'bar', 'marker': {'color': '#002855'}}];
+            var hamilton_price_layout = {
+                title: '価格帯別 販売分布',
+                xaxis: {title: '価格帯'},
+                yaxis: {title: '販売数'},
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('hamilton_price_chart', hamilton_price_data, hamilton_price_layout, {responsive: true});
+
+            // Hamilton - 駆動方式別分布
+            var hamilton_movement_data = [{'labels': ['クオーツ', '自動巻', '不明', '手巻き', 'デジタル'], 'values': [79, 65, 50, 8, 1], 'type': 'pie', 'marker': {'colors': ['#002855', '#C8A882', '#666666', '#999999', '#CCCCCC']}}];
+            var hamilton_movement_layout = {
+                title: '駆動方式別 分布',
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('hamilton_movement_chart', hamilton_movement_data, hamilton_movement_layout, {responsive: true});
+
+            // Hamilton - 性別・カテゴリー別
+            var hamilton_gender_data = [{'x': ['メンズ', '不明', 'ユニセックス', 'レディース'], 'y': [140, 54, 6, 3], 'type': 'bar', 'marker': {'color': '#C8A882'}}];
+            var hamilton_gender_layout = {
+                title: '性別・カテゴリー別 販売数',
+                xaxis: {title: 'カテゴリー'},
+                yaxis: {title: '販売数'},
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('hamilton_gender_chart', hamilton_gender_data, hamilton_gender_layout, {responsive: true});
+
+            // Hamilton - ライン別売上比率
+            var hamilton_line_data = [{'labels': ['その他Hamilton', 'Jazzmaster', 'Ventura', 'Khaki Field', 'Khaki Aviation', 'American Classic', 'Intra-Matic', 'Khaki Navy'], 'values': [80, 39, 26, 26, 21, 7, 2, 2], 'type': 'pie', 'hole': 0.4}];
+            var hamilton_line_layout = {
+                title: 'ライン別 売上比率',
+                plot_bgcolor: '#f8f9fa',
+                paper_bgcolor: '#ffffff'
+            };
+            Plotly.newPlot('hamilton_line_chart', hamilton_line_data, hamilton_line_layout, {responsive: true});
         </script>
 
 </body>
