@@ -867,13 +867,38 @@
             <div class="chart-container"><div id="movementPieChart"></div></div>
         </div>
 
+        
+        <h2 class="section-title">📦 完品データ統計</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="icon">📦</div>
+                <div class="label">完品販売数</div>
+                <div class="value">9,275</div>
+            </div>
+            <div class="stat-card">
+                <div class="icon">💰</div>
+                <div class="label">完品総売上</div>
+                <div class="value">$5,179,090</div>
+            </div>
+            <div class="stat-card">
+                <div class="icon">📊</div>
+                <div class="label">完品平均価格</div>
+                <div class="value">$558.39</div>
+            </div>
+            <div class="stat-card">
+                <div class="icon">📈</div>
+                <div class="label">完品中央値</div>
+                <div class="value">$229.99</div>
+            </div>
+        </div>
+
         <h2 class="section-title">🏷️ ブランド別分析（Top20）</h2>
         <div class="chart-grid">
             <div class="chart-container"><div id="brandBarChart"></div></div>
             <div class="chart-container"><div id="brandPieChart"></div></div>
         </div>
 
-        <h2 class="section-title">💰 価格帯分布</h2>
+        <h2 class="section-title">💰 価格帯分布（完品のみ）</h2>
         <div class="chart-container"><div id="priceDistChart"></div></div>
     </div>
 
@@ -1983,7 +2008,7 @@
             type: 'bar',
             marker: {color: '#1976D2'}
         }];
-        const layout = {...plotlyLayout, title: '価格帯分布（50ドル刻み）', xaxis: {title: '価格帯'}, yaxis: {title: '件数'}};
+        const layout = {...plotlyLayout, title: '価格帯分布（完品のみ・50ドル刻み）', xaxis: {title: '価格帯'}, yaxis: {title: '件数'}};
         Plotly.newPlot('priceDistChart', data, layout, plotlyConfig);
     }
     </script>
