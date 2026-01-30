@@ -830,6 +830,7 @@
         <div class="control-group">
             <label>💱 為替:</label>
             <input type="number" id="exchangeRate" value="155" step="0.1">
+            <button class="btn btn-secondary" onclick="updateExchangeRate()" style="margin-left: 10px;">🔄 最新レート取得</button>
         </div>
         <div class="control-group">
             <label>📦 送料(円):</label>
@@ -2067,6 +2068,40 @@
         const mode = document.querySelector('input[name="recMode"]:checked').value;
         document.getElementById('rotationMode').style.display = mode === 'rotation' ? 'block' : 'none';
         document.getElementById('profitMode').style.display = mode === 'profit' ? 'block' : 'none';
+    }
+
+    // 為替レート最新取得
+    async function updateExchangeRate() {
+        const button = event.target;
+        const originalText = button.textContent;
+        button.disabled = true;
+        button.textContent = '取得中...';
+
+        try {
+            const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+            if (!response.ok) {
+                throw new Error('API接続失敗');
+            }
+            const data = await response.json();
+            const newRate = data.rates.JPY;
+
+            if (!newRate || newRate <= 0) {
+                throw new Error('無効なレートデータ');
+            }
+
+            // 為替レートを更新（小数点1桁に丸める）
+            document.getElementById('exchangeRate').value = Math.round(newRate * 10) / 10;
+
+            // 損益分岐点を自動再計算
+            recalculate();
+
+            alert(`✅ 為替レート更新完了\n\n$1 = ¥${newRate.toFixed(2)}\n\n損益分岐点を再計算しました。`);
+        } catch (error) {
+            alert(`❌ 為替レート取得失敗\n\n${error.message}\n\n現在の値を使用してください。`);
+        } finally {
+            button.disabled = false;
+            button.textContent = originalText;
+        }
     }
 
     // 再計算
