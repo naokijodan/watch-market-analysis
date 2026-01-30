@@ -2105,19 +2105,128 @@
     }
 
     // 再計算
+    // 1. $マークを含む列を探す（データ型検出）
+    function findPriceColumnByDollarSign(row) {
+        const cells = row.querySelectorAll('td');
+        for (let i = 0; i < cells.length; i++) {
+            const text = cells[i].textContent.trim();
+            if (/^\$[\d,]+(\.\d+)?$/.test(text)) {
+                return i + 1; // nth-childは1-based
+            }
+        }
+        return null;
+    }
+
+    // 2. ヘッダー名で探す
+    function findPriceColumnByHeader(table) {
+        const headers = table.querySelectorAll('thead th');
+        for (let i = 0; i < headers.length; i++) {
+            const text = headers[i].textContent.trim();
+            if (text.includes('中央値') && (text.includes('$') || !text.includes('¥'))) {
+                return i + 1;
+            }
+        }
+        return null;
+    }
+
+    // 3. 既知パターンにフォールバック
+    const FALLBACK_PATTERNS = {
+        '🏷️ ブランド別パーツ需要': 3,
+        '🏷️ ブランド別集計': 5,
+        '🔵 ライン別詳細分析': 4,
+        '🎭 キャラクター/コラボ分析': 4,
+        '🏆 全ライン横断 型番分析': 4,
+        '🎁 限定モデル/記念モデル分析': 5,
+        '🎭 特徴・価値軸分析': 3,
+        '🔄 回転重視モード': 5,
+        '💰 利益重視モード': 5
+    };
+
+    function findPriceColumnByPattern(table) {
+        let elem = table.previousElementSibling;
+        while (elem && !elem.matches('h2, h3')) {
+            elem = elem.previousElementSibling;
+        }
+        
+        if (elem) {
+            const title = elem.textContent;
+            for (const [pattern, col] of Object.entries(FALLBACK_PATTERNS)) {
+                if (title.includes(pattern)) {
+                    return col;
+                }
+            }
+        }
+        return null;
+    }
+
+    // 通貨フォーマッター
+    const JPY_FORMATTER = new Intl.NumberFormat('ja-JP', {
+        style: 'currency',
+        currency: 'JPY',
+        maximumFractionDigits: 0
+    });
+
+    // 損益分岐点計算（純粋関数）
+    const calculateBreakeven = (price, rate, shipping, fee) => {
+        return price * rate * (1 - fee) - shipping;
+    };
+
+    // 再計算メイン関数
     function recalculate() {
         const rate = parseFloat(document.getElementById('exchangeRate').value);
         const shipping = parseFloat(document.getElementById('shippingCost').value);
-        const fee = parseFloat(document.getElementById('feeRate').value) / 100;
+        const feeRate = parseFloat(document.getElementById('feeRate').value);
         
+        if (!Number.isFinite(rate) || !Number.isFinite(shipping) || !Number.isFinite(feeRate)) {
+            console.warn('⚠️ 無効な入力パラメータ');
+            return;
+        }
+        
+        const fee = feeRate / 100;
+        let successCount = 0;
+        let failCount = 0;
+
         document.querySelectorAll('.highlight').forEach(el => {
-            const priceText = el.closest('tr')?.querySelector('td:nth-child(5)')?.textContent;
-            if (priceText) {
-                const price = parseFloat(priceText.replace('$', ''));
-                const breakeven = price * rate * (1 - fee) - shipping;
-                el.textContent = '¥' + Math.max(0, Math.round(breakeven)).toLocaleString();
+            const table = el.closest('table');
+            if (!table) return;
+
+            const row = el.closest('tr');
+            
+            // 3段階フォールバック
+            let priceColIndex = findPriceColumnByDollarSign(row);
+            
+            if (!priceColIndex) {
+                priceColIndex = findPriceColumnByHeader(table);
+            }
+            
+            if (!priceColIndex) {
+                priceColIndex = findPriceColumnByPattern(table);
+            }
+            
+            if (!priceColIndex) {
+                console.warn('価格列が見つかりません:', table);
+                failCount++;
+                return;
+            }
+            
+            const priceCell = row.querySelector(`td:nth-child(${priceColIndex})`);
+            
+            if (priceCell && priceCell.textContent) {
+                const priceRaw = priceCell.textContent.replace(/[^0-9.]/g, '');
+                const price = parseFloat(priceRaw);
+
+                if (Number.isFinite(price)) {
+                    const breakeven = calculateBreakeven(price, rate, shipping, fee);
+                    el.textContent = JPY_FORMATTER.format(Math.max(0, breakeven));
+                    successCount++;
+                } else {
+                    el.textContent = '-';
+                    failCount++;
+                }
             }
         });
+        
+        console.log(`✅ 再計算完了: ${successCount}件成功, ${failCount}件失敗`);
     }
 
     // Plotly共通設定
