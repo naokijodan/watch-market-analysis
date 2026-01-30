@@ -39240,25 +39240,25 @@
     </div>
 
 
-            <div id="Longines" class="tab-content">
+    <div id="Longines" class="tab-content">
         <h2 class="section-title longines-primary">🔵 Longines 詳細分析</h2>
 
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="label">総販売数</div>
-                <div class="value">2,954</div>
+                <div class="value">219</div>
             </div>
             <div class="stat-card">
                 <div class="label">中央値</div>
-                <div class="value">$269.99</div>
+                <div class="value">$262.95</div>
             </div>
             <div class="stat-card">
                 <div class="label">CV（変動係数）</div>
-                <div class="value">0.904</div>
+                <div class="value">1.090</div>
             </div>
             <div class="stat-card">
                 <div class="label">型番抽出率</div>
-                <div class="value longines-accent">54.2%</div>
+                <div class="value longines-accent">64.2%</div>
             </div>
         </div>
 
@@ -39268,7 +39268,7 @@
                 <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 4px solid #003057;">
                     <h4 style="color: #003057; margin-bottom: 10px;">✅ 狙い目条件</h4>
                     <ul style="margin-left: 20px;">
-                        <li><strong>Conquest:</strong> 最多販売数（490個）、スポーツウォッチとして人気</li>
+                        <li><strong>Conquest:</strong> 最多販売数、スポーツウォッチとして人気</li>
                         <li><strong>Flagship:</strong> フラッグシップライン、安定した需要</li>
                         <li><strong>Heritage:</strong> ヴィンテージ復刻モデル、コレクター向け</li>
                         <li><strong>特別版:</strong> Navigation Limited、Anniversary等の限定モデル</li>
@@ -39316,15 +39316,15 @@
         <div class="stats-grid" style="margin-bottom: 20px;">
             <div class="stat-card">
                 <div class="label">特別版商品数</div>
-                <div class="value longines-accent">25個</div>
+                <div class="value longines-accent">4個</div>
             </div>
             <div class="stat-card">
                 <div class="label">中央値</div>
-                <div class="value">$680</div>
+                <div class="value">$725</div>
             </div>
             <div class="stat-card">
                 <div class="label">全体比率</div>
-                <div class="value longines-accent">0.8%</div>
+                <div class="value longines-accent">1.8%</div>
             </div>
         </div>
 
@@ -39343,39 +39343,11 @@
                 <tbody>
 
                     <tr>
-                        <td><strong>Chronometer</strong></td>
-                        <td>9</td>
-                        <td class="longines-accent">0.3%</td>
-                        <td>$680</td>
-                        <td class="highlight longines-accent">¥81,320</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Chronometer+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20Chronometer%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td><strong>Limited</strong></td>
-                        <td>7</td>
-                        <td class="longines-accent">0.2%</td>
-                        <td>$1080</td>
-                        <td class="highlight longines-accent">¥130,920</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Limited+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20Limited%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-    
-                    <tr>
                         <td><strong>150th Anniversary</strong></td>
-                        <td>6</td>
-                        <td class="longines-accent">0.2%</td>
+                        <td>1</td>
+                        <td class="longines-accent">0.5%</td>
                         <td>$300</td>
-                        <td class="highlight longines-accent">¥34,198</td>
+                        <td class="highlight longines-accent">¥30,223</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+150th+Anniversary+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
@@ -39385,25 +39357,11 @@
                     </tr>
     
                     <tr>
-                        <td><strong>130th Anniversary</strong></td>
-                        <td>1</td>
-                        <td class="longines-accent">0.0%</td>
-                        <td>$950</td>
-                        <td class="highlight longines-accent">¥114,800</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+130th+Anniversary+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20130th%20Anniversary%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-    
-                    <tr>
                         <td><strong>165th Anniversary</strong></td>
                         <td>1</td>
-                        <td class="longines-accent">0.0%</td>
+                        <td class="longines-accent">0.5%</td>
                         <td>$408</td>
-                        <td class="highlight longines-accent">¥47,592</td>
+                        <td class="highlight longines-accent">¥41,106</td>
                         <td>
                             <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+165th+Anniversary+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
@@ -39413,15 +39371,29 @@
                     </tr>
     
                     <tr>
-                        <td><strong>500th Anniversary</strong></td>
+                        <td><strong>Chronometer</strong></td>
                         <td>1</td>
-                        <td class="longines-accent">0.0%</td>
-                        <td>$1620</td>
-                        <td class="highlight longines-accent">¥197,880</td>
+                        <td class="longines-accent">0.5%</td>
+                        <td>$1042</td>
+                        <td class="highlight longines-accent">¥104,936</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+500th+Anniversary+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Chronometer+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20500th%20Anniversary%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20Chronometer%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Navigation Limited</strong></td>
+                        <td>1</td>
+                        <td class="longines-accent">0.5%</td>
+                        <td>$1214</td>
+                        <td class="highlight longines-accent">¥122,290</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Navigation+Limited+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20Navigation%20Limited%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
@@ -39435,7 +39407,7 @@
         <p style="color: #666; margin-bottom: 20px;">元CSVデータから再分類した正確な人気モデルTop15</p>
 
         <h4 style="color: #003057; margin-top: 25px; border-bottom: 2px solid #003057; padding-bottom: 5px;">
-            その他Longines <span style="font-size: 0.9em; color: #666;">（販売数: 2126個）</span>
+            その他Longines <span style="font-size: 0.9em; color: #666;">（販売数: 156個）</span>
         </h4>
         <div class="table-container">
             <table>
@@ -39455,250 +39427,218 @@
     
                     <tr>
                         <td><strong class="longines-accent">1</strong></td>
-                        <td><strong>L4.637.2</strong></td>
-                        <td>88</td>
-                        <td>$200</td>
-                        <td class="highlight longines-accent">¥21,798</td>
-                        <td>0.240</td>
-                        <td class="model-sample">[ MINT /BOX ] Longines Grand Classic L4.637.2 Gold Dial Quartz Watch J</td>
+                        <td><strong>L150.4</strong></td>
+                        <td>7</td>
+                        <td>$190</td>
+                        <td class="highlight longines-accent">¥19,132</td>
+                        <td>0.191</td>
+                        <td class="model-sample">Vintage *NEAR MINT* LONGINES L150.4 7019 Gold 29mm Square Me</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+637+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L150.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20637%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L150.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">2</strong></td>
-                        <td><strong>L4.720.2</strong></td>
-                        <td>76</td>
-                        <td>$290</td>
-                        <td class="highlight longines-accent">¥32,958</td>
-                        <td>0.250</td>
-                        <td class="model-sample">[NEAR MINT] LONGINES Grande Classic L4.720.2 Gold Dial Date Day Qz Men</td>
+                        <td><strong>L4.635.2</strong></td>
+                        <td>6</td>
+                        <td>$334</td>
+                        <td class="highlight longines-accent">¥33,695</td>
+                        <td>0.122</td>
+                        <td class="model-sample">[NEAR MINT] Longines La Grande Classique L4.635.2 White Dial</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+720+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.635.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20720%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.635.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">3</strong></td>
-                        <td><strong>L4.635.2</strong></td>
-                        <td>66</td>
-                        <td>$330</td>
-                        <td class="highlight longines-accent">¥37,912</td>
-                        <td>0.250</td>
-                        <td class="model-sample">[NEAR MINT] Longines La Grande Classique L4.635.2 White Dial Qz Watch </td>
+                        <td><strong>L4.637.2</strong></td>
+                        <td>6</td>
+                        <td>$195</td>
+                        <td class="highlight longines-accent">¥19,641</td>
+                        <td>0.096</td>
+                        <td class="model-sample">[ MINT /BOX ] Longines Grand Classic L4.637.2 Gold Dial Quar</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+635+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.637.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20635%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.637.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">4</strong></td>
                         <td><strong>L4.636.2</strong></td>
-                        <td>48</td>
-                        <td>$216</td>
-                        <td class="highlight longines-accent">¥23,774</td>
-                        <td>0.210</td>
-                        <td class="model-sample">**NEAR MINT** LONGINES La Grande Classique L4.636.2 Quartz Roman Dial </td>
+                        <td>5</td>
+                        <td>$200</td>
+                        <td class="highlight longines-accent">¥20,139</td>
+                        <td>0.322</td>
+                        <td class="model-sample">**NEAR MINT** LONGINES La Grande Classique L4.636.2 Quartz R</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+636+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.636.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20636%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.636.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">5</strong></td>
-                        <td><strong>L4.135.2</strong></td>
-                        <td>47</td>
+                        <td><strong>L4.720.2</strong></td>
+                        <td>5</td>
                         <td>$300</td>
-                        <td class="highlight longines-accent">¥34,198</td>
-                        <td>0.170</td>
-                        <td class="model-sample">[Near MINT] LONGINES L4.135.2 24mm Gold Dial 4P Quartz Women's Watch F</td>
+                        <td class="highlight longines-accent">¥30,223</td>
+                        <td>0.171</td>
+                        <td class="model-sample">[NEAR MINT] LONGINES Grande Classic L4.720.2 Gold Dial Date </td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+135+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.720.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20135%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.720.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">6</strong></td>
-                        <td><strong>L4.720.4</strong></td>
-                        <td>37</td>
-                        <td>$300</td>
-                        <td class="highlight longines-accent">¥34,187</td>
-                        <td>0.150</td>
-                        <td class="model-sample">Longines Grand Classic L4.720.4 33mm White Date Quartz Men's Watch N M</td>
+                        <td><strong>L2.618.4</strong></td>
+                        <td>3</td>
+                        <td>$998</td>
+                        <td class="highlight longines-accent">¥100,509</td>
+                        <td>0.317</td>
+                        <td class="model-sample">LONGINES Lindberg L2.618.4 Chronograph day date white Dial A</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+720+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2.618.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20720%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2.618.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">7</strong></td>
                         <td><strong>L4.709.2</strong></td>
-                        <td>36</td>
-                        <td>$380</td>
-                        <td class="highlight longines-accent">¥44,118</td>
-                        <td>0.230</td>
-                        <td class="model-sample">[Near Mint/ w Box] Longines La Grande Classique L4.709.2 Gold Men's Wa</td>
+                        <td>3</td>
+                        <td>$341</td>
+                        <td class="highlight longines-accent">¥34,369</td>
+                        <td>0.012</td>
+                        <td class="model-sample">[Near Mint/ w Box] Longines La Grande Classique L4.709.2 Gol</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+709+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.709.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20709%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.709.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">8</strong></td>
-                        <td><strong>L4.209.4</strong></td>
-                        <td>26</td>
-                        <td>$300</td>
-                        <td class="highlight longines-accent">¥34,198</td>
-                        <td>0.310</td>
-                        <td class="model-sample">[NEAR MINT] LONGINES Grand Classic L4.209.4 24mm Quartz Women's Watch </td>
+                        <td><strong>L847.4</strong></td>
+                        <td>3</td>
+                        <td>$200</td>
+                        <td class="highlight longines-accent">¥20,148</td>
+                        <td>0.248</td>
+                        <td class="model-sample">[Exc+5 w/ BOX] LONGINES L847.4 847 5121 Hand Winding 30mm Go</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+209+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L847.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20209%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L847.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">9</strong></td>
-                        <td><strong>L4.209.2</strong></td>
-                        <td>24</td>
-                        <td>$400</td>
-                        <td class="highlight longines-accent">¥46,598</td>
-                        <td>0.220</td>
-                        <td class="model-sample">[MINT] Longines La Grande Classique L4.209.2 24mm Gold Dial Quartz Wom</td>
+                        <td><strong>L4.620.2</strong></td>
+                        <td>2</td>
+                        <td>$243</td>
+                        <td class="highlight longines-accent">¥24,532</td>
+                        <td>0.038</td>
+                        <td class="model-sample">Reserved LONGINES Grand Classic L4.620.2 Gold Roman Quartz M</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+209+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.620.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20209%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.620.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">10</strong></td>
-                        <td><strong>L4.709.4</strong></td>
-                        <td>18</td>
-                        <td>$335</td>
-                        <td class="highlight longines-accent">¥38,538</td>
-                        <td>0.200</td>
-                        <td class="model-sample">[ Paper ] LONGINES La Grande Classique L4.709.4 White Qz Mens Watch [L</td>
+                        <td><strong>L4.681.4</strong></td>
+                        <td>2</td>
+                        <td>$449</td>
+                        <td class="highlight longines-accent">¥45,231</td>
+                        <td>0.097</td>
+                        <td class="model-sample">[N MINT] LONGINES Grand Classis L4.681.4 White Dial Date Aut</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+709+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.681.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20709%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.681.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">11</strong></td>
-                        <td><strong>L4.620.2</strong></td>
-                        <td>12</td>
-                        <td>$208</td>
-                        <td class="highlight longines-accent">¥22,741</td>
-                        <td>0.120</td>
-                        <td class="model-sample">Reserved LONGINES Grand Classic L4.620.2 Gold Roman Quartz Men's Watch</td>
+                        <td><strong>L4.720.4</strong></td>
+                        <td>2</td>
+                        <td>$302</td>
+                        <td class="highlight longines-accent">¥30,476</td>
+                        <td>0.082</td>
+                        <td class="model-sample">Longines Grand Classic L4.720.4 33mm White Date Quartz Men's</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+620+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.720.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20620%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.720.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">12</strong></td>
-                        <td><strong>L2.673.4</strong></td>
-                        <td>11</td>
-                        <td>$1976</td>
-                        <td class="highlight longines-accent">¥242,037</td>
-                        <td>0.100</td>
-                        <td class="model-sample">LONGINES Master collection L2.673.4 Chronograph Triple calendar Automa</td>
+                        <td><strong>L5.131.3</strong></td>
+                        <td>2</td>
+                        <td>$183</td>
+                        <td class="highlight longines-accent">¥18,398</td>
+                        <td>0.134</td>
+                        <td class="model-sample">Longines Grand Classic L5.131.3 White Dial Quartz Women Watc</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+673+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5.131.3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20673%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5.131.3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">13</strong></td>
-                        <td><strong>L5.636.3</strong></td>
-                        <td>11</td>
-                        <td>$220</td>
-                        <td class="highlight longines-accent">¥24,280</td>
-                        <td>0.230</td>
-                        <td class="model-sample">[Near Mint] Longines LeGrande Classique L5.636.3 Quartz Unisex Watch 3</td>
+                        <td><strong>L645.1</strong></td>
+                        <td>2</td>
+                        <td>$335</td>
+                        <td class="highlight longines-accent">¥33,745</td>
+                        <td>0.148</td>
+                        <td class="model-sample">Vintage [N MINT] LONGINES L645.1 645 4120 Automatic Roman 34</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+636+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L645.1&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20636%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L645.1&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">14</strong></td>
-                        <td><strong>L5.131.3</strong></td>
-                        <td>11</td>
-                        <td>$188</td>
-                        <td class="highlight longines-accent">¥20,283</td>
-                        <td>0.070</td>
-                        <td class="model-sample">Longines Grand Classic L5.131.3 White Dial Quartz Women Watch Used Wor</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+131+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20131%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">15</strong></td>
-                        <td><strong>L4.137.2</strong></td>
-                        <td>10</td>
-                        <td>$182</td>
-                        <td class="highlight longines-accent">¥19,622</td>
-                        <td>0.090</td>
-                        <td class="model-sample">[Exc+5] Longines L4.137.2 White Dial Quartz Women's Watch From JAPAN</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+137+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20137%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
+        
                 </tbody>
             </table>
         </div>
     
         <h4 style="color: #003057; margin-top: 25px; border-bottom: 2px solid #003057; padding-bottom: 5px;">
-            Conquest <span style="font-size: 0.9em; color: #666;">（販売数: 490個）</span>
+            Conquest <span style="font-size: 0.9em; color: #666;">（販売数: 32個）</span>
         </h4>
         <div class="table-container">
             <table>
@@ -39718,250 +39658,74 @@
     
                     <tr>
                         <td><strong class="longines-accent">1</strong></td>
-                        <td><strong>L1.614.3</strong></td>
-                        <td>22</td>
+                        <td><strong>L1.113.3</strong></td>
+                        <td>2</td>
                         <td>$250</td>
-                        <td class="highlight longines-accent">¥27,998</td>
-                        <td>0.140</td>
-                        <td class="model-sample">Vintage [N MINT] LONGINES Conquest L1.614.3 33mm Gold Dial Date Men's </td>
+                        <td class="highlight longines-accent">¥25,177</td>
+                        <td>0.283</td>
+                        <td class="model-sample">[ Near MINT ] LONGINES Conquest V.H.P. L1.113.3 Gold Silver </td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+614+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1.113.3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20614%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1.113.3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">2</strong></td>
-                        <td><strong>L1.114.3</strong></td>
-                        <td>17</td>
-                        <td>$218</td>
-                        <td class="highlight longines-accent">¥24,032</td>
-                        <td>0.130</td>
-                        <td class="model-sample">[Near MINT] Longines Conquest L1.114.3 Silver Dial Date Quartz Women's</td>
+                        <td><strong>L1.614.3</strong></td>
+                        <td>2</td>
+                        <td>$209</td>
+                        <td class="highlight longines-accent">¥21,044</td>
+                        <td>0.143</td>
+                        <td class="model-sample">Vintage [N MINT] LONGINES Conquest L1.614.3 33mm Gold Dial D</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+114+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1.614.3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20114%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1.614.3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">3</strong></td>
-                        <td><strong>L1.613.3</strong></td>
-                        <td>17</td>
-                        <td>$270</td>
-                        <td class="highlight longines-accent">¥30,480</td>
-                        <td>0.240</td>
-                        <td class="model-sample">[Almost MINT] Longines Conquest VHP L1.613.3 Quartz White Dial Watch F</td>
+                        <td><strong>L1.620.3</strong></td>
+                        <td>2</td>
+                        <td>$475</td>
+                        <td class="highlight longines-accent">¥47,856</td>
+                        <td>0.164</td>
+                        <td class="model-sample">Longines Conquest L1.620.3 White Two-Tone Date Automatic Swi</td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+613+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1.620.3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20613%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1.620.3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
+        
                     <tr>
                         <td><strong class="longines-accent">4</strong></td>
-                        <td><strong>L1.631.4</strong></td>
-                        <td>15</td>
-                        <td>$290</td>
-                        <td class="highlight longines-accent">¥32,958</td>
-                        <td>0.130</td>
-                        <td class="model-sample">【NEAR MINT】Longines Conquest L1.631.4 35mm Stainless Steel  Unisex Qua</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+631+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20631%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">5</strong></td>
-                        <td><strong>L1.611.4</strong></td>
-                        <td>14</td>
-                        <td>$687</td>
-                        <td class="highlight longines-accent">¥82,133</td>
-                        <td>0.330</td>
-                        <td class="model-sample">[Near MINT] Longines Conquest Heritage L1.611.4 Automatic Men's Watch </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+611+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20611%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">6</strong></td>
                         <td><strong>L1.627.4</strong></td>
-                        <td>13</td>
-                        <td>$390</td>
-                        <td class="highlight longines-accent">¥45,360</td>
-                        <td>0.190</td>
-                        <td class="model-sample">[Exc+4] Vintage Longines L1.627.4 V.H.P. Conquest Perpetual Calendar M</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+627+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20627%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">7</strong></td>
-                        <td><strong>L1.113.3</strong></td>
-                        <td>12</td>
-                        <td>$257</td>
-                        <td class="highlight longines-accent">¥28,923</td>
-                        <td>0.170</td>
-                        <td class="model-sample">[ Near MINT ] LONGINES Conquest V.H.P. L1.113.3 Gold Silver Women QZ W</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+113+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20113%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">8</strong></td>
-                        <td><strong>L1.627.3</strong></td>
-                        <td>11</td>
-                        <td>$351</td>
-                        <td class="highlight longines-accent">¥40,524</td>
-                        <td>0.210</td>
-                        <td class="model-sample">[Read] Longines Conquest L1.627.3 V.H.P 165th Anniversary Men's Watch</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+627+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20627%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">9</strong></td>
-                        <td><strong>L1.614.4</strong></td>
-                        <td>11</td>
-                        <td>$200</td>
-                        <td class="highlight longines-accent">¥21,798</td>
-                        <td>0.100</td>
-                        <td class="model-sample">[Near MINT] Longines Conquest L1.614.4 Silver Men's Quartz Watch From </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+614+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20614%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">10</strong></td>
-                        <td><strong>L1.131.4</strong></td>
-                        <td>9</td>
-                        <td>$250</td>
-                        <td class="highlight longines-accent">¥27,987</td>
-                        <td>0.070</td>
-                        <td class="model-sample">LONGINES Conquest Date  L1.131.4  quartz  Women watch</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+131+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20131%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">11</strong></td>
-                        <td><strong>L1.613.9</strong></td>
-                        <td>8</td>
-                        <td>$254</td>
-                        <td class="highlight longines-accent">¥28,558</td>
-                        <td>0.260</td>
-                        <td class="model-sample">[Near MINT] LONGINES Conquest V.H.P L1.613.9 Gray 35mm Quartz Men's Wa</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+613+9&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20613%209&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">12</strong></td>
-                        <td><strong>L1.613.4</strong></td>
-                        <td>8</td>
+                        <td>2</td>
                         <td>$260</td>
-                        <td class="highlight longines-accent">¥29,238</td>
-                        <td>0.140</td>
-                        <td class="model-sample">Vintage [N MINT w/Case] LONGINES Conquest L1.613.4 V.H.P Gray Dial Men</td>
+                        <td class="highlight longines-accent">¥26,194</td>
+                        <td>0.326</td>
+                        <td class="model-sample">[Exc+4] Vintage Longines L1.627.4 V.H.P. Conquest Perpetual </td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+613+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1.627.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20613%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1.627.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">13</strong></td>
-                        <td><strong>L3.716.4</strong></td>
-                        <td>7</td>
-                        <td>$640</td>
-                        <td class="highlight longines-accent">¥76,360</td>
-                        <td>0.170</td>
-                        <td class="model-sample">[Exc+5]Box LONGINES Conquest VHP L3.716.4 Black Quartz Men's Watch 41m</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+716+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20716%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">14</strong></td>
-                        <td><strong>L3.612.3</strong></td>
-                        <td>5</td>
-                        <td>$250</td>
-                        <td class="highlight longines-accent">¥27,987</td>
-                        <td>0.110</td>
-                        <td class="model-sample">[Exc+5] LONGINES Conquest EFCo L3.612.3 White Dial Quartz 37mm Swiss M</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+612+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20612%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">15</strong></td>
-                        <td><strong>L3.689.4</strong></td>
-                        <td>4</td>
-                        <td>$530</td>
-                        <td class="highlight longines-accent">¥62,782</td>
-                        <td>0.130</td>
-                        <td class="model-sample">LONGINES Hydro Conquest L3.689.4 Date blue Dial Quartz Men's Watch</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+689+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20689%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
+        
                 </tbody>
             </table>
         </div>
     
         <h4 style="color: #003057; margin-top: 25px; border-bottom: 2px solid #003057; padding-bottom: 5px;">
-            DolceVita <span style="font-size: 0.9em; color: #666;">（販売数: 160個）</span>
+            DolceVita <span style="font-size: 0.9em; color: #666;">（販売数: 8個）</span>
         </h4>
         <div class="table-container">
             <table>
@@ -39982,1566 +39746,432 @@
                     <tr>
                         <td><strong class="longines-accent">1</strong></td>
                         <td><strong>L5.158.4</strong></td>
-                        <td>27</td>
-                        <td>$335</td>
-                        <td class="highlight longines-accent">¥38,538</td>
-                        <td>0.280</td>
-                        <td class="model-sample">[ N MINT ] Longines Dolce Vita L5.158.4 White Shell Dial Qz Ladies Wat</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+158+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20158%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">2</strong></td>
-                        <td><strong>L5.655.4</strong></td>
-                        <td>24</td>
-                        <td>$399</td>
-                        <td class="highlight longines-accent">¥46,476</td>
-                        <td>0.150</td>
-                        <td class="model-sample">[Exc+5 w/ BOX] Longines Dolce Vita L5.655.4 Square Quartz 26mm Men's S</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+655+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20655%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">3</strong></td>
-                        <td><strong>L5.656.4</strong></td>
-                        <td>16</td>
-                        <td>$600</td>
-                        <td class="highlight longines-accent">¥71,398</td>
-                        <td>0.130</td>
-                        <td class="model-sample">[Near MINT] LONGINES Dolce Vita L5.656.4 Chronograph Men Quartz Watch </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+656+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20656%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">4</strong></td>
-                        <td><strong>L5.155.4</strong></td>
-                        <td>13</td>
-                        <td>$390</td>
-                        <td class="highlight longines-accent">¥45,347</td>
-                        <td>0.110</td>
-                        <td class="model-sample">Longines Dolcevita Watch L5.155.4 Working</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+155+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20155%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">5</strong></td>
-                        <td><strong>L5.158.0</strong></td>
-                        <td>8</td>
-                        <td>$496</td>
-                        <td class="highlight longines-accent">¥58,442</td>
-                        <td>0.200</td>
-                        <td class="model-sample">New Battery▶[EXC+5] Longines Dolce Vita L5.158.0 Sapphire Womens Qz Wa</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+158+0&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20158%200&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">6</strong></td>
-                        <td><strong>L5.657.4</strong></td>
-                        <td>5</td>
-                        <td>$550</td>
-                        <td class="highlight longines-accent">¥65,198</td>
-                        <td>0.150</td>
-                        <td class="model-sample">LONGINES Dolce Vita L5.657.4 Date Orange Dial Automatic Men's Watch L#</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+657+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20657%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">7</strong></td>
-                        <td><strong>L5.166.4</strong></td>
-                        <td>5</td>
-                        <td>$290</td>
-                        <td class="highlight longines-accent">¥32,958</td>
-                        <td>0.090</td>
-                        <td class="model-sample">[N MINT] LONGINES L5.166.4 Dolce Vita Black Dial Quartz Women Swiss Wa</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+166+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20166%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">8</strong></td>
-                        <td><strong>L5.668.4</strong></td>
-                        <td>5</td>
-                        <td>$400</td>
-                        <td class="highlight longines-accent">¥46,598</td>
-                        <td>0.100</td>
-                        <td class="model-sample">[Near MINT] Longines Dolce Vita L5.668.4 30mm Chronograph Date Quartz </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+668+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20668%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">9</strong></td>
-                        <td><strong>L5.665.4</strong></td>
-                        <td>5</td>
-                        <td>$340</td>
-                        <td class="highlight longines-accent">¥39,158</td>
-                        <td>0.100</td>
-                        <td class="model-sample">[Near MINT]  Longines Dolce vita watch L5.665.4 Qz Vintage Black Dial </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+665+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20665%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">10</strong></td>
-                        <td><strong>L5.258.4</strong></td>
                         <td>3</td>
-                        <td>$650</td>
-                        <td class="highlight longines-accent">¥77,600</td>
-                        <td>0.120</td>
-                        <td class="model-sample">[ Box ] Longines Dolce Vita L5.258.4 Square Face Quartz Women's Watch </td>
+                        <td>$278</td>
+                        <td class="highlight longines-accent">¥27,985</td>
+                        <td>0.237</td>
+                        <td class="model-sample">[ N MINT ] Longines Dolce Vita L5.158.4 White Shell Dial Qz </td>
                         <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+258+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5.158.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
                             <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20258%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5.158.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
                             <input type="checkbox" class="search-checkbox">
                         </td>
                     </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">11</strong></td>
-                        <td><strong>L5.155.5</strong></td>
-                        <td>3</td>
-                        <td>$848</td>
-                        <td class="highlight longines-accent">¥102,189</td>
-                        <td>0.240</td>
-                        <td class="model-sample">LONGINES Dolcevita L5.155.5 Small seconds Silver Dial Quartz Ladies Wa</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+155+5&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20155%205&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">12</strong></td>
-                        <td><strong>L5.161.4</strong></td>
-                        <td>3</td>
-                        <td>$291</td>
-                        <td class="highlight longines-accent">¥33,084</td>
-                        <td>0.120</td>
-                        <td class="model-sample">[NEAR MINT] Longines Dolce Vita L5.161.4 White Shell Dial QZ Women Wat</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+161+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20161%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">13</strong></td>
-                        <td><strong>L5.255.4</strong></td>
-                        <td>3</td>
-                        <td>$700</td>
-                        <td class="highlight longines-accent">¥83,800</td>
-                        <td>0.080</td>
-                        <td class="model-sample">LONGINES Dolce Vita L5.255.4 Quartz White Women's Watch From JAPAN [Bo</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+255+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20255%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">14</strong></td>
-                        <td><strong>L5.258.5</strong></td>
-                        <td>2</td>
-                        <td>$1334</td>
-                        <td class="highlight longines-accent">¥162,478</td>
-                        <td>0.490</td>
-                        <td class="model-sample">LONGINES Dolce Vita L5.258.5 Band Size 16.5cm Ladies Used Watch #61030</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+258+5&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20258%205&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">15</strong></td>
-                        <td><strong>L5.174.4</strong></td>
-                        <td>2</td>
-                        <td>$336</td>
-                        <td class="highlight longines-accent">¥38,686</td>
-                        <td>0.440</td>
-                        <td class="model-sample">LONGINES Dolcevita L5.174.4 white Dial Quartz Ladies Watch_865336</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+174+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20174%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
+        
                 </tbody>
             </table>
         </div>
     
-        <h4 style="color: #003057; margin-top: 25px; border-bottom: 2px solid #003057; padding-bottom: 5px;">
-            Flagship <span style="font-size: 0.9em; color: #666;">（販売数: 132個）</span>
-        </h4>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>順位</th>
-                        <th>型番</th>
-                        <th>販売数</th>
-                        <th>中央値</th>
-                        <th class="longines-accent">仕入上限(¥)</th>
-                        <th>CV値</th>
-                        <th>商品例</th>
-                        <th>検索</th>
-                    </tr>
-                </thead>
-                <tbody>
-    
-                    <tr>
-                        <td><strong class="longines-accent">1</strong></td>
-                        <td><strong>L5.633.3</strong></td>
-                        <td>8</td>
-                        <td>$259</td>
-                        <td class="highlight longines-accent">¥29,128</td>
-                        <td>0.110</td>
-                        <td class="model-sample">Vintage Longines FLAGSHIP L5.633.3 Men's Watch Quartz Swiss Made Dress</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+633+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20633%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">2</strong></td>
-                        <td><strong>L4.774.4</strong></td>
-                        <td>5</td>
-                        <td>$600</td>
-                        <td class="highlight longines-accent">¥71,400</td>
-                        <td>0.120</td>
-                        <td class="model-sample">LONGINES Flagship L4.774.4 Date white Dial Automatic Men's Watch_84682</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+774+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20774%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">3</strong></td>
-                        <td><strong>L4.274.3</strong></td>
-                        <td>3</td>
-                        <td>$550</td>
-                        <td class="highlight longines-accent">¥65,200</td>
-                        <td>0.360</td>
-                        <td class="model-sample">LONGINES Flagship L4.274.3 12P diamond white Dial Automatic Ladies Wat</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+274+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20274%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">4</strong></td>
-                        <td><strong>L5.133.3</strong></td>
-                        <td>3</td>
-                        <td>$220</td>
-                        <td class="highlight longines-accent">¥24,278</td>
-                        <td>0.100</td>
-                        <td class="model-sample">[N MINT] LONGINES Flagship L5.133.3 Date Gold Two Tone Quartz Ladies W</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+133+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20133%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">5</strong></td>
-                        <td><strong>L4.774.3</strong></td>
-                        <td>3</td>
-                        <td>$551</td>
-                        <td class="highlight longines-accent">¥65,299</td>
-                        <td>0.160</td>
-                        <td class="model-sample">LONGINES Flagship L4.774.3 Date white Dial Automatic Men's Watch_87907</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+774+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20774%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">6</strong></td>
-                        <td><strong>L4.803.4</strong></td>
-                        <td>2</td>
-                        <td>$996</td>
-                        <td class="highlight longines-accent">¥120,454</td>
-                        <td>0.030</td>
-                        <td class="model-sample">LONGINES Flagship L4.803.4 Chronograph 10P diamond Automatic Men's Wat</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+803+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20803%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">7</strong></td>
-                        <td><strong>L4.274.4</strong></td>
-                        <td>2</td>
-                        <td>$492</td>
-                        <td class="highlight longines-accent">¥58,065</td>
-                        <td>0.170</td>
-                        <td class="model-sample">LONGINES Flagship L4.274.4 12P diamond white Dial Automatic Ladies Wat</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+274+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20274%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">8</strong></td>
-                        <td><strong>L5.633.2</strong></td>
-                        <td>2</td>
-                        <td>$231</td>
-                        <td class="highlight longines-accent">¥25,634</td>
-                        <td>0.120</td>
-                        <td class="model-sample">[EUC] LONGINES FLAGSHIP L5.633.2 MEN'S DATE VINTAGE WATCH SWISS QUARTZ</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+633+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20633%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">9</strong></td>
-                        <td><strong>L5.131.2</strong></td>
-                        <td>2</td>
-                        <td>$305</td>
-                        <td class="highlight longines-accent">¥34,820</td>
-                        <td>0.260</td>
-                        <td class="model-sample">[Near MINT] Longines Flagship L5.131.2 24mm White Dial Day Quartz Wome</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+131+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20131%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">10</strong></td>
-                        <td><strong>L5.631.3</strong></td>
-                        <td>1</td>
-                        <td>$270</td>
-                        <td class="highlight longines-accent">¥30,453</td>
-                        <td>0.000</td>
-                        <td class="model-sample">Longines Flagship L5.631.3 Men's Automatic Watch, Used, Excellent Cond</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+631+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20631%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">11</strong></td>
-                        <td><strong>L5.133.2</strong></td>
-                        <td>1</td>
-                        <td>$280</td>
-                        <td class="highlight longines-accent">¥31,718</td>
-                        <td>0.000</td>
-                        <td class="model-sample">[Near MINT] LONGINES Flagship L5.133.2 Gold Date Quartz Women's Watch </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+133+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20133%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">12</strong></td>
-                        <td><strong>L5.132.3</strong></td>
-                        <td>1</td>
-                        <td>$186</td>
-                        <td class="highlight longines-accent">¥20,052</td>
-                        <td>0.000</td>
-                        <td class="model-sample">[Near MINT] LONGINES Flagship L5.132.3 White Dial Gold Quartz Women's </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+132+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20132%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">13</strong></td>
-                        <td><strong>L4.984.4</strong></td>
-                        <td>1</td>
-                        <td>$1500</td>
-                        <td class="highlight longines-accent">¥183,000</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Flagship Black L4.984.4.59.2 L49844592</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+984+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20984%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">14</strong></td>
-                        <td><strong>L4.874.4</strong></td>
-                        <td>1</td>
-                        <td>$951</td>
-                        <td class="highlight longines-accent">¥114,915</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Flagship L4.874.4.57.6 13P diamond date Automatic Men's_82424</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+874+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20874%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">15</strong></td>
-                        <td><strong>L2.830.4</strong></td>
-                        <td>1</td>
-                        <td>$1649</td>
-                        <td class="highlight longines-accent">¥201,507</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Flagship heritage L2.830.4.93.0 Chronograph Automatic Men's P</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+830+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20830%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                </tbody>
-            </table>
-        </div>
-    
-        <h4 style="color: #003057; margin-top: 25px; border-bottom: 2px solid #003057; padding-bottom: 5px;">
-            Heritage <span style="font-size: 0.9em; color: #666;">（販売数: 29個）</span>
-        </h4>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>順位</th>
-                        <th>型番</th>
-                        <th>販売数</th>
-                        <th>中央値</th>
-                        <th class="longines-accent">仕入上限(¥)</th>
-                        <th>CV値</th>
-                        <th>商品例</th>
-                        <th>検索</th>
-                    </tr>
-                </thead>
-                <tbody>
-    
-                    <tr>
-                        <td><strong class="longines-accent">1</strong></td>
-                        <td><strong>L2.822.4</strong></td>
-                        <td>5</td>
-                        <td>$1197</td>
-                        <td class="highlight longines-accent">¥145,450</td>
-                        <td>0.110</td>
-                        <td class="model-sample">with paper LONGINES Heritage L2.822.4.56.9 black Dial Automatic Men's </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+822+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20822%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">2</strong></td>
-                        <td><strong>L2.832.4</strong></td>
-                        <td>3</td>
-                        <td>$951</td>
-                        <td class="highlight longines-accent">¥114,919</td>
-                        <td>0.110</td>
-                        <td class="model-sample">LONGINES Heritage Military L2.832.4 Date black Dial Automatic Men's Wa</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+832+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20832%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">3</strong></td>
-                        <td><strong>L2.789.4</strong></td>
-                        <td>2</td>
-                        <td>$877</td>
-                        <td class="highlight longines-accent">¥105,807</td>
-                        <td>0.120</td>
-                        <td class="model-sample">LONGINES Heritage Military 1938 L2.789.4 GMT black Dial Automatic Men'</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+789+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20789%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">4</strong></td>
-                        <td><strong>L2.828.4</strong></td>
-                        <td>2</td>
-                        <td>$1557</td>
-                        <td class="highlight longines-accent">¥190,018</td>
-                        <td>0.100</td>
-                        <td class="model-sample">LONGINES Heritage Classic L2.828.4 Small seconds Automatic Men's Watch</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+828+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20828%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">5</strong></td>
-                        <td><strong>L2.747.4</strong></td>
-                        <td>2</td>
-                        <td>$1300</td>
-                        <td class="highlight longines-accent">¥158,198</td>
-                        <td>0.110</td>
-                        <td class="model-sample">Rare [MINT] LONGINES Heritage L2.747.4 White Dial Day/Date Mens Watch </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+747+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20747%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">6</strong></td>
-                        <td><strong>L2.791.4</strong></td>
-                        <td>1</td>
-                        <td>$1698</td>
-                        <td class="highlight longines-accent">¥207,571</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Heritage 1973 Chronograph L2.791.4 Date Automatic Men's Watch</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+791+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20791%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">7</strong></td>
-                        <td><strong>L2.808.4</strong></td>
-                        <td>1</td>
-                        <td>$1836</td>
-                        <td class="highlight longines-accent">¥224,701</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Heritage L2.808.4 Diver 1967 black Dial Automatic Men's Watch</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+808+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20808%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">8</strong></td>
-                        <td><strong>L2.796.4</strong></td>
-                        <td>1</td>
-                        <td>$1550</td>
-                        <td class="highlight longines-accent">¥189,200</td>
-                        <td>0.000</td>
-                        <td class="model-sample">Longines Heritage Diver (L2.796.4.52.9)</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+796+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20796%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">9</strong></td>
-                        <td><strong>L2.795.4</strong></td>
-                        <td>1</td>
-                        <td>$1018</td>
-                        <td class="highlight longines-accent">¥123,193</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Heritage diver L2.795.4 Date black Dial Automatic Men's Watch</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+795+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20795%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">10</strong></td>
-                        <td><strong>L2.649.4</strong></td>
-                        <td>1</td>
-                        <td>$749</td>
-                        <td class="highlight longines-accent">¥89,876</td>
-                        <td>0.000</td>
-                        <td class="model-sample">Longines Heritage L2.649.4 Chronograph Qz Men's Watch From JAPAN [ Box</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+649+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20649%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">11</strong></td>
-                        <td><strong>L2.788.4</strong></td>
-                        <td>1</td>
-                        <td>$800</td>
-                        <td class="highlight longines-accent">¥96,200</td>
-                        <td>0.000</td>
-                        <td class="model-sample">Longines Heritage Military Auto L2.788.4.53.0 40mm Date Black Dial SS </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+788+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20788%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">12</strong></td>
-                        <td><strong>L2.781.4</strong></td>
-                        <td>1</td>
-                        <td>$1668</td>
-                        <td class="highlight longines-accent">¥203,803</td>
-                        <td>0.000</td>
-                        <td class="model-sample">Longines Heritage Tachymeter Chronograph L2.781.4 AT SS White Dial 40m</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+781+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20781%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">13</strong></td>
-                        <td><strong>L2.777.4</strong></td>
-                        <td>1</td>
-                        <td>$1225</td>
-                        <td class="highlight longines-accent">¥148,954</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Heritage Avigation L2.777.4 oversized crown Automatic Men's_9</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+777+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20777%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">14</strong></td>
-                        <td><strong>L2.768.4</strong></td>
-                        <td>1</td>
-                        <td>$1600</td>
-                        <td class="highlight longines-accent">¥195,400</td>
-                        <td>0.000</td>
-                        <td class="model-sample">Longines L2.768.4 Heritage 1942 Chronograph Bk Dial Men'S Automatic Wi</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+768+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20768%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">15</strong></td>
-                        <td><strong>L2.767.4</strong></td>
-                        <td>1</td>
-                        <td>$1100</td>
-                        <td class="highlight longines-accent">¥133,400</td>
-                        <td>0.000</td>
-                        <td class="model-sample">Longines Heritage 1940 Date L2.767.4 Black Dial Automatic 39mm Excelle</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+767+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20767%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                </tbody>
-            </table>
-        </div>
-    
-        <h4 style="color: #003057; margin-top: 25px; border-bottom: 2px solid #003057; padding-bottom: 5px;">
-            Spirit <span style="font-size: 0.9em; color: #666;">（販売数: 17個）</span>
-        </h4>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>順位</th>
-                        <th>型番</th>
-                        <th>販売数</th>
-                        <th>中央値</th>
-                        <th class="longines-accent">仕入上限(¥)</th>
-                        <th>CV値</th>
-                        <th>商品例</th>
-                        <th>検索</th>
-                    </tr>
-                </thead>
-                <tbody>
-    
-                    <tr>
-                        <td><strong class="longines-accent">1</strong></td>
-                        <td><strong>L2.700.4</strong></td>
-                        <td>5</td>
-                        <td>$718</td>
-                        <td class="highlight longines-accent">¥86,032</td>
-                        <td>0.120</td>
-                        <td class="model-sample">LONGINES Spirit L2.700.4 Black Dial Date Automatic SS Men's Watch ( 17</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+700+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20700%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">2</strong></td>
-                        <td><strong>L3.410.4</strong></td>
-                        <td>2</td>
-                        <td>$1570</td>
-                        <td class="highlight longines-accent">¥191,618</td>
-                        <td>0.140</td>
-                        <td class="model-sample">LONGINES Spirit L3.410.4 Date Black Dial Automatic Men's Watch_896266</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+410+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20410%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">3</strong></td>
-                        <td><strong>L3.820.4</strong></td>
-                        <td>2</td>
-                        <td>$1645</td>
-                        <td class="highlight longines-accent">¥201,033</td>
-                        <td>0.090</td>
-                        <td class="model-sample">discount LONGINES Spirit chronograph L3.820.4 Date blue Dial Men's O#1</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+820+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20820%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">4</strong></td>
-                        <td><strong>L2.198.4</strong></td>
-                        <td>1</td>
-                        <td>$593</td>
-                        <td class="highlight longines-accent">¥70,569</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Spirit L2.198.4 Date Black Dial Quartz Boy's Watch_864525</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+198+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20198%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">5</strong></td>
-                        <td><strong>L2.699.4</strong></td>
-                        <td>1</td>
-                        <td>$1037</td>
-                        <td class="highlight longines-accent">¥125,588</td>
-                        <td>0.000</td>
-                        <td class="model-sample">[Reserved] Longines Spirit L2.699.4 Black Dial Date Automatic SS 36mm </td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+699+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20699%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">6</strong></td>
-                        <td><strong>L2.705.4</strong></td>
-                        <td>1</td>
-                        <td>$953</td>
-                        <td class="highlight longines-accent">¥115,117</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Spirit chronograph L2.705.4 Date Automatic Men's Watch_868253</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+705+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20705%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">7</strong></td>
-                        <td><strong>L3.802.4</strong></td>
-                        <td>1</td>
-                        <td>$2330</td>
-                        <td class="highlight longines-accent">¥285,964</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Longines Spirit ZULU TIME L3.802.4.93.6 Automatic Men's Watch</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+802+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20802%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">8</strong></td>
-                        <td><strong>L3.810.4</strong></td>
-                        <td>1</td>
-                        <td>$1396</td>
-                        <td class="highlight longines-accent">¥170,111</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Spirit 40 L3.810.4 Chronometer Navy Dial Automatic Men's Watc</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+810+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20810%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">9</strong></td>
-                        <td><strong>L3.811.4</strong></td>
-                        <td>1</td>
-                        <td>$1042</td>
-                        <td class="highlight longines-accent">¥126,152</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Spirit L3.811.4 Chronometer Date black Dial Automatic Men's_9</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+811+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20811%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">10</strong></td>
-                        <td><strong>L3.812.4</strong></td>
-                        <td>1</td>
-                        <td>$1976</td>
-                        <td class="highlight longines-accent">¥242,024</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES L3.812.4 spirit zulu time Automatic CeramicStainless steel me</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+812+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20812%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                    <tr>
-                        <td><strong class="longines-accent">11</strong></td>
-                        <td><strong>L3.821.4</strong></td>
-                        <td>1</td>
-                        <td>$3375</td>
-                        <td class="highlight longines-accent">¥415,543</td>
-                        <td>0.000</td>
-                        <td class="model-sample">LONGINES Spirit Flyback 42mm L3.821.4.53.2 Flyback Automatic Men's Wat</td>
-                        <td>
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L3+821+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                            <input type="checkbox" class="search-checkbox">
-                            <a href="https://jp.mercari.com/search?keyword=Longines%20L3%20821%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                            <input type="checkbox" class="search-checkbox">
-                        </td>
-                    </tr>
-            
-                </tbody>
-            </table>
-        </div>
-    
+
         <h3 class="section-title longines-primary">🔵 ライン別詳細分析（全6ライン）</h3>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>ライン</th>
-                    <th>販売数</th>
-                    <th>比率</th>
-                    <th>中央値</th>
-                    <th>仕入上限(¥)</th>
-                    <th>CV値</th>
-                    <th>安定度</th>
-                    <th>検索</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>その他Longines</strong></td>
-                    <td>2,126</td>
-                    <td>72.0%</td>
-                    <td>$250.99</td>
-                    <td>¥28,122</td>
-                    <td>0.886</td>
-                    <td>☆☆☆</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+その他Longines+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20その他Longines%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Conquest</strong></td>
-                    <td>490</td>
-                    <td>16.6%</td>
-                    <td>$279.99</td>
-                    <td>¥31,718</td>
-                    <td>0.792</td>
-                    <td>☆☆☆</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Conquest+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20Conquest%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>DolceVita</strong></td>
-                    <td>160</td>
-                    <td>5.4%</td>
-                    <td>$399.99</td>
-                    <td>¥46,598</td>
-                    <td>0.442</td>
-                    <td>☆☆☆</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+DolceVita+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20DolceVita%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Flagship</strong></td>
-                    <td>132</td>
-                    <td>4.5%</td>
-                    <td>$250.00</td>
-                    <td>¥28,000</td>
-                    <td>1.152</td>
-                    <td>☆☆☆</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Flagship+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20Flagship%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Heritage</strong></td>
-                    <td>29</td>
-                    <td>1.0%</td>
-                    <td>$1199.99</td>
-                    <td>¥145,798</td>
-                    <td>0.553</td>
-                    <td>☆☆☆</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Heritage+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20Heritage%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Spirit</strong></td>
-                    <td>17</td>
-                    <td>0.6%</td>
-                    <td>$1041.55</td>
-                    <td>¥126,152</td>
-                    <td>0.561</td>
-                    <td>☆☆☆</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Spirit+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20Spirit%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ライン</th>
+                        <th>販売数</th>
+                        <th class="longines-accent">比率</th>
+                        <th>中央値</th>
+                        <th class="longines-accent">仕入上限(¥)</th>
+                        <th>CV値</th>
+                        <th>安定度</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-        <!-- 全ライン横断 型番分析Top30 -->
+                    <tr>
+                        <td><strong>その他Longines</strong></td>
+                        <td>156</td>
+                        <td class="longines-accent">71.2%</td>
+                        <td>$237</td>
+                        <td class="highlight longines-accent">¥23,877</td>
+                        <td>0.792</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+その他Longines+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20その他Longines%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Conquest</strong></td>
+                        <td>32</td>
+                        <td class="longines-accent">14.6%</td>
+                        <td>$285</td>
+                        <td class="highlight longines-accent">¥28,708</td>
+                        <td>0.822</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Conquest+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20Conquest%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Flagship</strong></td>
+                        <td>13</td>
+                        <td class="longines-accent">5.9%</td>
+                        <td>$270</td>
+                        <td class="highlight longines-accent">¥27,181</td>
+                        <td>0.862</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Flagship+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20Flagship%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>DolceVita</strong></td>
+                        <td>8</td>
+                        <td class="longines-accent">3.7%</td>
+                        <td>$341</td>
+                        <td class="highlight longines-accent">¥34,355</td>
+                        <td>0.453</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+DolceVita+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20DolceVita%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Heritage</strong></td>
+                        <td>6</td>
+                        <td class="longines-accent">2.7%</td>
+                        <td>$1377</td>
+                        <td class="highlight longines-accent">¥138,763</td>
+                        <td>0.726</td>
+                        <td>☆☆☆</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Heritage+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20Heritage%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong>Spirit</strong></td>
+                        <td>3</td>
+                        <td class="longines-accent">1.4%</td>
+                        <td>$1037</td>
+                        <td class="highlight longines-accent">¥104,477</td>
+                        <td>0.141</td>
+                        <td>★★★</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+Spirit+Watch&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20Spirit%20時計&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
+
         <h3 class="section-title longines-primary">🏆 全ライン横断 型番分析Top30</h3>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>順位</th>
-                    <th>型番</th>
-                    <th>販売数</th>
-                    <th>中央値($)</th>
-                    <th>仕入上限(¥)</th>
-                    <th>CV</th>
-                    <th>検索</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>1</strong></td>
-                    <td>L4.637.2</td>
-                    <td>88</td>
-                    <td>$199.99</td>
-                    <td>¥21,798</td>
-                    <td>0.240</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+637+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20637%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>2</strong></td>
-                    <td>L4.720.2</td>
-                    <td>76</td>
-                    <td>$289.99</td>
-                    <td>¥32,958</td>
-                    <td>0.250</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+720+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20720%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>3</strong></td>
-                    <td>L4.635.2</td>
-                    <td>66</td>
-                    <td>$329.94</td>
-                    <td>¥37,912</td>
-                    <td>0.250</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+635+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20635%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>4</strong></td>
-                    <td>L4.636.2</td>
-                    <td>48</td>
-                    <td>$215.92</td>
-                    <td>¥23,774</td>
-                    <td>0.210</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+636+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20636%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>5</strong></td>
-                    <td>L4.135.2</td>
-                    <td>47</td>
-                    <td>$299.99</td>
-                    <td>¥34,198</td>
-                    <td>0.170</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+135+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20135%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>6</strong></td>
-                    <td>L4.720.4</td>
-                    <td>37</td>
-                    <td>$299.90</td>
-                    <td>¥34,187</td>
-                    <td>0.150</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+720+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20720%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>7</strong></td>
-                    <td>L4.709.2</td>
-                    <td>36</td>
-                    <td>$379.99</td>
-                    <td>¥44,118</td>
-                    <td>0.230</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+709+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20709%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>8</strong></td>
-                    <td>L5.158.4</td>
-                    <td>29</td>
-                    <td>$329.99</td>
-                    <td>¥37,918</td>
-                    <td>0.290</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+158+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20158%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>9</strong></td>
-                    <td>L4.209.4</td>
-                    <td>26</td>
-                    <td>$299.99</td>
-                    <td>¥34,198</td>
-                    <td>0.310</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+209+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20209%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>10</strong></td>
-                    <td>L5.655.4</td>
-                    <td>26</td>
-                    <td>$399.00</td>
-                    <td>¥46,476</td>
-                    <td>0.150</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+655+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20655%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>11</strong></td>
-                    <td>L4.209.2</td>
-                    <td>24</td>
-                    <td>$399.99</td>
-                    <td>¥46,598</td>
-                    <td>0.220</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+209+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20209%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>12</strong></td>
-                    <td>L1.614.3</td>
-                    <td>23</td>
-                    <td>$249.99</td>
-                    <td>¥27,998</td>
-                    <td>0.130</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+614+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20614%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>13</strong></td>
-                    <td>L4.709.4</td>
-                    <td>18</td>
-                    <td>$334.99</td>
-                    <td>¥38,538</td>
-                    <td>0.200</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+709+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20709%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>14</strong></td>
-                    <td>L1.613.3</td>
-                    <td>17</td>
-                    <td>$270.00</td>
-                    <td>¥30,480</td>
-                    <td>0.240</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+613+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20613%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>15</strong></td>
-                    <td>L1.114.3</td>
-                    <td>17</td>
-                    <td>$218.00</td>
-                    <td>¥24,032</td>
-                    <td>0.130</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+114+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20114%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>16</strong></td>
-                    <td>L5.656.4</td>
-                    <td>16</td>
-                    <td>$599.99</td>
-                    <td>¥71,398</td>
-                    <td>0.130</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+656+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20656%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>17</strong></td>
-                    <td>L1.631.4</td>
-                    <td>15</td>
-                    <td>$289.99</td>
-                    <td>¥32,958</td>
-                    <td>0.130</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+631+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20631%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>18</strong></td>
-                    <td>L1.611.4</td>
-                    <td>14</td>
-                    <td>$686.56</td>
-                    <td>¥82,133</td>
-                    <td>0.330</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+611+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20611%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>19</strong></td>
-                    <td>L5.155.4</td>
-                    <td>14</td>
-                    <td>$387.54</td>
-                    <td>¥45,054</td>
-                    <td>0.120</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+155+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20155%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>20</strong></td>
-                    <td>L1.627.4</td>
-                    <td>14</td>
-                    <td>$370.00</td>
-                    <td>¥42,880</td>
-                    <td>0.190</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+627+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20627%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>21</strong></td>
-                    <td>L4.620.2</td>
-                    <td>12</td>
-                    <td>$207.59</td>
-                    <td>¥22,741</td>
-                    <td>0.120</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+620+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20620%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>22</strong></td>
-                    <td>L1.113.3</td>
-                    <td>12</td>
-                    <td>$257.45</td>
-                    <td>¥28,923</td>
-                    <td>0.170</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+113+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20113%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>23</strong></td>
-                    <td>L2.673.4</td>
-                    <td>11</td>
-                    <td>$1976.11</td>
-                    <td>¥242,037</td>
-                    <td>0.100</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2+673+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L2%20673%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>24</strong></td>
-                    <td>L1.614.4</td>
-                    <td>11</td>
-                    <td>$199.99</td>
-                    <td>¥21,798</td>
-                    <td>0.100</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+614+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20614%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>25</strong></td>
-                    <td>L5.131.3</td>
-                    <td>11</td>
-                    <td>$187.77</td>
-                    <td>¥20,283</td>
-                    <td>0.070</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+131+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20131%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>26</strong></td>
-                    <td>L5.636.3</td>
-                    <td>11</td>
-                    <td>$220.00</td>
-                    <td>¥24,280</td>
-                    <td>0.230</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5+636+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L5%20636%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>27</strong></td>
-                    <td>L1.627.3</td>
-                    <td>11</td>
-                    <td>$351.00</td>
-                    <td>¥40,524</td>
-                    <td>0.210</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+627+3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20627%203&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>28</strong></td>
-                    <td>L4.137.2</td>
-                    <td>10</td>
-                    <td>$182.44</td>
-                    <td>¥19,622</td>
-                    <td>0.090</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+137+2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20137%202&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>29</strong></td>
-                    <td>L1.131.4</td>
-                    <td>9</td>
-                    <td>$249.90</td>
-                    <td>¥27,987</td>
-                    <td>0.070</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1+131+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L1%20131%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>30</strong></td>
-                    <td>L4.635.4</td>
-                    <td>9</td>
-                    <td>$300.00</td>
-                    <td>¥34,200</td>
-                    <td>0.200</td>
-                    <td>
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4+635+4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
-                        <input type="checkbox" class="search-checkbox">
-                        <a href="https://jp.mercari.com/search?keyword=Longines%20L4%20635%204&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
-                        <input type="checkbox" class="search-checkbox">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>型番</th>
+                        <th>販売数</th>
+                        <th>中央値($)</th>
+                        <th class="longines-accent">仕入上限(¥)</th>
+                        <th>CV</th>
+                        <th>検索</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-        <!-- グラフ初期化スクリプト -->
-        <script>
-        (function() {
-            // 価格帯別分布
-            const priceData = [{
-                x: ["~$100", "$100-150", "$150-200", "$200-300", "$300-500", "$500-1K", "$1K-2K", "$2K~"],
-                y: [52, 178, 608, 911, 640, 389, 158, 18],
-                type: 'bar',
-                marker: {color: '#003057'}
-            }];
-            Plotly.newPlot('longines_price_chart', priceData, {
-                xaxis: {title: '価格帯'},
-                yaxis: {title: '販売数'},
-                margin: {l: 50, r: 30, t: 30, b: 80}
-            });
+                    <tr>
+                        <td><strong class="longines-accent">1</strong></td>
+                        <td>L150.4</td>
+                        <td>8</td>
+                        <td>$194.94</td>
+                        <td class="highlight longines-accent">¥19,640</td>
+                        <td>0.210</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L150.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L150.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">2</strong></td>
+                        <td>L4.635.2</td>
+                        <td>6</td>
+                        <td>$334.44</td>
+                        <td class="highlight longines-accent">¥33,695</td>
+                        <td>0.122</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.635.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.635.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">3</strong></td>
+                        <td>L4.637.2</td>
+                        <td>6</td>
+                        <td>$194.95</td>
+                        <td class="highlight longines-accent">¥19,641</td>
+                        <td>0.096</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.637.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.637.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">4</strong></td>
+                        <td>L4.636.2</td>
+                        <td>5</td>
+                        <td>$199.90</td>
+                        <td class="highlight longines-accent">¥20,139</td>
+                        <td>0.322</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.636.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.636.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">5</strong></td>
+                        <td>L4.720.2</td>
+                        <td>5</td>
+                        <td>$299.99</td>
+                        <td class="highlight longines-accent">¥30,223</td>
+                        <td>0.171</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.720.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.720.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">6</strong></td>
+                        <td>L2.618.4</td>
+                        <td>3</td>
+                        <td>$997.61</td>
+                        <td class="highlight longines-accent">¥100,509</td>
+                        <td>0.317</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L2.618.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L2.618.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">7</strong></td>
+                        <td>L4.709.2</td>
+                        <td>3</td>
+                        <td>$341.13</td>
+                        <td class="highlight longines-accent">¥34,369</td>
+                        <td>0.012</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.709.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.709.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">8</strong></td>
+                        <td>L5.158.4</td>
+                        <td>3</td>
+                        <td>$277.77</td>
+                        <td class="highlight longines-accent">¥27,985</td>
+                        <td>0.237</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5.158.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5.158.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">9</strong></td>
+                        <td>L847.4</td>
+                        <td>3</td>
+                        <td>$199.99</td>
+                        <td class="highlight longines-accent">¥20,148</td>
+                        <td>0.248</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L847.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L847.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">10</strong></td>
+                        <td>L1.113.3</td>
+                        <td>2</td>
+                        <td>$249.90</td>
+                        <td class="highlight longines-accent">¥25,177</td>
+                        <td>0.283</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1.113.3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1.113.3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">11</strong></td>
+                        <td>L1.614.3</td>
+                        <td>2</td>
+                        <td>$208.88</td>
+                        <td class="highlight longines-accent">¥21,044</td>
+                        <td>0.143</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1.614.3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1.614.3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">12</strong></td>
+                        <td>L1.620.3</td>
+                        <td>2</td>
+                        <td>$475.00</td>
+                        <td class="highlight longines-accent">¥47,856</td>
+                        <td>0.164</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1.620.3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1.620.3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">13</strong></td>
+                        <td>L1.627.4</td>
+                        <td>2</td>
+                        <td>$260.00</td>
+                        <td class="highlight longines-accent">¥26,194</td>
+                        <td>0.326</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L1.627.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L1.627.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">14</strong></td>
+                        <td>L4.620.2</td>
+                        <td>2</td>
+                        <td>$243.50</td>
+                        <td class="highlight longines-accent">¥24,532</td>
+                        <td>0.038</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.620.2&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.620.2&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">15</strong></td>
+                        <td>L4.681.4</td>
+                        <td>2</td>
+                        <td>$448.95</td>
+                        <td class="highlight longines-accent">¥45,231</td>
+                        <td>0.097</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.681.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.681.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">16</strong></td>
+                        <td>L4.720.4</td>
+                        <td>2</td>
+                        <td>$302.50</td>
+                        <td class="highlight longines-accent">¥30,476</td>
+                        <td>0.082</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L4.720.4&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L4.720.4&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">17</strong></td>
+                        <td>L5.131.3</td>
+                        <td>2</td>
+                        <td>$182.62</td>
+                        <td class="highlight longines-accent">¥18,398</td>
+                        <td>0.134</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L5.131.3&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L5.131.3&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td><strong class="longines-accent">18</strong></td>
+                        <td>L645.1</td>
+                        <td>2</td>
+                        <td>$334.94</td>
+                        <td class="highlight longines-accent">¥33,745</td>
+                        <td>0.148</td>
+                        <td>
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=Longines+L645.1&LH_Sold=1" target="_blank" class="link-btn link-ebay">eBay</a>
+                            <input type="checkbox" class="search-checkbox">
+                            <a href="https://jp.mercari.com/search?keyword=Longines%20L645.1&status=on_sale" target="_blank" class="link-btn link-mercari">メルカリ</a>
+                            <input type="checkbox" class="search-checkbox">
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+        </div>
 
-            // 駆動方式別分布
-            const driveData = [{
-                labels: ["\u30af\u30aa\u30fc\u30c4", "\u81ea\u52d5\u5dfb", "\u4e0d\u660e", "\u624b\u5dfb\u304d"],
-                values: [2004, 447, 300, 203],
-                type: 'pie',
-                hole: 0.4
-            }];
-            Plotly.newPlot('longines_movement_chart', driveData, {
-                margin: {l: 30, r: 30, t: 30, b: 30}
-            });
-            // 性別分布
-            const genderData = [{
-                labels: ["\u30e1\u30f3\u30ba", "\u4e0d\u660e", "\u30ec\u30c7\u30a3\u30fc\u30b9", "\u30e6\u30cb\u30bb\u30c3\u30af\u30b9", "\u30dc\u30fc\u30a4\u30ba/\u30ad\u30c3\u30ba"],
-                values: [2343, 330, 235, 45, 1],
-                type: 'pie',
-                hole: 0.4
-            }];
-            Plotly.newPlot('longines_gender_chart', genderData, {
-                margin: {l: 30, r: 30, t: 30, b: 30}
-            });
-            // ライン別売上比率
-            const lineData = [{
-                labels: ["\u305d\u306e\u4ed6Longines", "Conquest", "DolceVita", "Flagship", "Heritage", "Spirit"],
-                values: [2126, 490, 160, 132, 29, 17],
-                type: 'pie',
-                hole: 0.4
-            }];
-            Plotly.newPlot('longines_line_chart', lineData, {
-                margin: {l: 30, r: 30, t: 30, b: 30}
-            });
-        })();
-        </script>
     </div>
 
     <div id="Cartier" class="tab-content">
