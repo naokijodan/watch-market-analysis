@@ -5,6 +5,35 @@ eBay時計販売データの分析システム
 - SEIKO、CASIO、CITIZEN、Orientなどのブランド別詳細分析
 - HTMLタブ形式で複数ブランドの統計・人気モデル・仕入れ戦略を提供
 
+## 🚫 行動規範（過去の失敗から学んだ絶対ルール）
+
+### 1. ファイルは末尾まで読む
+- 部分読み（最初の200行だけ等）で仕様を推測してはならない
+- 雛形・テンプレートは必ず全行読み込んでから作業する
+- 「だいたい理解した」は理解していない
+
+### 2. 質問に先に答える
+- ユーザーが「なぜ？」と聞いたら、まず答える
+- 作業を強行して質問を無視してはならない
+- 質問への回答 → 合意 → 作業、の順序を守る
+
+### 3. 設計を提示し、承認を得てから実装する
+- コードを書く前に設計書（変更内容・影響範囲）を提示
+- ユーザーの承認なしに実装を進めない
+- 3者協議を指示された場合は必ず実行する
+
+### 4. 完了を自己判断しない
+- 作業後は必ず `git diff` で差分を確認する
+- HTMLの出力をブラウザで検証する
+- 「完了」はユーザーが判断する。自分で宣言しない
+
+### 5. 模倣が基本、改善は許可制
+- 既存の構造・順序を勝手に「改善」しない
+- 雛形がある場合は完全に模倣する
+- 改善したい場合はユーザーに提案して承認を得る
+
+---
+
 ## 🚨 重要：HTMLタブ置換時の再発防止策
 
 ### 過去の失敗事例（必読）
@@ -162,14 +191,43 @@ python3 rebuild_all_tabs.py
 
 ```
 watch-market-analysis/
-├── index.html                        # メインHTML（547.5 KB）
-├── 時計データ_分類済み.csv          # データソース（~/Desktop/）
-├── rebuild_seiko_v3_complete.py     # SEIKOタブ再構築
-├── rebuild_casio_v3_complete.py     # CASIOタブ再構築
-├── rebuild_citizen_v3_complete.py   # CITIZENタブ再構築
-├── rebuild_orient_v3_complete.py    # Orientタブ再構築
-├── rebuild_all_tabs.py              # 全タブ一括再構築
-└── CLAUDE.md                         # このファイル
+├── index.html                          # メインHTML
+├── CLAUDE.md                           # このファイル
+│
+│  【データ追加パイプライン】
+├── add_watch_data.py                   # CSVマージ + 属性生成 + 駆動方式/パーツタブ再生成
+├── generate_attributes.py              # 属性生成（add_watch_data.pyから呼ばれる）
+│
+│  【分析シート生成】
+├── export_analysis_excel.py            # → 分析シート.xlsx
+├── export_brand_analysis_excel.py      # → ブランド別詳細分析.xlsx
+├── 分析シート.xlsx                      # 全体統計（12シート）
+├── ブランド別詳細分析.xlsx              # ブランド別詳細（12ブランド）
+│
+│  【HTMLタブ再生成（現在使用するスクリプト）】
+├── rebuild_overall_complete.py         # 全体分析タブ
+├── rebuild_brand_list_tab.py           # ブランド一覧タブ
+├── rebuild_seiko_v3_complete.py        # SEIKOタブ
+├── rebuild_casio_v3_complete.py        # CASIOタブ
+├── rebuild_citizen_v3_complete.py      # CITIZENタブ
+├── rebuild_orient_v3_complete.py       # Orientタブ
+├── rebuild_omega_v3_complete.py        # OMEGAタブ
+├── rebuild_rolex_v3_complete.py        # ROLEXタブ
+├── rebuild_tagheuer_v3_complete.py     # TAG HEUERタブ
+├── rebuild_gucci_v3_complete.py        # GUCCIタブ
+├── rebuild_hamilton_v3_complete.py     # Hamiltonタブ
+├── rebuild_longines_complete_fixed.py  # Longinesタブ（7セクション完全版）
+├── rebuild_cartier_v3_complete.py      # Cartierタブ
+├── rebuild_rado_v3_complete.py         # RADOタブ
+├── build_movement_tabs.py              # 駆動方式タブ（6種）
+├── build_parts_tabs.py                 # パーツタブ（4種）
+│
+│  【データソース（プロジェクト外）】
+│  ~/Desktop/時計データ_分類済み.csv    # メインCSV
+│
+│  【その他】
+├── rebuild_all_tabs.py                 # 旧・全タブ一括再構築（非推奨）
+└── schema.py                           # データスキーマ定義
 ```
 
 ---
@@ -552,62 +610,103 @@ r'<td><strong>NAME</strong></td>.*?\s*</tr>'
 
 ---
 
-## 📊 データ追加方法（2026-01-28追加）
+## 📊 データ追加方法（2026-02-01更新）
 
-### ユーザーが「時計のデータを追加したい」と言った場合
+### クイックチェックリスト
 
-**推奨方法**: 新しいCSVを渡して「追加して」と指示
+```
+□ Phase 1: 事前準備
+  □ CLAUDE.md読む（行動規範確認）
+  □ Obsidian開発ログ確認
+  □ git status / git log 確認
+□ Phase 2: データマージ + 分析シート更新
+  □ python3 add_watch_data.py <新規CSVパス>
+  □ python3 export_analysis_excel.py
+  □ python3 export_brand_analysis_excel.py
+□ Phase 3: HTMLタブ再生成（この順序で実行）
+  □ python3 rebuild_overall_complete.py
+  □ python3 rebuild_brand_list_tab.py
+  □ python3 rebuild_xxx_v3_complete.py（該当ブランド）
+  □ python3 build_movement_tabs.py
+  □ python3 build_parts_tabs.py
+□ Phase 4: 完了処理
+  □ ブラウザで各タブ確認
+  □ git diff で差分確認
+  □ git commit & push
+  □ Obsidianノート作成
+```
 
-### 手順
+### Phase 1: 事前準備
 
-1. **新しいデータを取得**
-   - eBayなどから新しい時計データを取得
-   - CSVファイルに保存（例: `~/Desktop/new_seiko_2026_feb.csv`）
+1. **CLAUDE.md を読む** - 行動規範を確認（焦って作業しない）
+2. **Obsidian の開発ログを確認** - 過去の失敗・注意点を把握
+3. **Git の状態を確認** - 未コミットの変更がないか `git status` / `git log` で確認
 
-2. **Claudeに指示**（新しい会話でもOK）
+### Phase 2: データマージ + 分析シート更新
+
+4. **新データのCSVパスを受け取る**
+5. **CSVマージ**
+   ```bash
+   cd ~/Desktop/watch-market-analysis
+   python3 add_watch_data.py <新規CSVパス>
    ```
-   「~/Desktop/new_seiko_2026_feb.csv を追加して再生成」
-   ```
-   または
-   ```
-   「watch-market-analysisプロジェクトに、
-   ~/Desktop/new_seiko_2026_feb.csv を追加して、
-   全タブを再生成してください」
-   ```
+   - Dry Run（属性生成テスト・抽出率チェック）
+   - 重複チェック（タイトル + 販売日で判定）
+   - 歩留まり率検証
+   - CSV保存 → 駆動方式タブ・パーツタブ再生成
+   - **注意: このスクリプトは駆動方式+パーツタブしか再生成しない。Phase 3が必須**
 
-3. **自動実行される処理**
-   1. ✅ プロジェクトフォルダ確認（`~/Desktop/watch-market-analysis/`）
-   2. ✅ 既存CSV読み込み（`~/Desktop/時計データ_分類済み.csv`）
-   3. ✅ 新しいCSVをマージ（重複チェック）
-   4. ✅ 統計表示（追加件数、ブランド別件数）
-   5. ✅ 全タブを再生成
-      - ブランドタブ（SEIKO, CASIO, CITIZEN, Orientなど）
-      - 駆動方式タブ（自動巻、クオーツ、ソーラー、手巻き、スマートウォッチ、デジタル）
-      - パーツタブ（ベルト素材、ケース素材、文字盤色、ケースサイズ）
-   6. ✅ `index.html` を更新
-   7. ✅ Git commit & push
-   8. ✅ Obsidianノート作成（変更履歴）
+6. **分析シート再生成**
+   ```bash
+   python3 export_analysis_excel.py       # → 分析シート.xlsx
+   python3 export_brand_analysis_excel.py  # → ブランド別詳細分析.xlsx
+   ```
+   - 新ブランドを追加する場合は `export_brand_analysis_excel.py` の `target_brands` リストに追加が必要
 
-### なぜこの方法？
+### Phase 3: HTMLタブ再生成
 
-- **全自動**: マージ、重複チェック、再生成、Git commitまで一括処理
-- **エラー防止**: CSVフォーマットのバリデーション
-- **記録**: Obsidianノートに変更履歴が残る
-- **楽**: 新しいCSVを置いて指示するだけ
+**実行順序と依存関係**:
+
+| 順序 | スクリプト | 対象 | 依存関係 |
+|------|-----------|------|---------|
+| 1 | `rebuild_overall_complete.py` | 全体分析タブ | CSVから全体統計を再計算 |
+| 2 | `rebuild_brand_list_tab.py` | ブランド一覧タブ | CSVからブランド別販売数を再集計 |
+| 3 | `rebuild_xxx_v3_complete.py` | 該当ブランドタブ | CSVからブランド別詳細を再生成 |
+| 4 | `build_movement_tabs.py` | 駆動方式タブ | add_watch_data.pyで実行済みだが確認用 |
+| 5 | `build_parts_tabs.py` | パーツタブ | add_watch_data.pyで実行済みだが確認用 |
+
+**順序4,5はadd_watch_data.pyで実行済みのため、問題なければスキップ可**
+
+### Phase 4: 完了処理
+
+7. **検証**: ブラウザで各タブの表示を確認
+8. **差分確認**: `git diff` で変更内容を確認
+9. **Git commit & push**
+10. **Obsidianノート作成**
+    - ファイル名: `watch-market-analysis_データ追加_{日付}.md`
+    - 内容: 追加件数、ブランド別統計、変更履歴
+
+### 関連スクリプト一覧
+
+| スクリプト | 用途 |
+|-----------|------|
+| `add_watch_data.py` | CSVマージ + 属性生成 + 駆動方式/パーツタブ再生成 |
+| `generate_attributes.py` | 属性生成（add_watch_data.pyから呼ばれる） |
+| `export_analysis_excel.py` | 分析シート.xlsx 生成 |
+| `export_brand_analysis_excel.py` | ブランド別詳細分析.xlsx 生成 |
+| `rebuild_overall_complete.py` | 全体分析タブ再生成 |
+| `rebuild_brand_list_tab.py` | ブランド一覧タブ再生成 |
+| `rebuild_xxx_v3_complete.py` | 各ブランドタブ再生成（xxxはブランド名） |
+| `build_movement_tabs.py` | 駆動方式タブ再生成 |
+| `build_parts_tabs.py` | パーツタブ再生成 |
 
 ### 新しい会話でもOK
 
-新しい会話を始めても、以下のファイルから文脈を復元できる：
-- プロジェクト構造: `/Users/naokijodan/Desktop/watch-market-analysis/`
-- データソース: `~/Desktop/時計データ_分類済み.csv`
+新しい会話を始めても、以下から文脈を復元できる：
 - プロジェクトルール: `CLAUDE.md`（このファイル）
+- データソース: `~/Desktop/時計データ_分類済み.csv`
 - 過去の変更履歴: Gitコミット履歴
-- 開発ログ: `~/開発ログ/*.md`
-
-### 詳細ガイド
-
-詳しい手順は以下を参照：
-- Obsidianノート: `~/開発ログ/watch-market-analysis_データ追加ガイド.md`
+- 開発ログ: Obsidian `/開発ログ/watch-market-analysis_*.md`
 
 ---
 
