@@ -18,9 +18,9 @@ class WatchDataPipeline:
     """時計データ追加の統合パイプライン"""
 
     # 既存CSVパス
-    EXISTING_CSV = '/Users/naokijodan/Desktop/時計データ_分類済み.csv'
-    TEMP_CSV = '/Users/naokijodan/Desktop/時計データ_分類済み_temp.csv'
-    BACKUP_CSV = '/Users/naokijodan/Desktop/時計データ_分類済み_backup.csv'
+    EXISTING_CSV = '/Users/naokijodan/Desktop/watch-market-analysis/時計データ_分類済み.csv'
+    TEMP_CSV = '/Users/naokijodan/Desktop/watch-market-analysis/時計データ_分類済み_temp.csv'
+    BACKUP_CSV = '/Users/naokijodan/Desktop/watch-market-analysis/時計データ_分類済み_backup.csv'
 
     # プロジェクトディレクトリ
     PROJECT_DIR = '/Users/naokijodan/Desktop/watch-market-analysis'
